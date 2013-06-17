@@ -1,0 +1,255 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8"/>
+		<title>Ansimuz Help File</title>
+		
+		<!--[if lt IE 9]>
+			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link rel="stylesheet" media="all" href="assets/css/style.css"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<!-- Adding "maximum-scale=1" fixes the Mobile Safari auto-zoom bug: http://filamentgroup.com/examples/iosScaleBug/ -->
+		
+		
+	</head>
+	
+	<body lang="en">
+	
+		
+		<div id="top" class="wrapper clearfix">
+		
+			<header>
+				<h2>Vintage Template  Documentation<span> by <a href="http://www.luiszuno.com">Luis Zuno</a></span></h2>
+				
+				<div>Thank you for downloading my theme. If you have any questions that are beyond the scope of this help file, please visit the <a href="http://luiszuno.com/free-forums/"><strong>forums</strong></a>.</div>
+				
+				
+			</header>
+		
+		
+			<nav>
+				<ul>
+					<li><a href="#description">Description</a></li>
+						
+					<li><a href="#html">HTML</a>
+						<ul>
+							<li><a href="#structure">Html Structure</a> </li>
+							<li><a href="#files">File List</a> </li>
+							<li><a href="#tooltips">Tooltips</a> </li>
+							<li><a href="#googlemap">Google Map</a> </li>
+							<li><a href="#contactform">Contact Form</a></a> </li>
+						</ul>
+					</li>
+					
+					<li><a href="#css">CSS</a>
+						<ul>
+							<li><a href="#less" >LESS Files</a></li>
+						</ul>
+					</li>
+					
+					<li><a href="#image">Image Files</a></li>
+					
+					<li><a href="#javascript">Javascript</a>
+						<ul>
+							<li><a href="#twitter" >Twitter Config</a></li>
+						</ul>
+					</li>
+					
+					<li><a href="#credits">Credits</a></li>
+					<li><a href="http://luiszuno.com/blog/tweaky/">Customisation</a></li>
+					
+					<p align="center"><a href="http://themeforest.net/user/Ansimuz/portfolio?ref=Ansimuz" target="_blank" ><img src="assets/img/tf_180x100_v2.gif" alt="Premium Files" /></a></p>
+				</ul>
+			</nav>
+			
+			
+		
+			<!-- MAIN -->
+			<div id="main">	
+				
+					
+				
+				
+				<!-- GETTING STARTED -->
+				<article>
+					<h1 class="description" id="start">Description<a class="top" href="#top">top</a></h1>
+						
+					
+					<p>Vintage Template  is a theme with a responsive design for your creative portfolio. Showcase your work display, blog, videos, image galleries and more.  View the <a href="http://luiszuno.com/themes/vintage/">online demo</a></p>
+					
+				</article>	
+				<!-- ENDS GETTING STARTED -->
+				
+				
+				
+				
+				<!-- HTML -->
+				<article>
+					<h1 id="html">HTML</h1>	
+					<p>This theme is a responsive layout theme made in valid HTML 5 markup, its perfect for personal blog/portfolio style websites. Also this site is responsive to all major devices (Tablet and iphone) to date.</p>
+										
+					<h2 id="structure">HTML Structure <a class="top" href="#top">top</a></h2>
+					<p>The HTML structure for the pages are the a <strong>HEADER</strong> a <strong>#MAIN</strong> and a <strong>FOOTER</strong> inside each of this one is a wrapper to align everything.</p>
+					
+					<h2 id="files">File list <a class="top" href="#top">top</a></h2>
+					<p>This download package contains all the necessary HTML, CSS, JS and Image files necessary to build a complete site. I will post the editable PSD files at my  <a href="http://www.luiszuno.com" >site</a> pretty soon. </p>
+					
+					<h2 id="tooltips">Tooltips <a class="top" href="#top">top</a></h2>
+					<p>For the tooltips i am using a javascript library called <a href="http://vadikom.com/demos/poshytip/" >poshytip</a> its very easy to set up. The default browser tooltip that displays the value of the title attribute is replaced with a "poshier" version just add a title text and a class of poshytip.</p>
+					<p>Example</p>
+	  <pre>&lt;a href=&quot;#&quot;<strong> title=&quot;I am a tooltip&quot; class=&quot;poshytip&quot;</strong>&gt;Tool tip&lt;/a&gt;
+         
+         
+&lt;img src=&quot;image.jpg&quot; <strong>title=&quot;I am a tooltip&quot; class=&quot;poshytip</strong>&quot; alt=&quot;Image&quot; /&gt;</pre>
+
+
+					<h2 id="googlemap">Google Map <a class="top" href="#top">top</a></h2>
+					<p>To set your own google map follow these 3 steps:</p>
+				  <p>1)  Go to <a href="http://itouchmap.com/latlong.html">http://itouchmap.com/latlong.html</a> to get the Latitud and Longitud values from the itouch map app. </p>
+				  <p>2) Edit your &quot;contact.html&quot; file around line #164 and enter the values for the Api key, the Longitude and the Latitude values:</p>
+				  <pre>
+var latlng = new google.maps.LatLng(-34.397, 150.644);
+					</pre>
+				
+				
+				
+					<h2 id="contactform">Contact Form <a class="top" href="#top">top</a></h2>
+					<p> There are 2 files nedded  filed needed for the FORM VALIDATION (js/form-validation.js) and the PHP (send-mail.php) that actually sends the data .</p>
+			      <p>The HTML</p>
+			      <p><img src="assets/img/contact-html.png"></p>
+			      <h2>Configuring the email recipients and data</h2>
+			      <p>To set the sender and the recipients just change the value for the hidden
+			        input values inside the contact.html.</p>
+			     
+			      <h2>Form validation</h2>
+			      <p><strong>Form-validation.js </strong> This is the
+			        javascript validation for the fields.</p>
+			      <p>How to add fields to the contact form:</p>
+			      <p> <img src="assets/img/field.png"></p>
+      
+				</article>	
+				<!-- ENDS HTML -->
+				
+				
+				
+				
+				<!-- CSS -->
+				<article>
+					<h1 id="css">CSS Files and Structure<a class="top" href="#top">top</a></h1>
+					<p>All the CSS files are stored in a folder named css on the root of the html files.</p>
+					<p>There's a main css <strong>css/style.css</strong> with all the styles for the site it also calls different css files that help to reset the styles and some other css files for the social icons and the web elements. </p>
+					
+					<p>List of css files under the CSS folder:</p>
+					<p><strong>comments.css</strong></p>
+					<p>Use this file to edit the visual of the comments on the single.html template page</p>
+					<p><strong>ie-hacks.css</strong></p>
+					<p>Just in case a CSS rule don't display correctly on IE.</p>
+					<p><strong>jquery.tweet.css</strong></p>
+					<p>To edit the appearance of the tweets</p>
+					<p><strong>reset.css</strong></p>
+					<p>Core CSS file needed to display correctly by reseting the default values</p>
+					<p><strong>social-icons.css</strong></p>
+					<p>The list of social icons files</p>
+					<p><strong>style.css</strong></p>
+					<p>This is the main styles for the whole site, in there you will probably find the most CSS rules for the template</p>
+					<p><strong>superfish.css</strong></p>
+					<p>This is a core file for the correct display of the dropdown menu</p>
+	  				<p><strong>lessframework.css</strong></p>
+					<p>This is responsible for the responsiveness depending on the device or browser size.</p>
+					<p><strong>lofslider.css</strong></p>
+					<p>Style the home page  page image slider.</p>
+					<p><strong>flexslider.css</strong></p>
+					<p>Style the project page image slider.</p>
+					<p><strong>skin.css</strong></p>
+					<p>If you want to change the colors and backgrounds refer to this file.</p>
+					<p><strong>elements.css</strong></p>
+					<p>This one styles all the web elements such accordions, tabs, buttons...</p>
+
+					
+					<h2 id="less">LESS Files<a class="top" href="#top">top</a></h2>
+					<p>I have included a folder with the LESS files in case you are developer and want to use them instead of the CSS files. You should see this folder named "LESS" on the root folder.</p>
+										
+				</article>
+				<!-- ENDS CSS -->
+				
+				
+				<!-- IMAGE -->
+				<article>
+					<h1 id="image">Image Files<a class="top" href="#top">top</a></h1>
+					<p>All the graphic elements for the entire theme are contained at the &quot;<strong>img</strong>&quot; folder. The mockup images used to feed the site are contained at the &quot;<strong>img/dummies&quot;</strong> folder.</p>
+					
+					<p>I will post the editable PSD files at my  <a href="http://www.luiszuno.com" >site</a> pretty soon.</p>
+				</article>
+				<!-- ENDS IMAGE -->
+				
+				
+				<!-- Javascript -->
+				<article>
+					<h1 id="javascript">Javascript<a class="top" href="#top">top</a></h1>
+					<p>All the pages link the neccessary js files inside the &quot;head&quot; tag of the document. If you need to modify the behavior from a certain jquery element open the <strong>&quot;js/custom.js</strong>&quot; file. where you can alter the parameters of some of the js elements.</p>
+					
+					
+					<h2 id="twitter">Twitter Configuration<a class="top" href="#top">top</a></h2>
+					<p>To display your own tweets open your <strong>js/custom.js</strong> file around line #4 and change the username value for yours. That easy!</p>
+					<pre>
+//##########################################
+// Tweet feed
+//##########################################
+
+$("#tweets").tweet({
+    count: 3,
+    username: "ansimuz"
+});
+					</pre>
+					
+				</article>
+				<!-- ENDS Javascript -->
+				
+				
+				<!-- CREDITS -->
+				<article>
+					<h1 id="credits">Credits</h1>
+					<p>This theme uses work from the following resources: </p>
+					
+					
+					<h2>Images<a class="top" href="#top">top</a></h2>
+					<ul class="list">
+						<li>Thanks to Dan Matutina for allowing to use his work on the Preview Demo. Visit his site: <a href="http://twistedfork.me/" >http://twistedfork.me/</a></li>
+						<li>Small Icons by <a href="http://yourneighbours.de/web-design/free-retro-icon-set/" >yourneighbours.de</a></li>
+						<li>Social Icons by <a href="http://www.premiumpixels.com" >premiumpixels.com</a></li>
+						
+					</ul>
+					
+					<h2>Scripts<a class="top" href="#top">top</a></h2>
+					<ul class="list">
+						<li>CSS3 MediaQueries <a href="http://code.google.com/p/css3-mediaqueries-js/" >Site</a></li>
+						<li>Poshytips by <a href="http://vadikom.com/tools/poshy-tip-jquery-plugin-for-stylish-tooltips/" >http://vadikom.com/tools/poshy-tip-jquery-plugin-for-stylish-tooltips/</a></li>
+						<li>PrettyPhoto by <a href="http://www.no-margin-for-errors.com" >http://www.no-margin-for-errors.com</a></li>
+						<li>Superfish by Joel Birch</li>
+						<li>Tabs by <a href="http://flowplayer.org/tools/tabs/" >http://flowplayer.org/tools/tabs/</a></li>
+						<li>Tweet Feed by seaofclouds</li>
+						
+						<li>Modernizr library by <a href="http://modernizr.com/" >modernizr.com</a></li>
+						
+						<li>Nivo slider by <a href="http://nivo.dev7studios.com/" >Dev7 Studios</a></li>
+						<li><a href="http://isotope.metafizzy.co" >Isotope plugin (Licensed)</a></li>
+
+						
+					</ul>
+										
+				</article>
+				<!-- ENDS CREDITS -->	
+				
+				
+			</div>
+			<!-- ENDS MAIN -->
+		
+		
+		</div>
+		<!-- ENDS WRAPPER -->
+		
+			
+	</body>
+</html>
