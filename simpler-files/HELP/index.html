@@ -1,0 +1,186 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<head lang="en">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<title>Template Documentation Template</title>
+	<!-- Framework CSS -->
+	<link rel="stylesheet" href="assets/blueprint-css/screen.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="assets/blueprint-css/print.css" type="text/css" media="print">
+	<!--[if lt IE 8]><link rel="stylesheet" href="assets/blueprint-css/ie.css" type="text/css" media="screen, projection"><![endif]-->
+	<link rel="stylesheet" href="assets/blueprint-css/plugins/fancy-type/screen.css" type="text/css" media="screen, projection">
+	<style type="text/css" media="screen">
+		p, table, hr, .box { margin-bottom:25px; }
+		.box p { margin-bottom:10px; }
+	.style1 {
+	color: #0000FF;
+	font-weight: bold;
+}
+    </style>
+</head>
+
+
+<body>
+	<div class="container">
+	
+		<p align="center"><a href="http://themeforest.net/user/Ansimuz/portfolio?ref=Ansimuz" target="_blank" ><img src="assets/images/tf_468x60_v4.gif" alt="Premium Files" /></a></p>
+		
+		<h3 class="center alt">	&ldquo;Simpler&rdquo; Documentation by &ldquo;ansimuz
+		  v1.0</h3>
+		
+<hr>
+		
+		<h1 class="center">&ldquo;SIMPLER TEMPLATE&rdquo;</h1>
+		
+<div class="borderTop">
+			<div class="span-6 colborder info prepend-1">
+				<p class="prepend-top">
+					<strong>
+					Created: 01/22/2012<br>
+					By: Luis Zuno aka ansimuz<br>
+					Email: <a href="mailto:luis@luiszuno.com">luis@luiszuno.com</a>					</strong>				</p>
+</div><!-- end div .span-6 -->		
+	
+			<div class="span-12 last">
+				<p class="prepend-top append-0">Thank you for downloading my theme. If you like this file you may like some of my premium items found on themeforest portfolio <a href="http://themeforest.net/user/Ansimuz/portfolio?ref=ansimuz">Visit portfolio</a>. Thanks so much!</p>
+    </div>
+		</div><!-- end div .borderTop -->
+		
+		<hr>
+		
+		<h2 id="toc" class="alt">Table of Contents</h2>
+		<ol class="alpha">
+			<li><a href="#htmlStructure">HTML</a></li>
+		  <li><a href="#cssFiles">CSS Files</a></li>
+		  <li><a href="#imgFiles">Image Files</a></li>
+		  <li><a href="#javascript">JavaScript</a></li>
+			<li><a href="#psdFiles">PSD Files</a></li>
+			<li><a href="#credits">Sources and Credits</a></li>
+			<li><a href="http://luiszuno.com/blog/tweaky/">Customisation</a></li>
+	    </ol>
+		
+<hr>
+		
+		<h1 id="htmlStructure"><strong> HTML </strong> - <a href="#toc">top</a></h1>
+	  <p>This theme is a fixed layout theme made in HTML 5 its perfect for personal blog/portfolio style websites. Also this site is responsive to all major devices (Tablet and iphone) to date.</p>
+	  <h2>HTML STRUCTURE</h2>
+	  <p>The html structure for the pages are the a HEADER a #MAIN and a FOOTER inside each of this one is a wrapper to align everything.</p>
+	  <h2>FILE LIST</h2>
+	  <p>This download package contains all the necessary HTML, CSS, JS and Image files necessary to build a complete site. Also it includes this help file and some editable PSD files in case you need to customize the graphic elements.</p>
+	  <h2>TOOLTIPS</h2>
+	  <p>For the tooltips i am using a javascript library called <a href="http://vadikom.com/demos/poshytip/" target="_blank">poshytip</a> its very easy to set up. The default browser tooltip that displays the value of the title attribute is replaced with a &quot;poshier&quot; version just add a title text and a class of poshytip.</p>
+	  <p>&nbsp;</p>
+	  <p>Example</p>
+	  <pre>&lt;a href=&quot;#&quot;<strong> title=&quot;I am a tooltip&quot; class=&quot;poshytip&quot;</strong>&gt;Tool tip&lt;/a&gt;
+         
+         
+&lt;img src=&quot;image.jpg&quot; <strong>title=&quot;I am a tooltip&quot; class=&quot;poshytip</strong>&quot; alt=&quot;Image&quot; /&gt;</pre>
+	  <h2>GOOGLE MAP CONFIGURATION</h2>
+	  <p>To set your own google map follow these 3 steps:</p>
+	  <p>1) Sign Up for an&quot;API KEY&quot;<a href="http://code.google.com/apis/maps/signup.html"> http://code.google.com/apis/maps/signup.html</a> Save this key in a notepad for the moment.</p>
+	  <p>2)  Go to <a href="http://itouchmap.com/latlong.html">http://itouchmap.com/latlong.html</a> to get the Latitud and Longitud values from the itouch map app. </p>
+	  <p>3) Edit your &quot;contact.html&quot; file around line #122 and enter the values for the Api key, the Longitude and the Latitude values:</p>
+	  <pre>&lt;!-- GOOGLE MAPS --&gt;
+ &lt;script type=&quot;text/javascript&quot; src=&quot;http://www.google.com/jsapi?key=<span class="style1">PASTE API KEY HERE</span>&quot; &gt;&lt;/script&gt;
+ &lt;script type=&quot;text/javascript&quot; &gt;google.load(&quot;maps&quot;,&quot;2.x&quot;);&lt;/script&gt;
+ 
+ &lt;script type=&quot;text/javascript&quot;&gt;
+ 
+ jQuery(document).ready(function($) {
+ 
+ //##########################################
+ // Google maps
+ //##########################################
+ 
+ // You can get the latitud and Longitude values at http://itouchmap.com/latlong.html
+ 
+ var latitude = <span class="style1">COPY LATITUDE VALUE HERE</span>;
+ var longitude = <span class="style1">COPY LONGITUDE VALUE HERE</span>;</pre>
+	  <h3><br>
+      </h3>
+	  <h2>CONTACT FORM</h2>
+      <p> There are 2 files nedded  filed needed for the FORM VALIDATION (js/form-validation.js) and the PHP (send-mail.php) that actually sends the data .</p>
+      <p>The HTML</p>
+      <p><img src="assets/images/contact-html.png" width="815" height="481"></p>
+      <h2>Configuring the email recipients and data</h2>
+      <p>To set the sender and the recipients just change the value for the hidden
+        input values inside the contact.html.</p>
+      <p><img src="assets/images/send-mail-config.png" width="871" height="83"></p>
+      <h2>Form validation</h2>
+      <p><strong>Form-validation.js </strong> This is the
+        javascript validation for the fields.</p>
+      <p>How to add fields to the contact form:</p>
+      <p> <img src="assets/images/field.png" width="687" height="201"></p>
+      <p>&nbsp;</p>
+      <h2>&nbsp;</h2>
+    <hr>
+
+		<h1 id="cssFiles"><strong>CSS Files and Structure</strong> - <a href="#toc">top</a></h1>
+	  <p>All the CSS files are stored in a folder named css on the root of the html files. Also you can have the dark skin by adding the following line of code to before the closing &lt;/head&gt; tag: <strong>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/dark.css&quot; type=&quot;text/css&quot; media=&quot;screen&quot; /&gt;</strong></p>
+	  <p>List of css files under the CSS folder:</p>
+	  <p><strong>comments.css</strong></p>
+	  <p>Use this file to edit the visual of the comments on the single.html template page</p>
+	  <p><strong>ie-hacks.css</strong></p>
+	  <p>Just in case a CSS rule don't display correctly on IE.</p>
+	  <p><strong>jquery.tweet.css</strong></p>
+	  <p>To edit the appearance of the tweets</p>
+	  <p><strong>reset.css</strong></p>
+	  <p>Core CSS file needed to display correctly by reseting the default values</p>
+	  <p><strong>social-icons.css</strong></p>
+	  <p>The list of social icons files</p>
+	  <p><strong>style.css</strong></p>
+	  <p>This is the main styles for the whole site, in there you will probably find the most CSS rules for the template</p>
+	  <p><strong>superfish.css</strong></p>
+	  <p>This is a core file for the correct display of the dropdown menu</p>
+	  <p><strong>tabs.css</strong></p>
+	  <p>This controls the visual aspect for the tabs widgets</p>
+	  <p><strong>skin.css</strong></p>
+	  <p>Contains all the background and colors definitions </p>
+	  <hr>
+		
+	  <h3 id="imgFiles">&nbsp;</h3>
+	  <h1><strong>Image Files - <a href="#toc">top</a></strong></h1>
+	  <p>All the graphic elements for the entire theme are contained at the &quot;<strong>img</strong>&quot; folder. The mockup images used to feed the site are contained at the &quot;<strong>img/dummies&quot;</strong> folder.</p>
+	  <p>&nbsp;</p>
+      <hr>
+	  <h1 id="javascript"></h1>
+      <h1><strong>JavaScript</strong> - <a href="#toc">top</a></h1>
+	  <p>All the pages link the neccessary js files inside the &quot;head&quot; tag of the document. If you need to modify the behavior from a certain jquery element open the <strong>&quot;js/custom.js</strong>&quot; file. where you can alter the parameters of some of the js elements.<br>
+	    <br>
+	  </p>
+	  <hr>
+	  <h3 id="psdFiles">&nbsp;</h3>
+		<h1>E) PSD Files - <a href="#toc">top</a></h1>
+	  <p>I have included editable psd files in case you need to change or edit the graphic elements. You can find them at the PSD folder.</p>
+		
+    <hr>
+		
+		<h1 id="credits">&nbsp;</h1>
+		<h1>Sources and Credits - <a href="#toc">top</a></h1>
+	  <p>I've used the following images, icons or other files as listed.        
+	  <h3>JAVASCRIPT      </h3>
+	  <ul><li>jQuery <a href="http://jquery.com/" target="_blank">http://jquery.com/</a></li>
+		<li>PrettyPhoto<a href="http://www.no-margin-for-errors.com/projects/prettyphoto-jquery-lightbox-clone/" target="_blank"> http://www.no-margin-for-errors.com/projects/prettyphoto-jquery-lightbox-clone/</a></li>
+		<li>Superfish <a href="http://users.tpg.com.au/j_birch/plugins/superfish/" target="_blank">http://users.tpg.com.au/j_birch/plugins/superfish/</a></li>
+        <li>Google fonts api <a href="http://fonts.googleapis.com/" target="_blank">http://fonts.googleapis.com/</a></li>
+	    <li>Poshytip <a href="http://vadikom.com/tools/poshy-tip-jquery-plugin-for-stylish-tooltips/">http://vadikom.com/tools/poshy-tip-jquery-plugin-for-stylish-tooltips/</a></li>
+        <li>Tabs<a href="http://flowplayer.org/tools/tabs/"> http://flowplayer.org/tools/tabs/</a></li>
+	    <li>Gallery Masonty <a href="http://masonry.desandro.com"> http://masonry.desandro.com</a></li>
+	    <li>Media queries for older browsers  <a href="http://code.google.com/p/css3-mediaqueries-js/">http://code.google.com/p/css3-mediaqueries-js/</a></li>
+	  </ul>
+		
+      <h3>IMAGES</h3>
+      <ul><li>Icons by sweet icons: <a href="http://iconsweets2.com/">http://iconsweets2.com/</a></li>
+        <li>Monoicons <a href="http://www.tutorial9.net/downloads/108-mono-icons-huge-set-of-minimal-icons/">http://www.tutorial9.net/downloads/108-mono-icons-huge-set-of-minimal-icons/</a></li>
+      </ul>
+<hr>
+		
+		<p>Once again, thank you  for downloading this free file. I don't offer support on freebies however you can always look for help at <a href="http://luiszuno.com/free-forums/">http://luiszuno.com/free-forums/</a></p> 
+		
+		<p class="append-bottom alt large">ansimuz</p>
+		<p><a href="#toc">Go To Table of Contents</a></p>
+		
+		<p align="center"><a href="http://themeforest.net/user/Ansimuz/portfolio?ref=Ansimuz" target="_blank" ><img src="assets/images/tf_468x60_v4.gif" alt="Premium Files" /></a></p>
+		
+		<hr class="space">
+	</div><!-- end div .container -->
+</body>
+</html>

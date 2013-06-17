@@ -1,0 +1,23 @@
+/* 
+*  Social icons CSS
+*/
+
+
+#social-bar{
+	display: block;
+	overflow: hidden;
+}
+
+#social-bar li{
+	display: block;
+	float: right;
+	width: 36px;
+	height: 36px;
+	margin-left: 5px;
+}
+
+#social-bar li a{
+	display: block;
+	width: 100%;
+	height: 100%;
+}

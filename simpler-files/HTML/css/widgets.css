@@ -1,0 +1,31 @@
+/* RECENT POSTS -----------------------------------------------*/
+
+.recent-post{
+	margin-bottom: 21px;
+	
+}
+
+
+.recent-post .thumb{
+	display: block;
+	float: left;
+	background: #f1f1f1;
+	line-height: 0em;
+	padding: 5px;
+	
+	-webkit-box-shadow: 0px 0px 3px rgba(0,0,0,.5);
+	-moz-box-shadow: 0px 0px 3px rgba(0,0,0,.5);
+	-o-box-shadow: 0px 0px 3px rgba(0,0,0,.5);
+	box-shadow: 0px 0px 3px rgba(0,0,0,.5);
+	
+}
+
+.recent-post .post-head{
+	width: 140px;
+	display: block;
+	float: right;
+}
+
+.recent-post span{
+	display: block;
+}

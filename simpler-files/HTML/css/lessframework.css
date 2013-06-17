@@ -1,0 +1,676 @@
+/*	Less Framework 4
+	http://lessframework.com
+	by Joni Korpi
+	License: http://opensource.org/licenses/mit-license.php	*/
+
+
+/*	
+
+
+
+/*		Default Layout: 992px. 
+		Gutters: 24px.
+		Outer margins: 48px.
+		Leftover space for scrollbars @1024px: 32px.
+-------------------------------------------------------------------------------
+cols    1     2      3      4      5      6      7      8      9      10
+px      68    160    252    344    436    528    620    712    804    896    */
+
+
+#comboNav{ display: none; }
+
+
+/*		Tablet Layout: 768px.
+		Gutters: 24px.
+		Outer margins: 28px.
+		Inherits styles from: Default Layout.
+-----------------------------------------------------------------
+cols    1     2      3      4      5      6      7      8
+px      68    160    252    344    436    528    620    712    */
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+	
+	/* GENERAL */
+	
+	.wrapper{
+		width: 768px;
+	}	
+	
+	#fold{ display: none; }	
+	
+	#logo{ margin-left: 28px;}
+	
+	/* NAV */
+	
+	#comboNav{ display: none; }
+	
+	#nav{ margin-right: 28px;}
+	
+	#nav>li{ margin-left: 15px; }
+	
+	/* home slider */
+	
+	#slider-holder{ padding-bottom: 22px;}
+	
+	.home-slider { 
+		width: 748px; /* 768 - 20*/
+		margin-bottom: 58px;
+	} 
+	
+	#slider-holder #headline{
+		margin-left: 0px;
+		width: 712px /* 768 - ( 28 x 2)*/; 
+		margin: 0px 28px;
+	}
+
+	
+	/* HOME */
+	
+	.home-block{
+		padding-left: 28px;
+	}
+	
+	.home-block figure{
+		width: 344px;
+		margin-left: 0px;
+		margin-right: 24px;
+	}
+	
+	.home-block figure .thumb{
+		width: 324px;
+	}
+	
+	.left-home-block,
+	.right-home-block{ width: 344px; }
+		
+	.left-home-block{ 
+		float: left;
+		margin-left: 28px;
+		margin-right: 0px;
+	}
+	
+	.right-home-block{ 
+		float: right;
+		margin-left: 0px;
+		margin-right: 28px;
+	}
+	
+	
+	.home-posts .entry-date em{ display: none; }
+	
+	.home-posts article{ padding-left: 80px;}
+	
+	.testimonial-slider{ width: 304px; /* 344 - ( 20 x 2) */ }
+	
+	.masthead{ padding: 54px 28px }
+	
+	.clients-logos li{ width: 112px; }
+	
+	/* PORTFOLIO */
+	
+	.portfolio-list{
+		margin-left: 28px;
+	}
+	
+	.portfolio-list figure{
+		width: 344px; 
+		margin-right: 24px;
+		margin-left: 0px;
+	}
+	
+	.portfolio-list figure .thumb{ width: 324px; /* 344 - ( 2 x 10 )*/ }
+	
+	/* PROJECT */
+	
+	.project-pager{
+		padding-left: 28px;
+		padding-right: 28px;
+	}
+	
+	.project-slider{
+		margin-left: 28px;
+		margin-right: 28px
+	}
+	
+	#project-content .info{
+		width: 160px;
+		margin-left: 24px;
+	}
+	
+	#project-content .description{
+		width: 528px;
+		margin-right: 28px;
+	}
+	
+	.related-projects{
+		padding-left: 28px;
+	}
+	
+	.related-heading{ margin-left: 0px; }
+	
+	.related-projects  figure{
+		margin-left: 0px;
+		margin-right: 24px;
+		width: 160px;
+	}
+	
+
+	/* BLOG */
+	
+	#posts-list,
+	#post-content{
+		width: 436px;
+		margin-left: 28px;
+	}
+	
+	#posts-list article{
+		padding-left: 0px;
+		width: 436px;
+	}
+	
+	#posts-list .entry-date,
+	#posts-content .entry-date,
+	.home-posts .entry-date{ left: 0px; }
+	
+	#posts-list .entry-date em,
+	#posts-content .entry-date em,
+	.home-posts .entry-date em{ display: none;} 
+	
+	#posts-list .post-heading,
+	#posts-content .post-heading{ 
+		min-height: 78px;
+		margin-left: 80px;
+	}
+	
+
+	#posts-list article .feature-image{
+		margin-left: 0px;
+		width: 426px; /* 436 - (2 x 5) */
+	}
+	
+	
+	
+	/* SIDEBAR */
+	
+	#sidebar{
+		width: 252px; 
+		margin-left: 24px;
+	}
+
+	/* FOOTER */
+	
+	.widget-cols{ padding-left: 28px;}
+	
+	.widget-cols>li{
+		width: 160px;
+		margin-left: 0px;
+		margin-right: 24px;
+	}
+	
+	.recent-post .post-head { width: 80px;}
+	
+	.footer-bottom{
+		padding-left: 28px;
+		padding-right: 28px;
+	}
+	
+}
+
+
+
+/*		Mobile Layout: 320px.
+		Gutters: 24px.
+		Outer margins: 34px.
+		Inherits styles from: Default Layout.
+---------------------------------------------
+cols    1     2      3
+px      68    160    252    */
+
+@media only screen and (max-width: 767px) {
+	
+	/* GENERAL */
+	
+	#fold{ display: none; }
+	
+	.wrapper{ width: 320px; }	
+	
+	
+	h1,h2,h3,h4,h5,h6{
+		font-family: Helvetica, Arial, sans-serif;
+		font-weight: bold;
+	}
+	
+	h1{ font-size: 21px;}
+
+	h2{ font-size: 18px; }
+	
+	h3{ font-size: 18px; }
+	
+	h4{ font-size: 18px; }
+	
+	h5{ font-size: 18px; }
+	
+	h6{ font-size: 18px; }
+	
+		
+	.masthead .subheading{
+		float: left;
+		width: 100%;
+	}
+	
+	/* LOGO */
+	
+	#logo{ margin-left: 0px;}
+	
+	#logo a{ 
+		display: block ; 
+		width: 320px; 
+	}
+
+	#logo img{ 
+		display: block; 
+		margin: 0 auto;
+	}
+
+
+	/* home slider */
+	
+	#slider-holder{ padding-bottom: 22px;}
+	
+	.home-slider { 
+		width: 320px; 
+		padding: 0px;
+		margin-bottom: 58px;
+	} 
+	
+	#slider-holder #headline{
+		margin-left: 0px;
+		width: 280px /* 320 - ( 20 x 2)*/; 
+		margin: 0px 20px;
+	}
+	
+	/* Layout */
+	
+	.one-half,
+	.one-third,
+	.one-fourth{ 
+		width: 280px;
+		margin-right: 0px;
+	}
+	
+
+	/* NAV */
+	
+	#nav{ display: none; }
+	#comboNav{ display: block; }
+	
+	/* HOME */
+		
+	.home-block figure{
+		width: 280px;
+		margin-left: 20px;
+	}
+	
+	.home-block figure .thumb{
+		width: 260px;
+	}
+	
+		
+	.left-home-block,
+	.right-home-block{ 
+		width: 280px;
+		float: left;
+		margin-left: 20px;
+		margin-right: 0px;
+	}
+	
+	.home-posts .entry-date{ left: 0px;	}
+	
+	.home-posts .entry-date em{ display: none; }
+	
+	.home-posts article{ padding-left: 80px;}
+	
+	.testimonial-slider{ 
+		width: 240px;   /* 280 - ( 20 x 2) */
+		margin-bottom: 50px;
+	}
+	
+	.clients-logos li{ width: 138px; }
+	
+	/* PORTFOLIO */
+	
+	.portfolio-list{
+		margin-left: 20px;
+	}
+	
+	.portfolio-list figure{
+		width: 280px; /* 320 - ( 2 x 20) */ 
+		margin-right: 0px;
+		margin-left: 0px;
+	}
+	
+	.portfolio-list figure .thumb{ width: 260px; /* 280 - ( 2 x 10 )*/ }
+	
+	.masthead{
+		line-height: 4em;
+	}
+	
+	.masthead h1{
+		width: 100%;
+	}
+	
+	.masthead .cat-nav{
+		float: left;
+		width: 100%;
+	}
+	
+	/* PROJECT */
+	
+	.project-pager{
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	
+	.project-slider{
+		margin-left: 20px;
+		margin-right: 20px
+	}
+	
+	#project-content .info{
+		width: 280px;
+		margin-left: 20px;
+		margin-bottom: 54px;
+	}
+	
+	#project-content .description{
+		width: 280px;
+		float: left;
+		margin-left: 20px;
+		margin-right: 0px;
+	}
+	
+	.related-projects{
+		padding-left: 20px;
+	}
+	
+	.related-heading{ margin-left: 0px; }
+	
+	.related-projects  figure{
+		margin-left: 0px;
+		margin-right: 0px;
+		width: 280px;
+	}
+
+	/* BLOG */
+	
+	#posts-list{
+		width: 320px;
+	}
+	
+	#posts-list article{
+		padding-left: 0px;
+	}
+	
+	#posts-list .entry-date{
+		position: static;
+		width: 100%;
+		height: auto;
+		padding: 10px 0px;
+		text-align: center;
+		margin-bottom: 20px;
+	}
+	
+	#posts-list .entry-date .number,
+	#posts-list .entry-date .month,
+	#posts-list .entry-date .year{
+		display: inline;
+		font-size: 13px;
+		margin-right: 3px;
+	}
+	
+	#posts-list .entry-date em{ display: none }
+	
+	#posts-list .post-heading,
+	#posts-content .post-heading{
+		margin-left: 20px;
+		margin-right: 20px;
+		margin-bottom: 19px;
+		line-height: 1.0em;
+	}
+	
+	#posts-list .feature-image,
+	#post-content .feature-image{
+		width: 270px; /* 320 - 2 x 20  - 2 x 5*/
+		margin-left: 20px;
+		margin-bottom: 21px;
+	}
+	
+	#posts-list .excerpt{
+		display: block;
+		margin-left: 20px;
+		margin-right: 20px;
+		margin-bottom: 20px;
+	}
+	
+	.page-navigation{
+		margin-left: 20px;
+		margin-right: 20px;
+		font-size: 13px;
+	}
+	
+	/* SINGLE */
+	
+	.commentlist { margin: 30px 20px ; }
+	
+	#comments-wrap h4{ 
+		margin-left: 20px;
+		margin-right: 20px;
+	}
+	
+	#respond{
+		margin-left: 20px;
+		margin-right: 20px;
+	}
+	
+	/* SIDEBAR */
+	
+	#sidebar{
+		width: 280px; 
+		margin-left: 20px;
+	}
+	
+	/* FOOTER */
+	
+	.widget-cols{ padding-left: 0px;}
+	
+	.widget-cols>li{
+		width: 280px;
+		margin-left: 20px;
+		margin-right: 20px;
+		margin-bottom: 20px;
+	}
+	
+	.recent-post .post-head { width: 200px;}
+	
+	.footer-bottom{
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	
+	/* form */
+	
+	#contactForm{ 
+		width: 280px;
+	}
+	
+	#contactForm input[type="text"],
+	#contactForm textarea{ 
+		width: 240px;
+	}
+	
+	#contactForm label,
+	#commentform label{
+		padding-left: 0px;
+		padding-bottom: 10px;
+		margin-top: -15px;
+		display: block;
+	}
+}
+
+
+
+/*		Wide Mobile Layout: 480px.
+		Gutters: 24px.
+		Outer margins: 22px.
+		Inherits styles from: Default Layout, Mobile Layout.
+------------------------------------------------------------
+cols    1     2      3      4      5
+px      68    160    252    344    436    */
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+	
+	/* GENERAL */
+	
+	#fold{ display: none; }
+	
+	.wrapper{ width: 480px; }	
+	 
+	/* LOGO */
+	
+	#logo a{ 
+		width: 480px; 
+	}
+	 
+	 /* Layout */
+	
+	.one-half,
+	.one-third,
+	.one-fourth{ 
+		width: 440px;
+		margin-right: 0px;
+	}
+	 
+	 /* home slider */
+	
+	.home-slider { width: 480px; }
+	
+	#slider-holder #headline{
+		margin-left: 0px;
+		width: 436px /* 480 - ( 22 x 2)*/; 
+		margin: 0px 20px;
+	}
+	
+	
+	/* HOME */
+		
+	.home-block figure{
+		width: 436px; /* 480 - (22 x 2) */
+		margin-left: 22px;
+	}
+	
+	.home-block figure .thumb{
+		width: 416px;
+	}
+	
+	.left-home-block,
+	.right-home-block{ 
+		width: 436px;
+		float: left;
+		margin-left: 22px;
+		margin-right: 0px;
+	}
+	
+	.testimonial-slider{ 
+		width: 396px;   /* 436 - ( 20 x 2) */
+		margin-bottom: 50px;
+	}
+	
+	.clients-logos li{ width: 143px; }
+	
+	/* PORTFOLIO */
+	
+	.portfolio-list figure{
+		width: 440px; /* 480 - ( 2 x 20) */ 
+		margin-right: 0px;
+		margin-left: 0px;
+	}
+	
+	.portfolio-list figure .thumb{ width: 420px; /* 440 - ( 2 x 10 )*/ }
+	
+	/* PROJECT */
+	
+	
+	#project-content .info,
+	#project-content .description{
+		width: 440px;
+		margin-left: 20px;
+		margin-bottom: 54px;
+	}
+			
+	.related-projects  figure{
+		width: 440px;
+	}
+	
+	/* BLOG */
+	
+	#posts-list{
+		width: 480px;
+	}
+	
+	#posts-list .feature-image,
+	#post-content .feature-image{
+		width: 430px; /* 480 - 2 x 20  - 2 x 5*/
+		margin-left: 20px;
+		margin-bottom: 21px;
+	}
+	
+	
+	/* form */
+	
+	#contactForm{ 
+		width: 440px;
+	}
+	
+	#contactForm input[type="text"],
+	#contactForm textarea{ 
+		width: 400px;
+	}
+	
+	#contactForm label,
+	#commentform label{
+		padding-left: 0px;
+		padding-bottom: 10px;
+		margin-top: -15px;
+		display: block;
+	}
+	
+	/* SIDEBAR */
+	
+	#sidebar{
+		width: 440px; 
+		margin-left: 20px;
+	}
+	
+	/* FOOTER */
+	
+	.widget-cols>li{
+		width: 436px;
+		margin-left: 20px;
+		margin-right: 20px;
+		margin-bottom: 20px;
+	}
+	
+	.recent-post .post-head { width: 350px;}
+	
+	.footer-bottom{
+		padding-left: 22px;
+		padding-right: 22px;
+	}
+}
+
+
+
+
+
+
+
