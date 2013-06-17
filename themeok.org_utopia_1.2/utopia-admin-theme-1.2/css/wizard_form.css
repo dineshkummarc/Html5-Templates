@@ -1,0 +1,27 @@
+/* wizard form Css Start */
+.utopia-from-action{
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+.utopia-form-box{
+    /*min-height: 425px;*/
+}
+.sample-form{
+    width: 600px;
+    margin: auto;
+}
+.utopia-from-action{
+    margin-bottom: 18px;
+    margin-top: 18px;
+    width: 400px;
+    margin-left: 160px;
+}
+.utopia-from-action button{
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.utopia-form-tabs{
+    min-height: 335px;
+}
+/* wizard form Css end */

@@ -1,0 +1,218 @@
+/* Side bar start */
+.leftmenu{
+    overflow: visible;
+}
+
+.leftmenu ul li .dropdown{
+    left: 214px;
+}
+
+/* Side bar end */
+
+/* Slider galleries css start */
+
+.utopia-canvas-gallery{
+    display: none;
+}
+
+.widget{
+    margin-bottom: 25px;
+}
+.utopia-icon-views{
+    font-size: 12px;
+    float: right;
+    height: 20px;
+    padding-left: 25px;
+    padding-top: 2px;
+    background: url(/img/icons/eye.png) no-repeat;
+    background-position: 8% 80%;
+    background-size: cover;
+    padding-right: 5px;
+}
+
+.utopia-icon-comments{
+    font-size: 12px;
+    float: right;
+    height: 20px;
+    padding-left: 23px;
+    padding-top: 2px;
+    background: url(/img/icons/messenger.png) no-repeat;
+    background-position: 8% 80%;
+    background-size: cover;
+    padding-right: 5px;
+}
+
+
+.upotia-icon-fans{
+    font-size: 12px;
+    float: right;
+    height: 20px;
+    padding-left: 23px;
+    padding-top: 2px;
+    background: url(/img/icons/hand_thumbsup.png) no-repeat;
+    background-position: 8% 80%;
+    background-size: cover;
+    padding-right: 5px;
+
+}
+
+.widget span a{
+    color:#000000;
+}
+
+/*Slider galleries custom css properties*/
+
+.carousel{
+    position: relative;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+.carousel .item img{
+    max-width: 100%;
+
+}
+
+/* ---End--- */
+
+
+/*Image Galleries custom properties with dashboard*/
+
+#gallery img{
+    margin-bottom: 3px\9;
+
+}
+
+#galleries img{
+    margin: 2px 2px 5px 3px\9;
+}
+
+/*---End---*/
+
+.adipoli-wrapper
+{
+    margin:3px;
+    position:relative;
+    display: inline-block;
+}
+.adipoli-wrapper>img
+{
+    position: absolute;
+    z-index: 1;
+}
+.adipoli-before
+{
+    position: absolute;
+    z-index: 5;
+}
+.adipoli-after
+{
+    position: absolute;
+    z-index: 10;
+}
+.adipoli-slice {
+    display:block;
+    position:absolute;
+    z-index:15;
+    height:100%;
+}
+.adipoli-box
+{
+    display:block;
+    position:absolute;
+    z-index:15;
+}
+
+
+.utopia-hovereffect-container
+{
+    float: left;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.utopia-hovereffect-container img{
+    height: 204px;
+    width: 240px;
+}
+
+/* Slider galleries css end */
+
+/* Video galleries css start */
+
+.utopia-video-galleries ul{
+    position: relative;
+}
+.utopia-video-galleries ul li{
+    float: left;
+    position: relative;
+    display: inline-block;
+    margin: 7px;
+    width: 31%;
+    height: auto;
+    background: #eee;
+    list-style:none;
+
+}
+
+.utopia-gallery-video-title{
+    position: absolute;
+    background-color: #808080;
+    top: 150px;
+    left: 0px;
+    height: 40px;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    color: #f8f8ff;
+    padding-top: 10px;
+    z-index:1;
+    /* These three lines are for transparency in all browsers. */
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    filter: alpha(opacity=30);
+    opacity:.3;
+
+
+}
+
+.utopia-video-galleries ul li img{
+    max-width: 100%;
+    height: 200px;
+    width: 100%;
+}
+
+.utopia-video-info{
+    padding: 5px;
+}
+
+#utopia-player {
+    width: 98% ;
+
+}
+#utopia-player ol {
+    width: 92%;
+    padding-left:35px;
+}
+
+#utopia-player ol li {
+    margin-right: 15px;
+}
+
+.audiojs {
+    /*margin: 15px 0px 20px 5px;*/
+    width: auto;
+    margin-bottom: 10px;
+}
+
+.audiojs .time {
+    text-align: right;
+}
+
+.audiojs .scrubber {
+    width: 45%;
+}
+
+/* Video galleries css end */

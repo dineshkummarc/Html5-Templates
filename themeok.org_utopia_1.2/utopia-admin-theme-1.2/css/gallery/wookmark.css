@@ -1,0 +1,57 @@
+
+/**
+ * Grid container
+ */
+#utopia-tiles {
+list-style-type: none;
+position: relative; /** Needed to ensure items are laid out relative to this container **/
+margin: 0;
+}
+
+/**
+ * Grid items
+ */
+#utopia-tiles li {
+width: 150px;
+background-color: #ffffff;
+border: 1px solid #dedede;
+-moz-border-radius: 2px;
+-webkit-border-radius: 2px;
+border-radius: 2px;
+display: none; /** Hide items initially to avoid a flicker effect **/
+cursor: pointer;
+padding: 4px;
+    margin:3px;
+}
+
+#utopia-tiles li img {
+display: block;
+
+    width:150px;
+}
+
+/**
+ * Grid item text
+ */
+#utopia-tiles li p {
+color: #666;
+font-size: 12px;
+margin: 7px 0 0 7px;
+}
+
+/**
+ * Some extra styles to randomize heights of grid items.
+ */
+#utopia-tiles ali:nth-child(3n) {
+height: 175px;
+}
+
+#utopia-tiles ali:nth-child(4n-3) {
+padding-bottom: 30px;
+}
+
+#utopia-tiles ali:nth-child(5n) {
+height: 250px;
+}
+
+

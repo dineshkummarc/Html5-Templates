@@ -1,0 +1,84 @@
+#weather{
+    background: #6f9dbe;
+    background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#B5B5B5));
+    background: -moz-linear-gradient(top, #FFFFFF, #B5B5B5);
+    width: 50%;
+    margin: auto;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+#weather h2 {
+    /*color: #000;*/
+    text-shadow: rgba(250, 250, 250, 0.6) 2px 2px 0;
+}
+
+#weather p {
+    font-size: 12px;
+    margin: 20px 0 0 0;
+}
+
+#weather p span {
+    font-size: 10px;
+}
+
+#weather a:link, #weather a:active, #weather a:visited {
+    display: block;
+    clear: both;
+    text-decoration: none;
+    /*color: #222;*/
+    font-size: 12px;
+}
+
+#weather a:hover {
+    /*color: #000;*/
+    text-decoration: underline;
+}
+
+#utopia-dashboard-weather{
+    background: #F7F7F7;
+    background: -moz-linear-gradient(top, #F7F7F7 0%,white 45%, white 59%, #F7F7F7 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #F7F7F7), color-stop(45%,white), color-stop(59%, white), color-stop(100%, #F7F7F7));
+    background: -webkit-linear-gradient(top, #F7F7F7 0%, white 45%,white 59%, #F7F7F7 100%);
+    background: -o-linear-gradient(top, #F7F7F7 0%, white 45%, white 59%, #F7F7F7 100%);
+    background: -ms-linear-gradient(top, #F7F7F7 0%, white 45%, white 59%,#F7F7F7 100%);
+    background: linear-gradient(top,#F7F7F7 0%, white 45%, white 59%,#F7F7F7 100%);
+    width: 100%;
+    margin: auto;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+}
+
+#utopia-dashboard-weather h2 {
+    /*color: #000;*/
+    text-shadow: rgba(250, 250, 250, 0.6) 2px 2px 0;
+    margin-left: 10px;
+    margin-top: 3px;
+}
+
+#utopia-dashboard-weather p {
+    font-size: 12px;
+    margin: 20px 0 0;
+}
+
+#utopia-dashboard-weather p span {
+    font-size: 12px;
+}
+
+#utopia-dashboard-weather a:link, #weather a:active, #weather a:visited {
+    display: block;
+    clear: both;
+    text-decoration: none;
+    /*color: #222;*/
+    font-size: 15px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+#utopia-dashboard-weather a:hover {
+    /*color: #000;*/
+    text-decoration: none;
+}

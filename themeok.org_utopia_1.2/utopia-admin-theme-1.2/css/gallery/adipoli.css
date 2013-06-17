@@ -1,0 +1,48 @@
+.adipoli-wrapper
+{
+    margin:3px;
+    position:relative;
+    display: inline-block;
+}
+.adipoli-wrapper>img
+{
+    position: absolute;
+    z-index: 1;
+}
+.adipoli-before
+{
+    position: absolute;
+    z-index: 5;
+}
+.adipoli-after
+{
+    position: absolute;
+    z-index: 10;
+}
+.adipoli-slice {
+    display:block;
+    position:absolute;
+    z-index:10;
+    height:100%;
+}
+.adipoli-box
+{
+    display:block;
+    position:absolute;
+    z-index:15;
+}
+
+
+.utopia-hovereffect-container
+{
+    float: left;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.utopia-hovereffect-container img{
+    height: 205px;
+    width: 240px;
+}

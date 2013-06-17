@@ -1,0 +1,33 @@
+/* Header start */
+#triangle-down{
+    right: -6px\0/;
+}
+
+:root #triangle-down{
+    right: -7px\0/IE9;
+}
+/* Header end */
+
+/* Side bar start */
+
+.leftmenu ul li a {
+    border-left-color: #ddd\0/;
+    border-bottom-color: #ddd\0/;
+}
+
+/* Side bar end */
+
+*Album Gallery Starts*/
+#utopia-canvas {
+    height:400px;
+}
+/*Album Gallery Ends*/
+
+/*Video Gallery Starts*/
+.utopia-video-galleries ul li img{
+    max-width: 100%;
+    height: 200px;
+    width: 100%;
+}
+
+/*Video Gallery Ends*/

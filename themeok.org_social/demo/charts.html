@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<title>Social - Facebook UI Responsive Admin Template</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="shortcut icon" href="http://cesarlab.com/templates/social/assets/img/favicon.ico"/>
+<link rel="icon" type="image/gif" href="../assets/img/favicon.gif">
+ 
+<link href="../assets/css/twitter-bootstrap/bootstrap.css" rel="stylesheet">
+<link href="../assets/css/social.css" rel="stylesheet">
+<link href="../assets/css/social.plugins.css" rel="stylesheet">
+<link href="../assets/css/social.examples.css" rel="stylesheet">
+<link href="../assets/css/font-awesome.css" rel="stylesheet">
+<link href="../assets/css/twitter-bootstrap/bootstrap-responsive.css" rel="stylesheet">
+<link href="../assets/css/docs.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="../assets/js/jquery-easy-pie-chart/jquery.easy-pie-chart.css">
+<style>#g1{width:400px;height:320px;display:inline-block;margin:1em;}@media (max-width: 480px){#g1{display:none;}}#g2,#g3,#g4{width:100px;height:80px;display:inline-block;margin:1em;}</style>
+<style>.wraper #main{margin-top:40px;}</style>
+<script>
+        ie = false;
+    </script>
+ 
+<!--[if lt IE 9]>
+      <script src="/templates/social/assets/js/html5shiv.js"></script>
+    <![endif]-->
+<!--[if lte IE 8]>
+    <script src="/templates/social/assets/js/respond/respond.min.js"></script>
+    <script>
+        ie = 8;
+    </script>
+    <![endif]-->
+<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="/templates/social/assets/js/jquery-flot/excanvas.min.js"></script><![endif]-->
+<script type="text/javascript">
+      /*<![CDATA[*/
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-38708835-1']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+      /*]]>*/
+    </script>
+</head>
+<body>
+<div class="wraper sidebar-full">
+ 
+<aside class="social-sidebar sidebar-full">
+<div class="user-settings">
+<div class="arrow"></div>
+<h3 class="user-settings-title">Settings shortcuts</h3>
+<div class="user-settings-content">
+<a href="#my-profile">
+<div class="icon">
+<i class="icon-user"></i>
+</div>
+<div class="title">My Profile</div>
+<div class="content">View your profile</div>
+</a>
+<a href="#view-messages">
+<div class="icon">
+<i class="icon-envelope-alt"></i>
+</div>
+<div class="title">View Messages</div>
+<div class="content">You have <strong>17</strong> new messages</div>
+</a>
+<a href="#view-pending-tasks">
+<div class="icon">
+<i class="icon-tasks"></i>
+</div>
+<div class="title">View Tasks</div>
+<div class="content">You have <strong>8</strong> pending tasks</div>
+</a>
+</div>
+<div class="user-settings-footer">
+<a href="#more-settings">See more settings</a>
+</div>
+</div>
+<div class="social-sidebar-content">
+<div class="scrollable">
+<div>
+<div class="user">
+<img class="avatar" width="25" height="25" src="../assets/img/avatar-30.png" alt="Julio Marquez">
+<span data-toggle="dropdown">Julio Marquez</span>
+<i class="icon-user trigger-user-settings"></i>
+</div>
+<div class="navigation-sidebar">
+<i class="switch-sidebar-icon icon-chevron-left"></i>
+<i class="switch-sidebar-full icon-chevron-right"></i>
+<span>Navigation</span>
+</div>
+<div class="search-sidebar">
+<form class="search-sidebar-form">
+<input type="text" class="search-query input-block-level" placeholder="Search">
+</form>
+</div>
+</div>
+<section class="menu">
+<div class="accordion" id="accordion2">
+<div class="accordion-group ">
+<div class="accordion-heading">
+<a class="accordion-toggle " href="dashboard.html">
+<img src="../assets/img/icons/stuttgart-icon-pack/32x32/home.png" alt="Dashboard">
+<span>Dashboard </span><span class="badge">9</span> </a>
+</div>
+</div>
+<div class="accordion-group ">
+<div class="accordion-heading">
+<a class="accordion-toggle " data-toggle="collapse" data-parent="#accordion2" href="#collapse-ui-elements">
+<img src="../assets/img/icons/stuttgart-icon-pack/32x32/database.png" alt="UI Elements">
+<span>UI Elements </span><span class="arrow"></span> </a>
+</div>
+<ul id="collapse-ui-elements" class="accordion-body collapse nav nav-list collapse "><li><a href="ui-elements/general.html">General</a></li><li><a href="ui-elements/buttons.html">Buttons</a></li><li><a href="ui-elements/tabs-accordions.html">Tabs &amp; Accodions</a></li><li><a href="ui-elements/typography.html">Typography</a></li><li><a href="ui-elements/icons.html">Icons</a></li><li><a href="ui-elements/grid.html">Grid</a></li></ul> </div>
+<div class="accordion-group ">
+<div class="accordion-heading">
+<a class="accordion-toggle " data-toggle="collapse" data-parent="#accordion2" href="#collapse-form-stuff">
+<img src="../assets/img/icons/stuttgart-icon-pack/32x32/sitemap.png" alt="Form Stuff">
+<span>Form Stuff </span><span class="arrow"></span> </a>
+</div>
+<ul id="collapse-form-stuff" class="accordion-body collapse nav nav-list collapse "><li><a href="form-stuff/elements.html">Form elements</a></li><li><a href="form-stuff/validation.html">Form validation</a></li><li><a href="form-stuff/wizard.html">Wizard</a></li><li><a href="form-stuff/grid-system.html">Grid System</a></li><li><a href="form-stuff/wysiwyg.html">WYSIWYG</a></li></ul> </div>
+<div class="accordion-group active">
+<div class="accordion-heading">
+<a class="accordion-toggle opened" href="charts.html">
+<img src="../assets/img/icons/stuttgart-icon-pack/32x32/statistics.png" alt="Charts">
+<span>Charts </span><span class="badge">6</span> </a>
+</div>
+</div>
+<div class="accordion-group ">
+<div class="accordion-heading">
+<a class="accordion-toggle " data-toggle="collapse" data-parent="#accordion2" href="#collapse-tables">
+<img src="../assets/img/icons/stuttgart-icon-pack/32x32/invoice.png" alt="Tables">
+<span>Tables </span><span class="arrow"></span> </a>
+</div>
+<ul id="collapse-tables" class="accordion-body collapse nav nav-list collapse "><li><a href="tables/standard.html">Standard tables</a></li><li><a href="tables/dynamic.html">Dynamic tables</a></li></ul> </div>
+<div class="accordion-group ">
+<div class="accordion-heading">
+<a class="accordion-toggle " data-toggle="collapse" data-parent="#accordion2" href="#collapse-media">
+<img src="../assets/img/icons/stuttgart-icon-pack/32x32/photography.png" alt="Media">
+<span>Media </span><span class="arrow"></span> </a>
+</div>
+<ul id="collapse-media" class="accordion-body collapse nav nav-list collapse "><li><a href="media/gallery.html">Gallery</a></li></ul> </div>
+<div class="accordion-group ">
+<div class="accordion-heading">
+<a class="accordion-toggle " href="calendar.html">
+<img src="../assets/img/icons/stuttgart-icon-pack/32x32/calendar.png" alt="Calendar">
+<span>Calendar </span><span class="badge">3</span> </a>
+</div>
+</div>
+<div class="accordion-group ">
+<div class="accordion-heading">
+<a class="accordion-toggle " data-toggle="collapse" data-parent="#accordion2" href="#collapse-maps">
+<img src="../assets/img/icons/stuttgart-icon-pack/32x32/world.png" alt="Maps">
+<span>Maps </span><span class="arrow"></span> </a>
+</div>
+<ul id="collapse-maps" class="accordion-body collapse nav nav-list collapse "><li><a href="maps/vector.html">Vector Maps</a></li><li><a href="maps/google.html">Google Maps</a></li></ul> </div>
+<div class="accordion-group ">
+<div class="accordion-heading">
+<a class="accordion-toggle " data-toggle="collapse" data-parent="#accordion2" href="#collapse-extra">
+<img src="../assets/img/icons/stuttgart-icon-pack/32x32/star.png" alt="Extra">
+<span>Extra </span><span class="arrow"></span> </a>
+</div>
+<ul id="collapse-extra" class="accordion-body collapse nav nav-list collapse "><li><a href="extra/social-timeline.html">Social Timeline</a></li><li><a href="extra/chat-inbox.html">Chat Inbox</a></li><li><a href="extra/email-inbox.html">Email Inbox</a></li><li><a href="extra/404-page.html">404 Page</a></li><li><a href="extra/500-page.html">500 Page</a></li><li><a href="extra/invoice.html">Invoice</a></li><li><a href="extra/login.html">Login</a></li></ul> </div>
+</div>
+</section>
+</div>
+</div>
+</aside> <header>
+ 
+<nav class="navbar navbar-blue navbar-fixed-top social-navbar">
+<div class="navbar-inner">
+<div class="container-fluid">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".social-sidebar">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</a>
+<a class="brand" href="dashboard.html">
+Social
+</a>
+<ul class="nav pull-right nav-indicators">
+<li class="dropdown nav-notifications">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+<span class="badge">9</span><i class="icon-warning-sign"></i>
+</a>
+<ul class="dropdown-menu">
+<li class="nav-notifications-header">
+<a tabindex="-1" href="#">You have <strong>9</strong> new notifications</a>
+</li>
+<li class="nav-notification-body text-info">
+<a href="#">
+<i class="icon-user"></i> New User
+<small class="pull-right">Just Now</small>
+</a>
+</li>
+<li class="nav-notification-body text-error">
+<a href="#">
+<i class="icon-user"></i> User Deleted
+<small class="pull-right">Just Now</small>
+</a>
+</li>
+<li class="nav-notification-body text-warning">
+<a href="#">
+<i class="icon-cogs"></i> Sever is overloaded
+<small class="pull-right">2 minutes ago</small>
+</a>
+</li>
+<li class="nav-notification-body">
+<a href="#">
+<i class="icon-briefcase"></i> Backup is completed
+<small class="pull-right">4 minutes ago</small>
+</a>
+</li>
+<li class="nav-notification-body text-info">
+<a href="#">
+<i class="icon-user"></i> New User
+<small class="pull-right">Just Now</small>
+</a>
+</li>
+<li class="nav-notification-body text-error">
+<a href="#">
+<i class="icon-user"></i> User Deleted
+<small class="pull-right">Just Now</small>
+</a>
+</li>
+<li class="nav-notification-body text-warning">
+<a href="#">
+<i class="icon-cogs"></i> Sever is overloaded
+<small class="pull-right">3 minutes ago</small>
+</a>
+</li>
+<li class="nav-notification-body">
+<a href="#">
+<i class="icon-briefcase"></i> Backup is completed
+<small class="pull-right">6 minutes ago</small>
+</a>
+</li>
+<li class="nav-notifications-footer">
+<a tabindex="-1" href="#">View all messages
+</a>
+</li>
+</ul>
+</li>
+<li class="dropdown nav-tasks">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+<span class="badge">13</span>
+<i class="icon-tasks"></i>
+</a>
+<ul class="dropdown-menu">
+<li class="nav-taks-header">
+<a tabindex="-1" href="#">You have <strong>13</strong> tasks in progress</a>
+</li>
+<li>
+<a>
+<strong>Windows PC</strong><span class="pull-right">30%</span>
+<div class="progress progress-danger active">
+<div class="bar" style="width: 30%;"></div>
+</div>
+</a>
+</li>
+<li>
+<a>
+<strong>Mac</strong><span class="pull-right">40%</span>
+<div class="progress progress-info active">
+<div class="bar" style="width: 40%;"></div>
+</div>
+</a>
+</li>
+<li>
+<a>
+<strong>iPad/iPhone</strong><span class="pull-right">80%</span>
+<div class="progress progress-striped active">
+<div class="bar" style="width: 80%;"></div>
+</div>
+</a>
+</li>
+<li>
+<a>
+<strong>Android</strong><span class="pull-right">5%</span>
+<div class="progress progress-success active">
+<div class="bar" style="width: 5%;"></div>
+</div>
+</a>
+</li>
+<li>
+<a>
+<strong>Others</strong><span class="pull-right">15%</span>
+<div class="progress progress-warning active">
+<div class="bar" style="width: 15%;"></div>
+</div>
+</a>
+</li>
+<li class="nav-taks-footer">
+<a tabindex="-1" href="#">View all tasks
+</a>
+</li>
+</ul>
+</li>
+<li class="dropdown nav-messages">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+<span class="badge">8</span>
+<i class="icon-envelope-alt"></i>
+</a>
+<ul class="dropdown-menu">
+<li class="nav-messages-header">
+<a tabindex="-1" href="#">You have <strong>8</strong> new messages</a>
+</li>
+<li class="nav-message-body">
+<a>
+<img src="../assets/img/avatars/user-55x55.png" alt="User">
+<div>
+<small class="pull-right">Just Now</small>
+<strong>Julio Marquez</strong>
+</div>
+<div>
+Lorem ipsum dolor sit amet, consectetur...
+</div>
+</a>
+</li>
+<li class="nav-message-body">
+<a>
+<img src="../assets/img/avatars/user-55x55.png" alt="User">
+<div>
+<small class="pull-right">Just Now</small>
+<strong>Julio Marquez</strong>
+</div>
+<div>
+Lorem ipsum dolor sit amet, consectetur...
+</div>
+</a>
+</li>
+<li class="nav-message-body">
+<a>
+<img src="../assets/img/avatars/user-55x55.png" alt="User">
+<div>
+<small class="pull-right">Just Now</small>
+<strong>Julio Marquez</strong>
+</div>
+<div>
+Lorem ipsum dolor sit amet, consectetur...
+</div>
+</a>
+</li>
+<li class="nav-message-body">
+<a>
+<img src="../assets/img/avatars/user-55x55.png" alt="User">
+<div>
+<small class="pull-right">Just Now</small>
+<strong>Julio Marquez</strong>
+</div>
+<div>
+Lorem ipsum dolor sit amet, consectetur...
+</div>
+</a>
+</li>
+<li class="nav-messages-footer">
+<a tabindex="-1" href="#">View all messages
+</a>
+</li>
+</ul>
+</li>
+<li class="divider-vertical"></li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-caret-down"></i></a>
+<ul class="dropdown-menu">
+<li><a href="#"><i class="icon-user"></i> My Profile</a></li>
+<li><a href="#"><i class="icon-cogs"></i> Settings</a></li>
+<li><a href="#"><i class="icon-off"></i> Log Out</a></li>
+<li class="divider"></li>
+<li><a href="#"><i class="icon-info-sign"></i> Help</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</nav> </header>
+<div id="main">
+<div class="container-fluid">
+<div class="row-fluid">
+<div class="span12">
+<h3 class="page-title">
+Charts
+</h3>
+<ul class="breadcrumb">
+<li>
+<i class="icon-home"></i>
+<a href="dashboard.html">Dashboard</a>
+</li>
+</ul> </div>
+</div>
+<div class="row-fluid">
+<div class="span6">
+<div class="social-box">
+<div class="header">
+<h4>Basic Charts</h4>
+</div>
+<div class="body">
+<div id="basic-charts" class="plot"></div>
+</div>
+</div>
+</div>
+<div class="span6">
+<div class="social-box">
+<div class="header">
+<h4>Live Chart</h4>
+</div>
+<div class="body">
+<div id="live-chart" class="plot" style="padding-top: 1px;"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="row-fluid">
+<div class="span8">
+<div class="social-box">
+<div class="header">
+<h4>justGage Charts</h4>
+</div>
+<div class="body" style="text-align: center;">
+<div class="row-fluid">
+<div class="span7">
+<div id="g1"></div>
+</div>
+<div class="span5">
+<div id="g2"></div>
+<div id="g3"></div>
+<div id="g4"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="span4">
+<div class="social-box">
+<div class="header">
+<h4>Sparklines</h4>
+</div>
+<div class="body">
+<p>Composite bar <span id="compositebar">4,6,7,7,4,3,2,1,4</span>
+</p>
+<p>
+Customize size and colours
+<span id="linecustom">10,8,9,3,5,8,5,7</span>
+</p>
+<p>
+Tristate charts
+<span class="sparktristate">1,1,0,1,-1,-1,1,-1,0,0,1,1</span><br/>
+</p>
+</div>
+</div>
+<div class="social-box">
+<div class="header">
+<h4>Pie Charts</h4>
+<div class="tools">
+<a class="btn btn-primary updatePieCharts" data-toggle="tooltip" title="Update pie Charts"><i class="icon-refresh"></i></a>
+</div>
+</div>
+<div class="body">
+<div class="row-fluid">
+<div class="chart span6">
+<div class="percentage" data-percent="55"><span>55</span>%</div>
+<div class="label">New visitors</div>
+</div>
+<div class="chart span6">
+<div class="percentage" data-percent="21"><span>21</span>%</div>
+<div class="label">Bounce rate</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row-fluid">
+<div class="span8">
+<div class="social-box">
+<div class="header">
+<h4>Chart with symbols</h4>
+</div>
+<div class="body">
+<div id="symbols-chart" class="plot"></div>
+</div>
+</div>
+</div>
+<div class="span4">
+<div class="social-box">
+<div class="header">
+<h4>Pie Chart</h4>
+</div>
+<div class="body">
+<div id="pie-chart" class="plot"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="row-fluid">
+<div class="span8">
+<div class="social-box">
+<div class="header">
+<h4>Bar chart</h4>
+<div class="tools">
+<div class="stackControls btn-group">
+<button class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><i class="icon-cog"></i></button>
+<ul class="dropdown-menu pull-right">
+<li><a href="#">Without stacking</a></li>
+<li><a href="#">With stacking</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="body">
+<div id="bar-chart" class="plot"></div>
+</div>
+<div class="footer">
+<div class="graphControls btn-group span5" data-toggle="buttons-radio">
+<button class="btn active"><i class="icon-bar-chart "></i> Bars</button>
+<button class="btn"><i class="icon-bar-chart "></i> Lines</button>
+<button class="btn"><i class="icon-signal"></i> Lines with steps</button>
+</div>
+<div class="clearfix"></div>
+</div>
+</div>
+</div>
+<div class="span4">
+<div class="social-box">
+<div class="header">
+<h4>Donut Chart</h4>
+</div>
+<div class="body">
+<div id="donut-chart" class="plot"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+ 
+<footer id="footer">
+<div class="container-fluid">
+2013 © <em>Social - Facebook UI Responsive Admin Template</em> by <a href="http://cesarlab.com/" target="_blank">cesarlab.com</a>.
+</div>
+</footer> </div>
+</div>
+ 
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="../assets/js/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="../assets/js/jquery-ui/js/jquery-ui-1.10.1.custom.min.js"></script>
+<script src="../assets/js/twitter-bootstrap/bootstrap.js"></script>
+<script src="../assets/js/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<!--[if lte IE 8]>
+    <script src="/templates/social/assets/js/placeholders/placeholders.min.js"></script>
+    <![endif]-->
+<script src="../assets/js/extents.js"></script>
+<script src="../assets/js/app.js"></script>
+<script src="../assets/js/jquery-flot/jquery.flot.js"></script>
+<script src="../assets/js/jquery-flot/jquery.flot.resize.js"></script>
+<script src="../assets/js/jquery-flot/jquery.flot.pie.js"></script>
+<script src="../assets/js/jquery-flot/jquery.flot.stack.js"></script>
+<script src="../assets/js/jquery-flot/jquery.flot.symbol.js"></script>
+<script src="../assets/js/jquery-sparkline/jquery.sparkline.min.js"></script>
+<script src="../assets/js/jquery-easy-pie-chart/jquery.easy-pie-chart.js"></script>
+<script src="../assets/js/justGage/resources/js/raphael.2.1.0.min.js"></script>
+<script src="../assets/js/justGage/resources/js/justgage.1.0.1.min.js"></script>
+<script src="../assets/js/charts.js"></script>
+ 
+<script>
+      /*<![CDATA[*/
+      var _gauges = _gauges || [];
+      (function() {
+        var t   = document.createElement('script');
+        t.type  = 'text/javascript';
+        t.async = true;
+        t.id    = 'gauges-tracker';
+        t.setAttribute('data-site-id', '');
+        t.src = '//secure.gaug.es/track.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(t, s);
+      })();
+      /*]]>*/
+    </script>
+</body>
+
+</html>

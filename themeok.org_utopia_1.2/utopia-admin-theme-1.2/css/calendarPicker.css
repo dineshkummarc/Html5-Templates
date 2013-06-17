@@ -1,0 +1,129 @@
+.calendarPicker-place{
+    width: 100%;
+    text-align: center;
+    color: #808080;
+
+}
+.calendarPicker-place span{
+    font-size: 15px;
+}
+.calBox {
+    background-color: #feffff;
+    background: -webkit-gradient(linear, left top, left bottom, from(#feffff), to(#f9f9f9));
+    background: -webkit-linear-gradient(top, #feffff, #f9f9f9);
+    background: -moz-linear-gradient(top, #feffff, #f9f9f9);
+    background: -ms-linear-gradient(top, #feffff, #f9f9f9);
+    background: -o-linear-gradient(top, #feffff, #f9f9f9);
+    filter: progid:dximagetransform.microsoft.gradient(startColorstr='#feffff', endColorstr='#f9f9f9', GradientType=0);
+    padding: 3px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    text-align: center;
+    color: #808080;
+}
+
+.calElement {
+  margin: 1px;
+  display: inline-block;
+  overflow:hidden;
+}
+
+.calYear {
+  font-size: 20px;
+  border-bottom: 1px dotted #D2D2D2;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  padding: 5px 0;
+}
+
+.calYear .calElement {
+    -webkit-box-shadow: 0 0 4px rgba(255, 255, 255, 0.6) inset, 0 0 4px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 0 4px rgba(255, 255, 255, 0.6) inset, 0 0 4px rgba(0, 0, 0, 0.08);
+
+}
+
+.calMonth {
+  border-bottom: 1px dotted #D2D2D2;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  padding: 4px 0;
+}
+
+.calMonth .calElement {
+  font-size: 14px;
+    margin: 2px;
+    -webkit-box-shadow: 0 0 4px rgba(255, 255, 255, 0.6) inset, 0 0 4px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 0 4px rgba(255, 255, 255, 0.6) inset, 0 0 4px rgba(0, 0, 0, 0.08);
+}
+
+.calDay {
+    padding: 7px 0;
+}
+
+.calDay .calElement {
+  font-size: 12px;
+    -webkit-box-shadow: 0 0 4px rgba(255, 255, 255, 0.6) inset, 0 0 4px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 0 4px rgba(255, 255, 255, 0.6) inset, 0 0 4px rgba(0, 0, 0, 0.08);
+    color: #808080;
+    padding: 5px 0 3px 0;
+    background-color: #feffff;
+    background: -webkit-gradient(linear, left top, left bottom, from(#feffff), to(#f9f9f9));
+    background: -webkit-linear-gradient(top, #feffff, #f9f9f9);
+    background: -moz-linear-gradient(top, #feffff, #f9f9f9);
+    background: -ms-linear-gradient(top, #feffff, #f9f9f9);
+    background: -o-linear-gradient(top, #feffff, #f9f9f9);
+    filter: progid:dximagetransform.microsoft.gradient(startColorstr='#feffff', endColorstr='#f9f9f9', GradientType=0);
+    margin: 2px;
+}
+
+.calDay .calElement.prev {
+  background: transparent url(../img/prev.png) no-repeat 0 18px;
+  width: 6px;
+  height: 35px
+}
+
+.calDay .calElement.next {
+  background: transparent url(../img/next.png) no-repeat 0 18px;
+  width: 6px;
+  height: 35px;
+}
+
+span.calElement.next:hover, span.calElement.prev:hover {
+    -webkit-box-shadow: 0 0 4px rgba(255, 255, 255, 0.6) inset, 0 0 4px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 0 4px rgba(255, 255, 255, 0.6) inset, 0 0 4px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+}
+
+.calDay .calElement .dayNumber {
+  font-size: 20px;
+}
+
+
+.calElement.selected {
+  /*background-color: #C8C8C8;*/
+  border: 1px solid #DBE5EF;
+  border-radius:3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  color: #000;
+
+}
+
+span.calElement:hover {
+    -webkit-box-shadow: 0 0 4px rgba(170, 212, 224, 0.6) inset, 0 0 4px rgba(150, 85, 85, 0.08);
+    box-shadow: 0 0 4px rgba(170, 212, 224, 0.6) inset, 0 0 4px rgba(150, 85, 85, 0.08);
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius:3px;
+    color: #000;
+    cursor: pointer;
+}
+
+.calElement.today {
+    border: 1px solid #DBE5EF;
+    padding: 5px 0 3px 0;
+    /*background-color: #C8C8C8;*/
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}

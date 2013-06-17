@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Utopia, from Themio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A complete admin panel theme">
+    <meta name="author" content="theemio">
+
+    <!-- styles -->
+
+    <link href="css/utopia-white.css" rel="stylesheet">
+    <link href="css/utopia-responsive.css" rel="stylesheet">
+    <link href="css/ui-lightness/jquery-ui.css" rel="stylesheet" type="text/css">
+    <link href="css/weather.css" rel="stylesheet" type="text/css"/>
+    <link href="css/gallery/modal.css" rel="stylesheet">
+    <link href="css/validationEngine.jquery.css" rel="stylesheet" type="text/css">
+    <link href="css/chosen.css" media="screen" rel="stylesheet" type="text/css"/>
+    <link href="css/ie.css" rel="stylesheet"/>
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.cookie.js"></script>
+    <script type="text/javascript">
+        if($.cookie("css")) {
+            $('link[href*="utopia-white.css"]').attr("href",$.cookie("css"));
+            $('link[href*="utopia-dark.css"]').attr("href",$.cookie("css"));
+            $('link[href*="utopia-wooden.css"]').attr("href",$.cookie("css"));
+        }
+        $(document).ready(function() {
+            $(".theme-changer a").live('click', function() {
+                $('link[href*="utopia-white.css"]').attr("href",$(this).attr('rel'));
+                $('link[href*="utopia-dark.css"]').attr("href",$(this).attr('rel'));
+                $('link[href*="utopia-wooden.css"]').attr("href",$(this).attr('rel'));
+                $.cookie("css",$(this).attr('rel'), {expires: 365, path: '/'});
+                $('.user-info').removeClass('user-active');
+                $('.user-dropbox').hide();
+            });
+        });
+    </script>
+
+    <!--[if IE 8]>
+    <link href="css/ie8.css" rel="stylesheet">
+    <![endif]-->
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!--[if gte IE 9]>
+      <style type="text/css">
+        .gradient {
+           filter: none;
+        }
+      </style>
+    <![endif]-->
+
+</head>
+
+<body>
+
+<div class="container-fluid">
+
+    <!-- Header starts -->
+    <div class="row-fluid">
+        <div class="span12">
+
+            <div class="header-top">
+
+                <div class="header-wrapper">
+
+                    <a href="#" class="utopia-logo"><img src="img/utopia-logo.png" alt="Utopia"></a>
+
+                    <div class="header-right">
+
+                        <div class="header-divider">&nbsp;</div>
+
+                        <div class="search-panel header-divider">
+                            <div class="search-box">
+                                <img src="img/icons/zoom.png" alt="Search">
+                                <form action="" method="post">
+                                    <input type="text" name="search" placeholder="search"/>
+                                </form>
+                            </div>
+                        </div>
+
+
+                        <div class="notification header-divider">
+
+                            <div class="notification-wrapper">
+
+                                <a href="#" class="notification-counter">8</a>
+                                <div id="triangle-down"></div>
+
+                                <div class="tabbable notification-box">
+                                    <ul class="nav nav-tabs">
+                                        <li class="active"><a data-toggle="tab" href="#message">Messages (3)</a></li>
+                                        <li class=""><a data-toggle="tab" href="#activity">Activity (5)</a></li>
+                                    </ul>
+
+                                    <div class="tab-content">
+                                        <div id="message" class="tab-pane active">
+                                            <ul class="message-list">
+                                                <li class="message new">
+                                                    <div class="msg">
+                                                        From: <a href="">Benjamiin Buttons</a> <span>40m ago</span>
+                                                        <a class="subject" href="">Getting Started on Starlight Template</a>
+                                                        <p>Vitae dicta sunt explicabo. Nemo enim</p>
+                                                    </div>
+                                                </li>
+                                                <li class="message new">
+                                                    <div class="msg">
+                                                        From: <a href="">ThemePixels Team</a> <span>2 hours ago</span>
+                                                        <a class="subject" href="">Thank you for using StarLight Template</a>
+                                                        <p>Hi,Eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                                    </div>
+                                                </li>
+                                                <li class="message">
+                                                    <div class="msg">
+                                                        From: <a href="">Katherine Kate</a> <span>40m ago</span>
+                                                        <p>Lorem ipsum dolor sit amet...</p>
+                                                    </div>
+                                                </li>
+                                                <li class="message">
+                                                    <div class="msg">
+                                                        From: <a href="">ThemePixels Team</a> <span>Yesterday</span>
+                                                        <a class="subject" href="">Events for the next month</a>
+                                                        <p>Hi,Eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                                    </div>
+                                                </li>
+                                            </ul>
+
+                                            <div class="message-more"><a href="">See All Messages</a></div>
+
+                                        </div>
+
+                                        <div id="activity" class="tab-pane">
+                                            <ul class="message-list">
+                                                <li class="user new">
+                                                    <div class="msg">
+                                                        <a href="">Justin Meller</a> added <a href="">John Doe</a> as Admin.
+                                                    </div>
+                                                </li>
+                                                <li class="call new">
+                                                    <div class="msg">
+                                                        You missed a call from <a href="">Porfirio</a>
+                                                    </div>
+                                                </li>
+                                                <li class="calendar new">
+                                                    <div class="msg">
+                                                        <a href="">Katherine Kate</a> invited you in an event <a href="">Rock Party</a>.
+                                                    </div>
+                                                </li>
+                                                <li class="settings">
+                                                    <div class="msg">
+                                                        <a href="">Jane Doe</a> updated her profile.
+                                                    </div>
+                                                </li>
+                                                <li class="follow">
+                                                    <div class="msg">
+                                                        <a href="">Jet Lee</a> is now following you.
+                                                    </div>
+                                                </li>
+                                            </ul>
+
+                                            <div class="message-more"><a href="">View All Activities</a></div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div><!-- Notification end -->
+
+
+                        <div class="user-panel header-divider">
+                            <div class="user-info">
+                                <img src="img/icons/user.png" alt="">
+                                <a href="#">Admin user</a>
+                            </div>
+
+                            <div class="user-dropbox">
+                                <ul>
+                                    <li class="user"><a href="">Profile</a></li>
+                                    <li class="settings"><a href="">Account Settings</a></li>
+                                    <li class="theme-changer dark-theme"><a href="javascript:void(0)" class="dark" rel="css/themes/utopia-dark.css?v18" >Dark theme</a></li>
+                                    <li class="theme-changer white-theme"><a href="javascript:void(0)" class="white" rel="css/utopia-white.css?v19" >White theme</a></li>
+                                    <li class="theme-changer wooden-theme"><a href="javascript:void(0)" class="wooden" rel="css/themes/utopia-wooden.css" >Wooden theme</a></li>
+                                    <li class="logout"><a href="index.html">Logout</a></li>
+                                </ul>
+                            </div>
+
+                        </div><!-- User panel end -->
+
+                    </div><!-- End header right -->
+
+                </div><!-- End header wrapper -->
+
+            </div><!-- End header -->
+
+        </div>
+
+    </div>
+
+    <!-- Header ends -->
+
+    <div class="row-fluid">
+
+        <!-- Sidebar statrt -->
+        <div class="span2 sidebar-container">
+
+            <div class="sidebar">
+
+                <div class="navbar sidebar-toggle">
+                    <div class="container">
+
+                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div class="nav-collapse collapse leftmenu">
+
+                    <ul>
+                        <li class="current"><a class="dashboard smronju" href="dashboard.html" title="Dashboard"><span>Dashboard</span></a></li>
+                        <li><a class="list" href="javascript:void(0)" title="Tables"><span>Tables</span></a>
+                            <ul class="dropdown">
+                                <li><a class="tables" href="tables.html" title="Tables"><span>Tables</span></a>
+                                <li><a class="widgets smronju" href="pricingtables.html" title="Pricing Tables"><span>Pricingtables</span></a></li>
+                            </ul>
+                        </li>
+                        <li><a class="tables" href="typography.html" title="Typography"><span>Typography</span></a></li>
+                        <li><a class="elements" href="maps.html" title="Maps"><span>Maps</span></a></li>
+                        <li><a class="charts" href="charts.html" title="Graphs &amp; Charts"><span>Charts</span></a></li>
+                        <li><a class="barcode" href="barcode.html" title="Barcode"><span>Barcode</span></a></li>
+                        <li><a class="editor" href="javascript:void(0)" title="Forms"><span>Forms</span></a>
+                            <ul class="dropdown">
+                                <li><a class="simple smronju" href="forms.html" title="Form Elements"><span>Form Element</span></a></li>
+                                <li><a class="wizard-form smronju" href="wizard_form.html" title="Wizard Form"><span>Wizard Form</span></a></li>
+                            </ul>
+                        </li>
+                        <li><a class="gallery" href="javascript:void(0)" title="Galleries"><span>Galleries</span></a>
+                            <ul class="dropdown">
+                                <li><a class="fluidgallery" href="fluid_galleries.html" title="Fluid Gallery"><span>Fluid Gallery</span></a></li>
+                                <li><a class="slidergallery" href="mixed_galleries.html" title="Mixed Gallery"><span>Mixed Gallery</span></a></li>
+                                <li><a class="videogallery" href="video_galleries.html" title="Video Gallery"><span>Video Gallery</span></a></li>
+                            </ul>
+                        </li>
+                        <li><a class="grid" href="grid.html" title="Grid"><span>Grid</span></a></li>
+                        <li><a class="calendar" href="calendar.html" title="Calendar"><span>Calendar</span></a></li>
+                        <li><a class="icons" href="icons.html" title="Icons"><span> Icons</span></a></li>
+                        <li><a class="chat" href="conversation.html" title="Conversation"><span>Conversation</span></a></li>
+                        <li><a class="error" href="error.html" title="Error Page"><span>Error Page</span></a></li>
+                    </ul>
+
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Sidebar end -->
+
+        <!-- Body start -->
+            <div class="span10 body-container">
+
+                <div class="row-fluid">
+
+                    <!--Chart Icons -->
+                    <div class="span3">
+                        <div class="utopia-chart-legend">
+                            <div class="utopia-chart-icon">
+                                <img src="img/icons2/access_point.png">
+                            </div>
+                            <div class="utopia-chart-heading">191</div>
+                            <div class="utopia-chart-desc">USERS CONNECTED</div>
+                        </div>
+                    </div>
+
+                    <div class="span3">
+                        <div class="utopia-chart-legend">
+                            <div class="utopia-chart-icon">
+                                <img src="img/icons2/clock.png">
+                            </div>
+                            <div class="utopia-chart-heading">2191</div>
+                            <div class="utopia-chart-desc">HOURS SPENT</div>
+                        </div>
+                    </div>
+
+                    <div class="span3">
+                        <div class="utopia-chart-legend">
+                            <div class="utopia-chart-icon">
+                                <img src="img/icons2/download2.png">
+                            </div>
+                            <div class="utopia-chart-heading">33214</div>
+                            <div class="utopia-chart-desc">Downloads</div>
+                        </div>
+                    </div>
+
+                    <div class="span3">
+                        <div class="utopia-chart-legend">
+                            <div class="utopia-chart-icon">
+                                <img src="img/icons2/coin.png">
+                            </div>
+                            <div class="utopia-chart-heading">10894</div>
+                            <div class="utopia-chart-desc">SAVED</div>
+                        </div>
+                    </div>
+                    <!--Chart Icons End -->
+                </div>
+
+
+                <div class="row-fluid">
+
+                    <div class="span12">
+
+                        <div class="row-fluid">
+
+                            <div class="span9">
+                                <div class="row-fluid">
+
+                                    <div class="span12">
+
+                                        <section class="utopia-widget">
+                                            <div class="utopia-widget-title">
+                                                <img src="img/icons/paragraph_justify.png" class="utopia-widget-icon">
+                                                <span>static table</span>
+                                            </div>
+
+                                            <div class="utopia-widget-content">
+
+                                                <table class="table table-bordered">
+
+                                                    <colgroup>
+                                                        <col class="utopia-col-0">
+                                                        <col class="utopia-col-1">
+                                                        <col class="utopia-col-0">
+                                                        <col class="utopia-col-1">
+                                                        <col class="utopia-col-0">
+                                                    </colgroup>
+
+                                                    <thead>
+                                                    <tr>
+                                                        <th><input class="utopia-check-all" type="checkbox"></th>
+                                                        <th>Rendering engine</th>
+                                                        <th>Browser</th>
+                                                        <th>Platform(s)</th>
+                                                        <th>CSS grade</th>
+                                                    </tr>
+                                                    </thead>
+
+                                                    <tbody>
+                                                    <tr>
+                                                        <td><input class="chkbox" type="checkbox" name="checkbox[]"></td>
+                                                        <td>Other browsers</td>
+                                                        <td>All others</td>
+                                                        <td>-</td>
+                                                        <td>U</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td><input class="chkbox" type="checkbox" name="checkbox[]"></td>
+                                                        <td>Trident</td>
+                                                        <td>AOL browser (AOL desktop)</td>
+                                                        <td>Win XP</td>
+                                                        <td>A</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td><input class="chkbox" type="checkbox" name="checkbox[]"></td>
+                                                        <td>Gecko</td>
+                                                        <td>Camino 1.0</td>
+                                                        <td>OSX.2+</td>
+                                                        <td>A</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td><input class="chkbox" type="checkbox" name="checkbox[]"></td>
+                                                        <td>Gecko</td>
+                                                        <td>Camino 1.5</td>
+                                                        <td>OSX.3+</td>
+                                                        <td>A</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td><input class="chkbox" type="checkbox" name="checkbox[]"></td>
+                                                        <td>Misc</td>
+                                                        <td>Dillo 0.8</td>
+                                                        <td>Embedded devices</td>
+                                                        <td>X</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td><input class="chkbox" type="checkbox" name="checkbox[]"></td>
+                                                        <td>Gecko</td>
+                                                        <td>Epiphany 2.20</td>
+                                                        <td>Gnome</td>
+                                                        <td>A</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td><input class="chkbox" type="checkbox" name="checkbox[]"></td>
+                                                        <td>Gecko</td>
+                                                        <td>Firefox 1.0</td>
+                                                        <td>Win 98+ / OSX.2+</td>
+                                                        <td>A</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td><input class="chkbox" type="checkbox" name="checkbox[]"></td>
+                                                        <td>Gecko</td>
+                                                        <td>Firefox 1.5</td>
+                                                        <td>Win 98+ / OSX.2+</td>
+                                                        <td>A</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td><input class="chkbox" type="checkbox" name="checkbox[]"></td>
+                                                        <td>Gecko</td>
+                                                        <td>Firefox 2.0</td>
+                                                        <td>Win 98+ / OSX.2+</td>
+                                                        <td>A</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td><input class="chkbox" type="checkbox" name="checkbox[]"></td>
+                                                        <td>Gecko</td>
+                                                        <td>Firefox 3.0</td>
+                                                        <td>Win 2k+ / OSX.3+</td>
+                                                        <td>A</td>
+                                                    </tr>
+
+                                                    </tbody>
+                                                </table>
+
+                                                <div class="utopia-table-action">
+                                                    <div class="btn-group">
+                                                        <a href="#" class="btn"><i class="icon-cog"></i> Actions</a>
+                                                        <a href="#" data-toggle="dropdown" class="btn dropdown-toggle"><span class="caret"></span></a>
+                                                        <ul class="dropdown-menu">
+                                                            <li><a href="#"><i class="icon-eye-open"></i> View</a></li>
+                                                            <li><a href="#"><i class="icon-pencil"></i> Edit</a></li>
+                                                            <li><a href="#"><i class="icon-trash"></i> Delete</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </section>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="row-fluid">
+                                    <div class="span12">
+
+                                        <section class="utopia-widget">
+                                            <div class="utopia-widget-title">
+                                                <img src="img/icons/satellite.png" class="utopia-widget-icon">
+                                                <span>maps with route directions</span>
+                                            </div>
+
+                                            <div class="utopia-widget-content">
+                                                <div class="utopia-map-wrapper">
+                                                    <div id="utopia-google-map-5" class="utopia-map"></div>
+                                                    <div class="utopia-map-details">
+                                                        <div class="utopia-map-description">
+                                                            <p>
+                                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi et tempus elit.
+                                                                Duis pharetra blandit risus, a condimentum ipsum ultricies nec. Integer accumsan
+                                                                neque nec augue dictum sit amet dignissim tortor scelerisque.
+                                                            </p>
+                                                        </div>
+                                                        <div class="utopia-map-action">
+                                                            <img src="img/icons2/sun.png"/>
+                                                            <img src="img/icons2/world.png"/>
+                                                            <img src="img/icons2/cloud.png"/>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </section>
+
+                                    </div>
+                                </div>
+
+
+                                <!-- image gallery  Starts-->
+
+                                <div class="row-fluid">
+                                    <div class="span12">
+                                            <section class="utopia-widget">
+                                                <div class="utopia-widget-title">
+                                                    <img src="img/icons/photo_album.png" class="utopia-widget-icon">
+                                                    <span>image gallery</span>
+                                                </div>
+
+                                                <div class="utopia-widget-content">
+                                                    <!-- modal-gallery is the modal dialog used for the image gallery -->
+                                                    <div id="modal-gallery" class="modal modal-gallery hide fade">
+                                                        <div class="modal-header">
+                                                            <a class="close" data-dismiss="modal">&times;</a>
+
+                                                            <h3 class="modal-title">Image Gallery</h3>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div class="modal-image"></div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <a class="btn modal-download" target="_blank">
+                                                                <i class="icon-download"></i>
+                                                                <span>Download</span>
+                                                            </a>
+                                                            <a class="btn btn-success modal-play modal-slideshow" data-slideshow="5000">
+                                                                <i class="icon-play icon-white"></i>
+                                                                <span>Slideshow</span>
+                                                            </a>
+                                                            <a class="btn btn-info modal-prev">
+                                                                <i class="icon-arrow-left icon-white"></i>
+                                                                <span>Previous</span>
+                                                            </a>
+                                                            <a class="btn btn-primary modal-next">
+                                                                <span>Next</span>
+                                                                <i class="icon-arrow-right icon-white"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+
+                                                    <div id="gallery" data-toggle="modal-gallery" data-target="#modal-gallery">
+                                                        <a href="img/fullsize/01.jpg" rel="gallery"><img src="img/thumbnails/100x67/01.jpg"></a>
+                                                        <a href="img/fullsize/02.jpg" rel="gallery"><img src="img/thumbnails/100x67/02.jpg"></a>
+                                                        <a href="img/fullsize/03.jpg" rel="gallery"><img src="img/thumbnails/100x67/03.jpg"></a>
+                                                        <a href="img/fullsize/04.jpg" rel="gallery"><img src="img/thumbnails/100x67/04.jpg"></a>
+                                                        <a href="img/fullsize/05.jpg" rel="gallery"><img src="img/thumbnails/100x67/05.jpg"></a>
+                                                        <a href="img/fullsize/06.jpg" rel="gallery"><img src="img/thumbnails/100x67/06.jpg"></a>
+                                                        <a href="img/fullsize/07.jpg" rel="gallery"><img src="img/thumbnails/100x67/07.jpg"></a>
+                                                        <a href="img/fullsize/08.jpg" rel="gallery"><img src="img/thumbnails/100x67/08.jpg"></a>
+                                                        <a href="img/fullsize/09.jpg" rel="gallery"><img src="img/thumbnails/100x67/09.jpg"></a>
+                                                        <a href="img/fullsize/10.jpg" rel="gallery"><img src="img/thumbnails/100x67/10.jpg"></a>
+                                                        <a href="img/fullsize/11.jpg" rel="gallery"><img src="img/thumbnails/100x67/11.jpg"></a>
+                                                        <a href="img/fullsize/12.jpg" rel="gallery"><img src="img/thumbnails/100x67/12.jpg"></a>
+                                                        <a href="img/fullsize/14.jpg" rel="gallery"><img src="img/thumbnails/100x67/14.jpg"></a>
+                                                        <a href="img/fullsize/18.jpg" rel="gallery"><img src="img/thumbnails/100x67/18.jpg"></a>
+                                                        <a href="img/fullsize/01.jpg" rel="gallery"><img src="img/thumbnails/100x67/01.jpg"></a>
+                                                        <a href="img/fullsize/02.jpg" rel="gallery"><img src="img/thumbnails/100x67/02.jpg"></a>
+                                                        <a href="img/fullsize/03.jpg" rel="gallery"><img src="img/thumbnails/100x67/03.jpg"></a>
+                                                        <a href="img/fullsize/04.jpg" rel="gallery"><img src="img/thumbnails/100x67/04.jpg"></a>
+                                                        <a href="img/fullsize/05.jpg" rel="gallery"><img src="img/thumbnails/100x67/05.jpg"></a>
+                                                        <a href="img/fullsize/06.jpg" rel="gallery"><img src="img/thumbnails/100x67/06.jpg"></a>
+                                                        <a href="img/fullsize/07.jpg" rel="gallery"><img src="img/thumbnails/100x67/07.jpg"></a>
+                                                        <a href="img/fullsize/08.jpg" rel="gallery"><img src="img/thumbnails/100x67/08.jpg"></a>
+                                                        <a href="img/fullsize/09.jpg" rel="gallery"><img src="img/thumbnails/100x67/09.jpg"></a>
+                                                        <a href="img/fullsize/10.jpg" rel="gallery"><img src="img/thumbnails/100x67/10.jpg"></a>
+                                                        <a href="img/fullsize/11.jpg" rel="gallery"><img src="img/thumbnails/100x67/11.jpg"></a>
+                                                        <a href="img/fullsize/12.jpg" rel="gallery"><img src="img/thumbnails/100x67/12.jpg"></a>
+                                                        <a href="img/fullsize/18.jpg" rel="gallery"><img src="img/thumbnails/100x67/18.jpg"></a>
+                                                    </div>
+                                                </div>
+                                            </section>
+                                     </div>
+                                </div>
+                                <!-- image gallery  ends-->
+
+
+                            </div><!-- Mid panel -->
+
+                            <div class="span3">
+
+                                <div class="row-fluid">
+
+                                    <div class="span12">
+
+                                        <div class="utopia-chart-legend">
+                                            <div class="utopia-chart-sparkline" id="utopia-sparkline-type1">
+                                            </div>
+                                            <div class="utopia-chart-heading">LINE</div>
+                                            <div class="utopia-chart-desc">SPARKLINE</div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="row-fluid">
+                                    <div class="span12">
+                                        <div id="utopia-dashboard-weather">
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row-fluid">
+                                    <div class="span12">
+
+                                        <div id="utopia-dashboard-datepicker">
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="row-fluid">
+                                    <div class="span12">
+
+                                        <div class="alert alert-success">
+                                            <a class="close" data-dismiss="alert" href="#">×</a>
+                                            You <strong>successfully</strong> read this important alert message.
+                                        </div>
+                                        <div class="alert alert-info">
+                                            <a class="close" data-dismiss="alert" href="#">×</a>
+                                            This alert needs your <strong>attention</strong>.
+                                        </div>
+                                        <div class="alert alert-block">
+                                            <a class="close" data-dismiss="alert" href="#">×</a>
+                                            This a <strong>Warning!</strong> message.
+                                        </div>
+
+                                        <div class="alert alert-error">
+                                            <a class="close" data-dismiss="alert" href="#">×</a>
+                                            It's an <strong>Error!</strong> message.
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div><!-- Right panel -->
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="row-fluid">
+
+                    <div class="span6">
+
+                        <section class="utopia-widget">
+                            <div class="utopia-widget-title">
+                                <img src="img/icons/font_size.png" class="utopia-widget-icon">
+                                <span>contact form</span>
+                            </div>
+
+                            <div class="utopia-widget-content utopia-chosen-form">
+                                <form id="validation" action="javascript:void(0)" class="utopia-form-freeSpace form-horizontal">
+                                    <fieldset>
+                                        <div class="control-group">
+                                            <label class="control-label" for="input01">Title*:</label>
+
+                                            <div class="controls">
+                                                <input id="input01" class="input-fluid validate[required]" type="text" value="">
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+                                            <label class="control-label" for="inputError"> Contact email*:</label>
+
+                                            <div class="controls">
+                                                <input id="inputError" class="input-fluid validate[required,custom[email]]" type="text" value="jon.com"><br>
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+                                            <label class="control-label" for="phone">Contact phone*:</label>
+
+                                            <div class="controls">
+                                                <input id="phone" class="input-fluid  validate[required, custom[phone]]" type="text" value=""><br/>
+                                                <span class="help-inline">Must be (xxx) xxxxxxxxxx</span>
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+                                            <label class="control-label" for="select02">Category:</label>
+
+                                            <div class="controls sample-form-chosen">
+                                                <select id="select02" data-placeholder="Select your category" style="width:82.5%;" class="chzn-select-deselect" tabindex="7">
+                                                    <option value=""></option>
+                                                    <option value="Zimbabwe">Mac</option>
+                                                    <option value="Zimbabwe">Linux</option>
+                                                    <option value="Zimbabwe">Debian</option>
+                                                    <option value="Zimbabwe">Ubuntu</option>
+                                                    <option value="Zimbabwe">Gnome 3</option>
+                                                    <option value="Zimbabwe">Windows</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+                                            <label class="control-label" for="input" >Message:</label>
+
+                                            <div class="controls utopia-dashbord-cleditor">
+                                                <textarea id="input" class="input-fluid" name="input"></textarea>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </form>
+                            </div>
+                        </section>
+
+                    </div>
+
+
+                    <div class="span6">
+                        <section class="utopia-widget">
+                            <div class="utopia-widget-title">
+                                <img src="img/icons/pyramid.png" class="utopia-widget-icon">
+                                <span>activity</span>
+                            </div>
+
+                            <div class="utopia-widget-content">
+
+                                <div class="utopia-activity-feeds">
+                                    <ul>
+                                        <li>
+                                            <div class="text">
+                                                <p><span class="label label-success">smronju</span> Posted on tumblr blog.</p>
+                                            </div>
+
+                                            <div class="info">
+                                                <span>Type:</span> <a class="tooltipA" href="#" data-original-title="visit smronju's blog" rel="tooltip">blog</a>
+                                                <span>Status:</span> <a class="tooltipA" href="#" data-original-title="anyone can view" rel="tooltip">open</a>
+                                                <span class="date">May, 25 2012 2:00pm</span>
+                                            </div>
+                                        </li>
+
+                                        <li>
+                                            <div class="text">
+                                                <p><span class="label">hasinhayder</span> Commented on smronju's blog post.</p>
+                                            </div>
+
+                                            <div class="info">
+                                                <span>Type:</span> <a class="tooltipA" href="#" data-original-title="visit smronju's blog" rel="tooltip">blog</a>
+                                                <span>Status:</span> <a class="tooltipA" href="#" data-original-title="anyone can view" rel="tooltip">open</a>
+                                                <span class="date">May, 25 2012 2:00pm</span>
+                                            </div>
+                                        </li>
+
+                                        <li>
+                                            <div class="text">
+                                                <p><span class="label label-info">smronju</span> Updated his blog post.</p>
+                                            </div>
+
+                                            <div class="info">
+                                                <span>Type:</span> <a class="tooltipA" href="#" data-original-title="visit smronju's blog" rel="tooltip">blog</a>
+                                                <span>Status:</span> <a class="tooltipA" href="#" data-original-title="anyone can view" rel="tooltip">open</a>
+                                                <span class="date">May, 25 2012 2:00pm</span>
+                                            </div>
+                                        </li>
+
+                                        <li>
+                                            <div class="text">
+                                                <p><span class="label">hasinhayder</span> Replied on smronju's blog post comment.</p>
+                                            </div>
+
+                                            <div class="info">
+                                                <span>Type:</span> <a class="tooltipA" href="#" data-original-title="visit smronju's blog" rel="tooltip">blog</a>
+                                                <span>Status:</span> <a class="tooltipA" href="#" data-original-title="anyone can view" rel="tooltip">open</a>
+                                                <span class="date">May, 25 2012 2:00pm</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        <!-- Body end -->
+
+    </div>
+
+    <!-- Maincontent end -->
+
+</div> <!-- end of container -->
+
+<!-- javascript placed at the end of the document so the pages load faster -->
+<script type="text/javascript" src="js/utopia.js"></script>
+<script type="text/javascript" src="js/jquery.hoverIntent.min.js"></script>
+<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="js/jquery.datatable.js"></script>
+<script type="text/javascript" src="js/tables.js"></script>
+<script type="text/javascript" src="js/jquery.sparkline.js"></script>
+<script type="text/javascript" src="js/jquery.vticker-min.js"></script>
+<script type="text/javascript" src="js/ui/datepicker.js"></script>
+<script type="text/javascript" src="js/upload/load-image.min.js"></script>
+<script type="text/javascript" src="js/upload/image-gallery.min.js"></script>
+<script type="text/javascript" src="js/jquery.simpleWeather.js"></script>
+<script src="js/jquery.validationEngine.js" type="text/javascript"></script>
+<script src="js/jquery.validationEngine-en.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/maskedinput.js"></script>
+<script type="text/javascript" src="js/chosen.jquery.js"></script>
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAeTbCOpuPIKT4i9n8iUQsBHNUt_MWjtog&sensor=false"></script>
+<script type="text/javascript" src="js/gmap3.js"></script>
+<script type="text/javascript" src="js/header.js?v1"></script>
+<script type="text/javascript" src="js/sidebar.js"></script>
+
+<script type="text/javascript">
+
+    $(function() {
+
+        $( "#utopia-dashboard-datepicker" ).datepicker().css({marginBottom:'20px'});
+
+        jQuery("#validation").validationEngine();
+        $("#phone").mask("(999) 9999999999");
+        $(".chzn-select").chosen(); $(".chzn-select-deselect").chosen({allow_single_deselect:true});
+
+        $.simpleWeather({
+            zipcode: '10001',
+            unit: 'f',
+            success: function(weather) {
+                html = '<h2>'+weather.city+', '+weather.region+'</h2>';
+                html += '<img style="float:left" width="125px " src="'+weather.image+'">';
+                html += '<p>'+weather.temp+'&deg; '+weather.units.temp+'<br /><span>'+weather.currently+'</span></p>';
+                html += '<a href="'+weather.link+'">View Forecast &raquo;</a>';
+
+                $("#utopia-dashboard-weather").css({marginBottom:'20px'}).html(html);
+            },
+            error: function(error) {
+                $("#utopia-dashboard-weather").html('<p>'+error+'</p>');
+            }
+        });
+
+
+        /* maps with route directions */
+        $("#utopia-google-map-5").gmap3(
+            { action:'getRoute',
+                options:{
+                    origin:'48 Pirrama Road, Pyrmont NSW',
+                    destination:'Bondi Beach, NSW',
+                    travelMode:google.maps.DirectionsTravelMode.DRIVING
+                },
+                callback:function (results) {
+                    if (!results) return;
+                    $(this).gmap3(
+                        { action:'init',
+                            zoom:13,
+                            mapTypeId:google.maps.MapTypeId.ROADMAP,
+                            streetViewControl:true,
+                            center:[-33.879, 151.235]
+                        },
+                        { action:'addDirectionsRenderer',
+                            options:{
+                                preserveViewport:true,
+                                draggable:false,
+                                directions:results
+                            }
+                        }
+                    );
+                }
+            }
+        );
+        /* maps with route directions end */
+        
+    });
+
+    
+    $("#utopia-sparkline-type1").sparkline([5, 6, 7, 9, 9, 5, 3, 2, 2, 4, 6, 7, 5, 6, 7, 9, 9], {type:"line", height:48, width:140});
+
+    $('.utopia-activity-feeds').vTicker({
+        speed: 500,
+        pause: 3000,
+        animation: 'fade',
+        height: 335,
+        mousePause: true,
+        showItems: 4
+    });
+
+
+    
+</script>
+</body>
+</html>
