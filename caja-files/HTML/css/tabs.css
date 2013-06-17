@@ -1,0 +1,159 @@
+/* root element for tabs  */
+.tabs { 
+	list-style:none; 
+	margin:0 !important;
+	padding: 0px;	
+	height: 32px;
+	background: url(../img/tabs-divider.png) no-repeat bottom center;
+}
+
+body.home .tabs { 
+	padding: 0px 30px;
+
+}
+
+/* single tab */
+ul.tabs li { 
+	display: block;
+	float:left;	 
+	text-indent:0;
+	padding:0;
+	margin: 0px 5px 0px 0px !important;
+	list-style-image: none !important; 
+	
+}
+
+/* link inside the tab. uses a background image */
+ul.tabs a { 
+	display:block;
+	font-size:12px;
+	height: 30px;  
+	line-height:30px;
+	text-align:center;	
+	text-decoration:none;
+	padding: 0px 0px 0px 10px;	
+	position:relative;
+	top:0px;
+	background:  url(../img/tabs.png) no-repeat;
+}
+
+ul.tabs a span{ 
+	display:block;
+	height: 100%;
+	padding-right: 10px;
+	background:  url(../img/tabs.png) no-repeat right -40px;
+}
+
+#content ul.tabs a{
+	color: #747474;
+}
+
+ul.tabs a:active {
+	outline:none;
+}
+
+/* when mouse enters the tab move the background image */
+#content ul.tabs a:hover { 
+	background-position: 0px -80px;
+}
+
+#content ul.tabs a:hover span,
+#content ul.tabs a.current span{ 
+	background-position: right -120px;
+}
+
+/* active tab uses a class name "current". its highlight is also done by moving the background image. */
+ul.tabs a.current,
+#content ul.tabs a.current:hover,
+ul.tabs li.current a {	
+	cursor:default !important; 
+	color:#2a2d30 !important;
+	display: block;
+	background-position: 0px -80px;
+}
+
+
+/* initially all panes are hidden */ 
+.panes .pane {
+	display:none;	
+}
+
+.panes>div {
+    display: none;
+    min-height: 200px;
+   
+}
+
+/* HOME TABS THUMBS ---------------------------------------------------------*/
+
+.panes .blocks-thumbs{
+	overflow: hidden;
+	padding-top: 30px;
+}
+
+.panes .blocks-thumbs li{
+	display: block;
+	overflow: hidden;
+	float: left;
+	width: 282px;
+	margin: 0px 0px 30px 30px;
+	background: url(../img/shadow-1-3.png) no-repeat 0px 150px;
+}
+
+.panes .blocks-thumbs li .excerpt{
+	line-height: 1.5em;
+	margin-bottom: 20px;
+}
+
+#content .panes .blocks-thumbs li .header{
+	display: block;
+	font-family: 'Ubuntu', arial, serif;
+	font-size: 20px;
+	line-height: 1.4em;
+	margin-bottom: 10px;
+	text-decoration: none;
+	color: #2f3235;
+	border-bottom: 1px solid #c4c7c8;
+	padding-bottom: 10px;
+}
+
+.panes .blocks-thumbs li a.thumb{
+	display: block;
+	overflow: hidden;
+	width: 282px;
+	height: 150px;
+	margin-bottom: 20px;
+	background: url(../img/plus-sign.png) no-repeat center center;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+}
+
+
+/* HOME TABS GALLERY ---------------------------------------------------------*/
+
+.panes{
+	margin-top: 30px;
+}
+
+body.home .panes{
+	margin-top: 0px;
+}
+
+.panes .plain-text{
+	padding: 30px 30px;
+	line-height: 1.5em;
+}
+
+.panes .plain-text h1,
+.panes .plain-text h2,
+.panes .plain-text h3,
+.panes .plain-text h4,
+.panes .plain-text h5,
+.panes .plain-text h6 {
+	margin-bottom: 20px;
+}
+
+.panes .plain-text a{
+	text-decoration: none;
+}

@@ -1,0 +1,293 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>Blozzit</title>
+
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Sans:regular,bold&amp;subset=latin">
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
+<link href="style.css" media="all" rel="stylesheet" type="text/css"/>
+
+<script type="text/javascript" src="js/jquery-1.5.2.min.js"></script>
+
+<script>
+$(document).ready(function(){
+if (jQuery.browser.safari && document.readyState != "complete"){
+setTimeout( arguments.callee, 100 );
+return;
+} 
+var maxHeight = $('div#main-area-inside').height();
+
+$('div#content').height(maxHeight);
+$('div#sidebar').height(maxHeight);
+
+});
+</script>
+
+</head>
+
+<body>
+
+<!-- #navigation. -->
+<div id="navigation">
+
+    <!-- #navigation-inside. -->
+    <div id="navigation-inside">
+   
+        <ul class="main-menu">
+        
+            <li><a class="home" href="index.html">Home</a></li>
+            <li><a class="contact" href="contact.html">Contact</a></li>
+            <li><a class="about" href="about.html">About</a></li>
+        
+        </ul>
+
+    </div>
+    <!-- EOF: #navigation-inside. -->
+    
+</div>
+<!-- EOF: #navigation. -->
+
+<!-- #header. -->
+<div id="header">
+
+    <!-- #header-inside. -->
+    <div id="header-inside">
+   
+        <!-- #header-inside-left. -->
+        <div id="header-inside-left">
+        <a href="index.html"><img src="images/logo.png" alt="Blozzit" title="Blozzit"/></a>
+        </div>
+        <!-- EOF: #header-inside-left. -->
+    
+        <!-- #header-inside-right. -->
+        <div id="header-inside-right">
+            <div class="tweet-text">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna <a href="#">http://bit.ly/3nvlsq</a>
+            </div>
+            <div class="tweet-time">
+            Posted 3 hours ago
+            </div>
+        </div>
+        <!-- EOF: #header-inside-right. -->
+
+    </div>
+    <!-- EOF: #header-inside. -->
+    
+</div>
+<!-- EOF: #header. -->
+
+<!-- #main-area. -->
+<div id="main-area">
+
+    <!-- #main-area-inside. -->
+    <div id="main-area-inside">
+        
+        <!-- #content -->
+        <div id="content">
+        	
+            <!-- .node -->
+            <div class="node">
+                <div class="node-content">
+                
+                <div class="node-header">
+                <div class="node-title page">
+                <a href="#"><h1 class="title">About</h1></a>
+                </div>
+                </div>
+                
+                <div class="node-body">
+            	
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    
+                    <blockquote>"Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</blockquote>
+                    
+                    <h2>Header 2</h2>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    
+                    <h2><a href="#">Linked Header 2</a></h2>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    
+                    <h3>Header 3</h3>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    
+                    <h4>Header 4</h4>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    
+                    <h2>Code snippet</h2>
+                    
+                    <code>#header h1 a <br />
+                    display: block;<br />
+                    height: 80px;<br />
+                    width: 300px;<br />
+                    </code>
+                    
+                    <h2>Messages</h2>
+                    
+                    <div class="messages status">Sample status message. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                    <div class="messages error">Sample error message. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                    <div class="messages warning">Sample warning message. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                    
+                    <h2>Paragraph With Links</h2>
+                    <p>Lorem ipsum dolor sit amet, <a href="#">consectetuer adipiscing</a> elit. Donec odio. Quisque volutpat mattis eros. <a href="#">Nullam malesuada</a> erat ut turpis. Suspendisse urna nibh, viverra 			non, semper suscipit, posuere a, pede.</p>
+                    
+                    <h2>Ordered List</h2>
+                    <ol>
+                    <li>This is a sample <strong>Ordered List</strong>.</li>
+                    <li>Lorem ipsum dolor sit amet consectetuer.</li>
+                    <li>Condimentum quis.</li>
+                    <li>Congue Quisque augue elit dolor.
+                    <ol>
+                    <li>Something goes here.</li>
+                    <li>And another here</li>
+                    <li>Then one more</li>
+                    </ol>
+                    </li>
+                    <li>Congue Quisque augue elit dolor nibh.</li>
+                    </ol>
+                    
+                    <h2>Unordered List</h2>
+                    <ul>
+                    <li>This is a sample <strong>Unordered List</strong>.</li>
+                    <li>Condimentum quis.</li>
+                    <li>Congue Quisque augue elit dolor.
+                    <ul>
+                    <li>Something goes here.</li>
+                    <li>And another here
+                    <ul>
+                    <li>Something here as well</li>      
+                    <li>Something here as well</li>
+                    <li>Something here as well</li>
+                    </ul>
+                    </li>
+                    <li>Then one more</li>
+                    </ul>
+                    </li>
+                    <li>Nunc cursus sem et pretium sapien eget.</li>
+                    </ul>
+                    
+                    <h2>Fieldset</h2>
+                    <fieldset> <legend>Account information</legend> </fieldset>
+                    
+                    <h2>Table</h2>
+                    
+                    <table border="1">
+                    
+                    <tr>
+                    <th>Header 1</th>
+                    <th>Header 2</th>
+                    </tr>
+                    
+                    <tr class="odd">
+                    <td>row 1, cell 1</td>
+                    <td>row 1, cell 2</td>
+                    </tr>
+                    
+                    <tr class="even">
+                    <td>row 2, cell 1</td>
+                    <td>row 2, cell 2</td>
+                    </tr>
+                    
+                    <tr class="odd">
+                    <td>row 3, cell 1</td>
+                    <td>row 3, cell 2</td>
+                    </tr>
+                    
+                    </table>
+            	</div>
+            </div>
+            </div>
+            <!-- EOF: .node -->
+                   
+        </div>
+        <!-- EOF: #content -->
+    
+        <!-- #sidebar -->
+        <div id="sidebar">
+        
+            <div id="block-search-form" class="block">
+            
+                <form id="search-block-form">
+                    <div class="container-inline">
+                    <div class="form-item form-type-textfield">
+                    <input type="text" class="form-text" value="Search site" name="search_block_form" onfocus="if (this.value == 'Search site') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search site';}">
+                    </div>
+                    
+                    <div class="form-actions">
+                    <input type="image" class="form-submit" src="images/search-button.png" name="submit" id="edit-submit">
+                    </div>
+                    </div>
+                </form>
+            
+            </div>
+
+            <div class="block">
+                <ul class="menu">
+                    <li><a href="index.html" class="home">Home</a></li>
+                    <li><a href="contact.html" class="contact">Contact</a></li>
+                    <li><a href="about.html" class="about">About</a></li>
+                </ul>
+            </div>
+            
+            <div class="block articles">
+            
+                <div class="title"><h2>Latest articles</h2></div>
+               
+                <div class="item-list">
+                    <ul>
+                    <li><a href="#">Lorem ipsum dolor sit amet eos voluptas</a></li>
+                    <li><a href="#">Neque porro sit aspernatur sed quia</a></li>
+                    <li><a href="#">Mauris sem ipsum, vehicula non pellentesque non</a></li>
+                    </ul>
+                </div>
+            
+            </div>
+            
+            <div class="block archives">
+                <div class="title"><h2>Archives</h2></div>
+                <div class="content">
+                    <div class="archive"><a href="#">February 2011 <span class="archive-nodes">(16)</span></a></div>
+                    <div class="archive"><a href="#">January 2011 <span class="archive-nodes">(12)</span></a></div>
+                    <div class="archive"><a href="#">December 2010 <span class="archive-nodes">(11)</span></a></div>
+                    <div class="archive"><a href="#">November 2010 <span class="archive-nodes">(15)</span></a></div>
+                    <div class="archive"><a href="#">Octomber 2010 <span class="archive-nodes">(38)</span></a></div>
+                    <div class="archive"><a href="#">September 2010 <span class="archive-nodes">(42)</span></a></div>
+                    <div class="archive"><a href="#">August 2010 <span class="archive-nodes">(10)</span></a></div>
+                </div>
+            </div>
+            
+            <div class="block social-bookmarks">
+            <div class="title"><h2>Followme</h2></div>
+            <div class="content">
+            <ul>
+            <li class="facebook"><a href="http://www.facebook.com/pages/More-than-just-themes/194842423863081" target="_blank"/></a></li>
+            <li class="twitter"><a href="http://twitter.com/morethanthemes" target="_blank"/></a></li>
+            <li class="flickr"><a href="http://www.flickr.com/photos/56103643@N07" target="_blank"/></a></li>
+            <li class="youtube"><a href="http://www.youtube.com/morethanthemes" target="_blank"></a></li>
+            </ul>   
+            </div>
+            </div>
+            
+            <div class="block tags">
+                <div class="title"><h2>Tags</h2></div>
+                <div class="content">
+                eclipse <span class="tag-nodes">(31)</span> webdesign <span class="tag-nodes">(19)</span> drupal <span class="tag-nodes">(13)</span> drupalizing <span class="tag-nodes">(10)</span> themes <span class="tag-nodes">(10)</span> gwt <span class="tag-nodes">(9)</span> web dev <span class="tag-nodes">(9)</span> ajax <span class="tag-nodes">(8)</span> code <span class="tag-nodes">(7)</span> swt <span class="tag-nodes">(7)</span> julia <span class="tag-nodes">(6)</span>  tutorials <span class="tag-nodes">(4)</span> css <span class="tag-nodes">(3)</span> icons <span class="tag-nodes">(3)</span> iphone <span class="tag-nodes">(3)</span> web <span class="tag-nodes">(3)</span> browsers <span class="tag-nodes">(2)</span> cocoon <span class="tag-nodes">(2)</span> future <span class="tag-nodes">(2)</span> photoshop <span class="tag-nodes">(2)</span> svg <span class="tag-nodes">(2)</span> webinar <span class="tag-nodes">(2)</span> apple <span class="tag-nodes">(1)</span> asterix <span class="tag-nodes">(1)</span> backup <span class="tag-nodes">(1)</span> books <span class="tag-nodes">(1)</span> bugzilla <span class="tag-nodes">(1)</span> calendar <span class="tag-nodes">(1)</span> canvas <span class="tag-nodes">(1)</span> drupal7 <span class="tag-nodes">(1)</span> dvd <span class="tag-nodes">(1)</span> free time <span class="tag-nodes">(1)</span> gmail <span class="tag-nodes">(1)</span> html5 <span class="tag-nodes">(1)</span> jquery <span class="tag-nodes">(1)</span> macosx <span class="tag-nodes">(1)</span> magazeen lite <span class="tag-nodes">(1)</span> 
+                </div>
+            </div>
+        
+        </div>
+        <!-- EOF: #sidebar -->
+        
+        <!-- #footer -->
+        <div id="footer">
+        	<div id="footer-message">Copyright © John Smith 2011, <a href="#">Blozzit.com</a></div>
+        </div>
+    	<!-- EOF: #footer -->
+    	
+    </div><!-- EOF: #main-area-inside -->
+
+</div><!-- EOF: #main-area -->
+
+</body>
+</html>

@@ -1,0 +1,142 @@
+
+/* ALIGNMENT ------------------------------------------------------------*/
+
+.left-align{
+	float:left;
+	margin:8px 18px 18px 0;
+	display: block;
+}
+
+.right-align{
+	float:right;
+	margin:0px 0px 0px 10px;
+	display: block;
+}
+
+/* BLOCKS ------------------------------------------------------------*/
+
+.boxed{
+	background: white;
+	padding: 5px;
+	border: 1px solid #cccccc;
+}
+
+.border{
+	border: 2px solid white;
+}
+
+/* DROPCAP ------------------------------------------------------------*/
+
+.dropcap:first-letter{ 
+	font-size: 3.571em; 
+	line-height: 0.76em; 
+	padding: 0.04em 0.12em 0 0; 
+	float: left;
+}
+
+.dropcap.dark:first-letter{ 
+	display:block;
+	float:left;
+	font-size:30px;
+	line-height:40px;
+	margin:0 8px 0 0;
+	padding: 10px 10px;
+	background: #606060;
+	color: #fff;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	
+}
+
+/* HIGHLIGHT ------------------------------------------------------------*/
+
+.highlight,
+.highlight-red,
+.highlight-blue,
+.highlight-green {
+	background:yellow;
+	padding:2px 5px;
+}
+
+.highlight-red{ 
+	background: red;
+	color:#fff;
+}
+
+.highlight-blue{
+	background: blue;
+	color:#fff;
+}
+
+.highlight-green{
+	background: green;
+	color:#fff;
+}
+
+/* PULLQUOTES ------------------------------------------------------------*/
+
+.pullquote-right,
+.pullquote-left {
+	border-left: #555555 2px solid;
+	float:right;
+	font-size:16px;
+	line-height:1.5em;
+	margin: 20px 0px 20px 20px;
+	width:33%;
+	font-style: italic;
+}
+
+.pullquote-left {
+	float:left;
+	margin: 20px 20px 20px 0px;
+	padding:0 0 0 20px;
+}
+
+.pullquote-right{
+	border-left: none;
+	border-right: #555555 2px solid;
+	padding:0 20px 0 0px;
+}
+
+
+
+
+/* LISTS ------------------------------------------------------------*/
+
+
+.lists-check ul,
+.lists-arrow ul,
+.lists-plus ul,
+.lists-star ul,
+.lists-heart ul{
+	margin-bottom: 30px;
+	margin-left: 20px;
+}
+
+
+.lists-check ul li{ 
+	list-style-image: url(../img/bullets/check.png);
+	line-height: 1.5em;
+}
+	
+.lists-arrow ul{ 
+	list-style-image: url(../img/bullets/arrow.png); 
+	line-height: 1.5em;
+}
+
+.lists-plus ul{ 
+	list-style-image: url(../img/bullets/plus.png); 
+	line-height: 1.5em;
+}
+
+.lists-star ul{ 
+	list-style-image: url(../img/bullets/star.png); 
+	line-height: 1.5em;
+}
+
+.lists-heart ul{ 
+	list-style-image: url(../img/bullets/heart.png); 
+	line-height: 1.5em;
+}
+

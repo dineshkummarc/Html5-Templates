@@ -1,0 +1,228 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<head lang="en">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<title>Template Documentation Template</title>
+	<!-- Framework CSS -->
+	<link rel="stylesheet" href="assets/blueprint-css/screen.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="assets/blueprint-css/print.css" type="text/css" media="print">
+	<!--[if lt IE 8]><link rel="stylesheet" href="assets/blueprint-css/ie.css" type="text/css" media="screen, projection"><![endif]-->
+	<link rel="stylesheet" href="assets/blueprint-css/plugins/fancy-type/screen.css" type="text/css" media="screen, projection">
+	<style type="text/css" media="screen">
+		p, table, hr, .box { margin-bottom:25px; }
+		.box p { margin-bottom:10px; }
+	</style>
+</head>
+
+
+<body>
+	<div class="container">
+		
+		<p align="center"><a href="http://themeforest.net/user/Ansimuz/portfolio?ref=Ansimuz" target="_blank" ><img src="assets/images/tf_468x60_v4.gif" alt="Premium Files" /></a></p>
+		
+		<h3 class="center alt">	&ldquo;caja&rdquo; Documentation by &ldquo;ansimuz
+		  v1.0</h3>
+		
+<hr>
+		
+		<h1 class="center">&ldquo;CAJA TEMPLATE&rdquo;</h1>
+		
+<div class="borderTop">
+			<div class="span-6 colborder info prepend-1">
+				<p class="prepend-top">
+					<strong>
+					Created: 01/06/2011<br>
+					By: Luis Zuno aka ansimuz<br>
+					Email: <a href="mailto:luis@luiszuno.com">luis@luiszuno.com</a>					</strong>				</p>
+</div><!-- end div .span-6 -->		
+	
+			<div class="span-12 last">
+				<p class="prepend-top append-0">Thank you for downloading my theme. If you like this file you may like some of my premium items found on themeforest portfolio <a href="http://themeforest.net/user/Ansimuz/portfolio?ref=ansimuz">Visit portfolio</a>. Thanks so much!</p>
+    </div>
+		</div><!-- end div .borderTop -->
+		
+		<hr>
+		
+		<h2 id="toc" class="alt">Table of Contents</h2>
+		<ol class="alpha">
+			<li><a href="#htmlStructure">HTML</a></li>
+		  <li><a href="#cssFiles">CSS Files</a></li>
+		  <li><a href="#imgFiles">Image Files</a></li>
+		  <li><a href="#javascript">JavaScript</a></li>
+			<li><a href="#psdFiles">PSD Files</a></li>
+			<li><a href="#credits">Sources and Credits</a></li>
+			<li><a href="http://luiszuno.com/blog/tweaky/">Customisation</a></li>
+	    </ol>
+		
+<hr>
+		
+		<h1 id="htmlStructure"><strong>A) HTML </strong> - <a href="#toc">top</a></h1>
+	  <p>This theme is a fixed layout theme made in HTML 5 its perfect for corporate sites. It has 7 + different layouts and is very customizable using skins.</p>
+	  <h2>HTML STRUCTURE</h2>
+	  <p>The main layout is built from 7 main blocks each one contains a wrapper block to mantain the layout centered. There 7 main blocks are as follow:</p>
+	  <ol>
+	    <li>Header</li>
+        <li>Main</li>
+	    <li>footer</li>
+	    <li>bottom</li>
+      </ol>
+	  <h2>FILE LIST</h2>
+	  <p>The html folder contains all the necesary files to build a website it contains.
+	    you can find a PSD folder contianing all major layouts and elements folder for the web graphics.</p>
+	  <h2>TOOLTIPS</h2>
+	  <p>For the tooltips i am using a javascript library called <a href="http://vadikom.com/demos/poshytip/" target="_blank">poshytip</a> its very easy to set up. The default browser tooltip that displays the value of the title attribute is replaced with a &quot;poshier&quot; version just add a title text and a class of poshytip.</p>
+	  <p>&nbsp;</p>
+	  <p>Example</p>
+	  <pre>&lt;a href=&quot;#&quot;<strong> title=&quot;I am a tooltip&quot; class=&quot;poshytip&quot;</strong>&gt;Tool tip&lt;/a&gt;
+         
+         
+&lt;img src=&quot;image.jpg&quot; <strong>title=&quot;I am a tooltip&quot; class=&quot;poshytip</strong>&quot; alt=&quot;Image&quot; /&gt;</pre>
+	  <h3>&nbsp;</h3>
+	  <h2>TABS</h2>
+      <p>I am using a javascript library for the tabs you can find the source and more documentation <a href="http://flowplayer.org/tools/tabs/" target="_blank">here</a>.</p>
+      <p>Here is the minimal HTML code to get tabs working: </p>
+      <pre>&lt;!-- the tabs --&gt;
+ &lt;ul class=&quot;tabs&quot;&gt;
+ 	&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Tab 1&lt;/a&gt;&lt;/li&gt;
+ 	&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Tab 2&lt;/a&gt;&lt;/li&gt;
+ 	&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Tab 3&lt;/a&gt;&lt;/li&gt;
+ &lt;/ul&gt;</pre>
+      <pre>&lt;!-- tab &quot;panes&quot; --&gt;
+&lt;div class=&quot;panes&quot;&gt;
+	&lt;div&gt;pane 1 content&lt;/div&gt;
+	&lt;div&gt;pane 2 content&lt;/div&gt;
+	&lt;div&gt;pane 3 content&lt;/div&gt;
+&lt;/div&gt;</pre>
+      <p>&nbsp;</p>
+      <h2><br>
+      </h2>
+      <h2>CONTACT FORM</h2>
+      <p> There are 2 files nedded  filed needed for the FORM VALIDATION (js/form-validation.js) and the PHP (send-mail.php) that actually sends the data .</p>
+      <p>The HTML</p>
+      <p><img src="assets/images/contact-html.png" width="815" height="481"></p>
+      <h2>Configuring the email recipients and data</h2>
+      <p>To set the sender and the recipients just change the value for the hidden
+        input values inside the contact.html.</p>
+      <p><img src="assets/images/send-mail-config.png" width="871" height="83"></p>
+      <h2>Form validation</h2>
+      <p><strong>Form-validation.js </strong> This is the
+        javascript validation for the fields.</p>
+      <p>How to add fields to the contact form:</p>
+      <p> <img src="assets/images/field.png" width="687" height="201"></p>
+      <p>&nbsp;</p>
+      <h2>&nbsp;</h2>
+    <hr>
+
+		<h1 id="cssFiles"><strong>B) CSS Files and Structure</strong> - <a href="#toc">top</a></h1>
+	  <p>This theme uses several css files contained in the <strong>css</strong> folder. Please note that the &quot;<strong>skins/skin_name/style.css&quot;</strong> may overwrite styles defined at the &quot;<strong>css/style.css&quot;</strong> file.</p>
+	  <p>Changing or editing existing skins.</p>
+	  <p>If you need to edit a skinedit the css files at the skins folder. Dont forget to include the skin name at the &lt;head&gt; section of top of the document.</p>
+	  <pre>&lt;!-- CSS --&gt;
+ &lt;link rel=&quot;stylesheet&quot; href=&quot;css/style.css&quot; type=&quot;text/css&quot; media=&quot;screen&quot; /&gt;
+ &lt;link rel=&quot;stylesheet&quot; href=&quot;css/social-icons.css&quot; type=&quot;text/css&quot; media=&quot;screen&quot; /&gt;
+ <strong>&lt;link rel=&quot;stylesheet&quot; href=&quot;name of the skins.css&quot; type=&quot;text/css&quot; id=&quot;css-skins&quot; /&gt;</strong>
+       </pre>
+	  <p>&nbsp;</p>
+	  <p><strong>Please note</strong>. The &quot;css/styles.css&quot; imports essential external files at the the top of the file:</p>
+      
+      
+      
+      
+      <pre>
+      
+/* IMPORTS ------------------------------------------------------------*/
+<strong>
+@import url('reset.css');
+
+@import url('styled-elements.css')</strong>;
+
+
+/* HACKS ------------------------------------------------------------*/
+
+.clear{
+	clear:both;
+	height:1px;
+}
+
+.inv{ display:none; }
+
+.alignleft{
+	float: left;
+	margin: 5px 10px 5px 0px;
+}
+      </pre>
+      
+      
+      <hr>
+		
+	  <h3 id="imgFiles">&nbsp;</h3>
+	  <h1><strong>C) Image Files - <a href="#toc">top</a></strong></h1>
+	  <p>All the slides are contained at the &quot;<strong>images&quot;</strong> folder.</p>
+	  <p>All the graphic elements for the entire theme are contained at the &quot;<strong>img</strong>&quot; folder.</p>
+	  <p>The mockup images used to feed the site are contained at the &quot;<strong>img/dummies&quot;</strong> folder.</p>
+	  <p>All the background patterns are stored at the <strong>&quot;img/bg&quot;</strong> folder.</p>
+	  <p>&nbsp;</p>
+      <hr>
+	  <h1 id="javascript"></h1>
+      <h1><strong>D) JavaScript</strong> - <a href="#toc">top</a></h1>
+	  <p>All the pages link the neccessary js files inside the &quot;head&quot; tag of the document. If you need to modify the behavior from a certain jquery element open the <strong>&quot;js/custom.js</strong>&quot; file. where you can alter the parameters of some of the js elements.</p>
+	  <p>You will find the call to the next fucntions:</p>
+	  <p><br>
+	    Poshytips<br>
+	    Superfish menu<br>
+	    Scroll to top<br>
+	    Rollover functions<br>
+	    Tabs<br>
+      Pop ups windows<br>
+      slides<br>
+	    <br>
+      </p>
+	  <p>&nbsp;</p>
+      <hr>
+	  <h3 id="psdFiles">&nbsp;</h3>
+		<h1>E) PSD Files - <a href="#toc">top</a></h1>
+	  <p>The included image files in the downloadable package contain PSD and PNG files used in the layout</p>
+		
+			<p>Open the <strong>&quot;PSD/theme-PSD</strong>&quot; folder to discover the main four psd layouts for the theme. All this files are fully editable and well organized on folders and layer naming for easy manipulation:</p>
+			<p>main.psd<br>
+	  </p>
+	  <p>At the <strong>&quot;PSD/elements&quot;</strong> you will find the isolated graphics for the important graphics for the site.</p>
+			<p>stars.psd</p>
+	  <p>&nbsp;</p>
+    <hr>
+		
+		<h1 id="credits">&nbsp;</h1>
+		<h1>F) Sources and Credits - <a href="#toc">top</a></h1>
+	  <p>I've used the following images, icons or other files as listed.        
+	  <h3>JAVASCRIPT      </h3>
+	  <ul><li>jQuery <a href="http://jquery.com/" target="_blank">http://jquery.com/</a></li>
+			<li>jqueryui .<a href="http://jqueryui.com/"> Jquery
+		    ui Home page.</a></li>
+			<li>jQuery Easing Plugin <a href="http://gsgd.co.uk/sandbox/jquery/easing/" target="_blank">http://gsgd.co.uk/sandbox/jquery/easing/</a></li>
+			<li>Jquery tabs <a href="http://flowplayer.org/tools/tabs/">http://flowplayer.org/tools/tabs/</a></li>
+			<li>PrettyPhoto<a href="http://www.no-margin-for-errors.com/projects/prettyphoto-jquery-lightbox-clone/" target="_blank"> http://www.no-margin-for-errors.com/projects/prettyphoto-jquery-lightbox-clone/</a></li>
+		<li>DD_belatedPNG <a href="http://www.dillerdesign.com/experiment/DD_belatedPNG/" target="_blank">http://www.dillerdesign.com/experiment/DD_belatedPNG/</a></li>
+	    <li>Superfish <a href="http://users.tpg.com.au/j_birch/plugins/superfish/" target="_blank">http://users.tpg.com.au/j_birch/plugins/superfish/</a></li>
+        <li>Google fonts api <a href="http://fonts.googleapis.com/" target="_blank">http://fonts.googleapis.com/</a></li>
+	    <li>Scrollto<a href="http://flesler.blogspot.com"> http://flesler.blogspot.com</a></li>
+	    <li>Poshytip <a href="http://vadikom.com/tools/poshy-tip-jquery-plugin-for-stylish-tooltips/">http://vadikom.com/tools/poshy-tip-jquery-plugin-for-stylish-tooltips/</a></li>
+	    <li>tabs <a href="http://flowplayer.org/tools/tabs/">http://flowplayer.org/tools/tabs/</a></li>
+        <li>slides <a href="http://slidesjs.com/">http://slidesjs.com/</a></li>
+	  </ul>
+		
+      <h3>IMAGES</h3>
+      <ul>
+        <li>Social icons  <a href="http://www.premiumpixels.com/" target="_blank"> http://www.premiumpixels.com/</a></li>
+      </ul>
+<hr>
+		
+		<p>Once again, thank you  for downloading this free file. I don't offer support on freebies however you can always look for help at <a href="http://luiszuno.com/free-forums/">http://luiszuno.com/free-forums/</a></p> 
+		
+		<p class="append-bottom alt large">ansimuz</p>
+		<p><a href="#toc">Go To Table of Contents</a></p>
+		
+		<p align="center"><a href="http://themeforest.net/user/Ansimuz/portfolio?ref=Ansimuz" target="_blank" ><img src="assets/images/tf_468x60_v4.gif" alt="Premium Files" /></a></p>
+		
+		<hr class="space">
+	</div><!-- end div .container -->
+</body>
+</html>

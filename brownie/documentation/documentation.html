@@ -1,0 +1,737 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<head lang="en">
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <title>Brownie Dcoumentation</title>
+   
+    <style type="text/css" media="screen">
+        /* reset.css */html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td
+        {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-weight: inherit;
+            font-style: inherit;
+            font-size: 100%;
+            font-family: inherit;
+            vertical-align: baseline;
+        }
+        body
+        {
+            line-height: 1.5;
+        }
+        table
+        {
+            border-collapse: separate;
+            border-spacing: 0;
+        }
+        caption, th, td
+        {
+            text-align: left;
+            font-weight: normal;
+        }
+        table, td, th
+        {
+            vertical-align: middle;
+        }
+        blockquote:before, blockquote:after, q:before, q:after
+        {
+            content: "";
+        }
+        blockquote, q
+        {
+            quotes: "" "";
+        }
+        a img
+        {
+            border: none;
+        }
+        /* custom.css */.info
+        {
+            background: #fafcfc;
+        }
+        .borderTop
+        {
+            border-top: 1px solid #eee;
+        }
+        .append-0
+        {
+            padding-right: 20px;
+        }
+        body
+        {
+            font-size: 80%;
+            color: #222;
+            background: #fff;
+            font-family: "Helvetica Neue" , Arial, Helvetica, sans-serif;
+            padding-top: 30px;
+        }
+        h1, h2, h3, h4, h5, h6
+        {
+            font-weight: normal;
+            color: #111;
+        }
+        h1
+        {
+            font-size: 2.6em;
+            line-height: 1;
+            margin-bottom: 0.5em;
+        }
+        h2
+        {
+            font-size: 1.9em;
+            margin-bottom: 0.75em;
+        }
+        h3
+        {
+            font-size: 1.4em;
+            line-height: 1;
+            margin-bottom: 1em;
+        }
+        h4
+        {
+            font-size: 1.1em;
+            line-height: 1.25;
+            margin-bottom: 1.25em;
+        }
+        h5
+        {
+            font-size: 1em;
+            font-weight: bold;
+            margin-bottom: 1.5em;
+        }
+        h6
+        {
+            font-size: 1em;
+            font-weight: bold;
+        }
+        h1 img, h2 img, h3 img, h4 img, h5 img, h6 img
+        {
+            margin: 0;
+        }
+        p
+        {
+            margin: 0 0 1.5em;
+            line-height: 1.65em;
+        }
+        p img.left
+        {
+            float: left;
+            margin: 1.5em 1.5em 1.5em 0;
+            padding: 0;
+        }
+        p img.right
+        {
+            float: right;
+            margin: 1.5em 0 1.5em 1.5em;
+        }
+        a:focus, a:hover
+        {
+            color: #000;
+        }
+        a
+        {
+            color: #009;
+            text-decoration: underline;
+        }
+        blockquote
+        {
+            margin: 1.5em;
+            color: #666;
+            font-style: italic;
+        }
+        strong
+        {
+            font-weight: bold;
+        }
+        em, dfn
+        {
+            font-style: italic;
+        }
+        dfn
+        {
+            font-weight: bold;
+        }
+        sup, sub
+        {
+            line-height: 0;
+        }
+        abbr, acronym
+        {
+            border-bottom: 1px dotted #666;
+        }
+        address
+        {
+            margin: 0 0 1.5em;
+            font-style: italic;
+        }
+        del
+        {
+            color: #666;
+        }
+        pre
+        {
+          
+            white-space: pre;
+        }
+        pre, code, tt
+        {
+           
+            line-height: 1.5;
+        }
+		pre
+        {
+            
+           
+            overflow: auto;
+            padding: 20px 0px;
+            color: #4d4d4d;
+            display: block;
+            border: 1px solid #ddd;
+           
+            line-height: 2.5;
+        }
+		
+        li ul, li ol
+        {
+            margin: 0 1.5em;
+        }
+        ul, ol
+        {
+            margin: 0 1.5em 1.5em 3.5em;
+        }
+        ul
+        {
+            list-style-type: disc;
+        }
+        ol
+        {
+            list-style-type: decimal;
+        }
+        ol.alpha
+        {
+            list-style: upper-alpha;
+        }
+        dl
+        {
+            margin: 0 0 1.5em 0;
+        }
+        dl dt
+        {
+            font-weight: bold;
+        }
+        dd
+        {
+            margin-left: 1.5em;
+        }
+        table
+        {
+            margin-bottom: 1.4em;
+            width: 100%;
+        }
+        th
+        {
+            font-weight: bold;
+        }
+        thead th
+        {
+            background: #c3d9ff;
+        }
+        th, td, caption
+        {
+            padding: 4px 10px 4px 5px;
+        }
+        tr.even td
+        {
+            background: #e5ecf9;
+        }
+        tfoot
+        {
+            font-style: italic;
+        }
+        caption
+        {
+            background: #eee;
+        }
+        .small
+        {
+            font-size: .85em;
+            margin-bottom: 1.875em;
+            line-height: 1.875em;
+        }
+        .large
+        {
+            font-size: 1.2em;
+            line-height: 2.5em;
+            margin-bottom: 1.25em;
+        }
+        .hide
+        {
+            display: none;
+        }
+        .quiet
+        {
+            color: #666;
+        }
+        .loud
+        {
+            color: #000;
+        }
+        .highlight
+        {
+            background: #ff0;
+        }
+        .added
+        {
+            background: #060;
+            color: #fff;
+        }
+        .removed
+        {
+            background: #900;
+            color: #fff;
+        }
+        .first
+        {
+            margin-left: 0;
+            padding-left: 0;
+        }
+        .last
+        {
+            margin-right: 0;
+            padding-right: 0;
+        }
+        .top
+        {
+            margin-top: 0;
+            padding-top: 0;
+        }
+        .bottom
+        {
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .center
+        {
+            text-align: center;
+        }
+        /* forms.css */label
+        {
+            font-weight: bold;
+        }
+        fieldset
+        {
+            padding: 1.4em;
+            margin: 0 0 1.5em 0;
+            border: 1px solid #ccc;
+        }
+        legend
+        {
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        input[type=text], input[type=password], input.text, input.title, textarea, select
+        {
+            background-color: #fff;
+            border: 1px solid #bbb;
+        }
+        input[type=text]:focus, input[type=password]:focus, input.text:focus, input.title:focus, textarea:focus, select:focus
+        {
+            border-color: #666;
+        }
+        input[type=text], input[type=password], input.text, input.title, textarea, select
+        {
+            margin: 0.5em 0;
+        }
+        input.text, input.title
+        {
+            width: 300px;
+            padding: 5px;
+        }
+        input.title
+        {
+            font-size: 1.5em;
+        }
+        textarea
+        {
+            width: 390px;
+            height: 250px;
+            padding: 5px;
+        }
+        input[type=checkbox], input[type=radio], input.checkbox, input.radio
+        {
+            position: relative;
+            top: .25em;
+        }
+        form.inline
+        {
+            line-height: 3;
+        }
+        form.inline p
+        {
+            margin-bottom: 0;
+        }
+        .error, .notice, .success
+        {
+            padding: .8em;
+            margin-bottom: 1em;
+            border: 2px solid #ddd;
+        }
+        .error
+        {
+            background: #FBE3E4;
+            color: #8a1f11;
+            border-color: #FBC2C4;
+        }
+        .notice
+        {
+            background: #FFF6BF;
+            color: #514721;
+            border-color: #FFD324;
+        }
+        .success
+        {
+            background: #E6EFC2;
+            color: #264409;
+            border-color: #C6D880;
+        }
+        .error a
+        {
+            color: #8a1f11;
+        }
+        .notice a
+        {
+            color: #514721;
+        }
+        .success a
+        {
+            color: #264409;
+        }
+        /* grid.css */.container
+        {
+            width: 790px;
+            margin: 0 auto;
+        }
+        .showgrid
+        {
+            background: url(src/grid.png);
+        }
+        .column, div.span-1, div.span-2, div.span-3, div.span-4, div.span-5, div.span-6, div.span-7, div.span-8, div.span-9, div.span-10, div.span-11, div.span-12, div.span-13, div.span-14, div.span-15, div.span-16, div.span-17, div.span-18, div.span-19, div.span-20, div.span-21, div.span-22, div.span-23, div.span-24
+        {
+            float: left;
+            margin-right: 10px;
+        }
+        .last, div.last
+        {
+            margin-right: 0;
+        }
+        .span-1
+        {
+            width: 30px;
+        }
+        .span-2
+        {
+            width: 70px;
+        }
+        .span-3
+        {
+            width: 110px;
+        }
+        .span-4
+        {
+            width: 150px;
+        }
+        .span-5
+        {
+            width: 190px;
+        }
+        .span-6
+        {
+            width: 230px;
+        }
+        .span-7
+        {
+            width: 270px;
+        }
+        .span-8
+        {
+            width: 310px;
+        }
+        .span-9
+        {
+            width: 350px;
+        }
+        .span-10
+        {
+            width: 390px;
+        }
+        .span-11
+        {
+            width: 430px;
+        }
+        .span-12
+        {
+            width: 470px;
+        }
+        .span-13
+        {
+            width: 510px;
+        }
+        .span-14
+        {
+            width: 550px;
+        }
+        .span-15
+        {
+            width: 590px;
+        }
+        .span-16
+        {
+            width: 630px;
+        }
+        .span-17
+        {
+            width: 670px;
+        }
+        .span-18
+        {
+            width: 710px;
+        }
+        .span-19
+        {
+            width: 750px;
+        }
+        .span-20
+        {
+            width: 790px;
+        }
+        .span-21
+        {
+            width: 830px;
+        }
+        .span-22
+        {
+            width: 870px;
+        }
+        .span-23
+        {
+            width: 910px;
+        }
+        .span-24, div.span-24
+        {
+            width: 950px;
+            margin: 0;
+        }
+        div.border
+        {
+            padding-right: 4px;
+            margin-right: 5px;
+            border-right: 1px solid #eee;
+        }
+        div.colborder
+        {
+            padding-right: 24px;
+            margin-right: 25px;
+            border-right: 1px solid #eee;
+        }
+        div.colborderTop
+        {
+            border-top: 1px solid #eee;
+        }
+        .prepend-top
+        {
+            margin-top: 1.5em;
+        }
+        .append-bottom
+        {
+            margin-bottom: 1.5em;
+        }
+        .box
+        {
+            padding: 1.5em;
+            margin-bottom: 1.5em;
+            background: #E5ECF9;
+        }
+        hr
+        {
+            background: #ddd;
+            color: #ddd;
+            clear: both;
+            float: none;
+            width: 100%;
+            height: .1em;
+            margin: 0 0 1.45em;
+            border: none;
+        }
+        hr.space
+        {
+            background: #fff;
+            color: #fff;
+        }
+        .clearfix:after, .container:after
+        {
+            content: "\0020";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+            overflow: hidden;
+        }
+        .clearfix, .container
+        {
+            display: block;
+        }
+        .clear
+        {
+            clear: both;
+        }
+        p, table, hr, .box
+        {
+            margin-bottom: 25px;
+        }
+        .box p
+        {
+            margin-bottom: 10px;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3 class="center alt">
+            &ldquo;Brownie &rdquo; by eGrappler.com</h3>
+        <hr>
+        <h1 class="center">
+            &ldquo;Brownie - Responsive HTML5 Portfolio and Business Template&rdquo;</h1>
+        <div class="borderTop">
+            <div class="span-6 colborder info prepend-1">
+                <p class="prepend-top">
+                    <strong>Created: 22/05/2012<br>
+                        By: eGrappler.com
+				</p>
+            </div>
+            <!-- end div .span-6 -->
+            <div class="span-12 last">
+                <p class="prepend-top append-0">
+                    Thank you for downloading our template. If you have any questions that are beyond the
+                    scope of this help file, contact us, we will try to get back to as soon as poosible. Thank you!</p>
+            </div>
+        </div>
+        <!-- end div .borderTop -->
+        <hr>
+        <h2 id="toc" class="alt">
+            Table of Contents</h2>
+        <ol class="alpha">
+            <li><a href="#htmlStructure">HTML Structure</a></li>
+            <li><a href="#cssFiles">CSS Files and Structure</a></li>
+            <li><a href="#javascriptandCredits">JavaScript and Sources / Credits</a></li>
+            <li><a href="#contactform">Contact Form</a> <em class="quiet small"></em></li>
+        </ol>
+        <hr>
+        <h3 id="htmlStructure">
+            <strong>A) HTML Structure</strong> - <a href="#toc">top</a></h3>
+        <p>
+            Brownie is a fixed-width HTML5 template, perfect for businesses and portfolios. It has a easy-to-understnad structure. 
+            
+            <br /><br />
+            <b>Home Page Structure:</b>
+            
+            <pre>
+               Header 
+               Banner
+               Features Box
+               Featured Work
+               About and Services Section
+               Footer
+            </pre>
+            
+            
+            <br /><br />
+            <b>General Page Structure:</b><br /><br />
+            
+            <pre>
+               Header 
+               Page Title
+               Contents ( with or without sidebar )
+               Footer
+            </pre>
+            
+            </p>
+		
+        
+        <hr>
+        <h3 id="cssFiles">
+            <strong>B) CSS Files and Structure</strong> - <a href="#toc">top</a></h3>
+        <p>
+            Brownie has two stylesheet files: style.css and ie.css</p>
+       
+        <b>Style.css</b>
+        
+        <p>This is main CSS file for the template. It contains a generic reset snippet (Many browser interpret the default behavior of html elements differently. By using a general reset CSS file, we can work round this) and necessary styles required for the template.</p> 
+        <p>
+        
+        <p>If you would like to edit a specific section of the site, simply find the appropriate label in the CSS file, and then scroll down until you find the appropriate style that needs to be edited.</p> 
+        
+        <b>ie.css</b>
+        
+        <p>This file contains few styles for IE only.</p>	
+            
+        </p>
+        
+       
+        <hr>
+        <h3 id="contactform">
+            <strong>C)  Contact Form </strong> - <a href="#toc">top</a></h3>
+        <p>
+            One PHP file in the package: <strong>contact.php</strong> -> we are using this for contact form.</p>
+            
+         <pre>
+        $your_email = 'name@domain.com'; // Your email address
+        $subject = 'Email from your contact form'; // Email subject
+		</pre>
+          <br/>  
+        <p>
+            Change <strong>name@domain.com</strong> with your email address on which you want to receive emails and change the subject if needed. Boom! form is done and visitors can contact you now through your site and all inquiries will be forwarded to the above mentioned email.</p>
+       
+       
+        <hr>
+        <h3 id="javascriptandCredits">
+            <strong>D) JavaScript and Sources / Credits</strong> - <a href="#toc">top</a></h3>
+        <p>
+            We used the following Jquery Plugins.</p>
+        <ol>
+        	<li><a href="http://jqueryui.com/">jQuery and jQuery UI</a></li>
+            <li><a href="http://razorjack.net/quicksand/docs-and-demos.html">Quicksand</a></li>
+            <li><a href="http://www.no-margin-for-errors.com/projects/prettyphoto-jquery-lightbox-clone/">PrettyPhoto</a></li>
+            <li><a href="http://www.woothemes.com/flexslider/">FlexSlider</a></li>
+            <li><a href="http://responsive-slides.viljamis.com">ResponsiveSlides</a></li>
+            <li><a href="#">CSS media type/query in JS</a></li>
+            <li><a href="http://www.alistapart.com/articles/creating-intrinsic-ratios-for-video/">FitVids</a></li>
+            <li><a href="http://jquery.malsup.com/cycle/">jQuery Cycle</a></li>
+            <li><a href="http://www.protofunc.com/scripts/jquery/backgroundPosition/">Background-Position</a></li>
+            <li><a href="http://www.bitstorm.org/jquery/color-animation/">Color animation</a></li>
+            <li><a href="http://gsgd.co.uk/sandbox/jquery/easing/">Easing 1.3</a></li>
+            <li><a href="http://slidesjs.com/">Slides</a></li>
+        </ol>
+        
+        <p>All the above scripts are combined in one script file <strong>all-in-one.js</strong>.
+        There are also common and page specific scripts.
+        </p>
+        <ol>
+            <li>main.js</li>
+            <li>setup.js</li>
+            <li>contact-form.js</li>
+            <li>html5.js</li>
+        </ol>
+        
+     
+        <hr>
+        <p>Once again, thank you so much for downloading this template. As we said at the beginning, we'd be glad to help you if you have any questions relating to this template. No guarantees, but we'll do our best to assist.</p> 
+        <p class="append-bottom alt large">
+            <strong>eGrappler.com</strong></p>
+        <p>
+            <a href="#toc">Go To Table of Contents</a></p>
+        <hr class="space">
+    </div>
+    <!-- end div .container -->
+</body>
+</html>
