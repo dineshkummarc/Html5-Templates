@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="module" client="administrator" method="upgrade" version="1.5.0" position="icon">
+	<name>Quick Item Lite</name>
+	<author>JoomlaPraise</author>
+	<creationDate>4/26/2010</creationDate>
+	<license>GNU/GPL http://www.gnu.org/copyleft/gpl.html</license>
+	<copyright>Copyright (c) JoomlaPraise. All rights reserved.</copyright>
+	<authorEmail>support@pixelpraise.com</authorEmail>
+	<authorUrl>www.joomlapraise.com</authorUrl>
+	<version>1.0</version>
+	<description>Module for quickly adding content items from the control panel.</description>
+	<languages folder="language/en-GB">
+		  <language tag="en-GB">en-GB.mod_quickitem_lite.ini</language>
+	 </languages>
+	<files>
+		<filename module="mod_quickitem_lite">mod_quickitem_lite.php</filename>
+		<filename>index.html</filename>
+		<filename>helper.php</filename>
+		<folder>tmpl</folder>
+	</files>
+	<params>
+	</params>
+</install>

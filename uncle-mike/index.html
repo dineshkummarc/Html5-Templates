@@ -1,0 +1,183 @@
+﻿<!doctype html>
+<html>
+	<head>
+		<title>Uncle Mike</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="Author" content="Pojui(Ray) Chen">
+		
+		<script type="text/javascript">
+		  WebFontConfig = {
+			google: { families: [ 'Finger+Paint::latin' ] }
+		  };
+		  (function() {
+			var wf = document.createElement('script');
+			wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+			  '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+			wf.type = 'text/javascript';
+			wf.async = 'true';
+			var s = document.getElementsByTagName('script')[0];
+			s.parentNode.insertBefore(wf, s);
+		  })(); 
+		</script>
+		<style>
+			body {
+				font-family: 'Finger Paint', cursive;
+				background-color: #f0f0f0;
+				margin: 0px;
+				overflow: hidden;
+			}
+			
+			#message {
+				position: absolute;
+				color: #ffffff;
+				top: 40%;
+				left: 25%;
+				width: 50%;
+				text-align: center;
+				font-size: 50px;
+			}
+			
+			#number {
+				position: absolute;
+				bottom: 0;
+				right: 10px;
+				font-size: 140pt;
+				color: #ffffff;
+			}
+			
+			#replay {
+				position: absolute;
+				width: 20%;
+				height: 70px;
+				top: 45%;
+				left: 40%;
+				text-align: center;
+				font-size: 40pt;
+				background: rgba(55,55,55,0.6);
+				border:4px solid rgba(55,55,55,0.35);
+				color: #ffffff;
+				visibility: hidden;
+			}
+			
+			#replay:hover {
+				background: rgba(22,22,22,0.8);
+				cursor: pointer;
+			}
+			
+			.modalDialog {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background: rgba(0,0,0,0.8);
+			z-index: 99999;
+			opacity:0;
+			color: #000000;
+			-webkit-transition: opacity 400ms ease-in;
+			-moz-transition: opacity 400ms ease-in;
+			transition: opacity 400ms ease-in;
+			pointer-events: none;
+			}
+
+			.modalDialog:target {
+				opacity:1;
+				pointer-events: auto;
+			}
+
+			.modalDialog > div {
+				width: 80%;
+				height: 70%;
+				top: 15%;
+				left: 10%;
+				position: absolute;
+				font-size: 14pt;
+				padding: 5px 20px 5px 20px;
+				border-radius: 10px;
+				text-align: center;
+				background: rgba(255,255,255,0.8);
+				background: -moz-linear-gradient(rgba(255,255,255,0.8), rgba(77,77,77,0.8));
+				background: -webkit-linear-gradient(rgba(255,255,255,0.8), rgba(77,77,77,0.8));
+				background: -o-linear-gradient(rgba(255,255,255,0.8), rgba(77,77,77,0.8));
+			}
+			
+			#vid {
+				border: 1px solid rgba(255,255,255,0.3);
+			}
+			
+			#redetect {
+				position: absolute;
+				width: 320px;
+				height: 30px;
+				top: 240px;
+				left:0;
+				border: 1px solid rgba(255,255,255,0.3);
+				color: rgba(255,255,255,0.3);
+				background: transparent;
+				font-size: 16pt;
+				text-align: center;
+			}
+			
+			#redetect:hover {
+				border: 1px solid rgba(255,255,255,0.9);
+				color: rgba(255,255,255,0.9);
+				cursor: pointer;
+			}
+
+		</style>
+	</head>
+	<body>
+<script>
+var isReCalibrate = false;
+var camStream;
+</script>
+		<script src="js/three.min.js"></script>
+		<script src="js/tween.min.js"></script>
+		<script src="js/Detector.js"></script>
+		
+		<script src="js/ColladaLoader.js"></script>
+		
+		<script src="js/helvetiker_bold.typeface.js"></script>
+		
+		<script src="js/headtrackr.js"></script>
+		
+		<!-- Web Camera Feed !-->
+		<canvas id="compare" width="320" height="240" style="display:none"></canvas>
+		<video id="vid" width="320" height="240" autoplay loop></video>
+		<div id="redetect">Re-Detect My Face</div>
+		
+		<!-- Loading Page !-->
+		<div id="message">Loading...</div>
+		
+		<!-- Game Status !-->
+		<div id="number">20</div>
+		
+		<!-- Game Start!-->
+		<div id="openModal" class="modalDialog">
+			<div>
+				<h2 id="detailTitle"><center>Before Game Starts</center></h2>
+				<p id="detailParagraph">
+				Uncle Mike is experimenting on animals for a new taste.<br/>He will grab one of these animals and you cannot leak more than <font color="#ffffff" size="6">20</font>. <br/><br/>Try to <font color="#ffffff">SAVE</font> animals by letting the <font color="#ffffff">Same Specie</font> on his right hand  come to your <font color="#ffffff">FACE</font><br/>Beware of his <font color="#ffffff">dirty</font> moves!.<br/><br/>Click "<font color="#ffffff">Allow</font>" to access your camera and wait until Uncle Mike is ready to <font color="#ffffff">START</font> the game.<br/><br/>If it's not tracking properly, click "<font color="#ffffff">Re-Detect My Face</font>" below camera view to track your face again.<br/><br/>Uncle Mike is totally fictional.<br/>Any resemblance to actual individuals or events are coincidental.<br/><br/>Made by <a href="http://pojui.myweb.hinet.net/ray" target="_blank"  style="color: #ffffff">Ray</a>, Animated model from <a href="http://www.ro.me/" target="_blank"  style="color: #ffffff">Rome</a>
+				</p>
+			</div>
+		</div>
+		
+		<!-- Game End !-->
+		<div id="replay">Try Again</div>
+		
+		<!-- Background Music !-->
+		<audio id="bgmusic" autoplay loop preload>
+		  <source src="audio/bgmusic.wav" type="audio/wav">
+		  <source src="audio/bgmusic.mp3" type="audio/mpeg">
+		</audio>
+		
+		<script>
+		var _0x76c9=["\x77\x65\x62\x67\x6C","\x61\x64\x64\x47\x65\x74\x57\x65\x62\x47\x4C\x4D\x65\x73\x73\x61\x67\x65","\x76\x69\x64","\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x42\x79\x49\x64","\x63\x6F\x6D\x70\x61\x72\x65","\x6E\x75\x6D\x62\x65\x72","\x64\x69\x76","\x63\x72\x65\x61\x74\x65\x45\x6C\x65\x6D\x65\x6E\x74","\x66\x6F\x67","\x69\x6E\x6E\x65\x72\x57\x69\x64\x74\x68","\x69\x6E\x6E\x65\x72\x48\x65\x69\x67\x68\x74","\x7A","\x70\x6F\x73\x69\x74\x69\x6F\x6E","\x61\x64\x64","\x6D\x6F\x64\x65\x6C\x2F\x4A\x53\x4F\x4E\x61\x6E\x69\x6D\x61\x6C\x73\x2F\x66\x6C\x61\x6D\x69\x6E\x67\x6F\x2E\x6A\x73","\x66\x6C\x61\x6D\x69\x6E\x67\x6F","\x6D\x6F\x64\x65\x6C\x2F\x4A\x53\x4F\x4E\x61\x6E\x69\x6D\x61\x6C\x73\x2F\x62\x65\x61\x72\x42\x72\x6F\x77\x6E\x2E\x6A\x73","\x62\x65\x61\x72","\x6D\x6F\x64\x65\x6C\x2F\x4A\x53\x4F\x4E\x61\x6E\x69\x6D\x61\x6C\x73\x2F\x65\x6C\x6B\x2E\x6A\x73","\x65\x6C\x6B","\x6D\x6F\x64\x65\x6C\x2F\x4A\x53\x4F\x4E\x61\x6E\x69\x6D\x61\x6C\x73\x2F\x6D\x6F\x75\x6E\x74\x61\x69\x6E\x6C\x69\x6F\x6E\x2E\x6A\x73","\x6D\x6F\x75\x6E\x74\x61\x69\x6E\x6C\x69\x6F\x6E","\x55\x6E\x63\x6C\x65\x20\x4D\x69\x6B\x65","\x73\x65\x74","\x69\x6D\x67\x2F\x61\x61\x2E\x70\x6E\x67","\x6C\x6F\x61\x64\x54\x65\x78\x74\x75\x72\x65","\x49\x6D\x61\x67\x65\x55\x74\x69\x6C\x73","\x61\x6E\x69\x73\x6F\x74\x72\x6F\x70\x79","\x72\x65\x70\x65\x61\x74","\x77\x72\x61\x70\x53","\x77\x72\x61\x70\x54","\x52\x65\x70\x65\x61\x74\x57\x72\x61\x70\x70\x69\x6E\x67","\x66\x6F\x72\x6D\x61\x74","\x52\x47\x42\x46\x6F\x72\x6D\x61\x74","\x73\x70\x65\x65\x64","\x72\x61\x6E\x64\x6F\x6D","\x70\x75\x73\x68","\x44\x6F\x75\x62\x6C\x65\x53\x69\x64\x65","\x79","\x72\x6F\x74\x61\x74\x69\x6F\x6E","\x50\x49","\x78","\x69\x6D\x67\x2F\x65\x76\x69\x6C\x4D\x63\x2E\x6A\x70\x67","\x63\x6C\x6F\x6E\x65","\x69\x6D\x67\x2F\x65\x76\x69\x6C\x4D\x63\x32\x2E\x6A\x70\x67","\x69\x6D\x67\x2F\x65\x76\x69\x6C\x4D\x63\x33\x2E\x6A\x70\x67","\x4F\x62\x6A\x65\x63\x74\x33\x44","\x73\x65\x74\x53\x69\x7A\x65","\x73\x68\x61\x64\x6F\x77\x4D\x61\x70\x43\x75\x6C\x6C\x46\x61\x63\x65","\x43\x75\x6C\x6C\x46\x61\x63\x65\x42\x61\x63\x6B","\x67\x61\x6D\x6D\x61\x49\x6E\x70\x75\x74","\x67\x61\x6D\x6D\x61\x4F\x75\x74\x70\x75\x74","\x70\x68\x79\x73\x69\x63\x61\x6C\x6C\x79\x42\x61\x73\x65\x64\x53\x68\x61\x64\x69\x6E\x67","\x64\x6F\x6D\x45\x6C\x65\x6D\x65\x6E\x74","\x61\x70\x70\x65\x6E\x64\x43\x68\x69\x6C\x64","\x62\x6F\x64\x79","\x63\x6C\x69\x63\x6B","\x61\x64\x64\x45\x76\x65\x6E\x74\x4C\x69\x73\x74\x65\x6E\x65\x72","\x72\x65\x70\x6C\x61\x79","\x76\x6F\x6C\x75\x6D\x65","\x62\x67\x6D\x75\x73\x69\x63","\x72\x65\x64\x65\x74\x65\x63\x74","\x72\x65\x73\x69\x7A\x65","\x76\x65\x72\x74\x69\x63\x65\x73","\x6C\x65\x6E\x67\x74\x68","\x66\x61\x63\x65\x73","\x46\x61\x63\x65\x33","\x61","\x62","\x63","\x46\x61\x63\x65\x34","\x64","\x63\x6F\x6D\x70\x75\x74\x65\x4C\x69\x6E\x65\x44\x69\x73\x74\x61\x6E\x63\x65\x73","\x6D\x6F\x72\x70\x68\x43\x6F\x6C\x6F\x72\x73","\x63\x6F\x6C\x6F\x72\x73","\x63\x6F\x6C\x6F\x72","\x6F\x66\x66\x73\x65\x74\x48\x53\x4C","\x63\x6C\x69\x65\x6E\x74\x58","\x63\x6C\x69\x65\x6E\x74\x59","\x75\x6E\x70\x72\x6F\x6A\x65\x63\x74\x56\x65\x63\x74\x6F\x72","\x6E\x6F\x72\x6D\x61\x6C\x69\x7A\x65","\x73\x75\x62","\x63\x68\x69\x6C\x64\x72\x65\x6E","\x69\x6E\x74\x65\x72\x73\x65\x63\x74\x4F\x62\x6A\x65\x63\x74\x73","\x74\x79\x70\x65","\x6F\x62\x6A\x65\x63\x74","\x61\x70\x70\x6C\x69\x63\x61\x74\x69\x6F\x6E","\x6E\x61\x6D\x65","\x70\x72\x65\x76\x65\x6E\x74\x44\x65\x66\x61\x75\x6C\x74","\x63\x65\x69\x6C","\x73\x74\x61\x72\x74","\x69\x73\x54\x61\x72\x67\x65\x74","\x63\x6C\x61\x73\x73\x6E\x61\x6D\x65","\x72\x65\x6D\x6F\x76\x65","\x73\x63\x61\x6C\x65","\x6F\x6E\x55\x70\x64\x61\x74\x65","\x6F\x6E\x53\x74\x61\x72\x74","\x45\x78\x70\x6F\x6E\x65\x6E\x74\x69\x61\x6C","\x45\x61\x73\x69\x6E\x67","\x65\x61\x73\x69\x6E\x67","\x74\x6F","","\x68\x65\x6C\x76\x65\x74\x69\x6B\x65\x72","\x62\x6F\x6C\x64","\x6E\x6F\x72\x6D\x61\x6C","\x42\x6F\x75\x6E\x63\x65","\x63\x6F\x6E\x76\x65\x72\x74\x55\x70\x41\x78\x69\x73","\x6F\x70\x74\x69\x6F\x6E\x73","\x6D\x6F\x64\x65\x6C\x2F\x63\x6C\x6F\x77\x6E\x2E\x64\x61\x65","\x73\x63\x65\x6E\x65","\x6F\x6E\x43\x6F\x6D\x70\x6C\x65\x74\x65","\x6C\x6F\x61\x64","\x6C\x6F\x61\x64\x65\x64","\x74\x6F\x74\x61\x6C","\x64\x69\x73\x70\x6C\x61\x79","\x73\x74\x79\x6C\x65","\x6D\x65\x73\x73\x61\x67\x65","\x6E\x6F\x6E\x65","\x75\x70\x64\x61\x74\x65","\x74\x65\x78\x74\x43\x6F\x6E\x74\x65\x6E\x74","\x76\x69\x73\x69\x62\x69\x6C\x69\x74\x79","\x76\x69\x73\x69\x62\x6C\x65","\x67\x65\x74\x44\x65\x6C\x74\x61","\x6F\x66\x66\x73\x65\x74","\x72\x65\x6E\x64\x65\x72","\x23\x66\x66\x66\x66\x66\x66","\x68\x69\x64\x64\x65\x6E","\x61\x73\x70\x65\x63\x74","\x75\x70\x64\x61\x74\x65\x50\x72\x6F\x6A\x65\x63\x74\x69\x6F\x6E\x4D\x61\x74\x72\x69\x78","\x6C\x6F\x67","\x69\x6D\x67\x2F\x61\x61\x2E\x6A\x70\x67","\x73\x74\x61\x74\x75\x73\x44\x6F\x6D\x45\x6C\x65\x6D\x65\x6E\x74","\x6D\x6F\x64\x65\x6C\x2F\x6C\x65\x65\x70\x65\x72\x72\x79\x73\x6D\x69\x74\x68\x2F\x4C\x65\x65\x50\x65\x72\x72\x79\x53\x6D\x69\x74\x68\x2E\x6A\x73","\x63\x61\x73\x74\x53\x68\x61\x64\x6F\x77","\x72\x65\x63\x65\x69\x76\x65\x53\x68\x61\x64\x6F\x77","\x63\x6F\x6D\x70\x75\x74\x65\x4D\x6F\x72\x70\x68\x4E\x6F\x72\x6D\x61\x6C\x73","\x46\x61\x63\x65\x43\x6F\x6C\x6F\x72\x73","\x53\x6D\x6F\x6F\x74\x68\x53\x68\x61\x64\x69\x6E\x67","\x64\x75\x72\x61\x74\x69\x6F\x6E","\x73\x63\x6F\x72\x65","\x75\x70\x64\x61\x74\x65\x41\x6E\x69\x6D\x61\x74\x69\x6F\x6E","\x2B","\x61\x75\x64\x69\x6F\x2F\x77\x61\x76","\x73\x72\x63","\x61\x75\x64\x69\x6F\x2F","\x2E\x77\x61\x76","\x70\x6C\x61\x79","\x65\x6E\x64\x65\x64","\x23\x63\x33\x34\x38\x34\x38","\x6F\x70\x61\x63\x69\x74\x79","\x6D\x6F\x64\x61\x6C\x44\x69\x61\x6C\x6F\x67","\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x73\x42\x79\x43\x6C\x61\x73\x73\x4E\x61\x6D\x65","\x70\x6F\x69\x6E\x74\x65\x72\x45\x76\x65\x6E\x74\x73","\x61\x75\x74\x6F","\x61\x62\x73\x6F\x6C\x75\x74\x65","\x6C\x65\x66\x74","\x30\x70\x78","\x74\x6F\x70","\x7A\x49\x6E\x64\x65\x78","\x31\x30\x30\x30\x30\x31","\x62\x6C\x6F\x63\x6B","\x69\x6E\x69\x74","\x68\x65\x61\x64\x74\x72\x61\x63\x6B\x72\x53\x74\x61\x74\x75\x73","\x66\x6F\x75\x6E\x64","\x73\x74\x61\x74\x75\x73","\x68\x65\x61\x64\x74\x72\x61\x63\x6B\x69\x6E\x67\x45\x76\x65\x6E\x74","\x6C\x6F\x6F\x6B\x41\x74"];if(!Detector[_0x76c9[0]]){Detector[_0x76c9[1]]();} ;var videoInput=document[_0x76c9[3]](_0x76c9[2]);var canvasInput=document[_0x76c9[3]](_0x76c9[4]);var mainCube;var container,stats;var camera,scene,renderer,projector;var plane;var head_mesh;var mapHeight;var cube_layer_textures=[];var CameraBackForthFactor=1;var target;var TARGET_WIDTH=1000,TARGET_WIDTH_SEGMENT=10;var TARGET_HEIGHT=750,TARGET_HEIGHT_SEGMENT=10;var TARGET_DEPTH=10000,TARGET_DEPTH_SEGMENT=30;var applications=[],applications_Texture=[];var sphere;var isCamMovePostive=true;var CamOffset=50;var htracker;var isGameStart=false,isTipsClosed=false;var Life=document[_0x76c9[3]](_0x76c9[5]);var textMesh,textMeshPoint;var scoreBox,butcher;var targetAnimals=[];var targetAnimal;var GameScore=0;var pic,pic2,pic3;var flyingObjects;var animals,birds,bears,elks,mountainlions;var rect_effectObjects;var isExpanded=false,isAppLaunched=false;var sprite_object;var clock= new THREE.Clock();init();animate();function init(){container=document[_0x76c9[7]](_0x76c9[6]);scene= new THREE.Scene();scene[_0x76c9[8]]= new THREE.Fog(0x000000,1,4000);camera= new THREE.PerspectiveCamera(23,window[_0x76c9[9]]/window[_0x76c9[10]],1,10000);camera[_0x76c9[12]][_0x76c9[11]]=300;scene[_0x76c9[13]](camera);projector= new THREE.Projector();videoSetup();headTrackingSetup();birds= new THREE.Object3D();bears= new THREE.Object3D();elks= new THREE.Object3D();mountainlions= new THREE.Object3D();animals= new THREE.Object3D();loadJSON_animal(_0x76c9[14],birds,_0x76c9[15],12,TARGET_HEIGHT/3);loadJSON_animal(_0x76c9[16],bears,_0x76c9[17],12,-TARGET_HEIGHT/2);loadJSON_animal(_0x76c9[18],elks,_0x76c9[19],12,-TARGET_HEIGHT/2);loadJSON_animal(_0x76c9[20],mountainlions,_0x76c9[21],12,-TARGET_HEIGHT/2);loadButcher();change3DText(_0x76c9[22]);mainCube= new THREE.Mesh( new THREE.CubeGeometry(TARGET_WIDTH,TARGET_HEIGHT,TARGET_DEPTH,TARGET_WIDTH_SEGMENT,TARGET_HEIGHT_SEGMENT,TARGET_DEPTH_SEGMENT), new THREE.MeshBasicMaterial({color:0xffffff,wireframe:true,opacity:0,transparent:true}));mainCube[_0x76c9[12]][_0x76c9[23]](0,0,-400);textureUrlArray=_0x76c9[24];for(var _0xad7fx35=0;_0xad7fx35<TARGET_HEIGHT_SEGMENT;_0xad7fx35++){var _0xad7fx36=THREE[_0x76c9[26]][_0x76c9[25]](textureUrlArray);_0xad7fx36[_0x76c9[27]]=4;_0xad7fx36[_0x76c9[28]][_0x76c9[23]](TARGET_DEPTH_SEGMENT,0.5);_0xad7fx36[_0x76c9[29]]=_0xad7fx36[_0x76c9[30]]=THREE[_0x76c9[31]];_0xad7fx36[_0x76c9[32]]=THREE[_0x76c9[33]];_0xad7fx36[_0x76c9[34]]=Math[_0x76c9[35]]()*0.03+0.01;cube_layer_textures[_0x76c9[36]](_0xad7fx36);var _0xad7fx37= new THREE.Mesh( new THREE.PlaneGeometry(TARGET_DEPTH,TARGET_HEIGHT/TARGET_HEIGHT_SEGMENT,TARGET_DEPTH_SEGMENT,1), new THREE.MeshLambertMaterial({shininess:35,map:_0xad7fx36,bumpMap:_0xad7fx36,bumpScale:10,color:0xffffff*Math[_0x76c9[35]](),emissive:0x888888,diffuse:0xffffff,transparent:false,opacity:0.8,side:THREE[_0x76c9[37]]}));_0xad7fx37[_0x76c9[39]][_0x76c9[38]]=Math[_0x76c9[40]]/2;_0xad7fx37[_0x76c9[12]][_0x76c9[41]]=-TARGET_WIDTH/2;_0xad7fx37[_0x76c9[12]][_0x76c9[38]]=TARGET_HEIGHT/2-TARGET_HEIGHT/TARGET_HEIGHT_SEGMENT/2-TARGET_HEIGHT/TARGET_HEIGHT_SEGMENT*_0xad7fx35;if(_0xad7fx35==2&&pic==undefined){pic= new THREE.Mesh( new THREE.PlaneGeometry(603,723,1,1), new THREE.MeshLambertMaterial({map:THREE[_0x76c9[26]][_0x76c9[25]](_0x76c9[42]),opacity:0.9,transparent:true}));pic[_0x76c9[12]][_0x76c9[41]]+=1500;pic[_0x76c9[12]][_0x76c9[38]]-=50;pic[_0x76c9[12]][_0x76c9[11]]+=2;_0xad7fx37[_0x76c9[13]](pic);} ;var _0xad7fx38=_0xad7fx37[_0x76c9[43]]();_0xad7fx38[_0x76c9[12]][_0x76c9[41]]=TARGET_WIDTH/2;if(_0xad7fx35==5&&pic2==undefined){pic2= new THREE.Mesh( new THREE.PlaneGeometry(500,623,1,1), new THREE.MeshLambertMaterial({map:THREE[_0x76c9[26]][_0x76c9[25]](_0x76c9[44]),opacity:0.9,transparent:true,side:THREE[_0x76c9[37]]}));pic2[_0x76c9[12]][_0x76c9[41]]+=1500;pic2[_0x76c9[12]][_0x76c9[38]]-=50;pic2[_0x76c9[12]][_0x76c9[11]]-=2;_0xad7fx38[_0x76c9[13]](pic2);} ;var _0xad7fx39= new THREE.Mesh( new THREE.PlaneGeometry(TARGET_DEPTH,TARGET_WIDTH/TARGET_WIDTH_SEGMENT,TARGET_DEPTH_SEGMENT,1), new THREE.MeshLambertMaterial({shininess:35,map:_0xad7fx36,bumpMap:_0xad7fx36,bumpScale:10,color:0xffffff*Math[_0x76c9[35]](),emissive:0x888888,diffuse:0xffffff,transparent:true,opacity:0.8,side:THREE[_0x76c9[37]]}));_0xad7fx39[_0x76c9[39]][_0x76c9[41]]=-Math[_0x76c9[40]]/2;_0xad7fx39[_0x76c9[39]][_0x76c9[11]]=Math[_0x76c9[40]]/2;_0xad7fx39[_0x76c9[12]][_0x76c9[41]]=-TARGET_WIDTH/2+TARGET_WIDTH/TARGET_WIDTH_SEGMENT/2+TARGET_WIDTH/TARGET_WIDTH_SEGMENT*_0xad7fx35;_0xad7fx39[_0x76c9[12]][_0x76c9[38]]=TARGET_HEIGHT/2;var _0xad7fx3a=_0xad7fx39[_0x76c9[43]]();_0xad7fx3a[_0x76c9[12]][_0x76c9[38]]=-TARGET_HEIGHT/2;if(_0xad7fx35==2&&pic3==undefined){pic3= new THREE.Mesh( new THREE.PlaneGeometry(600,1800,1,1), new THREE.MeshLambertMaterial({map:THREE[_0x76c9[26]][_0x76c9[25]](_0x76c9[45]),opacity:0.9,transparent:true,side:THREE[_0x76c9[37]]}));pic3[_0x76c9[12]][_0x76c9[41]]=0;pic3[_0x76c9[12]][_0x76c9[38]]=TARGET_HEIGHT/2-2;pic3[_0x76c9[12]][_0x76c9[11]]-=2500;pic3[_0x76c9[39]][_0x76c9[41]]=Math[_0x76c9[40]]/2;scene[_0x76c9[13]](pic3);} ;mainCube[_0x76c9[13]](_0xad7fx37);mainCube[_0x76c9[13]](_0xad7fx38);mainCube[_0x76c9[13]](_0xad7fx39);mainCube[_0x76c9[13]](_0xad7fx3a);} ;scene[_0x76c9[13]](mainCube);var _0xad7fx3b= new THREE.PointLight(0xffffff,1,5000);camera[_0x76c9[13]](_0xad7fx3b);target= new THREE[_0x76c9[46]];target[_0x76c9[12]][_0x76c9[23]](0,0,-1800);scene[_0x76c9[13]](target);renderer= new THREE.WebGLRenderer({clearAlpha:1,clearColor:0x060708,antialias:true,alpha:false});renderer[_0x76c9[47]](window[_0x76c9[9]],window[_0x76c9[10]]);renderer[_0x76c9[48]]=THREE[_0x76c9[49]];renderer[_0x76c9[50]]=true;renderer[_0x76c9[51]]=true;renderer[_0x76c9[52]]=true;container[_0x76c9[54]](renderer[_0x76c9[53]]);document[_0x76c9[55]][_0x76c9[54]](container);document[_0x76c9[3]](_0x76c9[58])[_0x76c9[57]](_0x76c9[56],onPlayAgain,false);document[_0x76c9[3]](_0x76c9[60])[_0x76c9[59]]=0.1;document[_0x76c9[3]](_0x76c9[61])[_0x76c9[57]](_0x76c9[56],onReCalibrate,false);window[_0x76c9[57]](_0x76c9[62],onWindowResize,false);} ;function geo2line(_0xad7fx3d){var _0xad7fx3e= new THREE.Geometry();var _0xad7fx3f=_0xad7fx3e[_0x76c9[63]];for(i=0;i<_0xad7fx3d[_0x76c9[65]][_0x76c9[64]];i++){var _0xad7fx40=_0xad7fx3d[_0x76c9[65]][i];if(_0xad7fx40 instanceof THREE[_0x76c9[66]]){var _0xad7fx41=_0xad7fx3d[_0x76c9[63]][_0xad7fx40[_0x76c9[67]]][_0x76c9[43]]();var _0xad7fx42=_0xad7fx3d[_0x76c9[63]][_0xad7fx40[_0x76c9[68]]][_0x76c9[43]]();var _0xad7fx43=_0xad7fx3d[_0x76c9[63]][_0xad7fx40[_0x76c9[69]]][_0x76c9[43]]();_0xad7fx3f[_0x76c9[36]](_0xad7fx41,_0xad7fx42,_0xad7fx42,_0xad7fx43,_0xad7fx43,_0xad7fx41);} else {if(_0xad7fx40 instanceof THREE[_0x76c9[70]]){var _0xad7fx41=_0xad7fx3d[_0x76c9[63]][_0xad7fx40[_0x76c9[67]]][_0x76c9[43]]();var _0xad7fx42=_0xad7fx3d[_0x76c9[63]][_0xad7fx40[_0x76c9[68]]][_0x76c9[43]]();var _0xad7fx43=_0xad7fx3d[_0x76c9[63]][_0xad7fx40[_0x76c9[69]]][_0x76c9[43]]();var _0xad7fx44=_0xad7fx3d[_0x76c9[63]][_0xad7fx40[_0x76c9[71]]][_0x76c9[43]]();_0xad7fx3f[_0x76c9[36]](_0xad7fx41,_0xad7fx42,_0xad7fx42,_0xad7fx43,_0xad7fx43,_0xad7fx44,_0xad7fx44,_0xad7fx41);} ;} ;} ;_0xad7fx3e[_0x76c9[72]]();return _0xad7fx3e;} ;function morphColorsToFaceColors(_0xad7fx3e){if(_0xad7fx3e[_0x76c9[73]]&&_0xad7fx3e[_0x76c9[73]][_0x76c9[64]]){var _0xad7fx46=_0xad7fx3e[_0x76c9[73]][0];for(var _0xad7fx35=0;_0xad7fx35<_0xad7fx46[_0x76c9[74]][_0x76c9[64]];_0xad7fx35++){_0xad7fx3e[_0x76c9[65]][_0xad7fx35][_0x76c9[75]]=_0xad7fx46[_0x76c9[74]][_0xad7fx35];_0xad7fx3e[_0x76c9[65]][_0xad7fx35][_0x76c9[75]][_0x76c9[76]](0,0.3,0);} ;} ;} ;function onDocumentMouseMove(_0xad7fx48){var _0xad7fx49= new THREE.Vector3((_0xad7fx48[_0x76c9[77]]/window[_0x76c9[9]])*2-1,-(_0xad7fx48[_0x76c9[78]]/window[_0x76c9[10]])*2+1,0.5);projector[_0x76c9[79]](_0xad7fx49,camera);var _0xad7fx4a= new THREE.Raycaster(camera[_0x76c9[12]],_0xad7fx49[_0x76c9[81]](camera[_0x76c9[12]])[_0x76c9[80]]());var _0xad7fx4b=_0xad7fx4a[_0x76c9[83]](scene[_0x76c9[82]]);if(_0xad7fx4b[_0x76c9[64]]>0&&_0xad7fx4b[0][_0x76c9[85]][_0x76c9[84]]==_0x76c9[86]&&isExpanded){for(var _0xad7fx35=0;_0xad7fx35<applications[_0x76c9[64]];_0xad7fx35++){if(applications[_0xad7fx35][_0x76c9[87]]==_0xad7fx4b[0][_0x76c9[85]][_0x76c9[87]]){applications[_0xad7fx35][_0x76c9[12]][_0x76c9[38]]=20;} else {applications[_0xad7fx35][_0x76c9[12]][_0x76c9[38]]=0;} ;} ;} else {} ;} ;function onDocumentMouseClick(_0xad7fx48){_0xad7fx48[_0x76c9[88]]();var _0xad7fx49= new THREE.Vector3((_0xad7fx48[_0x76c9[77]]/window[_0x76c9[9]])*2-1,-(_0xad7fx48[_0x76c9[78]]/window[_0x76c9[10]])*2+1,0.5);projector[_0x76c9[79]](_0xad7fx49,camera);var _0xad7fx4a= new THREE.Raycaster(camera[_0x76c9[12]],_0xad7fx49[_0x76c9[81]](camera[_0x76c9[12]])[_0x76c9[80]]());var _0xad7fx4b=_0xad7fx4a[_0x76c9[83]](scene[_0x76c9[82]]);if(_0xad7fx4b[_0x76c9[64]]>0){} ;} ;function captureAnimal(){var _0xad7fx4e;var _0xad7fx4f=Math[_0x76c9[89]](butcher[_0x76c9[39]][_0x76c9[38]]/(2*Math[_0x76c9[40]]))*2*Math[_0x76c9[40]]+2*Math[_0x76c9[40]]; new TWEEN.Tween(butcher[_0x76c9[39]])[_0x76c9[100]]({y:_0xad7fx4f},2000)[_0x76c9[99]](TWEEN[_0x76c9[98]][_0x76c9[97]].InOut)[_0x76c9[96]](function (){_0xad7fx4e=false;} )[_0x76c9[95]](function (){if(_0xad7fx4f-butcher[_0x76c9[39]][_0x76c9[38]]<Math[_0x76c9[40]]&&!_0xad7fx4e){if(targetAnimal){targetAnimal[_0x76c9[91]]=false;if(targetAnimal[_0x76c9[92]]==_0x76c9[15]){targetAnimal[_0x76c9[12]][_0x76c9[38]]=TARGET_HEIGHT/3;} else {targetAnimal[_0x76c9[12]][_0x76c9[38]]=-TARGET_HEIGHT/2;} ;butcher[_0x76c9[93]](targetAnimal);} ;var _0xad7fx50=parseInt(Math[_0x76c9[35]]()*targetAnimals[_0x76c9[64]]);targetAnimal=targetAnimals[_0xad7fx50];targetAnimal[_0x76c9[91]]=true;targetAnimal[_0x76c9[94]][_0x76c9[23]](1/9,1/9,1/9);targetAnimal[_0x76c9[12]][_0x76c9[41]]=-14;if(targetAnimal[_0x76c9[92]]!=_0x76c9[15]){targetAnimal[_0x76c9[12]][_0x76c9[38]]=40;} else {targetAnimal[_0x76c9[12]][_0x76c9[38]]=48;} ;targetAnimal[_0x76c9[12]][_0x76c9[11]]=17;_0xad7fx4e=true;butcher[_0x76c9[13]](targetAnimal);} ;} )[_0x76c9[90]]();} ;function change3DText(_0xad7fx52){if(textMesh){scene[_0x76c9[93]](textMesh);} ;var _0xad7fx53=_0xad7fx52+_0x76c9[101];textGeo= new THREE.TextGeometry(_0xad7fx52,{size:70,height:5,curveSegments:5,font:_0x76c9[102],weight:_0x76c9[103],style:_0x76c9[104],bevelThickness:2,bevelSize:1,bevelEnabled:true});textMesh= new THREE.Mesh(textGeo, new THREE.MeshLambertMaterial({color:0xffffff,shininess:60,specular:0xffffff}));textMesh[_0x76c9[12]][_0x76c9[41]]=-27*(_0xad7fx53[_0x76c9[64]]);textMesh[_0x76c9[12]][_0x76c9[38]]=-80;textMesh[_0x76c9[12]][_0x76c9[11]]=-1300;scene[_0x76c9[13]](textMesh);} ;function change3DText_points(_0xad7fx52){if(textMeshPoint){scene[_0x76c9[93]](textMeshPoint);} ;var _0xad7fx53=_0xad7fx52+_0x76c9[101];textGeo= new THREE.TextGeometry(_0xad7fx52,{size:50,height:5,curveSegments:5,font:_0x76c9[102],weight:_0x76c9[103],style:_0x76c9[104],bevelThickness:2,bevelSize:1,bevelEnabled:true});var _0xad7fx55= new THREE.MeshLambertMaterial({color:0x00ff00,shininess:60,specular:0x00ff00,opacity:1,transparent:true});textMeshPoint= new THREE.Mesh(textGeo,_0xad7fx55);textMeshPoint[_0x76c9[12]][_0x76c9[41]]=-21*(_0xad7fx53[_0x76c9[64]]);textMeshPoint[_0x76c9[12]][_0x76c9[38]]=0;textMeshPoint[_0x76c9[12]][_0x76c9[11]]=-1100;scene[_0x76c9[13]](textMeshPoint); new TWEEN.Tween(_0xad7fx55)[_0x76c9[100]]({opacity:0},1000)[_0x76c9[99]](TWEEN[_0x76c9[98]][_0x76c9[105]].In)[_0x76c9[90]]();} ;function loadButcher(){var _0xad7fx57= new THREE.ColladaLoader();_0xad7fx57[_0x76c9[107]][_0x76c9[106]]=true;_0xad7fx57[_0x76c9[111]](_0x76c9[108],function (_0xad7fx58){butcher=_0xad7fx58[_0x76c9[109]];butcher[_0x76c9[94]][_0x76c9[41]]=butcher[_0x76c9[94]][_0x76c9[38]]=butcher[_0x76c9[94]][_0x76c9[11]]=9;butcher[_0x76c9[12]][_0x76c9[23]](0,1000,-1500);scene[_0x76c9[13]](butcher); new TWEEN.Tween(butcher[_0x76c9[12]])[_0x76c9[100]]({y:-TARGET_HEIGHT/2},2000)[_0x76c9[99]](TWEEN[_0x76c9[98]][_0x76c9[105]].Out)[_0x76c9[110]](function (){PopupMsgHandler();} )[_0x76c9[90]]();} ,progressCallback);} ;function progressCallback(_0xad7fx5a){if(_0xad7fx5a[_0x76c9[112]]/_0xad7fx5a[_0x76c9[113]]*100>99){document[_0x76c9[3]](_0x76c9[116])[_0x76c9[115]][_0x76c9[114]]=_0x76c9[117];} ;} ;function animate(){requestAnimationFrame(animate);render();} ;var counter=0,randomFrameCount=480,frameBound=360;function render(){counter++;TWEEN[_0x76c9[118]]();if(parseInt(Life[_0x76c9[119]])<=0){document[_0x76c9[3]](_0x76c9[58])[_0x76c9[115]][_0x76c9[120]]=_0x76c9[121];return ;} ;var _0xad7fx60=clock[_0x76c9[122]]();animateJSON_animal(birds,_0xad7fx60);animateJSON_animal(bears,_0xad7fx60);animateJSON_animal(elks,_0xad7fx60);animateJSON_animal(mountainlions,_0xad7fx60);if(counter%randomFrameCount==0&&butcher){captureAnimal();randomFrameCount=parseInt(Math[_0x76c9[35]]()*(frameBound--))+frameBound;if(frameBound<120){frameBound=120;} ;} ;for(i=0;i<cube_layer_textures[_0x76c9[64]];i++){cube_layer_textures[i][_0x76c9[123]][_0x76c9[41]]+=cube_layer_textures[i][_0x76c9[34]];} ;pic[_0x76c9[12]][_0x76c9[41]]-=5;pic2[_0x76c9[12]][_0x76c9[41]]-=8;pic3[_0x76c9[12]][_0x76c9[11]]+=10;if(pic[_0x76c9[12]][_0x76c9[41]]<-200){pic[_0x76c9[12]][_0x76c9[41]]=TARGET_DEPTH/4*Math[_0x76c9[35]]()+TARGET_DEPTH/4;} ;if(pic2[_0x76c9[12]][_0x76c9[41]]<-200){pic2[_0x76c9[12]][_0x76c9[41]]=TARGET_DEPTH/4*Math[_0x76c9[35]]()+TARGET_DEPTH/4;} ;if(pic3[_0x76c9[12]][_0x76c9[11]]>200){pic3[_0x76c9[12]][_0x76c9[11]]=-TARGET_DEPTH/4*Math[_0x76c9[35]]()-TARGET_DEPTH/4;} ;renderer[_0x76c9[124]](scene,camera);} ;function onPlayAgain(){counter=0;randomFrameCount=480;frameBound=360;Life[_0x76c9[119]]=20;GameScore=0;change3DText(_0x76c9[22]);if(targetAnimal){butcher[_0x76c9[93]](targetAnimal);} ;targetAnimal=undefined;document[_0x76c9[3]](_0x76c9[5])[_0x76c9[115]][_0x76c9[75]]=_0x76c9[125];document[_0x76c9[3]](_0x76c9[58])[_0x76c9[115]][_0x76c9[120]]=_0x76c9[126];} ;function onWindowResize(){windowHalfX=window[_0x76c9[9]]/2;windowHalfY=window[_0x76c9[10]]/2;camera[_0x76c9[127]]=window[_0x76c9[9]]/window[_0x76c9[10]];camera[_0x76c9[128]]();renderer[_0x76c9[47]](window[_0x76c9[9]],window[_0x76c9[10]]);} ;function GameControl(){var _0xad7fx64=animals[_0x76c9[82]];console[_0x76c9[129]](animals[_0x76c9[82]][_0x76c9[64]]);for(var _0xad7fx35=0;_0xad7fx35<animals[_0x76c9[82]][_0x76c9[64]];_0xad7fx35++){for(var _0xad7fx65=0;_0xad7fx65<animals[_0x76c9[82]][_0xad7fx35][_0x76c9[82]][_0x76c9[64]];_0xad7fx65++){} ;} ;} ;function loadHeadModel(){mapHeight=THREE[_0x76c9[26]][_0x76c9[25]](_0x76c9[130]);mapHeight[_0x76c9[27]]=4;mapHeight[_0x76c9[123]][_0x76c9[23]](0.001,0.001);mapHeight[_0x76c9[29]]=mapHeight[_0x76c9[30]]=THREE[_0x76c9[31]];mapHeight[_0x76c9[32]]=THREE[_0x76c9[33]];var _0xad7fx67= new THREE.MeshPhongMaterial({ambient:0x999999,color:0xffffff,specular:0x222222,shininess:25,bumpMap:mapHeight,bumpScale:1,metal:false,map:mapHeight});loader= new THREE.JSONLoader(true);document[_0x76c9[55]][_0x76c9[54]](loader[_0x76c9[131]]);loader[_0x76c9[111]](_0x76c9[132],function (_0xad7fx3e){createScene(_0xad7fx3e,30,_0xad7fx67);} );} ;function createScene(_0xad7fx3e,_0xad7fx69,_0xad7fx67){head_mesh= new THREE.Mesh(_0xad7fx3e,_0xad7fx67);head_mesh[_0x76c9[12]][_0x76c9[11]]=-1200;head_mesh[_0x76c9[94]][_0x76c9[23]](_0xad7fx69,_0xad7fx69,_0xad7fx69);head_mesh[_0x76c9[133]]=true;head_mesh[_0x76c9[134]]=true;var _0xad7fx6a= new THREE.TextGeometry(_0x76c9[22],{size:20,height:2,curveSegments:3,font:_0x76c9[102],weight:_0x76c9[103],style:_0x76c9[104],bevelThickness:2,bevelSize:1,bevelEnabled:true});var textMesh= new THREE.Mesh(_0xad7fx6a, new THREE.MeshLambertMaterial({color:0xffffff}));textMesh[_0x76c9[12]][_0x76c9[41]]=-70;textMesh[_0x76c9[12]][_0x76c9[38]]=-80;textMesh[_0x76c9[12]][_0x76c9[11]]=-900;scene[_0x76c9[13]](textMesh);scene[_0x76c9[13]](head_mesh);loader[_0x76c9[131]][_0x76c9[115]][_0x76c9[114]]=_0x76c9[117];} ;function loadJSON_animal(_0xad7fx6c,_0xad7fx6d,_0xad7fx6e,_0xad7fx6f,_0xad7fx70){var _0xad7fx57= new THREE.JSONLoader();_0xad7fx57[_0x76c9[111]](_0xad7fx6c,function (_0xad7fx3e){morphColorsToFaceColors(_0xad7fx3e);_0xad7fx3e[_0x76c9[135]]();var _0xad7fx67= new THREE.MeshPhongMaterial({color:0xffffff,specular:0xffffff,shininess:20,morphTargets:true,morphNormals:true,vertexColors:THREE[_0x76c9[136]],shading:THREE[_0x76c9[137]]});var _0xad7fx71= new THREE.MorphAnimMesh(_0xad7fx3e,_0xad7fx67);_0xad7fx71[_0x76c9[138]]=5000;_0xad7fx71[_0x76c9[92]]=_0xad7fx6e;_0xad7fx71[_0x76c9[94]][_0x76c9[23]](1.2,1.2,1.2);_0xad7fx71[_0x76c9[12]][_0x76c9[23]](Math[_0x76c9[35]]()*(TARGET_WIDTH-TARGET_WIDTH/10)-(TARGET_WIDTH)/2,_0xad7fx70,-Math[_0x76c9[35]]()*TARGET_DEPTH);_0xad7fx71[_0x76c9[34]]=Math[_0x76c9[35]]()*10+10;switch(_0xad7fx6e){case _0x76c9[15]:_0xad7fx71[_0x76c9[139]]=60;break ;;case _0x76c9[17]:_0xad7fx71[_0x76c9[139]]=50;break ;;case _0x76c9[19]:_0xad7fx71[_0x76c9[139]]=100;break ;;case _0x76c9[21]:_0xad7fx71[_0x76c9[139]]=80;break ;;} ;targetAnimals[_0x76c9[36]](_0xad7fx71);_0xad7fx6d[_0x76c9[13]](_0xad7fx71);for(var _0xad7fx35=0;_0xad7fx35<_0xad7fx6f-1;_0xad7fx35++){var _0xad7fx72=_0xad7fx71[_0x76c9[43]]();_0xad7fx72[_0x76c9[92]]=_0xad7fx6e;_0xad7fx72[_0x76c9[139]]=_0xad7fx71[_0x76c9[139]];_0xad7fx72[_0x76c9[12]][_0x76c9[23]](Math[_0x76c9[35]]()*(TARGET_WIDTH-TARGET_WIDTH/10)-(TARGET_WIDTH-TARGET_WIDTH/10)/2,_0xad7fx70,-Math[_0x76c9[35]]()*TARGET_DEPTH);_0xad7fx72[_0x76c9[34]]=Math[_0x76c9[35]]()*10+10;_0xad7fx6d[_0x76c9[13]](_0xad7fx72);} ;animals[_0x76c9[13]](_0xad7fx6d);scene[_0x76c9[13]](_0xad7fx6d);} );} ;function animateJSON_animal(_0xad7fx6d,_0xad7fx60){if(_0xad7fx6d[_0x76c9[82]][_0x76c9[64]]){for(var _0xad7fx35=0;_0xad7fx35<_0xad7fx6d[_0x76c9[82]][_0x76c9[64]];_0xad7fx35++){var _0xad7fx74=_0xad7fx6d[_0x76c9[82]][_0xad7fx35];if(!_0xad7fx74[_0x76c9[91]]){_0xad7fx74[_0x76c9[140]](6000*_0xad7fx60*_0xad7fx74[_0x76c9[34]]/25);_0xad7fx74[_0x76c9[12]][_0x76c9[11]]+=_0xad7fx74[_0x76c9[34]];} ;if(_0xad7fx74[_0x76c9[12]][_0x76c9[11]]>camera[_0x76c9[12]][_0x76c9[11]]-300){if(((_0xad7fx74[_0x76c9[12]][_0x76c9[38]]>camera[_0x76c9[12]][_0x76c9[38]]-180&&_0xad7fx74[_0x76c9[12]][_0x76c9[38]]<camera[_0x76c9[12]][_0x76c9[38]]+20&&_0xad7fx74[_0x76c9[92]]!=_0x76c9[15])||(_0xad7fx74[_0x76c9[12]][_0x76c9[38]]>camera[_0x76c9[12]][_0x76c9[38]]-120&&_0xad7fx74[_0x76c9[12]][_0x76c9[38]]<camera[_0x76c9[12]][_0x76c9[38]]+80&&_0xad7fx74[_0x76c9[92]]==_0x76c9[15]))&&_0xad7fx74[_0x76c9[12]][_0x76c9[41]]>camera[_0x76c9[12]][_0x76c9[41]]-100&&_0xad7fx74[_0x76c9[12]][_0x76c9[41]]<camera[_0x76c9[12]][_0x76c9[41]]+100){if(targetAnimal&&_0xad7fx74[_0x76c9[92]]==targetAnimal[_0x76c9[92]]){GameScore+=parseInt(_0xad7fx74[_0x76c9[139]]);change3DText(GameScore);change3DText_points(_0x76c9[141]+_0xad7fx74[_0x76c9[139]]);var _0xad7fx75= new Audio();_0xad7fx75[_0x76c9[84]]=_0x76c9[142];_0xad7fx75[_0x76c9[143]]=_0x76c9[144]+targetAnimal[_0x76c9[92]]+_0x76c9[145];_0xad7fx75[_0x76c9[59]]=0.2;_0xad7fx75[_0x76c9[146]]();_0xad7fx75[_0x76c9[57]](_0x76c9[147],function (){_0xad7fx75=null;} );} ;} else {if(targetAnimal&&_0xad7fx74[_0x76c9[92]]==targetAnimal[_0x76c9[92]]&&isGameStart){var _0xad7fx76=parseInt(Life[_0x76c9[119]]);_0xad7fx76--;Life[_0x76c9[119]]=_0xad7fx76;if(_0xad7fx76<6){document[_0x76c9[3]](_0x76c9[5])[_0x76c9[115]][_0x76c9[75]]=_0x76c9[148];} ;} ;} ;_0xad7fx74[_0x76c9[12]][_0x76c9[23]](Math[_0x76c9[35]]()*(TARGET_WIDTH-TARGET_WIDTH/10)-(TARGET_WIDTH-TARGET_WIDTH/10)/2,_0xad7fx74[_0x76c9[12]][_0x76c9[38]],-TARGET_DEPTH);} ;} ;} ;} ;function PopupMsgHandler(_0xad7fx48){if(document[_0x76c9[151]](_0x76c9[150])[0][_0x76c9[115]][_0x76c9[149]]==1){document[_0x76c9[151]](_0x76c9[150])[0][_0x76c9[115]][_0x76c9[149]]=0;document[_0x76c9[151]](_0x76c9[150])[0][_0x76c9[115]][_0x76c9[152]]=_0x76c9[117];} else {document[_0x76c9[151]](_0x76c9[150])[0][_0x76c9[115]][_0x76c9[149]]=1;document[_0x76c9[151]](_0x76c9[150])[0][_0x76c9[115]][_0x76c9[152]]=_0x76c9[153];} ;} ;function onReCalibrate(){isReCalibrate=true;} ;function videoSetup(){videoInput[_0x76c9[115]][_0x76c9[12]]=_0x76c9[154];videoInput[_0x76c9[115]][_0x76c9[155]]=_0x76c9[156];videoInput[_0x76c9[115]][_0x76c9[157]]=_0x76c9[156];videoInput[_0x76c9[115]][_0x76c9[158]]=_0x76c9[159];videoInput[_0x76c9[115]][_0x76c9[114]]=_0x76c9[160];} ;function headTrackingSetup(){htracker= new headtrackr.Tracker({fadeVideo:true,detectionInterval:5});htracker[_0x76c9[161]](videoInput,canvasInput);htracker[_0x76c9[90]]();} ;document[_0x76c9[57]](_0x76c9[162],function (_0xad7fx48){switch(_0xad7fx48[_0x76c9[164]]){case _0x76c9[163]:if(!isGameStart){PopupMsgHandler();isGameStart=true;} ;onPlayAgain();break ;;} ;} );document[_0x76c9[57]](_0x76c9[165],function (_0xad7fx48){camera[_0x76c9[12]][_0x76c9[41]]=_0xad7fx48[_0x76c9[41]]*70;camera[_0x76c9[12]][_0x76c9[38]]=_0xad7fx48[_0x76c9[38]]*80-700;if(camera[_0x76c9[12]][_0x76c9[41]]>(target[_0x76c9[12]][_0x76c9[41]]+TARGET_WIDTH/2-CamOffset)){camera[_0x76c9[12]][_0x76c9[41]]=target[_0x76c9[12]][_0x76c9[41]]+TARGET_WIDTH/2-CamOffset;} ;if(camera[_0x76c9[12]][_0x76c9[41]]<(target[_0x76c9[12]][_0x76c9[41]]-TARGET_WIDTH/2+CamOffset)){camera[_0x76c9[12]][_0x76c9[41]]=target[_0x76c9[12]][_0x76c9[41]]-TARGET_WIDTH/2+CamOffset;} ;if(camera[_0x76c9[12]][_0x76c9[38]]>(target[_0x76c9[12]][_0x76c9[38]]+TARGET_HEIGHT/2-CamOffset)){camera[_0x76c9[12]][_0x76c9[38]]=target[_0x76c9[12]][_0x76c9[38]]+TARGET_HEIGHT/2-CamOffset;} ;if(camera[_0x76c9[12]][_0x76c9[38]]<(target[_0x76c9[12]][_0x76c9[38]]-TARGET_HEIGHT/2+CamOffset)){camera[_0x76c9[12]][_0x76c9[38]]=target[_0x76c9[12]][_0x76c9[38]]-TARGET_HEIGHT/2+CamOffset;} ;camera[_0x76c9[166]](target[_0x76c9[12]]);} ,false);	
+		
+		//Turn off Cam after exit
+		window.addEventListener('beforeunload', onBeforeUnload, false);		
+		function onBeforeUnload(){
+			camStream.stop();
+		}
+		</script>
+	</body>
+</html>

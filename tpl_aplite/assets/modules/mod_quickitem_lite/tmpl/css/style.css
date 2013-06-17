@@ -1,0 +1,14 @@
+/* Quick Item CSS */
+
+#quickAddContentForm table.admintable{
+border:0;
+padding:10px;
+}
+#quickAddContentForm #sectionid,#quickAddContentForm #catid,
+#quickAddContentForm #title,#quickAddContentForm #alias,
+#quickAddContentForm textarea{
+width:98%;
+}
+#quickAddContentForm #quickadd_reset{
+float:right;
+}

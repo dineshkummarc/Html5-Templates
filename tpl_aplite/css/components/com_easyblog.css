@@ -1,0 +1,94 @@
+/**
+* @copyright Copyright (C) 2009 - 2011 Pixel Praise LLC. All rights reserved.
+* @license GNU/GPL, see LICENSE.php
+* Joomla! is free software. This version may have been modified pursuant
+* to the GNU General Public License, and as distributed it includes or
+* is derivative of works licensed under the GNU General Public License or
+* other free or open source software licenses.
+*/
+
+/**
+ * AdminPraise Lite Admin template component css file
+ *
+ * @author		Kyle Ledbetter <support@pixelpraise.com>
+ * @package		Joomla
+ * @since		1.7.3
+ * @version  	1.0
+ */
+ #submenu-box {
+ 	padding: 10px 10px 0 10px;
+ }
+ #submenu-box {
+ 	margin-bottom: 10px;
+ }
+ 
+ #submenu-box .padding {
+ 	padding: 0;
+ }
+ 
+ /* ---- Submenu styles -------------------------- */
+ #submenu {
+ 	list-style: none;
+ 	padding: 0;
+ 	margin: 0;
+ 	line-height: 115%;
+ }
+ 
+ #submenu li {
+ 	float: left;
+ 	padding: 4px 10px;
+ 	margin: 0;
+ }
+ 
+ #submenu li a,
+ #submenu span.nolink {
+
+ }
+ 
+ #submenu span.nolink {
+ 	color: #999;
+ }
+ 
+ #submenu a:hover,
+ #submenu a.active,
+ #submenu span.nolink.active {
+ 	color: #146295;
+ 	background: #FFF;
+ }
+ div#submenu-box div.t,
+ div#submenu-box div.b{display:none}
+ div#element-box div.m,
+ div#toolbar-box div.m,
+ div#element-box div.current{border:0}
+ body div#element-box div.m{padding:0}
+ div#element-box div.current{padding:0}
+ #content-box div#toolbar-box div.m{border-bottom:0;padding:0px;margin:0;background: none;border-radius:0;-moz-border-radius:0;-webkit-border-radius:0}
+ div#submenu-box{margin:0}
+ div#submenu-box div.m{background:none;border:0}
+ div#submenu-box{background: none;padding:0 !important;border:0;border-bottom:0;}
+ div#submenu-box div#submenu-box{border-bottom:0}
+ div#element-box,
+ div#element-box div.m{background-color:#fff!important}
+ #submenu-box #submenu{display:inline-block;width:100%;padding-top: 0px;border-top:0;}
+ #submenu-box #submenu li{margin-left:0;}
+ #submenu-box #submenu li+li{margin-left:0;}
+ #submenu-box #submenu a{padding:0px;margin:0px;display:block;border:0;text-decoration:none !important;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:3px}
+ #submenu-box #submenu a:hover{background: none;color:#444}
+ #submenu-box #submenu a.active{color:#222;margin:0;padding:0px;background: none;text-decoration:none;border:0;border-bottom:0;border-radius:3px 3px 0 0;-moz-border-radius:3px 3px 0 0;-webkit-border-radius:3px 3px 0 0}
+ 
+ .adminform .inputbox{
+ max-width: 50%;
+ }
+ body fieldset.adminform{
+ margin: 2px !important;
+ padding: 2px !important;
+ width: 97%;
+ }
+ div.current{
+ padding: 5px;
+ }
+ .option-enable,
+ .option-disable{
+ width: auto;
+ margin: 0;
+ }

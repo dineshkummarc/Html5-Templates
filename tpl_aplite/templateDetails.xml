@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install PUBLIC "-//Joomla! 1.6//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/1.6/template-install.dtd">
+<install type="template" version="1.6" client="administrator">
+	<name>aplite</name>
+	<creationDate>2/28/2012</creationDate>
+	<author>AdminPraise</author>
+	<authorEmail>support@adminpraise.com</authorEmail>
+	<authorUrl>http://www.adminpraise.com</authorUrl>
+	<copyright>Copyright AdminPraise</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<version>2.5.1.2</version>
+	<description>AdminPraise Lite for Joomla! 2.5 by 
+&lt;a href=&quot;http://www.adminpraise.com&quot; target=&quot;_blank&quot;&gt;AdminPraise.com&lt;/a&gt;, a &lt;a href=&quot;http://www.adminpraise.com/joomla/admin-templates.php&quot; target=&quot;_blank&quot;&gt;Joomla Admin Templates&lt;/a&gt; &amp; &lt;a href=&quot;http://www.adminpraise.com/joomla/admin-extensions.php&quot; target=&quot;_blank&quot;&gt;Joomla Admin Extensions&lt;/a&gt; Developer&lt;br&gt;Reflection Icons copyright webdesignerdepot.com&lt;br&gt;Web Development Icons copyright icojoy.com&lt;br&gt;Fugue icons copyright Yusuke Kamiyamane.</description>
+	<files>
+		<filename>component.php</filename>
+		<filename>cpanel.php</filename>
+		<filename>favicon.ico</filename>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+		<filename>index.php</filename>
+		<filename>LICENSE.txt</filename>
+		<filename>login.php</filename>
+		<filename>params.ini</filename>
+		<filename>template_preview.png</filename>
+		<filename>template_thumbnail.png</filename>
+		
+		<folder>assets</folder>
+		<folder>css</folder>
+		<folder>html</folder>
+		<folder>images</folder>
+		<folder>js</folder>
+		
+	</files>
+	<languages>
+		<language tag="en-GB">en-GB.tpl_aplite.ini</language>
+		<language tag="en-GB">en-GB.tpl_aplite.sys.ini</language>
+	</languages>
+	<positions>
+		<position>apadmin</position>
+		<position>apcpanel</position>
+		<position>aptop</position>
+		<position>apbottom</position>
+		<position>apside</position>
+		<position>apfooter</position>
+		<position>menu</position>
+		<position>submenu</position>
+		<position>toolbar</position>
+		<position>title</position>
+		<position>status</position>
+		<position>icon</position>
+		<position>cp_shell</position>
+		<position>cpanel</position>
+		<position>debug</position>
+	</positions>
+	<config>
+		<fields name="params">
+			<fieldset name="colors">
+				<field name="templateTheme" type="list" default="theme6" label="Global Theme" description="Choose a theme">
+					<option value="theme1">Green/Gray</option>
+					<option value="theme2">Blue/Teal</option>
+					<option value="theme3">Brown/Tan</option>
+					<option value="theme4">White/Gray</option>
+					<option value="theme5">Black/Gray</option>
+					<option value="theme6">Blue/Orange</option>
+				</field>
+				<field name="mainColor" type="text" size="20" label="TPL_MAIN_COLOR" description="TPL_PARAMCUSTOMCOLOR" default="" />
+				<field name="secondColor" type="text" size="20" label="TPL_SECONDARY_COLOR" description="TPL_PARAMCUSTOMCOLOR" default="" />
+				<field name="backgroundColor" type="text" size="20" label="TPL_BACKGROUND_COLOR" description="TPL_PARAMCUSTOMCOLOR" default="" />
+				<field name="linkColor" type="text" size="20" label="TPL_LINK_COLOR" description="TPL_PARAMCUSTOMCOLOR" default="" />
+			</fieldset>
+			<fieldset name="layout">
+				<field name="adminTitle" type="text" size="50" label="TPL_ADMIN_TITLE" description="TPL_ADMIN_TITLE_DESC" default="" />
+				<field name="showSidebar" type="radio" default="1" label="TPL_SHOW_SIDEBAR" description="Enable/Disable Sidebar">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="switchSidebar" type="radio" default="1" label="TPL_SIDEBAR_LOCATION" description="Choose which side the sidebar is displayed (sidebar must be enabled above)">
+					<option value="1">Left</option>			
+					<option value="0">Right</option>
+				</field>		
+				<field name="showBreadCrumbs" type="radio" default="1" label="TPL_SHOW_BREADCRUMBS" description="Enable/Disable Breadcrumbs">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="showQuickAdd" type="radio" default="1" label="TPL_SHOW_QUICK_ADD" description="Enable/Disable Quick Add">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="showComponentList" type="radio" default="1" label="TPL_SHOW_COMPONENT_LIST" description="Enable/Disable Component List">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="showChildren" type="radio" default="1" label="TPL_SHOW_COMPONENT_CHILDREN" description="Show children links on hover">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="bottomStatus" type="radio" default="1" label="TPL_STATUS_ON_BOTTOM" description="Move status bar to bottom?">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="wideComponents" type="text" size="50" label="TPL_WIDE_COMPONENTS" description="PARAMWIDECOMPONENTS" default="com_virtuemart,com_projectfork,com_gantry" />
+				<field name="fontSize" type="text" size="20" label="Tablature Font Size" description="Font size for data in tables" default="" />
+				<field name="minWidth" type="text" size="20" label="Main Min Width" description="Overall minimum width" default="" />
+				<field name="sidebarWidth" type="text" size="20" label="Sidebar Width (%)" description="Sidebar Width (%)" default="" />
+				<field name="colorSpacer" type="spacer" label="" description="" default="Colors" />
+			</fieldset>
+			<fieldset name="menus">
+				<field name="menusAcl" type="radio" label="TPL_MENUS_ACCESS" description="TPL_PARAMADMINACCESSLEVEL" default="1">
+					<option value="0">Hide</option>
+					<option value="1">Show</option>
+				</field>
+				<field name="categoriesAcl" type="radio" label="TPL_CATEGORIES_ACCESS" description="TPL_PARAMADMINACCESSLEVEL" default="0">
+					<option value="0">Hide</option>
+					<option value="1">Show</option>
+				</field>
+				<field name="articlesAcl" type="radio" label="TPL_ARTICLES_ACCESS" description="TPL_PARAMADMINACCESSLEVEL" default="1">
+					<option value="0">Hide</option>
+					<option value="1">Show</option>
+				</field>
+				<field name="componentsAcl" type="radio" label="TPL_COMPONENTS_ACCESS" description="TPL_PARAMADMINACCESSLEVEL" default="1">
+					<option value="0">Hide</option>
+					<option value="1">Show</option>
+				</field>
+				<field name="modulesAcl" type="radio" label="TPL_MODULES_ACCESS" description="TPL_PARAMADMINACCESSLEVEL" default="1">
+					<option value="0">Hide</option>
+					<option value="1">Show</option>
+				</field>
+				<field name="pluginsAcl" type="radio" label="TPL_PLUGINS_ACCESS" description="TPL_PARAMADMINACCESSLEVEL" default="1">
+					<option value="0">Hide</option>
+					<option value="1">Show</option>
+				</field>
+				<field name="templatesAcl" type="radio" label="TPL_TEMPLATES_ACCESS" description="TPL_PARAMADMINACCESSLEVEL" default="1">
+					<option value="0">Hide</option>
+					<option value="1">Show</option>
+				</field>
+				<field name="installAcl" type="radio" label="TPL_INSTALL_ACCESS" description="TPL_PARAMADMINACCESSLEVEL" default="0">
+					<option value="0">Hide</option>
+					<option value="1">Show</option>
+				</field>
+				<field name="usersAcl" type="radio" label="TPL_USERS_ACCESS" description="TPL_PARAMADMINACCESSLEVEL" default="1">
+					<option value="0">Hide</option>
+					<option value="1">Show</option>
+				</field>
+				<field name="adminAcl" type="radio" label="TPL_ADMIN_ACCESS" description="TPL_PARAMADMINACCESSLEVEL" default="1">
+					<option value="0">Hide</option>
+					<option value="1">Show</option>
+				</field>
+				<field name="customSpacer" type="spacer" label="" description="" default="Custom Link 1" />
+				
+				<field name="custom1Name" type="text" size="60" label="TPL_CUSTOM_NAME" description="TPL_PARAMLINKNAME" default="" />
+				<field name="custom1Link" type="text" size="60" label="TPL_CUSTOM_URL" description="TPL_PARAMLINKURL" default="" />
+				<field name="custom1Acl" type="radio" label="TPL_CUSTOM_ACCESS" description="TPL_PARAMADMINACCESSLEVEL" default="0">
+					<option value="0">Hide</option>
+					<option value="1">Show</option>
+				</field>
+				
+				<field name="customSpacer" type="spacer" label="" description="" default="Custom Link 2" />
+				
+				<field name="custom2Name" type="text" size="60" label="TPL_CUSTOM_NAME" description="TPL_PARAMLINKNAME" default="" />
+				<field name="custom2Link" type="text" size="60" label="TPL_CUSTOM_URL" description="TPL_PARAMLINKURL" default="" />
+				<field name="custom2Acl" type="radio" label="TPL_CUSTOM_ACCESS" description="TPL_PARAMADMINACCESSLEVEL" default="0">
+					<option value="0">Hide</option>
+					<option value="1">Show</option>
+				</field>
+				
+				<field name="customSpacer" type="spacer" label="" description="" default="Custom Link 3" />
+				
+				<field name="custom3Name" type="text" size="60" label="TPL_CUSTOM_NAME" description="TPL_PARAMLINKNAME" default="" />
+				<field name="custom3Link" type="text" size="60" label="TPL_CUSTOM_URL" description="TPL_PARAMLINKURL" default="" />
+				<field name="custom3Acl" type="radio" label="TPL_CUSTOM_ACCESS" description="TPL_PARAMADMINACCESSLEVEL" default="0">
+					<option value="0">Hide</option>
+					<option value="1">Show</option>
+				</field>
+				
+				<field name="customSpacer" type="spacer" label="" description="" default="Custom Link 4" />
+				
+				<field name="custom4Name" type="text" size="60" label="TPL_CUSTOM_NAME" description="TPL_PARAMLINKNAME" default="" />
+				<field name="custom4Link" type="text" size="60" label="TPL_CUSTOM_URL" description="TPL_PARAMLINKURL" default="" />
+				<field name="custom4Acl" type="radio" label="TPL_CUSTOM_ACCESS" description="TPL_PARAMADMINACCESSLEVEL" default="0">
+					<option value="0">Hide</option>
+					<option value="1">Show</option>
+				</field>
+				
+				<field name="customSpacer" type="spacer" label="" description="" default="Custom Link 5" />
+				
+				<field name="custom5Name" type="text" size="60" label="TPL_CUSTOM_NAME" description="TPL_PARAMLINKNAME" default="" />
+				<field name="custom5Link" type="text" size="60" label="TPL_CUSTOM_URL" description="TPL_PARAMLINKURL" default="" />
+				<field name="custom5Acl" type="radio" label="TPL_CUSTOM_ACCESS" description="TPL_PARAMADMINACCESSLEVEL" default="0">
+					<option value="0">Hide</option>
+					<option value="1">Show</option>
+				</field>
+				
+			</fieldset>
+		</fields>
+	</config>
+</install>

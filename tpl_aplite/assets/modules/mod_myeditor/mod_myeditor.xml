@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5" type="module" client="administrator">
+	<name>My Editor</name>
+	<version>1.1.2</version>
+	<creationDate>2009/08/19</creationDate>
+	<author>AdminPraise</author>
+	<authorEmail>support@pixelpraise.com</authorEmail>
+	<authorUrl>http://www.adminpraise.com</authorUrl>
+	<copyright>Pixel Praise LLC</copyright>
+	<license>GNU/GPL</license>
+	<description>My Editor for Joomla! 1.5 by AdminPraise.com</description>
+	<files>
+		<filename>mod_myeditor.xml</filename>
+		<filename>index.html</filename>
+		<filename>tmpl/index.html</filename>
+		<filename module="mod_myeditor">mod_myeditor.php</filename>
+		<filename>helper.php</filename>
+		<filename>tmpl/default.php</filename>
+	</files>
+	<languages>
+        <language tag="en-GB">en-GB.mod_myeditor.ini</language>
+    </languages>
+	<params>
+		<param name="moduleclass_sfx" type="text" label="MODULE CLASS SUFFIX" description="PARAMMODULECLASSSUFFIX" default="" />
+	</params>
+</install>

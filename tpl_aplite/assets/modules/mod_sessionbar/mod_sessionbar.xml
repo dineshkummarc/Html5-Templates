@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="module" version="1.5.0" client="administrator">
+	<name>Session Lifetime Bar</name>
+	<author>AdminPraise</author>
+	<creationDate>08/13/09</creationDate>
+	<copyright>Pixel Praise LLC</copyright>
+	<license>GNU/GPL</license>
+	<authorEmail>support@pixelpraise.com</authorEmail>
+	<authorUrl>www.adminpraise.com</authorUrl>
+	<version>1.1</version>
+	<description>Session Lifetime Bar for Joomla! 1.5 by AdminPraise.com</description>
+	<files>
+		<filename module="mod_sessionbar">mod_sessionbar.php</filename>
+	</files>
+	<languages>
+        <language tag="en-GB">en-GB.mod_sessionbar.ini</language>
+    </languages>
+</install>
