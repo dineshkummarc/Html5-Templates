@@ -1,0 +1,130 @@
+/* 
+    Document   : headBoxingStyle
+    Created on : 09/05/2013, 10:32:28 PM
+    Author     : dogy
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+canvas{
+    position: fixed;
+}
+
+#headBad,#headBadHit{
+    left: 44%;
+    top: 15%;
+}
+
+#myHead{
+    opacity: 0.3;
+    top:0px;
+}
+#inputVideo{
+    position: fixed;
+    left: 46%;
+    top: 74%
+}
+#red, #red2{
+    z-index: 0;
+}
+#gloveRightBad,#red2{
+    left: 65%;
+    top: 35%;
+}
+#pow{
+     left: 65%;
+    top: 10%;
+}
+#wtf{
+     left: 50%;
+    top: 10%;
+}
+#smash{
+     left: 25%;
+    top: 20%;
+}
+#gloveRightBadHit{
+    left: 45%;
+    top: 35%;
+}
+#badPunchs{
+    color: blue;
+    left: 2%;
+}
+#myPunchs,#badPunchs,#timer{
+    top: 0%;
+    position: fixed;
+    font-size: 6em;
+    font-family: verdana;
+}
+#myPunchs{
+    color: red;
+    left: 90%;
+}
+#timer{
+    color: black;
+    left:45%;
+}
+#gloveLeftBad,#red{
+    left: 25%;
+    top: 35%;
+}
+#gloveLeftBadHit{
+    left: 30%;
+    top: 35%;
+}
+#gloveLeftMine{
+    left: 10%;
+    top: 70%;
+}
+#gloveRightMine{
+    left: 75%;
+    top: 70%;
+}
+#punch{
+    left: 40%;
+    top: 0%;
+}
+#instructions{
+    width: 500px;
+    min-height: 240px;
+    top: 0px;
+    margin-left: -300px;
+    padding: 20px;
+    position: absolute;
+    opacity: 0.95;
+    left: 53%;
+    overflow: visible;
+    font-family: "Helvetica Neue",Helvetica,"Nimbus Sans L",Arial,"Liberation Sans",sans-serif;
+    color: #ffffff;
+    z-index: 11;
+    background-color: rgb(64, 64, 64);
+    background-image: radial-gradient(circle farthest-corner at 50% 0px , rgb(92, 92, 92) 0px, rgb(70, 70, 46) 100%);
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 0px 0px 10px rgb(0, 0, 0);
+    font-weight: bold;
+    text-align: justify;
+}
+#uwin,#ulost{
+
+    margin-left: -450px;
+    position: absolute;
+    left: 53%;
+    overflow: visible;
+    z-index: 11;
+
+}
+#starty{
+    cursor: pointer;
+    float: right;
+    margin-top: -10px;
+}
+
+h1{
+    text-align: center;
+
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="jquery-2.0.0.min.js"></script>
+        <script src="headtrackr.min.js"></script>
+        <script src="boxing.js"></script>
+
+        <link rel="stylesheet" href="headBoxingStyle.css"/>
+    </head>
+    <body>
+        <div id="headtrack"></div>
+        <canvas id="inCanvas"  width="500" height="500" style="display:none"></canvas>
+        <video id="inputVideo" width="100" height="100" autoplay loop ></video>
+        <div id="ringZone">
+
+            <div id="myPunchs">0</div>
+            <div id="badPunchs">0</div>
+            <div id="timer">60</div>
+            <canvas id="red" height="200" width="200" style="visibility: hidden"></canvas>
+            <canvas id="red2" height="200" width="200"  style="visibility: hidden"></canvas>
+            <canvas id="pow" height="315" width="325" style="display:none"></canvas>
+            <canvas id="wtf" height="300" width="245" style="display:none"></canvas>
+            <canvas id="smash" height="388" width="401" style="display:none"></canvas> 
+
+            <canvas id="headBadHit" width="209" height="253" style="visibility: hidden"></canvas>
+            <canvas id="headBad" width="209" height="253"></canvas>
+            <canvas id="gloveRightBad" height="188" width="186"></canvas>
+            <canvas id="gloveLeftBad" height="188" width="186"></canvas>
+            <canvas id="gloveLeftMine" height="300" width="300"></canvas>
+            <canvas id="gloveRightMine" height="300" width="300"></canvas>
+            <canvas id="gloveRightBadHit" height="392" width="392" style="visibility: hidden"></canvas>
+            <canvas id="gloveLeftBadHit" height="392" width="392" style="visibility: hidden"></canvas>
+
+
+            <canvas id="myHead" width="600" height="800"></canvas>
+            <canvas id="punch" height="500" width="500"></canvas>
+            <canvas id="uwin" width="1024" height="500"></canvas>
+            <canvas id="ulost" width="1024" height="500"></canvas>
+
+        </div>
+        <div id="instructions" >
+            <div id="starty"><img src="img/fancy_close.png" alt="start"></div>
+            <h1>HeadBoxing</h1>
+            <p>Try to avoid enemy’s punches moving your head without getting out of the camera. To punch your enemy use the keys “M” and “C”.
+                You have 60 seconds to win the fight. Good Luck. 
+            </p>
+            <p>To detect correctly your face you should try the game with a clear background. Close the window to start the game.</p>
+
+        </div>
+    </body>
+
+</html>
