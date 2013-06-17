@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Photobooth</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.1.0/pure-nr-min.css">
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
+    <script type='text/javascript' src='raf.js'></script>
+    <script type='text/javascript' src='html5slider.js'></script>
+    <script type='text/javascript' src='filters.js'></script>
+    <script type='text/javascript' src='app.js'></script>
+</head>
+
+<body style="text-align: center;">
+    <h1>Photobooth</h1>
+    <div id="intro">You need to allow the app to access your camera to continue...</div>
+    <canvas id="canvas" width="400" height="250">Browser Not Supported :(</canvas>
+
+    <form id='filters' class='pure-form'>
+        <select id='filtersSelect'>
+            <option value='nofilters'>No filters</option>
+        </select>
+        <button id='takePhotoBtn' type="button" class="pure-button">Take photo</button>
+
+
+        <div id='filterValues'>
+        </div>
+    </form>
+    <section id='history' style="white-space: nowrap; margin: 15px auto; overflow: auto;">
+    </section>
+</body>
+</html>
