@@ -1,0 +1,1333 @@
+<!doctype html> 
+<html lang="en"> 
+<head>
+  <style>
+    /* RESET */
+    html, body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote, a,
+    font, img, dl, dt, dd, ol, ul, li, legend, table, tbody, tr, th, td 
+    {margin:0px;padding:0px;border:0;outline:0;font-weight:inherit;font-style:inherit;font-size:100%;font-family:inherit;list-style:none;}
+    a img {border: none;}
+    ol li {list-style: decimal outside;}
+    fieldset {border:0;padding:0;}
+    
+    body { font-family: sans-serif; font-size: 1em; }
+    
+    div#container { width: 780px; margin: 0 auto; padding: 1em 0;  }
+    p { margin: 1em 0; max-width: 700px; }
+    h1 + p { margin-top: 0; }
+    
+    h1, h2 { font-family: Georgia, Times, serif; }
+    h1 { font-size: 2em !important; margin-bottom: .75em; }
+    h2 { font-size: 1em !important; margin: 2.5em 0 .5em; border-bottom: 1px solid #999; padding-bottom: 5px; }
+    h3 { font-weight: bold; }
+    
+    ul li { list-style: disc; margin-left: 1em; }
+    ol li { margin-left: 1.25em; }
+    
+    div.side-by-side { width: 100%; margin-bottom: 1em; }
+    div.side-by-side > div { float: left; width: 50%; }
+    div.side-by-side > div > em { margin-bottom: 10px; display: block; }
+    
+    a { color: orange; text-decoration: underline; }
+    
+    .faqs em { display: block; }
+    
+    .clearfix:after {
+      content: "\0020";
+      display: block;
+      height: 0;
+      clear: both;
+      overflow: hidden;
+      visibility: hidden;
+    }
+    
+    footer {
+      margin-top: 2em;
+      border-top: 1px solid #666;
+      padding-top: 5px;
+    }
+  </style>
+  <link rel="stylesheet" href="./chosen/chosen.css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+<body>
+  <form />
+  <div id="container">
+    <h1>Chosen (for LESS and Twitter Bootstrap)</h1>
+    <p>Chosen is a JavaScript plugin for Prototype and jQuery that makes long, unwieldy select boxes much more user-friendly. For more information (including usage, explanation and faqs), check out the <a href="http://harvesthq.github.com/chosen/">online documentation</a>.</p>
+    
+    <h2>Standard Select</h2>
+    <div class="side-by-side clearfix">
+      <div>
+        <em>Turns This</em>
+        <select data-placeholder="Choose a Country..." style="width:350px;" tabindex="1">
+          <option value="" /> 
+          <option value="United States" />United States 
+          <option value="United Kingdom" />United Kingdom 
+          <option value="Afghanistan" />Afghanistan 
+          <option value="Albania" />Albania 
+          <option value="Algeria" />Algeria 
+          <option value="American Samoa" />American Samoa 
+          <option value="Andorra" />Andorra 
+          <option value="Angola" />Angola 
+          <option value="Anguilla" />Anguilla 
+          <option value="Antarctica" />Antarctica 
+          <option value="Antigua and Barbuda" />Antigua and Barbuda 
+          <option value="Argentina" />Argentina 
+          <option value="Armenia" />Armenia 
+          <option value="Aruba" />Aruba 
+          <option value="Australia" />Australia 
+          <option value="Austria" />Austria 
+          <option value="Azerbaijan" />Azerbaijan 
+          <option value="Bahamas" />Bahamas 
+          <option value="Bahrain" />Bahrain 
+          <option value="Bangladesh" />Bangladesh 
+          <option value="Barbados" />Barbados 
+          <option value="Belarus" />Belarus 
+          <option value="Belgium" />Belgium 
+          <option value="Belize" />Belize 
+          <option value="Benin" />Benin 
+          <option value="Bermuda" />Bermuda 
+          <option value="Bhutan" />Bhutan 
+          <option value="Bolivia" />Bolivia 
+          <option value="Bosnia and Herzegovina" />Bosnia and Herzegovina 
+          <option value="Botswana" />Botswana 
+          <option value="Bouvet Island" />Bouvet Island 
+          <option value="Brazil" />Brazil 
+          <option value="British Indian Ocean Territory" />British Indian Ocean Territory 
+          <option value="Brunei Darussalam" />Brunei Darussalam 
+          <option value="Bulgaria" />Bulgaria 
+          <option value="Burkina Faso" />Burkina Faso 
+          <option value="Burundi" />Burundi 
+          <option value="Cambodia" />Cambodia 
+          <option value="Cameroon" />Cameroon 
+          <option value="Canada" />Canada 
+          <option value="Cape Verde" />Cape Verde 
+          <option value="Cayman Islands" />Cayman Islands 
+          <option value="Central African Republic" />Central African Republic 
+          <option value="Chad" />Chad 
+          <option value="Chile" />Chile 
+          <option value="China" />China 
+          <option value="Christmas Island" />Christmas Island 
+          <option value="Cocos (Keeling) Islands" />Cocos (Keeling) Islands 
+          <option value="Colombia" />Colombia 
+          <option value="Comoros" />Comoros 
+          <option value="Congo" />Congo 
+          <option value="Congo, The Democratic Republic of The" />Congo, The Democratic Republic of The 
+          <option value="Cook Islands" />Cook Islands 
+          <option value="Costa Rica" />Costa Rica 
+          <option value="Cote D'ivoire" />Cote D'ivoire 
+          <option value="Croatia" />Croatia 
+          <option value="Cuba" />Cuba 
+          <option value="Cyprus" />Cyprus 
+          <option value="Czech Republic" />Czech Republic 
+          <option value="Denmark" />Denmark 
+          <option value="Djibouti" />Djibouti 
+          <option value="Dominica" />Dominica 
+          <option value="Dominican Republic" />Dominican Republic 
+          <option value="Ecuador" />Ecuador 
+          <option value="Egypt" />Egypt 
+          <option value="El Salvador" />El Salvador 
+          <option value="Equatorial Guinea" />Equatorial Guinea 
+          <option value="Eritrea" />Eritrea 
+          <option value="Estonia" />Estonia 
+          <option value="Ethiopia" />Ethiopia 
+          <option value="Falkland Islands (Malvinas)" />Falkland Islands (Malvinas) 
+          <option value="Faroe Islands" />Faroe Islands 
+          <option value="Fiji" />Fiji 
+          <option value="Finland" />Finland 
+          <option value="France" />France 
+          <option value="French Guiana" />French Guiana 
+          <option value="French Polynesia" />French Polynesia 
+          <option value="French Southern Territories" />French Southern Territories 
+          <option value="Gabon" />Gabon 
+          <option value="Gambia" />Gambia 
+          <option value="Georgia" />Georgia 
+          <option value="Germany" />Germany 
+          <option value="Ghana" />Ghana 
+          <option value="Gibraltar" />Gibraltar 
+          <option value="Greece" />Greece 
+          <option value="Greenland" />Greenland 
+          <option value="Grenada" />Grenada 
+          <option value="Guadeloupe" />Guadeloupe 
+          <option value="Guam" />Guam 
+          <option value="Guatemala" />Guatemala 
+          <option value="Guinea" />Guinea 
+          <option value="Guinea-bissau" />Guinea-bissau 
+          <option value="Guyana" />Guyana 
+          <option value="Haiti" />Haiti 
+          <option value="Heard Island and Mcdonald Islands" />Heard Island and Mcdonald Islands 
+          <option value="Holy See (Vatican City State)" />Holy See (Vatican City State) 
+          <option value="Honduras" />Honduras 
+          <option value="Hong Kong" />Hong Kong 
+          <option value="Hungary" />Hungary 
+          <option value="Iceland" />Iceland 
+          <option value="India" />India 
+          <option value="Indonesia" />Indonesia 
+          <option value="Iran, Islamic Republic of" />Iran, Islamic Republic of 
+          <option value="Iraq" />Iraq 
+          <option value="Ireland" />Ireland 
+          <option value="Israel" />Israel 
+          <option value="Italy" />Italy 
+          <option value="Jamaica" />Jamaica 
+          <option value="Japan" />Japan 
+          <option value="Jordan" />Jordan 
+          <option value="Kazakhstan" />Kazakhstan 
+          <option value="Kenya" />Kenya 
+          <option value="Kiribati" />Kiribati 
+          <option value="Korea, Democratic People's Republic of" />Korea, Democratic People's Republic of 
+          <option value="Korea, Republic of" />Korea, Republic of 
+          <option value="Kuwait" />Kuwait 
+          <option value="Kyrgyzstan" />Kyrgyzstan 
+          <option value="Lao People's Democratic Republic" />Lao People's Democratic Republic 
+          <option value="Latvia" />Latvia 
+          <option value="Lebanon" />Lebanon 
+          <option value="Lesotho" />Lesotho 
+          <option value="Liberia" />Liberia 
+          <option value="Libyan Arab Jamahiriya" />Libyan Arab Jamahiriya 
+          <option value="Liechtenstein" />Liechtenstein 
+          <option value="Lithuania" />Lithuania 
+          <option value="Luxembourg" />Luxembourg 
+          <option value="Macao" />Macao 
+          <option value="Macedonia, The Former Yugoslav Republic of" />Macedonia, The Former Yugoslav Republic of 
+          <option value="Madagascar" />Madagascar 
+          <option value="Malawi" />Malawi 
+          <option value="Malaysia" />Malaysia 
+          <option value="Maldives" />Maldives 
+          <option value="Mali" />Mali 
+          <option value="Malta" />Malta 
+          <option value="Marshall Islands" />Marshall Islands 
+          <option value="Martinique" />Martinique 
+          <option value="Mauritania" />Mauritania 
+          <option value="Mauritius" />Mauritius 
+          <option value="Mayotte" />Mayotte 
+          <option value="Mexico" />Mexico 
+          <option value="Micronesia, Federated States of" />Micronesia, Federated States of 
+          <option value="Moldova, Republic of" />Moldova, Republic of 
+          <option value="Monaco" />Monaco 
+          <option value="Mongolia" />Mongolia 
+          <option value="Montenegro" />Montenegro
+          <option value="Montserrat" />Montserrat 
+          <option value="Morocco" />Morocco 
+          <option value="Mozambique" />Mozambique 
+          <option value="Myanmar" />Myanmar 
+          <option value="Namibia" />Namibia 
+          <option value="Nauru" />Nauru 
+          <option value="Nepal" />Nepal 
+          <option value="Netherlands" />Netherlands 
+          <option value="Netherlands Antilles" />Netherlands Antilles 
+          <option value="New Caledonia" />New Caledonia 
+          <option value="New Zealand" />New Zealand 
+          <option value="Nicaragua" />Nicaragua 
+          <option value="Niger" />Niger 
+          <option value="Nigeria" />Nigeria 
+          <option value="Niue" />Niue 
+          <option value="Norfolk Island" />Norfolk Island 
+          <option value="Northern Mariana Islands" />Northern Mariana Islands 
+          <option value="Norway" />Norway 
+          <option value="Oman" />Oman 
+          <option value="Pakistan" />Pakistan 
+          <option value="Palau" />Palau 
+          <option value="Palestinian Territory, Occupied" />Palestinian Territory, Occupied 
+          <option value="Panama" />Panama 
+          <option value="Papua New Guinea" />Papua New Guinea 
+          <option value="Paraguay" />Paraguay 
+          <option value="Peru" />Peru 
+          <option value="Philippines" />Philippines 
+          <option value="Pitcairn" />Pitcairn 
+          <option value="Poland" />Poland 
+          <option value="Portugal" />Portugal 
+          <option value="Puerto Rico" />Puerto Rico 
+          <option value="Qatar" />Qatar 
+          <option value="Reunion" />Reunion 
+          <option value="Romania" />Romania 
+          <option value="Russian Federation" />Russian Federation 
+          <option value="Rwanda" />Rwanda 
+          <option value="Saint Helena" />Saint Helena 
+          <option value="Saint Kitts and Nevis" />Saint Kitts and Nevis 
+          <option value="Saint Lucia" />Saint Lucia 
+          <option value="Saint Pierre and Miquelon" />Saint Pierre and Miquelon 
+          <option value="Saint Vincent and The Grenadines" />Saint Vincent and The Grenadines 
+          <option value="Samoa" />Samoa 
+          <option value="San Marino" />San Marino 
+          <option value="Sao Tome and Principe" />Sao Tome and Principe 
+          <option value="Saudi Arabia" />Saudi Arabia 
+          <option value="Senegal" />Senegal 
+          <option value="Serbia" />Serbia 
+          <option value="Seychelles" />Seychelles 
+          <option value="Sierra Leone" />Sierra Leone 
+          <option value="Singapore" />Singapore 
+          <option value="Slovakia" />Slovakia 
+          <option value="Slovenia" />Slovenia 
+          <option value="Solomon Islands" />Solomon Islands 
+          <option value="Somalia" />Somalia 
+          <option value="South Africa" />South Africa 
+          <option value="South Georgia and The South Sandwich Islands" />South Georgia and The South Sandwich Islands 
+          <option value="South Sudan" />South Sudan 
+          <option value="Spain" />Spain 
+          <option value="Sri Lanka" />Sri Lanka 
+          <option value="Sudan" />Sudan 
+          <option value="Suriname" />Suriname 
+          <option value="Svalbard and Jan Mayen" />Svalbard and Jan Mayen 
+          <option value="Swaziland" />Swaziland 
+          <option value="Sweden" />Sweden 
+          <option value="Switzerland" />Switzerland 
+          <option value="Syrian Arab Republic" />Syrian Arab Republic 
+          <option value="Taiwan, Republic of China" />Taiwan, Republic of China 
+          <option value="Tajikistan" />Tajikistan 
+          <option value="Tanzania, United Republic of" />Tanzania, United Republic of 
+          <option value="Thailand" />Thailand 
+          <option value="Timor-leste" />Timor-leste 
+          <option value="Togo" />Togo 
+          <option value="Tokelau" />Tokelau 
+          <option value="Tonga" />Tonga 
+          <option value="Trinidad and Tobago" />Trinidad and Tobago 
+          <option value="Tunisia" />Tunisia 
+          <option value="Turkey" />Turkey 
+          <option value="Turkmenistan" />Turkmenistan 
+          <option value="Turks and Caicos Islands" />Turks and Caicos Islands 
+          <option value="Tuvalu" />Tuvalu 
+          <option value="Uganda" />Uganda 
+          <option value="Ukraine" />Ukraine 
+          <option value="United Arab Emirates" />United Arab Emirates 
+          <option value="United Kingdom" />United Kingdom 
+          <option value="United States" />United States 
+          <option value="United States Minor Outlying Islands" />United States Minor Outlying Islands 
+          <option value="Uruguay" />Uruguay 
+          <option value="Uzbekistan" />Uzbekistan 
+          <option value="Vanuatu" />Vanuatu 
+          <option value="Venezuela" />Venezuela 
+          <option value="Viet Nam" />Viet Nam 
+          <option value="Virgin Islands, British" />Virgin Islands, British 
+          <option value="Virgin Islands, U.S." />Virgin Islands, U.S. 
+          <option value="Wallis and Futuna" />Wallis and Futuna 
+          <option value="Western Sahara" />Western Sahara 
+          <option value="Yemen" />Yemen 
+          <option value="Zambia" />Zambia 
+          <option value="Zimbabwe" />Zimbabwe
+        </select>
+      </div>
+      <div>
+        <em>Into This</em>        
+        <select data-placeholder="Choose a Country..." class="chzn-select" style="width:350px;" tabindex="2">
+          <option value="" /> 
+          <option value="United States" />United States 
+          <option value="United Kingdom" />United Kingdom 
+          <option value="Afghanistan" />Afghanistan 
+          <option value="Albania" />Albania 
+          <option value="Algeria" />Algeria 
+          <option value="American Samoa" />American Samoa 
+          <option value="Andorra" />Andorra 
+          <option value="Angola" />Angola 
+          <option value="Anguilla" />Anguilla 
+          <option value="Antarctica" />Antarctica 
+          <option value="Antigua and Barbuda" />Antigua and Barbuda 
+          <option value="Argentina" />Argentina 
+          <option value="Armenia" />Armenia 
+          <option value="Aruba" />Aruba 
+          <option value="Australia" />Australia 
+          <option value="Austria" />Austria 
+          <option value="Azerbaijan" />Azerbaijan 
+          <option value="Bahamas" />Bahamas 
+          <option value="Bahrain" />Bahrain 
+          <option value="Bangladesh" />Bangladesh 
+          <option value="Barbados" />Barbados 
+          <option value="Belarus" />Belarus 
+          <option value="Belgium" />Belgium 
+          <option value="Belize" />Belize 
+          <option value="Benin" />Benin 
+          <option value="Bermuda" />Bermuda 
+          <option value="Bhutan" />Bhutan 
+          <option value="Bolivia" />Bolivia 
+          <option value="Bosnia and Herzegovina" />Bosnia and Herzegovina 
+          <option value="Botswana" />Botswana 
+          <option value="Bouvet Island" />Bouvet Island 
+          <option value="Brazil" />Brazil 
+          <option value="British Indian Ocean Territory" />British Indian Ocean Territory 
+          <option value="Brunei Darussalam" />Brunei Darussalam 
+          <option value="Bulgaria" />Bulgaria 
+          <option value="Burkina Faso" />Burkina Faso 
+          <option value="Burundi" />Burundi 
+          <option value="Cambodia" />Cambodia 
+          <option value="Cameroon" />Cameroon 
+          <option value="Canada" />Canada 
+          <option value="Cape Verde" />Cape Verde 
+          <option value="Cayman Islands" />Cayman Islands 
+          <option value="Central African Republic" />Central African Republic 
+          <option value="Chad" />Chad 
+          <option value="Chile" />Chile 
+          <option value="China" />China 
+          <option value="Christmas Island" />Christmas Island 
+          <option value="Cocos (Keeling) Islands" />Cocos (Keeling) Islands 
+          <option value="Colombia" />Colombia 
+          <option value="Comoros" />Comoros 
+          <option value="Congo" />Congo 
+          <option value="Congo, The Democratic Republic of The" />Congo, The Democratic Republic of The 
+          <option value="Cook Islands" />Cook Islands 
+          <option value="Costa Rica" />Costa Rica 
+          <option value="Cote D'ivoire" />Cote D'ivoire 
+          <option value="Croatia" />Croatia 
+          <option value="Cuba" />Cuba 
+          <option value="Cyprus" />Cyprus 
+          <option value="Czech Republic" />Czech Republic 
+          <option value="Denmark" />Denmark 
+          <option value="Djibouti" />Djibouti 
+          <option value="Dominica" />Dominica 
+          <option value="Dominican Republic" />Dominican Republic 
+          <option value="Ecuador" />Ecuador 
+          <option value="Egypt" />Egypt 
+          <option value="El Salvador" />El Salvador 
+          <option value="Equatorial Guinea" />Equatorial Guinea 
+          <option value="Eritrea" />Eritrea 
+          <option value="Estonia" />Estonia 
+          <option value="Ethiopia" />Ethiopia 
+          <option value="Falkland Islands (Malvinas)" />Falkland Islands (Malvinas) 
+          <option value="Faroe Islands" />Faroe Islands 
+          <option value="Fiji" />Fiji 
+          <option value="Finland" />Finland 
+          <option value="France" />France 
+          <option value="French Guiana" />French Guiana 
+          <option value="French Polynesia" />French Polynesia 
+          <option value="French Southern Territories" />French Southern Territories 
+          <option value="Gabon" />Gabon 
+          <option value="Gambia" />Gambia 
+          <option value="Georgia" />Georgia 
+          <option value="Germany" />Germany 
+          <option value="Ghana" />Ghana 
+          <option value="Gibraltar" />Gibraltar 
+          <option value="Greece" />Greece 
+          <option value="Greenland" />Greenland 
+          <option value="Grenada" />Grenada 
+          <option value="Guadeloupe" />Guadeloupe 
+          <option value="Guam" />Guam 
+          <option value="Guatemala" />Guatemala 
+          <option value="Guinea" />Guinea 
+          <option value="Guinea-bissau" />Guinea-bissau 
+          <option value="Guyana" />Guyana 
+          <option value="Haiti" />Haiti 
+          <option value="Heard Island and Mcdonald Islands" />Heard Island and Mcdonald Islands 
+          <option value="Holy See (Vatican City State)" />Holy See (Vatican City State) 
+          <option value="Honduras" />Honduras 
+          <option value="Hong Kong" />Hong Kong 
+          <option value="Hungary" />Hungary 
+          <option value="Iceland" />Iceland 
+          <option value="India" />India 
+          <option value="Indonesia" />Indonesia 
+          <option value="Iran, Islamic Republic of" />Iran, Islamic Republic of 
+          <option value="Iraq" />Iraq 
+          <option value="Ireland" />Ireland 
+          <option value="Israel" />Israel 
+          <option value="Italy" />Italy 
+          <option value="Jamaica" />Jamaica 
+          <option value="Japan" />Japan 
+          <option value="Jordan" />Jordan 
+          <option value="Kazakhstan" />Kazakhstan 
+          <option value="Kenya" />Kenya 
+          <option value="Kiribati" />Kiribati 
+          <option value="Korea, Democratic People's Republic of" />Korea, Democratic People's Republic of 
+          <option value="Korea, Republic of" />Korea, Republic of 
+          <option value="Kuwait" />Kuwait 
+          <option value="Kyrgyzstan" />Kyrgyzstan 
+          <option value="Lao People's Democratic Republic" />Lao People's Democratic Republic 
+          <option value="Latvia" />Latvia 
+          <option value="Lebanon" />Lebanon 
+          <option value="Lesotho" />Lesotho 
+          <option value="Liberia" />Liberia 
+          <option value="Libyan Arab Jamahiriya" />Libyan Arab Jamahiriya 
+          <option value="Liechtenstein" />Liechtenstein 
+          <option value="Lithuania" />Lithuania 
+          <option value="Luxembourg" />Luxembourg 
+          <option value="Macao" />Macao 
+          <option value="Macedonia, The Former Yugoslav Republic of" />Macedonia, The Former Yugoslav Republic of 
+          <option value="Madagascar" />Madagascar 
+          <option value="Malawi" />Malawi 
+          <option value="Malaysia" />Malaysia 
+          <option value="Maldives" />Maldives 
+          <option value="Mali" />Mali 
+          <option value="Malta" />Malta 
+          <option value="Marshall Islands" />Marshall Islands 
+          <option value="Martinique" />Martinique 
+          <option value="Mauritania" />Mauritania 
+          <option value="Mauritius" />Mauritius 
+          <option value="Mayotte" />Mayotte 
+          <option value="Mexico" />Mexico 
+          <option value="Micronesia, Federated States of" />Micronesia, Federated States of 
+          <option value="Moldova, Republic of" />Moldova, Republic of 
+          <option value="Monaco" />Monaco 
+          <option value="Mongolia" />Mongolia 
+          <option value="Montenegro" />Montenegro
+          <option value="Montserrat" />Montserrat 
+          <option value="Morocco" />Morocco 
+          <option value="Mozambique" />Mozambique 
+          <option value="Myanmar" />Myanmar 
+          <option value="Namibia" />Namibia 
+          <option value="Nauru" />Nauru 
+          <option value="Nepal" />Nepal 
+          <option value="Netherlands" />Netherlands 
+          <option value="Netherlands Antilles" />Netherlands Antilles 
+          <option value="New Caledonia" />New Caledonia 
+          <option value="New Zealand" />New Zealand 
+          <option value="Nicaragua" />Nicaragua 
+          <option value="Niger" />Niger 
+          <option value="Nigeria" />Nigeria 
+          <option value="Niue" />Niue 
+          <option value="Norfolk Island" />Norfolk Island 
+          <option value="Northern Mariana Islands" />Northern Mariana Islands 
+          <option value="Norway" />Norway 
+          <option value="Oman" />Oman 
+          <option value="Pakistan" />Pakistan 
+          <option value="Palau" />Palau 
+          <option value="Palestinian Territory, Occupied" />Palestinian Territory, Occupied 
+          <option value="Panama" />Panama 
+          <option value="Papua New Guinea" />Papua New Guinea 
+          <option value="Paraguay" />Paraguay 
+          <option value="Peru" />Peru 
+          <option value="Philippines" />Philippines 
+          <option value="Pitcairn" />Pitcairn 
+          <option value="Poland" />Poland 
+          <option value="Portugal" />Portugal 
+          <option value="Puerto Rico" />Puerto Rico 
+          <option value="Qatar" />Qatar 
+          <option value="Reunion" />Reunion 
+          <option value="Romania" />Romania 
+          <option value="Russian Federation" />Russian Federation 
+          <option value="Rwanda" />Rwanda 
+          <option value="Saint Helena" />Saint Helena 
+          <option value="Saint Kitts and Nevis" />Saint Kitts and Nevis 
+          <option value="Saint Lucia" />Saint Lucia 
+          <option value="Saint Pierre and Miquelon" />Saint Pierre and Miquelon 
+          <option value="Saint Vincent and The Grenadines" />Saint Vincent and The Grenadines 
+          <option value="Samoa" />Samoa 
+          <option value="San Marino" />San Marino 
+          <option value="Sao Tome and Principe" />Sao Tome and Principe 
+          <option value="Saudi Arabia" />Saudi Arabia 
+          <option value="Senegal" />Senegal 
+          <option value="Serbia" />Serbia 
+          <option value="Seychelles" />Seychelles 
+          <option value="Sierra Leone" />Sierra Leone 
+          <option value="Singapore" />Singapore 
+          <option value="Slovakia" />Slovakia 
+          <option value="Slovenia" />Slovenia 
+          <option value="Solomon Islands" />Solomon Islands 
+          <option value="Somalia" />Somalia 
+          <option value="South Africa" />South Africa 
+          <option value="South Georgia and The South Sandwich Islands" />South Georgia and The South Sandwich Islands 
+          <option value="South Sudan" />South Sudan 
+          <option value="Spain" />Spain 
+          <option value="Sri Lanka" />Sri Lanka 
+          <option value="Sudan" />Sudan 
+          <option value="Suriname" />Suriname 
+          <option value="Svalbard and Jan Mayen" />Svalbard and Jan Mayen 
+          <option value="Swaziland" />Swaziland 
+          <option value="Sweden" />Sweden 
+          <option value="Switzerland" />Switzerland 
+          <option value="Syrian Arab Republic" />Syrian Arab Republic 
+          <option value="Taiwan, Republic of China" />Taiwan, Republic of China 
+          <option value="Tajikistan" />Tajikistan 
+          <option value="Tanzania, United Republic of" />Tanzania, United Republic of 
+          <option value="Thailand" />Thailand 
+          <option value="Timor-leste" />Timor-leste 
+          <option value="Togo" />Togo 
+          <option value="Tokelau" />Tokelau 
+          <option value="Tonga" />Tonga 
+          <option value="Trinidad and Tobago" />Trinidad and Tobago 
+          <option value="Tunisia" />Tunisia 
+          <option value="Turkey" />Turkey 
+          <option value="Turkmenistan" />Turkmenistan 
+          <option value="Turks and Caicos Islands" />Turks and Caicos Islands 
+          <option value="Tuvalu" />Tuvalu 
+          <option value="Uganda" />Uganda 
+          <option value="Ukraine" />Ukraine 
+          <option value="United Arab Emirates" />United Arab Emirates 
+          <option value="United Kingdom" />United Kingdom 
+          <option value="United States" />United States 
+          <option value="United States Minor Outlying Islands" />United States Minor Outlying Islands 
+          <option value="Uruguay" />Uruguay 
+          <option value="Uzbekistan" />Uzbekistan 
+          <option value="Vanuatu" />Vanuatu 
+          <option value="Venezuela" />Venezuela 
+          <option value="Viet Nam" />Viet Nam 
+          <option value="Virgin Islands, British" />Virgin Islands, British 
+          <option value="Virgin Islands, U.S." />Virgin Islands, U.S. 
+          <option value="Wallis and Futuna" />Wallis and Futuna 
+          <option value="Western Sahara" />Western Sahara 
+          <option value="Yemen" />Yemen 
+          <option value="Zambia" />Zambia 
+          <option value="Zimbabwe" />Zimbabwe
+        </select>
+      </div>
+    </div>
+    
+    <h2>Multiple Select</h2>
+    <div class="side-by-side clearfix">
+      <div>
+        <em>Turns This</em>
+        <select data-placeholder="Choose a Country..." style="width:350px;" multiple="" tabindex="3">
+          <option value="United States" />United States 
+          <option value="United Kingdom" />United Kingdom 
+          <option value="Afghanistan" />Afghanistan 
+          <option value="Albania" />Albania 
+          <option value="Algeria" />Algeria 
+          <option value="American Samoa" />American Samoa 
+          <option value="Andorra" />Andorra 
+          <option value="Angola" />Angola 
+          <option value="Anguilla" />Anguilla 
+          <option value="Antarctica" />Antarctica 
+          <option value="Antigua and Barbuda" />Antigua and Barbuda 
+          <option value="Argentina" />Argentina 
+          <option value="Armenia" />Armenia 
+          <option value="Aruba" />Aruba 
+          <option value="Australia" />Australia 
+          <option value="Austria" />Austria 
+          <option value="Azerbaijan" />Azerbaijan 
+          <option value="Bahamas" />Bahamas 
+          <option value="Bahrain" />Bahrain 
+          <option value="Bangladesh" />Bangladesh 
+          <option value="Barbados" />Barbados 
+          <option value="Belarus" />Belarus 
+          <option value="Belgium" />Belgium 
+          <option value="Belize" />Belize 
+          <option value="Benin" />Benin 
+          <option value="Bermuda" />Bermuda 
+          <option value="Bhutan" />Bhutan 
+          <option value="Bolivia" />Bolivia 
+          <option value="Bosnia and Herzegovina" />Bosnia and Herzegovina 
+          <option value="Botswana" />Botswana 
+          <option value="Bouvet Island" />Bouvet Island 
+          <option value="Brazil" />Brazil 
+          <option value="British Indian Ocean Territory" />British Indian Ocean Territory 
+          <option value="Brunei Darussalam" />Brunei Darussalam 
+          <option value="Bulgaria" />Bulgaria 
+          <option value="Burkina Faso" />Burkina Faso 
+          <option value="Burundi" />Burundi 
+          <option value="Cambodia" />Cambodia 
+          <option value="Cameroon" />Cameroon 
+          <option value="Canada" />Canada 
+          <option value="Cape Verde" />Cape Verde 
+          <option value="Cayman Islands" />Cayman Islands 
+          <option value="Central African Republic" />Central African Republic 
+          <option value="Chad" />Chad 
+          <option value="Chile" />Chile 
+          <option value="China" />China 
+          <option value="Christmas Island" />Christmas Island 
+          <option value="Cocos (Keeling) Islands" />Cocos (Keeling) Islands 
+          <option value="Colombia" />Colombia 
+          <option value="Comoros" />Comoros 
+          <option value="Congo" />Congo 
+          <option value="Congo, The Democratic Republic of The" />Congo, The Democratic Republic of The 
+          <option value="Cook Islands" />Cook Islands 
+          <option value="Costa Rica" />Costa Rica 
+          <option value="Cote D'ivoire" />Cote D'ivoire 
+          <option value="Croatia" />Croatia 
+          <option value="Cuba" />Cuba 
+          <option value="Cyprus" />Cyprus 
+          <option value="Czech Republic" />Czech Republic 
+          <option value="Denmark" />Denmark 
+          <option value="Djibouti" />Djibouti 
+          <option value="Dominica" />Dominica 
+          <option value="Dominican Republic" />Dominican Republic 
+          <option value="Ecuador" />Ecuador 
+          <option value="Egypt" />Egypt 
+          <option value="El Salvador" />El Salvador 
+          <option value="Equatorial Guinea" />Equatorial Guinea 
+          <option value="Eritrea" />Eritrea 
+          <option value="Estonia" />Estonia 
+          <option value="Ethiopia" />Ethiopia 
+          <option value="Falkland Islands (Malvinas)" />Falkland Islands (Malvinas) 
+          <option value="Faroe Islands" />Faroe Islands 
+          <option value="Fiji" />Fiji 
+          <option value="Finland" />Finland 
+          <option value="France" />France 
+          <option value="French Guiana" />French Guiana 
+          <option value="French Polynesia" />French Polynesia 
+          <option value="French Southern Territories" />French Southern Territories 
+          <option value="Gabon" />Gabon 
+          <option value="Gambia" />Gambia 
+          <option value="Georgia" />Georgia 
+          <option value="Germany" />Germany 
+          <option value="Ghana" />Ghana 
+          <option value="Gibraltar" />Gibraltar 
+          <option value="Greece" />Greece 
+          <option value="Greenland" />Greenland 
+          <option value="Grenada" />Grenada 
+          <option value="Guadeloupe" />Guadeloupe 
+          <option value="Guam" />Guam 
+          <option value="Guatemala" />Guatemala 
+          <option value="Guinea" />Guinea 
+          <option value="Guinea-bissau" />Guinea-bissau 
+          <option value="Guyana" />Guyana 
+          <option value="Haiti" />Haiti 
+          <option value="Heard Island and Mcdonald Islands" />Heard Island and Mcdonald Islands 
+          <option value="Holy See (Vatican City State)" />Holy See (Vatican City State) 
+          <option value="Honduras" />Honduras 
+          <option value="Hong Kong" />Hong Kong 
+          <option value="Hungary" />Hungary 
+          <option value="Iceland" />Iceland 
+          <option value="India" />India 
+          <option value="Indonesia" />Indonesia 
+          <option value="Iran, Islamic Republic of" />Iran, Islamic Republic of 
+          <option value="Iraq" />Iraq 
+          <option value="Ireland" />Ireland 
+          <option value="Israel" />Israel 
+          <option value="Italy" />Italy 
+          <option value="Jamaica" />Jamaica 
+          <option value="Japan" />Japan 
+          <option value="Jordan" />Jordan 
+          <option value="Kazakhstan" />Kazakhstan 
+          <option value="Kenya" />Kenya 
+          <option value="Kiribati" />Kiribati 
+          <option value="Korea, Democratic People's Republic of" />Korea, Democratic People's Republic of 
+          <option value="Korea, Republic of" />Korea, Republic of 
+          <option value="Kuwait" />Kuwait 
+          <option value="Kyrgyzstan" />Kyrgyzstan 
+          <option value="Lao People's Democratic Republic" />Lao People's Democratic Republic 
+          <option value="Latvia" />Latvia 
+          <option value="Lebanon" />Lebanon 
+          <option value="Lesotho" />Lesotho 
+          <option value="Liberia" />Liberia 
+          <option value="Libyan Arab Jamahiriya" />Libyan Arab Jamahiriya 
+          <option value="Liechtenstein" />Liechtenstein 
+          <option value="Lithuania" />Lithuania 
+          <option value="Luxembourg" />Luxembourg 
+          <option value="Macao" />Macao 
+          <option value="Macedonia, The Former Yugoslav Republic of" />Macedonia, The Former Yugoslav Republic of 
+          <option value="Madagascar" />Madagascar 
+          <option value="Malawi" />Malawi 
+          <option value="Malaysia" />Malaysia 
+          <option value="Maldives" />Maldives 
+          <option value="Mali" />Mali 
+          <option value="Malta" />Malta 
+          <option value="Marshall Islands" />Marshall Islands 
+          <option value="Martinique" />Martinique 
+          <option value="Mauritania" />Mauritania 
+          <option value="Mauritius" />Mauritius 
+          <option value="Mayotte" />Mayotte 
+          <option value="Mexico" />Mexico 
+          <option value="Micronesia, Federated States of" />Micronesia, Federated States of 
+          <option value="Moldova, Republic of" />Moldova, Republic of 
+          <option value="Monaco" />Monaco 
+          <option value="Mongolia" />Mongolia 
+          <option value="Montenegro" />Montenegro
+          <option value="Montserrat" />Montserrat 
+          <option value="Morocco" />Morocco 
+          <option value="Mozambique" />Mozambique 
+          <option value="Myanmar" />Myanmar 
+          <option value="Namibia" />Namibia 
+          <option value="Nauru" />Nauru 
+          <option value="Nepal" />Nepal 
+          <option value="Netherlands" />Netherlands 
+          <option value="Netherlands Antilles" />Netherlands Antilles 
+          <option value="New Caledonia" />New Caledonia 
+          <option value="New Zealand" />New Zealand 
+          <option value="Nicaragua" />Nicaragua 
+          <option value="Niger" />Niger 
+          <option value="Nigeria" />Nigeria 
+          <option value="Niue" />Niue 
+          <option value="Norfolk Island" />Norfolk Island 
+          <option value="Northern Mariana Islands" />Northern Mariana Islands 
+          <option value="Norway" />Norway 
+          <option value="Oman" />Oman 
+          <option value="Pakistan" />Pakistan 
+          <option value="Palau" />Palau 
+          <option value="Palestinian Territory, Occupied" />Palestinian Territory, Occupied 
+          <option value="Panama" />Panama 
+          <option value="Papua New Guinea" />Papua New Guinea 
+          <option value="Paraguay" />Paraguay 
+          <option value="Peru" />Peru 
+          <option value="Philippines" />Philippines 
+          <option value="Pitcairn" />Pitcairn 
+          <option value="Poland" />Poland 
+          <option value="Portugal" />Portugal 
+          <option value="Puerto Rico" />Puerto Rico 
+          <option value="Qatar" />Qatar 
+          <option value="Reunion" />Reunion 
+          <option value="Romania" />Romania 
+          <option value="Russian Federation" />Russian Federation 
+          <option value="Rwanda" />Rwanda 
+          <option value="Saint Helena" />Saint Helena 
+          <option value="Saint Kitts and Nevis" />Saint Kitts and Nevis 
+          <option value="Saint Lucia" />Saint Lucia 
+          <option value="Saint Pierre and Miquelon" />Saint Pierre and Miquelon 
+          <option value="Saint Vincent and The Grenadines" />Saint Vincent and The Grenadines 
+          <option value="Samoa" />Samoa 
+          <option value="San Marino" />San Marino 
+          <option value="Sao Tome and Principe" />Sao Tome and Principe 
+          <option value="Saudi Arabia" />Saudi Arabia 
+          <option value="Senegal" />Senegal 
+          <option value="Serbia" />Serbia 
+          <option value="Seychelles" />Seychelles 
+          <option value="Sierra Leone" />Sierra Leone 
+          <option value="Singapore" />Singapore 
+          <option value="Slovakia" />Slovakia 
+          <option value="Slovenia" />Slovenia 
+          <option value="Solomon Islands" />Solomon Islands 
+          <option value="Somalia" />Somalia 
+          <option value="South Africa" />South Africa 
+          <option value="South Georgia and The South Sandwich Islands" />South Georgia and The South Sandwich Islands 
+          <option value="South Sudan" />South Sudan 
+          <option value="Spain" />Spain 
+          <option value="Sri Lanka" />Sri Lanka 
+          <option value="Sudan" />Sudan 
+          <option value="Suriname" />Suriname 
+          <option value="Svalbard and Jan Mayen" />Svalbard and Jan Mayen 
+          <option value="Swaziland" />Swaziland 
+          <option value="Sweden" />Sweden 
+          <option value="Switzerland" />Switzerland 
+          <option value="Syrian Arab Republic" />Syrian Arab Republic 
+          <option value="Taiwan, Republic of China" />Taiwan, Republic of China 
+          <option value="Tajikistan" />Tajikistan 
+          <option value="Tanzania, United Republic of" />Tanzania, United Republic of 
+          <option value="Thailand" />Thailand 
+          <option value="Timor-leste" />Timor-leste 
+          <option value="Togo" />Togo 
+          <option value="Tokelau" />Tokelau 
+          <option value="Tonga" />Tonga 
+          <option value="Trinidad and Tobago" />Trinidad and Tobago 
+          <option value="Tunisia" />Tunisia 
+          <option value="Turkey" />Turkey 
+          <option value="Turkmenistan" />Turkmenistan 
+          <option value="Turks and Caicos Islands" />Turks and Caicos Islands 
+          <option value="Tuvalu" />Tuvalu 
+          <option value="Uganda" />Uganda 
+          <option value="Ukraine" />Ukraine 
+          <option value="United Arab Emirates" />United Arab Emirates 
+          <option value="United Kingdom" />United Kingdom 
+          <option value="United States" />United States 
+          <option value="United States Minor Outlying Islands" />United States Minor Outlying Islands 
+          <option value="Uruguay" />Uruguay 
+          <option value="Uzbekistan" />Uzbekistan 
+          <option value="Vanuatu" />Vanuatu 
+          <option value="Venezuela" />Venezuela 
+          <option value="Viet Nam" />Viet Nam 
+          <option value="Virgin Islands, British" />Virgin Islands, British 
+          <option value="Virgin Islands, U.S." />Virgin Islands, U.S. 
+          <option value="Wallis and Futuna" />Wallis and Futuna 
+          <option value="Western Sahara" />Western Sahara 
+          <option value="Yemen" />Yemen 
+          <option value="Zambia" />Zambia 
+          <option value="Zimbabwe" />Zimbabwe
+        </select>
+      </div>
+      <div>
+        <em>Into This</em>        
+        <select data-placeholder="Choose a Country..." class="chzn-select" multiple="" style="width:350px;" tabindex="4">
+          <option value="" /> 
+          <option value="United States" />United States 
+          <option value="United Kingdom" />United Kingdom 
+          <option value="Afghanistan" />Afghanistan 
+          <option value="Albania" />Albania 
+          <option value="Algeria" />Algeria 
+          <option value="American Samoa" />American Samoa 
+          <option value="Andorra" />Andorra 
+          <option value="Angola" />Angola 
+          <option value="Anguilla" />Anguilla 
+          <option value="Antarctica" />Antarctica 
+          <option value="Antigua and Barbuda" />Antigua and Barbuda 
+          <option value="Argentina" />Argentina 
+          <option value="Armenia" />Armenia 
+          <option value="Aruba" />Aruba 
+          <option value="Australia" />Australia 
+          <option value="Austria" />Austria 
+          <option value="Azerbaijan" />Azerbaijan 
+          <option value="Bahamas" />Bahamas 
+          <option value="Bahrain" />Bahrain 
+          <option value="Bangladesh" />Bangladesh 
+          <option value="Barbados" />Barbados 
+          <option value="Belarus" />Belarus 
+          <option value="Belgium" />Belgium 
+          <option value="Belize" />Belize 
+          <option value="Benin" />Benin 
+          <option value="Bermuda" />Bermuda 
+          <option value="Bhutan" />Bhutan 
+          <option value="Bolivia" />Bolivia 
+          <option value="Bosnia and Herzegovina" />Bosnia and Herzegovina 
+          <option value="Botswana" />Botswana 
+          <option value="Bouvet Island" />Bouvet Island 
+          <option value="Brazil" />Brazil 
+          <option value="British Indian Ocean Territory" />British Indian Ocean Territory 
+          <option value="Brunei Darussalam" />Brunei Darussalam 
+          <option value="Bulgaria" />Bulgaria 
+          <option value="Burkina Faso" />Burkina Faso 
+          <option value="Burundi" />Burundi 
+          <option value="Cambodia" />Cambodia 
+          <option value="Cameroon" />Cameroon 
+          <option value="Canada" />Canada 
+          <option value="Cape Verde" />Cape Verde 
+          <option value="Cayman Islands" />Cayman Islands 
+          <option value="Central African Republic" />Central African Republic 
+          <option value="Chad" />Chad 
+          <option value="Chile" />Chile 
+          <option value="China" />China 
+          <option value="Christmas Island" />Christmas Island 
+          <option value="Cocos (Keeling) Islands" />Cocos (Keeling) Islands 
+          <option value="Colombia" />Colombia 
+          <option value="Comoros" />Comoros 
+          <option value="Congo" />Congo 
+          <option value="Congo, The Democratic Republic of The" />Congo, The Democratic Republic of The 
+          <option value="Cook Islands" />Cook Islands 
+          <option value="Costa Rica" />Costa Rica 
+          <option value="Cote D'ivoire" />Cote D'ivoire 
+          <option value="Croatia" />Croatia 
+          <option value="Cuba" />Cuba 
+          <option value="Cyprus" />Cyprus 
+          <option value="Czech Republic" />Czech Republic 
+          <option value="Denmark" />Denmark 
+          <option value="Djibouti" />Djibouti 
+          <option value="Dominica" />Dominica 
+          <option value="Dominican Republic" />Dominican Republic 
+          <option value="Ecuador" />Ecuador 
+          <option value="Egypt" />Egypt 
+          <option value="El Salvador" />El Salvador 
+          <option value="Equatorial Guinea" />Equatorial Guinea 
+          <option value="Eritrea" />Eritrea 
+          <option value="Estonia" />Estonia 
+          <option value="Ethiopia" />Ethiopia 
+          <option value="Falkland Islands (Malvinas)" />Falkland Islands (Malvinas) 
+          <option value="Faroe Islands" />Faroe Islands 
+          <option value="Fiji" />Fiji 
+          <option value="Finland" />Finland 
+          <option value="France" />France 
+          <option value="French Guiana" />French Guiana 
+          <option value="French Polynesia" />French Polynesia 
+          <option value="French Southern Territories" />French Southern Territories 
+          <option value="Gabon" />Gabon 
+          <option value="Gambia" />Gambia 
+          <option value="Georgia" />Georgia 
+          <option value="Germany" />Germany 
+          <option value="Ghana" />Ghana 
+          <option value="Gibraltar" />Gibraltar 
+          <option value="Greece" />Greece 
+          <option value="Greenland" />Greenland 
+          <option value="Grenada" />Grenada 
+          <option value="Guadeloupe" />Guadeloupe 
+          <option value="Guam" />Guam 
+          <option value="Guatemala" />Guatemala 
+          <option value="Guinea" />Guinea 
+          <option value="Guinea-bissau" />Guinea-bissau 
+          <option value="Guyana" />Guyana 
+          <option value="Haiti" />Haiti 
+          <option value="Heard Island and Mcdonald Islands" />Heard Island and Mcdonald Islands 
+          <option value="Holy See (Vatican City State)" />Holy See (Vatican City State) 
+          <option value="Honduras" />Honduras 
+          <option value="Hong Kong" />Hong Kong 
+          <option value="Hungary" />Hungary 
+          <option value="Iceland" />Iceland 
+          <option value="India" />India 
+          <option value="Indonesia" />Indonesia 
+          <option value="Iran, Islamic Republic of" />Iran, Islamic Republic of 
+          <option value="Iraq" />Iraq 
+          <option value="Ireland" />Ireland 
+          <option value="Israel" />Israel 
+          <option value="Italy" />Italy 
+          <option value="Jamaica" />Jamaica 
+          <option value="Japan" />Japan 
+          <option value="Jordan" />Jordan 
+          <option value="Kazakhstan" />Kazakhstan 
+          <option value="Kenya" />Kenya 
+          <option value="Kiribati" />Kiribati 
+          <option value="Korea, Democratic People's Republic of" />Korea, Democratic People's Republic of 
+          <option value="Korea, Republic of" />Korea, Republic of 
+          <option value="Kuwait" />Kuwait 
+          <option value="Kyrgyzstan" />Kyrgyzstan 
+          <option value="Lao People's Democratic Republic" />Lao People's Democratic Republic 
+          <option value="Latvia" />Latvia 
+          <option value="Lebanon" />Lebanon 
+          <option value="Lesotho" />Lesotho 
+          <option value="Liberia" />Liberia 
+          <option value="Libyan Arab Jamahiriya" />Libyan Arab Jamahiriya 
+          <option value="Liechtenstein" />Liechtenstein 
+          <option value="Lithuania" />Lithuania 
+          <option value="Luxembourg" />Luxembourg 
+          <option value="Macao" />Macao 
+          <option value="Macedonia, The Former Yugoslav Republic of" />Macedonia, The Former Yugoslav Republic of 
+          <option value="Madagascar" />Madagascar 
+          <option value="Malawi" />Malawi 
+          <option value="Malaysia" />Malaysia 
+          <option value="Maldives" />Maldives 
+          <option value="Mali" />Mali 
+          <option value="Malta" />Malta 
+          <option value="Marshall Islands" />Marshall Islands 
+          <option value="Martinique" />Martinique 
+          <option value="Mauritania" />Mauritania 
+          <option value="Mauritius" />Mauritius 
+          <option value="Mayotte" />Mayotte 
+          <option value="Mexico" />Mexico 
+          <option value="Micronesia, Federated States of" />Micronesia, Federated States of 
+          <option value="Moldova, Republic of" />Moldova, Republic of 
+          <option value="Monaco" />Monaco 
+          <option value="Mongolia" />Mongolia 
+          <option value="Montenegro" />Montenegro
+          <option value="Montserrat" />Montserrat 
+          <option value="Morocco" />Morocco 
+          <option value="Mozambique" />Mozambique 
+          <option value="Myanmar" />Myanmar 
+          <option value="Namibia" />Namibia 
+          <option value="Nauru" />Nauru 
+          <option value="Nepal" />Nepal 
+          <option value="Netherlands" />Netherlands 
+          <option value="Netherlands Antilles" />Netherlands Antilles 
+          <option value="New Caledonia" />New Caledonia 
+          <option value="New Zealand" />New Zealand 
+          <option value="Nicaragua" />Nicaragua 
+          <option value="Niger" />Niger 
+          <option value="Nigeria" />Nigeria 
+          <option value="Niue" />Niue 
+          <option value="Norfolk Island" />Norfolk Island 
+          <option value="Northern Mariana Islands" />Northern Mariana Islands 
+          <option value="Norway" />Norway 
+          <option value="Oman" />Oman 
+          <option value="Pakistan" />Pakistan 
+          <option value="Palau" />Palau 
+          <option value="Palestinian Territory, Occupied" />Palestinian Territory, Occupied 
+          <option value="Panama" />Panama 
+          <option value="Papua New Guinea" />Papua New Guinea 
+          <option value="Paraguay" />Paraguay 
+          <option value="Peru" />Peru 
+          <option value="Philippines" />Philippines 
+          <option value="Pitcairn" />Pitcairn 
+          <option value="Poland" />Poland 
+          <option value="Portugal" />Portugal 
+          <option value="Puerto Rico" />Puerto Rico 
+          <option value="Qatar" />Qatar 
+          <option value="Reunion" />Reunion 
+          <option value="Romania" />Romania 
+          <option value="Russian Federation" />Russian Federation 
+          <option value="Rwanda" />Rwanda 
+          <option value="Saint Helena" />Saint Helena 
+          <option value="Saint Kitts and Nevis" />Saint Kitts and Nevis 
+          <option value="Saint Lucia" />Saint Lucia 
+          <option value="Saint Pierre and Miquelon" />Saint Pierre and Miquelon 
+          <option value="Saint Vincent and The Grenadines" />Saint Vincent and The Grenadines 
+          <option value="Samoa" />Samoa 
+          <option value="San Marino" />San Marino 
+          <option value="Sao Tome and Principe" />Sao Tome and Principe 
+          <option value="Saudi Arabia" />Saudi Arabia 
+          <option value="Senegal" />Senegal 
+          <option value="Serbia" />Serbia 
+          <option value="Seychelles" />Seychelles 
+          <option value="Sierra Leone" />Sierra Leone 
+          <option value="Singapore" />Singapore 
+          <option value="Slovakia" />Slovakia 
+          <option value="Slovenia" />Slovenia 
+          <option value="Solomon Islands" />Solomon Islands 
+          <option value="Somalia" />Somalia 
+          <option value="South Africa" />South Africa 
+          <option value="South Georgia and The South Sandwich Islands" />South Georgia and The South Sandwich Islands 
+          <option value="South Sudan" />South Sudan 
+          <option value="Spain" />Spain 
+          <option value="Sri Lanka" />Sri Lanka 
+          <option value="Sudan" />Sudan 
+          <option value="Suriname" />Suriname 
+          <option value="Svalbard and Jan Mayen" />Svalbard and Jan Mayen 
+          <option value="Swaziland" />Swaziland 
+          <option value="Sweden" />Sweden 
+          <option value="Switzerland" />Switzerland 
+          <option value="Syrian Arab Republic" />Syrian Arab Republic 
+          <option value="Taiwan, Republic of China" />Taiwan, Republic of China 
+          <option value="Tajikistan" />Tajikistan 
+          <option value="Tanzania, United Republic of" />Tanzania, United Republic of 
+          <option value="Thailand" />Thailand 
+          <option value="Timor-leste" />Timor-leste 
+          <option value="Togo" />Togo 
+          <option value="Tokelau" />Tokelau 
+          <option value="Tonga" />Tonga 
+          <option value="Trinidad and Tobago" />Trinidad and Tobago 
+          <option value="Tunisia" />Tunisia 
+          <option value="Turkey" />Turkey 
+          <option value="Turkmenistan" />Turkmenistan 
+          <option value="Turks and Caicos Islands" />Turks and Caicos Islands 
+          <option value="Tuvalu" />Tuvalu 
+          <option value="Uganda" />Uganda 
+          <option value="Ukraine" />Ukraine 
+          <option value="United Arab Emirates" />United Arab Emirates 
+          <option value="United Kingdom" />United Kingdom 
+          <option value="United States" />United States 
+          <option value="United States Minor Outlying Islands" />United States Minor Outlying Islands 
+          <option value="Uruguay" />Uruguay 
+          <option value="Uzbekistan" />Uzbekistan 
+          <option value="Vanuatu" />Vanuatu 
+          <option value="Venezuela" />Venezuela 
+          <option value="Viet Nam" />Viet Nam 
+          <option value="Virgin Islands, British" />Virgin Islands, British 
+          <option value="Virgin Islands, U.S." />Virgin Islands, U.S. 
+          <option value="Wallis and Futuna" />Wallis and Futuna 
+          <option value="Western Sahara" />Western Sahara 
+          <option value="Yemen" />Yemen 
+          <option value="Zambia" />Zambia 
+          <option value="Zimbabwe" />Zimbabwe
+        </select>
+      </div>
+    </div>
+    
+    <h2>&lt;optgroup&gt; Support</h2>
+    <div class="side-by-side clearfix">
+      <div>
+        <em>Single Select with Groups</em>
+        <select data-placeholder="Your Favorite Football Team" style="width:350px;" class="chzn-select" tabindex="5">
+          <option value="" />
+          <optgroup label="NFC EAST">
+            <option />Dallas Cowboys
+            <option />New York Giants
+            <option />Philadelphia Eagles
+            <option />Washington Redskins
+          </optgroup>
+          <optgroup label="NFC NORTH">
+            <option />Chicago Bears
+            <option />Detroit Lions
+            <option />Green Bay Packers
+            <option />Minnesota Vikings
+          </optgroup>
+          <optgroup label="NFC SOUTH">
+            <option />Atlanta Falcons
+            <option />Carolina Panthers
+            <option />New Orleans Saints
+            <option />Tampa Bay Buccaneers
+          </optgroup>
+          <optgroup label="NFC WEST">
+            <option />Arizona Cardinals
+            <option />St. Louis Rams
+            <option />San Francisco 49ers
+            <option />Seattle Seahawks
+          </optgroup>
+          <optgroup label="AFC EAST">
+            <option />Buffalo Bills
+            <option />Miami Dolphins
+            <option />New England Patriots
+            <option />New York Jets
+          </optgroup>
+          <optgroup label="AFC NORTH">
+            <option />Baltimore Ravens
+            <option />Cincinnati Bengals
+            <option />Cleveland Browns
+            <option />Pittsburgh Steelers
+          </optgroup>
+          <optgroup label="AFC SOUTH">
+            <option />Houston Texans
+            <option />Indianapolis Colts
+            <option />Jacksonville Jaguars
+            <option />Tennessee Titans
+          </optgroup>
+          <optgroup label="AFC WEST">
+            <option />Denver Broncos
+            <option />Kansas City Chiefs
+            <option />Oakland Raiders
+            <option />San Diego Chargers
+          </optgroup>
+        </select>
+      </div>
+      <div>
+        <em>Multiple Select with Groups</em>
+        <select data-placeholder="Your Favorite Football Team" style="width:350px;" class="chzn-select" multiple="" tabindex="6">
+          <option value="" />
+          <optgroup label="NFC EAST">
+            <option />Dallas Cowboys
+            <option />New York Giants
+            <option />Philadelphia Eagles
+            <option />Washington Redskins
+          </optgroup>
+          <optgroup label="NFC NORTH">
+            <option />Chicago Bears
+            <option />Detroit Lions
+            <option />Green Bay Packers
+            <option />Minnesota Vikings
+          </optgroup>
+          <optgroup label="NFC SOUTH">
+            <option />Atlanta Falcons
+            <option />Carolina Panthers
+            <option />New Orleans Saints
+            <option />Tampa Bay Buccaneers
+          </optgroup>
+          <optgroup label="NFC WEST">
+            <option />Arizona Cardinals
+            <option />St. Louis Rams
+            <option />San Francisco 49ers
+            <option />Seattle Seahawks
+          </optgroup>
+          <optgroup label="AFC EAST">
+            <option />Buffalo Bills
+            <option />Miami Dolphins
+            <option />New England Patriots
+            <option />New York Jets
+          </optgroup>
+          <optgroup label="AFC NORTH">
+            <option />Baltimore Ravens
+            <option />Cincinnati Bengals
+            <option />Cleveland Browns
+            <option />Pittsburgh Steelers
+          </optgroup>
+          <optgroup label="AFC SOUTH">
+            <option />Houston Texans
+            <option />Indianapolis Colts
+            <option />Jacksonville Jaguars
+            <option />Tennessee Titans
+          </optgroup>
+          <optgroup label="AFC WEST">
+            <option />Denver Broncos
+            <option />Kansas City Chiefs
+            <option />Oakland Raiders
+            <option />San Diego Chargers
+          </optgroup>
+        </select>
+      </div>
+    </div>
+
+    <h2>Selected and Disabled Support</h2>
+    <div class="side-by-side clearfix">
+      <p>Chosen automatically highlights selected options and removes disabled options.</p>
+      <div>
+        <em>Single Select</em>
+        <select data-placeholder="Your Favorite Type of Bear" style="width:350px;" class="chzn-select" tabindex="7">
+          <option value="" />
+          <option />American Black Bear
+          <option />Asiatic Black Bear
+          <option />Brown Bear
+          <option />Giant Panda
+          <option selected="" />Sloth Bear
+          <option disabled="" />Sun Bear
+          <option />Polar Bear
+          <option disabled="" />Spectacled Bear
+        </select>
+      </div>
+      <div>
+        <em>Multiple Select</em>
+        <select data-placeholder="Your Favorite Types of Bear" style="width:350px;" multiple="" class="chzn-select" tabindex="8">
+          <option value="" />
+          <option />American Black Bear
+          <option />Asiatic Black Bear
+          <option />Brown Bear
+          <option />Giant Panda
+          <option selected="" />Sloth Bear
+          <option disabled="" />Sun Bear
+          <option selected="" />Polar Bear
+          <option disabled="" />Spectacled Bear
+        </select>
+      </div>
+    </div>
+
+    <div class="side-by-side clearfix">
+      <p>It is also possible to prevent selected options being deselected by also making them disabled.</p>
+      <div>
+        <select data-placeholder="Your Favorite Types of Bear" style="width:350px;" multiple="" class="chzn-select" id="test_me_paddington" name="test_me_form" tabindex="8">
+          <option value="" />
+          <option />American Black Bear
+          <option />Asiatic Black Bear
+          <option />Brown Bear
+          <option />Giant Panda
+          <option selected="" disabled="" />Sloth Bear
+          <option disabled="" />Sun Bear
+          <option selected="" disabled="" />Paddington Bear
+          <option selected="" />Polar Bear
+          <option disabled="" />Spectacled Bear
+        </select>
+      </div>
+    </div>
+
+    <h2>Default Text Support</h2>
+    <div class="side-by-side clearfix">
+      <p>Chosen automatically sets the default field text ("Choose a country...") by reading the select element's data-placeholder value. If no data-placeholder value is present, it will default to "Select Some Option" or "Select Some Options" depending on whether the select is single or multiple. You can change these elements in the plugin js file as you see fit.</p>
+      <code>&lt;select <strong>data-placeholder="Choose a country..."</strong> style="width:350px;" multiple class="chzn-select"&gt;</code>
+      <p><strong>Note:</strong> on single selects, the first element is assumed to be selected by the browser. To take advantage of the default text support, you will need to include a blank option as the first element of your select list.</p>
+    </div>
+    
+    <h2>No Results Text Support</h2>
+    <div class="side-by-side clearfix">
+      <p>Setting the "No results" search text is as easy as passing an option when you create Chosen:</p>
+      <code>
+        $(".chzn-select").chosen({no_results_text: "No results matched"});
+      </code>
+    </div>
+
+    <h2>Limit Selected Options in Multiselect</h2>
+    <div class="side-by-side clearfix">
+      <p>You can easily limit how many options can user select:</p>
+      <code>
+        $(".chzn-select").chosen({max_selected_options: 5});
+      </code>
+      <p>If you try to select another option with limit reached <code>liszt:maxselected</code> event is triggered:</p>
+      <code>
+        $(".chzn-select").bind("liszt:maxselected", function () { ... });
+      </code>
+    </div>
+    
+    <h2>Allow Deselect on Single Selects</h2>
+    <div class="side-by-side clearfix">
+      <p>When a single select box isn't a required field, you can set <code>allow_single_deselect: true</code> and Chosen will add a UI element for option deselection. This will only work if the first option has blank text.</p>
+      <div class="side-by-side clearfix">
+        <select data-placeholder="Your Favorite Type of Bear" style="width:350px;" class="chzn-select-deselect" tabindex="7">
+          <option value="" />
+          <option />American Black Bear
+          <option />Asiatic Black Bear
+          <option />Brown Bear
+          <option />Giant Panda
+          <option selected="" />Sloth Bear
+          <option />Sun Bear
+          <option />Polar Bear
+          <option />Spectacled Bear
+        </select>
+      </div>
+    </div>
+
+    <h2>Right to Left Support</h2>
+    <div class="side-by-side clearfix">
+      <p>Chosen supports right to left select boxes too. just add <code>"chzn-rtl"</code> in addition to <code>"chzn-select"</code> to your select tags and you are good to go.</p>
+      <p><code>&lt;select class="chzn-select <strong>chzn-rtl</strong>"&gt;</code></p>
+      <div>
+        <em>Single right to left select</em>
+        <select data-placeholder="Your Favorite Type of Bear" style="width:350px;" class="chzn-select chzn-rtl" tabindex="9">
+          <option value="" />
+          <option />American Black Bear
+          <option />Asiatic Black Bear
+          <option />Brown Bear
+          <option />Giant Panda
+          <option selected="" />Sloth Bear
+          <option />Polar Bear
+        </select>
+      </div>
+      <div>
+        <em>Multiple right to left select</em>
+        <select data-placeholder="Your Favorite Types of Bear" style="width:350px;" multiple="" class="chzn-select  chzn-rtl" tabindex="10">
+          <option value="" />
+          <option />American Black Bear
+          <option />Asiatic Black Bear
+          <option />Brown Bear
+          <option />Giant Panda
+          <option selected="" />Sloth Bear
+          <option selected="" />Polar Bear
+        </select>
+      </div>
+    </div>
+
+    <h2>Change / Update Events</h2>
+    <div class="side-by-side clearfix">
+      <ul>
+        <li>
+          <h3>Form Field Change</h3>
+          <p>When working with form fields, you often want to perform some behavior after a value has been selected or deselected. Whenever a user selects a field in Chosen, it triggers a "change" event* on the original form field. That let's you do something like this:</p>
+          <p><code>$("#form_field").chosen().change( &hellip; );</code></p>
+          <p><strong>Note:</strong> Prototype doesn't offer support for triggering standard browser events. <a href="https://github.com/kangax/protolicious/blob/5b56fdafcd7d7662c9d648534225039b2e78e371/event.simulate.js">Event.simulate</a> is required to trigger the change event when using the Prototype version.</p>
+        </li>
+        <li>
+          <h3>Updating Chosen Dynamically</h3>
+          <p>If you need to update the options in your select field and want Chosen to pick up the changes, you'll need to trigger the "liszt:updated" event on the field. Chosen will re-build itself based on the updated content.</p>
+          <ul>
+            <li><strong>jQuery Version:</strong> <code>$("#form_field").trigger("liszt:updated");</code></li>
+            <li><strong>Prototype Version:</strong> <code>Event.fire($("form_field"), "liszt:updated");</code></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <h2>Setup (for jQuery)</h2>
+    <p>Using Chosen is easy as can be.</p>
+    <ol>
+      <li>Download the plugin and copy the chosen files to your app.</li>
+      <li>Activate the plugin on the select boxes of your choice: <code>$(".chzn-select").chosen()</code></li>
+      <li><a href="http://youtu.be/pS-RsIzb78U?t=57s">Disco</a>.</li>
+    </ol>
+    
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js" type="text/javascript"></script>
+  <script src="./chosen/chosen.jquery.js" type="text/javascript"></script>
+  <script type="text/javascript"> $(".chzn-select").chosen(); $(".chzn-select-deselect").chosen({allow_single_deselect:true}); </script>
+  </form>
+</body>
+</html>
