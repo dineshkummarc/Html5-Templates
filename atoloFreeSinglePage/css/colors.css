@@ -1,0 +1,80 @@
+
+/*==========================================================================================
+	
+This file contains styles related to the color scheme of the template
+
+==========================================================================================*/
+
+a{color:#707070;text-decoration:none;}
+a:hover{color:#151515;text-decoration:none;}
+
+
+body{color:#ffffff;
+background:#f5f5f5;
+}
+
+header{background:#FFFFFF;}
+
+#triangle {border-top: 30px solid #ffffff; }
+
+#about{background:#00A1CB;}
+#about .section-title, #about .section-sub-title{color:#ffffff;}
+
+.diamond{
+background:#ffffff;
+border:5px solid rgba(255,255,255, 1);
+}
+
+.progressBkg{background:#303030;
+box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+.barBkg{background:#00C4F4;}
+
+#portfolio{background:#E24B2C;}
+#portfolio .section-title, #portfolio .section-sub-title{color:#ffffff;}
+
+.work-categ li{background:#ffffff;color:#464646;}
+
+#services{background:#5F5E5D;}
+#services .section-title, #services .section-sub-title{color:#ffffff;}
+#services .diamond{background:#ffffff;border:none;}
+
+#blog{background:#61AE24;}
+#blog .section-title, #blog .section-sub-title, .page-blog .section-title{color:#ffffff;}
+
+.post{background:#ffffff;
+color:#353535;
+}
+.post-title a{color:#353535;}
+.post-title a:hover{color:#61AE24;}
+
+.published{color:#a5a5a5;}
+.published a{color:#a5a5a5;}
+.published a:hover{color:#61AE24;}
+
+#contact{background:#A6AEBB;}
+#contact .section-title, #contact .section-sub-title{color:#ffffff;}
+
+
+
+#message2, input.comm-field{border: 1px solid #6C798E; }
+
+input.comm-field:focus, #message2:focus {border-color:#6C798E;}
+
+#submit{
+text-shadow: 0 1px 0 rgba(30, 30, 30, 0.8);
+color: #ffffff;
+background: #6C798E;
+border: 1px solid #6C798E;
+box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 1px 0 rgba(255, 255, 255, 0.4) inset;
+-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 1px 0 rgba(255, 255, 255, 0.4) inset;
+-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 1px 0 rgba(255, 255, 255, 0.4) inset;
+}
+#submit:hover, #submit:active{
+background:#6C798E;
+border: 1px solid #6C798E;
+color: #ffffff;
+}
+.output2{border:1px solid #ff0000;}
+
+
