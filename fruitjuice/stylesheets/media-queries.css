@@ -1,0 +1,115 @@
+/*------------------------------------*\
+
+    MEDIA QUERIES FOR COMMON DEVICES- RESPONSIVE GRID SYSTEM
+    URL - http://responsive.gs
+    LICENSE - PUBLIC DOMAIN
+
+\*------------------------------------*/
+
+    body                { background: #eee; color: #000; font-family: "Segoe UI", "Open Sans", sans-serif; font-size: 11pt; font-weight: 300; }
+    
+    .container          { background: #fff; }
+    .row                { margin-left: auto; margin-right: auto; }
+
+    .left               { float: left; }
+    .right              { float: right; }
+
+    a                   { color: #555; text-decoration: none; }
+    a:hover, a.active   { color: aqua; text-decoration: none; cursor: pointer; }
+
+    hr                  { margin: 2% auto 2% auto; opacity: .2; }
+    img                 { border: none; }
+    
+    *::selection        { background: aqua; color: #fff; }
+    *::-moz-selection   { background: aqua; color: #fff; }
+    *::-webkit-selection{ background: aqua; color: #fff; }
+
+
+    header              {  }
+    h1                  { display: block; float: left; font-size: 72pt; text-align: center; }
+    #small-logo         { background: aqua; float: left; height: 30px; margin: 13px 13px 0 0; padding: 3px; width: 30px; }
+    h3                  { float: left; font-size: 20pt; padding-top: 12px; }
+
+    #brand              { background: aqua; min-height: 285px; }
+    #brand p            { color: #fff; font-size: 18pt; margin: 36px auto; text-align: right; }
+
+    #key-features       {  }
+    h4                  { color: #444; font-size: 16pt; font-weight: 400; padding: 6px 6px 18px 6px; text-transform: uppercase; }
+    #key-features p     { padding: 6px 6px 18px 6px; text-align: justify; }
+
+    #details            { font-size: 13pt; }
+    h2                  { color: aqua; font-size: 22pt; font-weight: 600; padding: 6px 6px 18px 6px; text-transform: lowercase; }
+    .description        { padding: 6px 6px 18px 6px; text-align: justify; }
+    ul                  { list-style: square; padding: 6px 6px 18px 30px;  }
+    ul li               { padding-top: 6px; }
+
+    #showcase           {  }
+    /*
+    #wp_frame           { height: 499px; width: 276px; background: url("lumia800.png") #fff no-repeat; margin: auto; }
+    #screen             { margin: 36px 0 0 12px; position: absolute; }
+    */
+    #wp_frame           { height: 550px; width: 300px; background: url("frame.png") no-repeat; margin: auto; }
+    #screen             { width: 235px; height: 395px; margin: 52px 0 0 33px; position: absolute; }
+    
+    .download           { display: none; }
+    
+    #sharrre                { display: block; height: 87px; width: 254px; margin: auto; }
+    #shareme .box           { text-align: center; }
+    #shareme .box a         {  }
+    #shareme .box a:hover   { text-decoration:none; }
+    #shareme .count         { font-weight: 700; font-size: 48px; float: left; border-right: medium solid aqua; line-height: 40px; padding-right: 10px; margin: 25px 0 0 45px; }
+    #shareme .share         { float: left; margin-top: 25px; margin-left: 10px; font-size: 14px; width: 82px; }
+    #shareme .buttons       { position: absolute; width: 232px; background: #fff; padding: 11px; }
+    #shareme .button        { float: left; max-width: 50px; margin: 0 9px 0 0; }
+    #shareme .facebook      { margin: 0 4px 0 0; }
+
+    footer              { background: #eee; font-size: 11pt; }
+    footer p            { padding: 24px; text-align: center; }
+    footer p a          { color: #444; }
+    footer p span       { color: #aaa; margin: 2px; }
+    .menu               { float: left; }
+    .copyright          { float: right; }
+
+
+    #tile               { float: left; height: 173px; margin: 18px 18px 0 0; width: 173px; }
+
+    .live-tile          { background: aqua; display: block; float: none; font-weight: 400; margin: auto; }
+    .live-tile span     { bottom: 6px; font-size: 14pt; left: 12px; position: absolute; }
+    .live-tile img      { display: block; margin: auto; }
+
+    .front-tile     { background: aqua; }
+    .back-tile      { background: aqua; padding: 6px; }
+    .back-tile span { font-size: 16pt; position: static; text-align: justify; }
+    .back-tile a    { position: absolute; }
+    .back-tile img  { margin: -6px; }
+
+/*------------------------------------*\
+    DEVICES
+\*------------------------------------*/
+
+@media only screen and (min-width: 320px) and (max-width: 1024px) {
+    body                { background: #fff; }
+
+    .col                { display: inline-block; float: none; margin: auto; width: 100%; }
+    .col:first-child    {  }
+    .span_8             { width: 90%; }
+    
+    h1                  { float: none; font-size: 52pt; text-align: center; }
+    #small-logo         { margin: 10px 10px 0 0; }
+    h3                  { font-size: 18pt; padding-top: 12px; }
+
+    #brand p            { font-size: 16pt; text-align: center; }
+
+    #sharrre            { display: none; }
+    .download           { display: block; margin: 24px auto; }
+
+    footer p            { margin: 3px; padding: 6px; }
+    .menu, .copyright   { float: none; }
+
+    #tile               { display: block; float: none; height: 99px; margin: 18px auto; width: 99px; }
+    .live-tile          { display: block; float: left; height: 99px; margin: 2%; width: 99px; }
+    .live-tile img      { height: 99px; width: 99px; }
+    .front-tile span    { visibility: hidden; }
+    .back-tile span     { font-size: 10pt; }
+
+}

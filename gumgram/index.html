@@ -1,0 +1,56 @@
+<html>
+<head>
+
+    <title>Gumgram</title>
+
+    <link rel="stylesheet" type="text/css" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/ui-lightness/jquery-ui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <link href='//fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="cam.js"></script>
+
+
+</head>
+    <body>
+    <h1>Gumgram</h1>
+    <div id="main">
+
+        <h2> 1. Choose a Filter</h2>
+        <div id="filter">
+            <input type="radio" id="grey" name="filter" /><label for="grey">Black &amp; White</label>
+            <input type="radio" id="blue" name="filter" /><label for="blue">Blue Shift</label>
+            <input type="radio" id="hulk" name="filter" /><label for="hulk">Hulk</label>
+            <input type="radio" id="retro" name="filter" /><label for="retro">Retro</label>
+            <input type="radio" id="sepia" name="filter" /><label for="sepia">Sepia</label>
+            <input type="radio" id="solar" name="filter" /><label for="solar">Solarized</label>
+        </div>
+
+        <h2> 2. Smile </h2>
+        <div id="container">
+            <video id="video"></video>
+            <img src="" id="photo">
+            <canvas id="canvas"></canvas>
+        </div>
+
+        <h2> 3. Click Button</h2>
+        <button id="start">Take photo</button>
+        <button id="retry">Retry</button>
+    </div>
+
+    <div id="footer">
+    &bull;&nbsp;&nbsp; Demo inpsired by &amp; for <a href="https://developer.mozilla.org/en-US/demos/devderby">Mozilla Dev Derby</a>
+    &nbsp;&nbsp;&bull;&nbsp;&nbsp; Created by <em><a href="http://brombomb.com">Brombomb</a></em>
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#start, #retry').button();
+            $('#filter').buttonset();
+            camera();
+        })
+    </script>
+
+</body>
+</html>

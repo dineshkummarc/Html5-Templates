@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<link rel="stylesheet" type="text/css" href="styles/styles.min.css"/>
+    <script src="scripts/plugins/require.js" data-main="scripts/app.min.js"></script>
+  	<style type="text/css">
+  		#liveScore{
+  			position:fixed;
+  			bottom: 0;
+  			left:0;
+  			right:0;
+  			text-align: center;
+  			color:#00C;
+  			z-index:100;
+  			font-size: 2em;
+  			font-weight: bold;
+  		}
+
+  		#dialogs{
+  			display: none;
+  		}
+
+      #copyright{
+        font-size: 0.6em;
+      }
+  	</style>
+  </head>
+  <body bgcolor="#666">
+  	<div id="dialogs">
+	  	<div id="intro" title="Welcome To Get Motion Media!">
+	  		<p>Think of it as something like "Kinect Dancepad".</p>
+
+	  		<p>To begin, accept the camera request so the game can use the camera. Press <b>START!</b>, then stand back until the camera sees your upper body and enough that your arms can reach all buttons on the screen.</p>
+
+	  		<p>To trigger the buttons, wait for them to light up blue. If you hit/swat them correctly, they will turn green. If you miss, they turn red. Don't worry though, I set the buttons to extra sensitive. Best played under bright conditions.</p>
+
+	  		<p>I appologize, I made no in-game restart. You can reload the browser though :)</p>
+  		</div>
+
+  		<div id="score" title="Congratulations!">
+  			<h1></h1>
+  		</div>
+  	</div>	
+
+  	<div id="liveScore">
+  		<p></p>
+  		<b>Score</b>
+  	</div>
+
+    <p id="copyright">
+      Music: "Ether Disco" Kevin MacLeod (incompetech.com)
+    </p>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-41244106-1', 'mozilla.net');
+      ga('send', 'pageview');
+
+    </script>
+
+  </body>
+</html>

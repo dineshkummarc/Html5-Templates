@@ -1,0 +1,42 @@
+/*------------------------------------*\
+
+    FRUIT JUICE FOR WINDOWS PHONE 8
+    URL - http://fruitjuice.codeplex.com/
+    LICENSE - New BSD License (BSD)
+
+\*------------------------------------*/
+
+	a:hover, a.active   { color: #fa0000; }
+
+	*::selection        { background: #fa0000; color: #fff; }
+	*::-moz-selection   { background: #fa0000; color: #fff; }
+	*::-webkit-selection{ background: #fa0000; color: #fff; }
+
+	header				{ padding-top: 100px; }
+	#small-logo         { background: #fa0000; }
+
+	#brand              { background: #fa0000; max-height: 285px; }
+
+	h2                  { color: #fa0000; }
+
+	#wp_frame           { height: 550px; width: 300px; background: url("WP7_480x800.png") no-repeat; margin: -120px auto; }
+    #screen             { width: 235px; height: 395px; margin: 52px 0 0 32px; position: absolute; }
+
+	#shareme .count     { border-right: medium solid #fa0000; }
+
+	#tile               { float: none; margin: 140px auto 24px auto; }
+	.live-tile          { background: #fa0000; }
+
+	.front-tile     	{ background: #fa0000; }
+	.back-tile      	{ background: #fa0000; }
+
+/*------------------------------------*\
+    DEVICES
+\*------------------------------------*/
+
+@media only screen and (min-width: 320px) and (max-width: 1024px) {
+	
+	#brand              { max-height: 2000px; }
+
+	#wp_frame           { margin: auto; }
+}

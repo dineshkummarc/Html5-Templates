@@ -1,0 +1,49 @@
+/*------------------------------------*\
+
+    FRUIT JUICE FOR WINDOWS 8
+    URL - http://fruitjuice.codeplex.com/
+    LICENSE - New BSD License (BSD)
+
+\*------------------------------------*/
+
+    a:hover, a.active   { color: #0cf; }
+
+    *::selection        { background: #0cf; color: #fff; }
+    *::-moz-selection   { background: #0cf; color: #fff; }
+    *::-webkit-selection{ background: #0cf; color: #fff; }
+
+    #small-logo         { background: #0cf; }
+    /* #sharrre            { float: right; } */
+
+    #brand              { background: #180052; }
+
+    h2                  { color: #0cf; }
+
+    #shareme .count     { border-right: medium solid #0cf; }
+
+/*------------------------------------*\
+    LIVE TILE
+\*------------------------------------*/
+
+    #tile               { float: left; height: 150px; margin: 36px auto; width: 310px; }
+
+    .live-tile          { background: #0cf; float: left; }
+    .live-tile span     { bottom: 6px; font-size: 14pt; left: 12px; position: absolute; }
+    .live-tile img      { height: 150px; width: 310px; }
+
+    .front-tile     { background: #0cf; }
+    .back-tile      { background: #0cf; padding: 6px; }
+    .back-tile span { font-size: 16pt; position: static; text-align: justify; }
+    .back-tile a    { position: absolute; }
+    .back-tile img  { margin: -6px; }
+
+/*------------------------------------*\
+    DEVICES
+\*------------------------------------*/
+
+@media only screen and (min-width: 320px) and (max-width: 1024px) {
+
+    #tile               { display: block; float: none; margin: 24px auto 0 auto; }
+    .front-tile span    { visibility: visible; }
+
+}

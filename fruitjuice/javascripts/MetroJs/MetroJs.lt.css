@@ -1,0 +1,360 @@
+
+.metroBig { font-size:36px; line-height:36px; }
+.live-tile, .list-tile
+{
+	color:#fff;
+	float:left;
+	height: 180px;
+	margin:15px;
+	overflow:hidden;
+	position:relative;
+	width: 180px;
+}
+.live-tile.two-wide, .list-tile.two-wide { width:390px; }
+.live-tile.two-tall, .list-tile.two-tall { height:390px; }
+.live-tile img, .list-tile img { border:none; }
+.live-tile.me>.slide-back>a.metroBig { position:absolute; left:0; bottom:0; padding: 0 0 12px 12px; text-decoration:none; }
+.live-tile a:link, .live-tile a:visited { color:#fff; text-decoration:underline; }
+.live-tile a:hover { color:#fff; text-decoration:none; }
+.live-tile p { font-size:13px; line-height: 16px; padding:10px; }
+.live-tile .tile-title, .list-tile .tile-title { position:absolute; bottom:0px; font-size:12px; left:0px; width:100%; padding:0 0 6px 6px; z-index:30; }
+.live-tile a.tile-title, .list-tile a.tile-title { text-decoration:none; }
+.live-tile.me>.metroBig { padding-top:45px; }
+
+.live-tile,.live-tile>div,.list-tile>div
+{   /* ensure elements on backside don't continue to take focus */
+	backface-visibility:hidden;
+	-webkit-backface-visibility:hidden;
+	-moz-backface-visibility:hidden;
+}
+
+.live-tile>div,.list-tile>div
+{    
+	top:0px;
+	left:0px;
+	margin:0px;
+	height:100%;
+	width:100%;
+	position:absolute;
+	z-index:10;
+}
+.list-tile>div
+{
+	position:relative;
+}
+
+img.full , a.full
+{
+	display:block;
+	margin:0px;
+	height:100%;
+	width:100%;    
+}
+.list-tile>div { background-color:transparent; }
+
+.live-tile>.back, .live-tile>.slide-back,.live-tile>.flip-back, .flip-list .flip-back
+{
+	position:absolute;
+	z-index:5;	
+}
+/*  ========== flip-list Styles ==========
+	.flip-list
+	---li
+	------div.flip-front
+	------div.flip-back
+*/
+.flip-list  
+{
+	padding:0px; 
+	margin:0px;	
+}
+.list-tile .flip-list 
+{
+	height:100%;
+	width:100%;
+}
+.flip-list>li>a
+{
+	border:none;
+	outline:none;
+	text-decoration:none;
+	margin:0px;
+	padding:0px;
+	height:100%;
+	width:100%;
+}
+
+.flip-list img  
+{
+	border:none;
+	outline:none;
+	height:100%;
+	margin:0px;
+	padding:0px;
+	width:100%;
+}
+.flip-list>li 
+{
+	height: 60px;
+	float: left;
+	list-style-type:none;
+	margin: 0px;
+	outline:none;
+	padding: 0px;
+	position: relative;
+	width: 60px;
+}
+
+.flip-list>li>div 
+{
+	border:none;
+	background: white;
+	height: 100%;
+	left: 0px;
+	margin:0px;
+	overflow: hidden;
+	position: absolute;
+	padding:0px;
+	top: 0px;
+	width: 100%;
+	z-index:20;
+}
+
+.flip-list>li>div.flip-back 
+{
+   height:0px;
+}
+
+
+
+.live-tile.flip { background:none;}
+
+/* flip-list tile grid sprite styles */
+.nineTiles    
+{
+	/* set a default image here
+	background-image:url('/content/images/yourimage.jpg');  
+	*/
+}
+.flip-list.nineTiles>li,.flip-list.nineTiles>li>div,.flip-list.nineTiles>li>div>img,.flip-list.nineTiles>li>div>a 
+{ 
+	height:60px; width:60px; border:none; padding:0; margin:0; 
+}
+.nineTiles1  { background-position: 0px 0px; }
+.nineTiles2  { background-position: -60px 0px; }
+.nineTiles3  { background-position: -120px 0px; }
+.nineTiles4  { background-position: 0px -60px; }
+.nineTiles5  { background-position: -60px -60px; }
+.nineTiles6  { background-position: -120px -60px; }
+.nineTiles7  { background-position: 0px -120px; }
+.nineTiles8  { background-position: -60px -120px; }
+.nineTiles9  { background-position: -120px -120px; }
+
+.fourTiles   {}
+.flip-list.fourTiles>li,.flip-list.fourTiles>li>div,.flip-list.fourTiles>li>div>img,.flip-list.fourTiles>li>div>a 
+{ 
+	border:none; padding:0; margin:0; 
+	height:90px;
+	width:90px;
+}
+.fourTiles1  { background-position: 0px 0px; }
+.fourTiles2  { background-position: -90px 0px; }
+.fourTiles3  { background-position: 0px -90px; }
+.fourTiles4  { background-position: -90px -90px; }
+
+
+/* ------ Hardware Accelerated CSS3 Animations --------*/
+/* flip */
+.flip-list>li>.ha.flip-back, .flip-list>li>.ha.flip-back img
+{
+	 /* override the values set for margin and ensure the back tile is visible  */
+	margin:0px !important;
+	height:100%;
+}
+
+.live-tile>.ha.flip-front, .flip-list>li>.ha.flip-front  
+{   
+	position:absolute;
+	/* time to start repeating ourselves 
+	note: we are not setting a duration or delay here, 
+	that is added in script */
+	-webkit-animation-name:flipfront180;
+	-webkit-animation-play-state:paused;
+	-webkit-animation-fill-mode:forwards;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: linear;
+	-moz-animation-name:flipfront180;
+	-moz-animation-play-state:paused;
+	-moz-animation-fill-mode:forwards;
+	-moz-animation-iteration-count: 1;
+	-moz-animation-timing-function: linear;
+	-ms-animation-name:flipfront180;
+	-ms-animation-play-state:paused;
+	-ms-animation-fill-mode:forwards;
+	-ms-animation-iteration-count: 1;
+	-ms-animation-timing-function: linear;
+	-o-animation-name:flipfront180;
+	-o-animation-play-state:paused;
+	-o-animation-fill-mode:forwards;
+	-o-animation-iteration-count: 1;
+	-o-animation-timing-function: linear;
+	animation-name:flipfront180;
+	animation-play-state:paused;
+	animation-fill-mode:forwards;
+	animation-iteration-count: 1;
+	animation-timing-function: linear;
+}
+
+.live-tile>.ha.flip-back, .flip-list>li>.ha.flip-back
+{
+	position:absolute;
+	-webkit-animation-name:flipback180;
+	-webkit-animation-play-state:paused;
+	-webkit-animation-fill-mode:forwards;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: linear;
+	-moz-animation-name:flipback180;
+	-moz-animation-play-state:paused;
+	-moz-animation-fill-mode:forwards;
+	-moz-animation-iteration-count: 1;
+	-moz-animation-timing-function: linear;
+	-ms-animation-name:flipback180;
+	-ms-animation-play-state:paused;
+	-ms-animation-fill-mode:forwards;
+	-ms-animation-iteration-count: 1;
+	-ms-animation-timing-function: linear;
+	-o-animation-name:flipback180;
+	-o-animation-play-state:paused;
+	-o-animation-fill-mode:forwards;
+	-o-animation-iteration-count: 1;
+	-o-animation-timing-function: linear;
+	animation-name:flipback180;
+	animation-play-state:paused;
+	animation-fill-mode:forwards;
+	animation-iteration-count: 1;
+	animation-timing-function: linear;
+}
+
+/* Flip Vertical */
+  @-keyframes flipfront180 {
+	from     {  z-index:20; transform: rotateX(0deg); }
+	49%      {  z-index:20; }
+	50%      {  z-index:10; }
+	to       {  z-index:10; transform: rotateX(-180deg); }
+  }
+  @-webkit-keyframes flipfront180 {
+	from     {  z-index:20; -webkit-transform: rotateX(0deg); }
+	49%      {  z-index:20; }
+	50%      {  z-index:10; }
+	to       {  z-index:10; -webkit-transform: rotateX(-180deg);  }
+  }
+  @-moz-keyframes flipfront180 {
+	0%     {  z-index:20; -moz-transform: rotateX(0deg); }
+	49%      {  z-index:20; }
+	50%      {  z-index:10; }
+	100%       {  z-index:10; -moz-transform: rotateX(-180deg); }
+  }
+   @-ms-keyframes flipfront180 {
+	from     {  z-index:20; -ms-transform: rotateX(0deg); }
+	49%      {  z-index:20; }
+	50%      {  z-index:10; }
+	to       {  z-index:10; -ms-transform: rotateX(-180deg); }
+  }
+   @-o-keyframes flipfront180 {
+	from     {  z-index:20; -o-transform: rotateX(0deg); }
+	49%      {  z-index:20; }
+	50%      {  z-index:10; }
+	to       {  z-index:10; -o-transform: rotateX(-180deg); }
+  }
+  @-keyframes flipback180 {
+	0%     {  z-index:10; transform: rotateX(180deg); }
+	49%      {  z-index:10; }
+	50%      {  z-index:20; }
+	100%       {  z-index:20; transform: rotateX(0deg); }
+  }
+  @-webkit-keyframes flipback180 {
+	from     {  z-index:10; -webkit-transform: rotateX(180deg);  }
+	49%      {  z-index:10; }
+	50%      {  z-index:20; }
+	to       {  z-index:20;  -webkit-transform: rotateX(0deg); }
+  }
+  @-moz-keyframes flipback180 {
+	0%     {  z-index:10; -moz-transform: rotateX(180deg); }
+	49%      {  z-index:10; }
+	50%      {  z-index:20; }
+	100%       {  z-index:20; -moz-transform: rotateX(0deg); }
+  }
+  @-ms-keyframes flipback180 {
+	from     {  z-index:10; -ms-transform: rotateX(180deg); }
+	49%      {  z-index:10; }
+	50%      {  z-index:20; }
+	to       {  z-index:20; -ms-transform: rotateX(0deg); }
+  }
+  @-o-keyframes flipback180 {
+	from     {  z-index:10; -o-transform: rotateX(180deg); }
+	49%      {  z-index:10; }
+	50%      {  z-index:20; }
+	to       {  z-index:20; -o-transform: rotateX(0deg); }
+  }
+  
+  /* Flip Horizontal */
+  @-keyframes flipfrontY180 {
+	0%      {  z-index:20; transform: rotateY(0deg); }
+	49%     {  z-index:20; }
+	50%     {  z-index:10; }
+	100%    {  z-index:10; transform: rotateY(-180deg); }
+  }
+  @-webkit-keyframes flipfrontY180 {
+	from     {  z-index:20; -webkit-transform: rotateY(0deg); }
+	49%      {  z-index:20; }
+	50%      {  z-index:10; }
+	to       {  z-index:10; -webkit-transform: rotateY(-180deg);  }
+  }
+  @-moz-keyframes flipfrontY180 {
+	0%      {  z-index:20; -moz-transform: rotateY(0deg); }
+	49%     {  z-index:20; }
+	50%     {  z-index:10; }
+	100%    {  z-index:10; -moz-transform: rotateY(-180deg); }
+  }
+   @-ms-keyframes flipfrontY180 {
+	from     {  z-index:20; -ms-transform: rotateY(0deg); }
+	49%      {  z-index:20; }
+	50%      {  z-index:10; }
+	to       {  z-index:10; -ms-transform: rotateY(-180deg); }
+  }
+   @-o-keyframes flipfrontY180 {
+	from     {  z-index:20; -o-transform: rotateY(0deg); }
+	49%      {  z-index:20; }
+	50%      {  z-index:10; }
+	to       {  z-index:10; -o-transform: rotateY(-180deg); }
+  }
+  @-keyframes flipbackY180 {
+	0%     {  z-index:10; transform: rotateY(180deg); }
+	49%      {  z-index:10; }
+	50%      {  z-index:20; }
+	100%       {  z-index:20; transform: rotateY(0deg); }
+  }
+  @-webkit-keyframes flipbackY180 {
+	from     {  z-index:10; -webkit-transform: rotateY(180deg);  }
+	49%      {  z-index:10; }
+	50%      {  z-index:20; }
+	to       {  z-index:20;  -webkit-transform: rotateY(0deg); }
+  }
+  @-moz-keyframes flipbackY180 {
+	0%       {  z-index:10; -moz-transform: rotateY(180deg); }
+	49%      {  z-index:10; }
+	50%      {  z-index:20; }
+	100%     {  z-index:20; -moz-transform: rotateY(0deg); }
+  }
+  @-ms-keyframes flipbackY180 {
+	from     {  z-index:10; -ms-transform: rotateY(180deg); }
+	49%      {  z-index:10; }
+	50%      {  z-index:20; }
+	to       {  z-index:20; -ms-transform: rotateY(0deg); }
+  }
+  @-o-keyframes flipbackY180 {
+	from     {  z-index:10; -o-transform: rotateY(180deg); }
+	49%      {  z-index:10; }
+	50%      {  z-index:20; }
+	to       {  z-index:20; -o-transform: rotateY(0deg); }
+  }
