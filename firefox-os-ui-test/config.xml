@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<juiceboxgallery
+	galleryTitle="Firefox OS UI test"
+>
+  <image imageURL="imgs/0.png"
+	thumbURL="thumb/0.png"
+	linkURL="imgs/0.png"
+	linkTarget="_blank">
+	<title>Some screenshot of my app!</title>
+  </image>
+<image imageURL="imgs/4.png"
+	thumbURL="thumb/4.png"
+	linkURL="imgs/4.png"
+	linkTarget="_blank">
+	<title>some screenshot of my app!</title>
+  </image>
+<image imageURL="imgs/1.png"
+	thumbURL="thumb/1.png"
+	linkURL="imgs/1.png"
+	linkTarget="_blank">
+	<title>Header and Toolbar bar</title>
+  </image>
+<image imageURL="imgs/2.png"
+	thumbURL="thumb/2.png"
+	linkURL="imgs/2.png"
+	linkTarget="_blank">
+	<title>Sidebar</title>
+  </image>
+<image imageURL="imgs/3.png"
+	thumbURL="thumb/3.png"
+	linkURL="imgs/3.png"
+	linkTarget="_blank">
+	<title>Input and Area</title>
+  </image>
+
+<image imageURL="imgs/input_text.png"
+	thumbURL="thumb/input_text.png"
+	linkURL="imgs/input_text.png"
+	linkTarget="_blank">
+	<title>Input and Area</title>
+  </image>
+<image imageURL="imgs/5.png"
+	thumbURL="thumb/5.png"
+	linkURL="imgs/5.png"
+	linkTarget="_blank">
+	<title>Input and Area</title>
+  </image>
+<image imageURL="imgs/6.png"
+	thumbURL="thumb/6.png"
+	linkURL="imgs/6.png"
+	linkTarget="_blank">
+	<title>List</title>
+  </image>
+<image imageURL="imgs/7.png"
+	thumbURL="thumb/7.png"
+	linkURL="imgs/7.png"
+	linkTarget="_blank">
+	<title>Custom message box</title>
+  </image>
+</juiceboxgallery>
