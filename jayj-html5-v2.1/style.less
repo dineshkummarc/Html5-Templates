@@ -1,0 +1,1297 @@
+/* ============================================================================= */
+/*
+ * Jayj HTML5, a free HTML5 And CSS3 Theme
+ * Version 2.1
+ * By Jesper J, http://jayj.dk
+ * Download for free at http://jayj.dk/a-free-html5-and-css3-theme/
+
+	Released under New BSD License
+	http://www.opensource.org/licenses/bsd-license.php
+
+	Copyright (c) 2009-2012, Jayj.dk
+	All rights reserved.
+*/
+
+// Import LESS variables and mixins
+@import "variables.less";
+@import "mixins.less";
+
+/* =============================================================================
+   HTML5 display definitions
+   ========================================================================== */
+
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary {
+	display: block;
+}
+
+audio, canvas, video {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+}
+
+audio:not([controls]) {
+	display: none;
+}
+
+[hidden] {
+	display: none;
+}
+
+/* =============================================================================
+   Base
+   ========================================================================== */
+
+/* Apply a natural box layout model to all elements - http://paulirish.com/2012/box-sizing-border-box-ftw/ */
+* {
+	.box-sizing(border-box);
+}
+
+html {
+	font-size: 100%;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+}
+
+html, button, input, select, textarea {
+	font-family: @baseFontFamily;
+	color: @textColor;
+}
+
+body {
+	margin: 0;
+	font-size: @baseFontSize;
+	line-height: @baseLineHeight;
+
+	/* Page width */
+	width: 100%;
+	max-width: 1140px;
+	min-width: 755px;
+	margin: 0 auto;
+
+	/* Background image and color */
+	background-color: @bodyBackground;
+	background-image: url(images/bg.png);
+	background-repeat: repeat;
+	background-attachment: fixed;
+
+	// CSS3 gradient background pattern - http://leaverou.me/demos/css3-patterns.html
+	// @link http://leaverou.me/demos/css3-patterns.html
+	// Removed because of performance issues
+	//#gradient > .striped(@bodyBackground, 45deg);
+	//background-size: 16px 16px;
+
+	/* Fallback background image */
+	// .no-cssgradients & {
+	// 		background-image: url(images/bg.png);
+	// 		background-repeat: repeat;
+	// }
+}
+
+/**
+ * The selection color
+ * These selection declarations have to be separate
+ */
+::-moz-selection {
+	background: @selectionColor;
+	color: @selectionTextColor;
+	text-shadow: none;
+}
+
+::selection {
+	background: @selectionColor;
+	color: @selectionTextColor;
+	text-shadow: none;
+}
+
+/* =============================================================================
+   Links
+   ========================================================================== */
+
+a {
+	color: @linkColor;
+	text-decoration: none;
+
+	&:hover {
+		color: @linkColorHover;
+		text-decoration: underline;
+	}
+
+	&:focus {
+		outline: thin dotted;
+	}
+
+	&:hover,
+	&:active {
+		/* Improve readability when focused and hovered in all browsers */
+		outline: 0;
+	}
+}
+
+/* =============================================================================
+   Headings
+   ========================================================================== */
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: @headingsFontFamily;
+	text-rendering: optimizelegibility;
+}
+
+h1 small,
+h2 small,
+h3 small,
+h4 small,
+h5 small,
+h6 small {
+	font-weight: normal;
+	color: @grayLight;
+	padding-left: 10px;
+}
+
+h1 {
+	font-size: @baseHeadingSize;
+	font-weight: 900;
+
+	small {
+		font-size: (@baseHeadingSize - 10px);
+		letter-spacing: -1px;
+	}
+}
+
+h2 {
+	font-size: (@baseHeadingSize - 4px);
+	letter-spacing: -1px;
+}
+
+h4 {
+	border-bottom: 1px solid @grayLighter;
+	color: #f71570;
+	#font > .shorthand((@baseHeadingSize - 12px), bold, @baseFontFamily);
+	padding-bottom: 8px;
+}
+
+h6 {
+	font-size: (@baseHeadingSize - 16px);
+	color: @grayLight;
+	text-transform: uppercase;
+}
+
+/* Entry title */
+.entry-title {
+	font-size: (@baseHeadingSize + 4px);
+	letter-spacing: -1px;
+
+	a:hover {
+		text-decoration: none;
+		.transition(color 300ms ease-in-out);
+	}
+}
+
+/* Section title */
+section h1,
+.page-header h1,
+h1.page-header {
+	.border-seperator(border-bottom);
+	padding-bottom: 8px;
+}
+
+/* =============================================================================
+   HTML elements
+   ========================================================================== */
+
+abbr[title] {
+	cursor: help;
+	border-bottom: 1px dotted;
+}
+
+b,
+strong {
+	font-weight: bold;
+}
+
+dfn {
+	font-style: italic;
+}
+
+hr {
+	clear: both;
+	display: block;
+	height: 0;
+	border: 0;
+	border-bottom: 4px double @hrBorder;
+	margin: 1em 0;
+	padding: 0;
+}
+
+ins {
+	background: lighten(@yellow, 30%);
+	color: @black;
+	text-decoration: none;
+}
+
+mark {
+	background: @yellow;
+	color: @black;
+	font-style: italic;
+	font-weight: bold;
+}
+
+small {
+	font-size: 85%;
+}
+
+/**
+ * Position subscript and superscript content without affecting line-height: h5bp.com/k
+ */
+sub,
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sup {
+	top: -0.5em;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+/* =============================================================================
+   Lists
+   ========================================================================== */
+
+ul, ol {
+	line-height: 28px;
+	margin: 1em 0;
+	padding: 0 0 0 @gutterWidth;
+}
+
+ul {
+	list-style: square;
+}
+
+ol {
+	list-style-type: decimal;
+}
+
+ol ol { list-style: upper-roman }
+ol ol ol { list-style: lower-roman }
+ol ol ol ol { list-style: upper-alpha }
+ol ol ol ol ol { list-style: lower-alpha }
+ul ul, ol ol, ul ol, ol ul { margin: 10px 0 }
+
+nav ul, nav ol {
+	list-style: none;
+	list-style-image: none;
+	margin: 0;
+	padding: 0;
+}
+
+dl {
+	margin: 0 0 @smallGutterWidth 5px;
+}
+
+dt {
+	font-weight: bold;
+	margin: 10px 0 0 0;
+}
+
+dd {
+	margin: 0 0 0 @gutterWidth;
+}
+
+/* =============================================================================
+   Quotes
+   ========================================================================== */
+
+blockquote {
+	border-left: 5px solid @blockquoteBorder;
+	margin: @gutterWidth 0;
+	padding: 5px 0 5px 20px;
+	position: relative;
+
+	p {
+		font-size: 16px;
+		font-weight: 300;
+		margin-top: 0;
+	}
+
+	small {
+		display: block;
+		color: @grayLight;
+		&:before { content: '\2014 \00A0'; }
+	}
+
+	/* Right-aligned blockquote */
+	&.alignright {
+		border-right: 5px solid @blockquoteBorder;
+		border-left: 0;
+		float: right;
+		padding-right: 20px;
+		padding-left: 0;
+
+		p,
+		small {
+			text-align: right;
+		}
+	}
+}
+
+q {
+	quotes: none;
+
+	&:before,
+	&:after {
+		content: "";
+		content: none;
+	}
+}
+
+/* =============================================================================
+   Code
+   ========================================================================== */
+
+/**
+ * Redeclare monospace font family: h5bp.com/j
+ */
+pre, code, kbd, samp {
+	font: 1em @monoFontFamily;
+}
+
+code {
+	color: @codeColor;
+}
+
+pre {
+	@preLineHeight: 26px;
+
+	/* Blue stribes to make it look like paper */
+	#gradient > .vertical(#e2f1f7 1px, transparent, #fefefe, 1px);
+	background-size: 100% @preLineHeight;
+	box-shadow: inset 0 1px 1px #fff, 0 0 15px rgba(204, 204, 204, 0.35);
+	border: 1px solid darken(@grayLighter, 5%);
+	border-radius: 3px;
+	color: @grayDarker;
+	font-size: 14px;
+	line-height: @preLineHeight;
+	padding: @preLineHeight @smallGutterWidth;
+	margin: 0 0 @smallGutterWidth;
+	position: relative;
+	white-space: pre;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+
+	code {
+		background: none;
+		color: inherit;
+		font: inherit;
+	}
+
+	ol.linenums {
+		line-height: @preLineHeight;
+	}
+}
+
+/**
+ * Line numbering for the Google Prettify script
+ */
+
+/* Add to red stribes to make it look like a notebook */
+pre[class*="linenums"]:before {
+	border: 1px solid #f1e9ea;
+	border-width: 0 1px;
+	content: "";
+	width: 4px;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 50px;
+	z-index: 1;
+}
+
+ol.linenums {
+	color: #aeaeae;
+	margin: 0 0 0 0;
+	padding: 0 0 0 24px;
+
+	li {
+		padding-left: 24px;
+	}
+}
+
+/*  Google Code Prettify */
+.pln { color: #000; }
+.str { color: #008800; }
+.kwd { color: #000088; }
+.com { color: #880000; }
+.typ { color: #660066; }
+.lit { color: #006666; }
+.pun, .opn, .clo { color: #666600; }
+pre .tag { color: #000088; }
+.atn { color: #660066; }
+.atv { color: #008800; }
+.dec, .var { color: #660066; }
+.fun { color: #ff0000; }
+
+/* =============================================================================
+   Embedded content
+   ========================================================================== */
+
+/*
+ * 1. Improve image quality when scaled in IE7: h5bp.com/d
+ * 2. Remove the gap between images and borders on image containers: h5bp.com/i/440
+ */
+img {
+	border: 0;
+	vertical-align: middle;
+	.box-sizing(content-box);
+	-ms-interpolation-mode: bicubic;
+}
+
+a:hover img {
+	box-shadow: 0 0 8px @primaryColor;
+	.transition(all 200ms ease);
+}
+
+img,
+embed,
+object,
+video,
+iframe {
+	max-width: 100%;
+}
+
+/* Seamless iframes */
+iframe[seamless] {
+    background-color: transparent;
+    border: 0px none transparent;
+    padding: 0px;
+    overflow: hidden;
+}
+
+/* Correct overflow not hidden in IE9 */
+svg:not(:root) {
+	overflow: hidden;
+}
+
+/**
+ * Figures
+ */
+
+figure {
+	background: @figureBackground;
+	border-radius: 5px;
+	color: @figureTextColor;
+	width: 100%;
+	padding: 20px;
+	margin: @smallGutterWidth 0;
+	text-align: center;
+
+	figcaption {
+		font: 14px @headingsFontFamily;
+		margin: 21px 0 3px;
+	}
+
+	img {
+		border-radius: 0;
+		display: block;
+		margin: 0 auto;
+		padding: 0;
+		box-shadow: none;
+	}
+}
+
+/* =============================================================================
+   Tables
+   ========================================================================== */
+
+table {
+	background-color: @white;
+	border: 1px solid @tableBorder;
+	border-collapse: separate;
+	*border-collapse: collapsed;
+	border-radius: 4px;
+	border-spacing: 0;
+	width: 100%;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+	margin-bottom: @smallGutterWidth;
+
+	th, td {
+		border-top: 1px solid @tableBorder;
+		border-left: 1px solid @tableBorder;
+		padding: 8px;
+		line-height: 18px;
+		text-align: left;
+		vertical-align: top;
+	}
+
+	th {
+		font-weight: bold;
+	}
+
+	// Bottom align for column headings
+	thead th {
+		vertical-align: bottom;
+	}
+
+	// Remove top border from thead by default
+	caption + thead tr:first-child th,
+	caption + thead tr:first-child td,
+	colgroup + thead tr:first-child th,
+	colgroup + thead tr:first-child td,
+	thead:first-child tr:first-child th,
+	thead:first-child tr:first-child td {
+		border-top: 0;
+	}
+
+	tr th:first-child,
+	tr td:first-child {
+		border-left: 0;
+	}
+
+	// Account for multiple tbody instances
+	tbody + tbody {
+		border-top: 2px solid @tableBorder;
+	}
+
+	// tfoot
+	tfoot td {
+		background: #f5f5f5;
+		color: darken(@grayLight, 20%);
+		font-size: 11px;
+		text-transform: uppercase;
+		box-shadow: inset 0 1px 1px 0 #eee;
+	}
+
+	// Table caption
+	caption {
+		font-size: 18px;
+		font-weight: bold;
+		margin-bottom: 10px;
+	}
+ }
+
+/* =============================================================================
+   Forms
+   ========================================================================== */
+
+form {
+	margin: 0;
+}
+
+fieldset {
+	.border-seperator(border);
+	border-radius: 5px;
+	padding: 20px;
+	margin: 0;
+}
+
+legend {
+	background-color: @legendBackground;
+	border: solid @contentBackground;
+	border-width: 0 2px;
+	border-radius: 5px;
+	color: @legendColor;
+	font-size: 11px;
+	font-weight: bold;
+	padding: 6px 8px;
+	white-space: normal;
+	text-transform: uppercase;
+	*margin-left: -7px; /* Correct alignment displayed oddly in IE6/7 */
+}
+
+/* Labels */
+label {
+	color: @gray;
+	cursor: pointer; /* Indicate that 'label' will shift focus to the associated form element */
+	display: block;
+	#font > .shorthand(12px, 900, @headingsFontFamily);
+	margin-bottom: 7px;
+
+	.required {
+		color: #777;
+		font-size: 11px;
+		font-weight: normal;
+		padding-left: 2px;
+	}
+}
+
+/*
+ * 1. Correct font-size not inheriting in all browsers
+ * 2. Remove margins in FF3/4 S5 Chrome
+ * 3. Define consistent vertical alignment display in all browsers
+ */
+button,
+input,
+select,
+textarea {
+	font-size: 100%;
+	margin: 0;
+	vertical-align: baseline;
+	*vertical-align: middle;
+}
+
+/*
+ * Define line-height as normal to match FF3/4 (set using !important in the UA stylesheet)
+ */
+button,
+input {
+	line-height: normal;
+}
+
+/*
+ * Consistent box sizing and appearance
+ */
+input[type="checkbox"],
+input[type="radio"] {
+	padding: 0;
+	*width: 13px;
+	*height: 13px;
+}
+
+input[type="color"] {
+	padding: 3px;
+	.box-sizing(content-box);
+}
+
+input[type="search"] {
+	-webkit-appearance: textfield;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-results-button {
+	-webkit-appearance: none;
+}
+
+/*
+ * Remove inner padding and border in FF3/4: h5bp.com/l
+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+
+/*
+ * 1. Remove default vertical scrollbar in IE6/7/8/9
+ * 2. Allow only vertical resizing
+ */
+textarea {
+	overflow: auto;
+	vertical-align: top;
+	resize: vertical;
+}
+
+/**
+ * Input styling
+ */
+
+input,
+select,
+textarea {
+	color: @gray;
+	font-size: 13px;
+	margin-bottom: 9px;
+	padding: 6px;
+}
+
+input,
+textarea {
+	background-color: @inputBackground;
+	border: 1px solid @inputBorder;
+	border-radius: @inputBorderRadius;
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	.transition(~"border, box-shadow linear 200ms");
+
+	/* :focus styling */
+	&:focus {
+		border-color: rgba(82, 168, 236, 0.8);
+		outline: 0;
+		outline: thin dotted \9; /* IE6-9 */
+		box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.4);
+	}
+
+	/* Invalid inputs, change focus to red */
+	&:invalid:focus {
+		border-color: @red;
+		box-shadow: 0 0 6px lighten(@red, 30%);
+	}
+}
+
+/* Input sizes */
+.input-mini {
+	width: 60px;
+}
+
+.input-small {
+	width: 90px;
+}
+
+.input-medium {
+	width: 150px;
+}
+
+.input-large {
+	width: 210px;
+}
+
+.input-xlarge {
+	width: 270px;
+}
+
+.input-xxlarge {
+	width: 100%;
+}
+
+/**
+ * Buttons
+ */
+.btn,
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	.buttonBackground(@btnBackground, @btnBackgroundHighlight);
+	border-radius: 4px;
+	font-size: @baseFontSize - 1px;
+	text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+
+	text-align: center;
+	padding: 9px 14px;
+	margin-bottom: 0;
+
+	display: inline-block;
+	vertical-align: middle;
+	cursor: pointer; /* Display hand cursor for clickable form elements */
+	*overflow: visible; /* Correct inner spacing displayed oddly in IE7 (doesn't effect IE6) */
+
+	/* Pink, primary button */
+	&.primary {
+		.buttonBackground( @btnPrimaryBackgroundHighlight, @btnPrimaryBackground, @btnPrimaryTextColor);
+		text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+	}
+}
+
+/*
+ * Disabled elements
+ */
+.btn[disabled],
+button[disabled],
+input[disabled] {
+	cursor: not-allowed;
+	background-color: @grayLighter;
+	background-image: none !important;
+	color: @grayDark;
+	text-shadow: none;
+	opacity: 0.65;
+	filter: alpha(opacity=65);
+}
+
+/**
+ * Search inputs
+  */
+input[type="search"] {
+	background: #fff url(images/search.png) no-repeat 8px center;
+	padding-left: 22px;
+}
+
+.searchform {
+	.well;
+	.clearfix;
+	margin-bottom: @smallGutterWidth;
+
+	input[type="search"] {
+		float: left;
+		width: 68%;
+		margin-bottom: 0;
+	}
+
+	input[type="submit"] {
+		width: 28%;
+		padding: 6px 6px;
+		float: right;
+	}
+}
+
+/* =============================================================================
+   Content
+   ========================================================================== */
+
+#main {
+	#gradient > .vertical(fade(@contentBackground, 25%), @contentBackground, none, 190px);
+	border-radius: 10px;
+	padding: @gutterWidth;
+	box-shadow: 0 2px 3px 0 rgba(204, 204, 204, 0.8);
+}
+
+.no-cssgradients #main {
+	background-color: @contentBackground;
+}
+
+#content {
+	margin-left: 0;
+}
+
+#sidebar {
+	float: right;
+}
+
+/**
+ * Simple grid system
+ * @credits Twitter Bootstrap
+ */
+#grid > .fluid(@fluidGridColumnWidth, @fluidGridGutterWidth);
+
+/* =============================================================================
+   Header
+   ========================================================================== */
+
+#master-header {
+	padding: @gutterWidth;
+	position: relative;
+	z-index: 2;
+}
+
+#site-title {
+	float: left;
+
+	a {
+		color: @siteTitleColor;
+		display: inline-block;
+		font-size: 48px;
+		font-weight: 900;
+		letter-spacing: -1px;
+		text-shadow: 0 1px 0 @white;
+		.transition(all 200ms ease-in-out);
+
+		&:hover {
+			text-decoration: none;
+			/* Scale the site title on hover */
+			.scale(0.95);
+		}
+	}
+
+	img {
+		box-shadow: none;
+	}
+}
+
+#site-description {
+	font-size: 19px;
+	float: right;
+	padding-top: 24px;
+}
+
+/* =============================================================================
+   Navigation
+   ========================================================================== */
+
+.main-navigation {
+	margin: 0 0 @smallGutterWidth;
+	*z-index: 10; // IE7
+
+	li {
+		float: left;
+		margin: 0 15px 0 0;
+		position: relative;
+		*z-index: 5; // IE7
+	}
+
+	// Navigation item
+	a {
+		#gradient > .vertical(lighten(@btnBackgroundHighlight, 5%), @btnBackgroundHighlight, @btnBackgroundHighlight);
+		border: 1px solid;
+		border-color: @btnHighlight @btnShadow @btnShadow @btnHighlight;
+		border-radius: 5px;
+		display: block;
+		#font > .shorthand(@baseFontSize + 1px, normal, @headingsFontFamily);
+		margin-bottom: 5px;
+		padding: 14px 21px;
+		text-shadow: 0 1px 0 @btnHighlight;
+		.transition(all 150ms ease);
+
+		&:hover {
+			#gradient > .vertical(lighten(@btnBackgroundHighlight, 5%), darken(@btnBackgroundHighlight, 1%), darken(@btnBackgroundHighlight, 2%));
+			border-radius: 10px 0 10px 0;
+			text-decoration: none;
+		}
+
+		&:active,
+		&:focus {
+			box-shadow: inset 1px 1px 6px @grayLight;
+		}
+	} // .main-navigation a
+
+	// Current navigation item
+	.current > a {
+		#gradient > .vertical(@btnPrimaryBackgroundHighlight, @btnPrimaryBackground, @btnPrimaryBackground);
+		border-color: transparent;
+		border-radius: 10px 0 10px 0;
+		color: @btnPrimaryTextColor;
+		text-shadow: 0 1px 0 rgba(0,0,0, 0.1);
+
+		&:hover {
+			border-radius: 0 10px 0 10px;
+		}
+	} // .main-navigation .current
+
+	// Navigation, level 2
+	.sub-menu {
+		display: none;
+		box-shadow: 0 1px 6px rgba(0,0,0, 0.22);
+		min-width: 200px;
+		position: absolute;
+		top: 100%; left: 0;
+		z-index: 1000;
+
+		li {
+			float: none;
+			margin: 0;
+		}
+
+		a {
+			border-radius: 0;
+			margin-bottom: 0;
+		}
+
+		// Navigation, level n
+		.sub-menu {
+			top: 0; left: 100%;
+		}
+
+	} // .sub-menu
+
+	// Show sub-menu on :hover
+	li:hover > .sub-menu {
+		display: block;
+	}
+
+} // .main-navigation
+
+/* =============================================================================
+   Entries
+   ========================================================================== */
+
+.hentry {
+	.border-seperator(border-bottom);
+	position: relative;
+	padding-bottom: @gutterWidth / 2;
+	margin-bottom: @gutterWidth;
+
+	&:last-of-type {
+		border-bottom: none;
+	}
+}
+
+/* Entry meta */
+.entry-meta {
+	#gradient > .vertical(lighten(@btnBackgroundHighlight, 5%), @btnBackgroundHighlight, @btnBackgroundHighlight);
+	border: 1px solid;
+	border-color: @btnHighlight @btnShadow @btnShadow @btnHighlight;
+	border-radius: 5px;
+	box-shadow: -1px 0 4px rgba(0, 0, 0, 0.1);
+	color: @btnTextColor;
+	clear: both;
+	font-size: round(@baseFontSize * 0.85);
+	line-height: 1.8;
+	margin: @gutterWidth 0 0 (@gutterWidth - @gutterWidth * 3);
+	padding: 14px 15px;
+	text-shadow: 0 1px 0 @btnHighlight;
+
+	.ie7 & {
+		margin-left: 0;
+	}
+}
+
+/* Edit link */
+.edit-link {
+	float: right;
+
+	a {
+		color: @gray;
+
+		&:hover {
+			color: @linkColor;
+			text-decoration: none;
+		}
+	}
+}
+
+/* More link */
+.more-link {
+	#font > .shorthand(@baseFontSize, 700, @headingsFontFamily);
+
+	&:hover {
+		text-decoration: none;
+
+		.meta-nav {
+			margin-left: 5px;
+			.transition(margin-left 200ms ease-in-out);
+		}
+	}
+}
+
+/* Entry thumbnails */
+.thumbnail {
+	background-color: @white;
+	border-radius: 3px;
+	padding: 4px;
+	box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.15);
+	float: left;
+	margin: 0 @smallGutterWidth 10px (@gutterWidth - @gutterWidth * 3);
+
+	/* Thumbnail rotation */
+	.hentry &:hover {
+		.rotate(-2deg);
+	}
+
+	.hentry:nth-of-type(even) &:hover {
+		.rotate(2deg);
+	}
+
+	.ie7 & {
+		margin-left: 0;
+	}
+}
+
+
+
+/* =============================================================================
+   Widgets
+   ========================================================================== */
+
+.widget {
+	.border-seperator(border-bottom);
+	position: relative;
+	padding-bottom: @smallGutterWidth - 15;
+	margin-bottom: @smallGutterWidth;
+
+	&:last-child {
+		border-bottom: none;
+	}
+
+	li a:hover {
+		margin-left: 5px;
+		.transition(margin-left 300ms linear);
+	}
+}
+
+.well .widget-title {
+	margin-top: 5px;
+}
+
+/* =============================================================================
+   Footer
+   ========================================================================== */
+
+#footer {
+	#gradient > .radial(rgba(0,0,0, @footerBackgroundOpacity), rgba(0,0,0,0));
+	font-size: @baseFontSize + 3px;
+	padding: 25px 40px;
+	text-shadow: 0px 1px 0px rgba(255,255,255, 0.5);
+	text-align: center;
+
+	a {
+		color: @footerLinkColor;
+		text-shadow: none;
+	}
+}
+
+/* =============================================================================
+   Alert messages
+   ========================================================================== */
+
+.alert {
+	background-color: @alertBackground;
+	border-left: 5px solid @alertBorder;
+	border-radius: 0 5px 5px 0;
+	color: @alertText;
+	padding: 10px 14px;
+	margin-bottom: @smallGutterWidth;
+	text-shadow: 0 1px 0 rgba(255,255,255, .5);
+
+	h4 {
+		border-bottom: 0;
+		color: inherit;
+		padding-bottom: 0;
+		margin: 10px 0;
+	}
+
+	p + p {
+		margin-bottom: 5px;
+	}
+}
+
+.alert-warning {
+	background-color: @warningBackground;
+	border-color: @warningBorder;
+	color: @warningText;
+}
+
+.alert-success {
+	background-color: @successBackground;
+	border-color: @successBorder;
+	color: @successText;
+}
+
+.alert-danger,
+.alert-error {
+	background-color: @errorBackground;
+	border-color: @errorBorder;
+	color: @errorText;
+}
+
+.alert-info {
+	background-color: @infoBackground;
+	border-color: @infoBorder;
+	color: @infoText;
+}
+
+/* =============================================================================
+   Non-semantic helper classes
+   ========================================================================== */
+
+.alignleft { float: left; }
+.alignright { float: right; }
+.aligncenter { display: block; margin-left: auto; margin-right: auto; }
+.clear { clear: both; }
+.last { margin-right: 0px; }
+
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+.hidden {
+	display: none !important;
+	visibility: hidden;
+}
+
+/* Hide only visually, but have it available for screenreaders: h5bp.com/v */
+.assistive-text {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+.invisible {
+	visibility: hidden;
+}
+
+/* =============================================================================
+   Media queries
+   ========================================================================== */
+
+@media only screen and (max-width: 1260px) {
+	/* Remove negative margins on post thumbnails and meta */
+	.entry-meta,
+	.thumbnail {
+		margin-left: 0;
+	}
+}
+
+@media only screen and (max-width: 1024px) {
+	#main {
+		border-radius: 0;
+		padding: @smallGutterWidth;
+		box-shadow: none;
+	}
+
+	#footer {
+		box-shadow: inset 0 2px 3px rgba(204, 204, 204, 0.6);
+	}
+}
+
+/**
+ * Turn the layout into one column
+ */
+@media only screen and (max-width: 768px) {
+	body {
+		font-size: @baseFontSize + 1px;
+		line-height: @baseLineHeight + 0.2;
+		width: 100%;
+		min-width: 0;
+	}
+
+	#main,
+	#master-header {
+		padding: 20px;
+	}
+
+	#main {
+		background: @contentBackground;
+	}
+
+	#content, #sidebar {
+		width: auto;
+		float: none !important;
+	}
+
+	// Make all grid-sized elements block level again
+	.row [class*="span"] {
+		float: none;
+		display: block;
+		width: auto;
+		margin-left: 0;
+	}
+
+	#site-title,
+	#site-description {
+		float: none;
+		text-align: center;
+	}
+
+	#site-description {
+		padding-top: 0;
+	}
+
+	/* Remove radial gradient in the footer */
+	#footer {
+		background-image: none;
+
+		.sep {
+			.invisible;
+		}
+	}
+}
+
+@media only screen and (max-width: 480px) {
+
+	/**
+	 * Make the navigation full width
+	 */
+	.main-navigation li {
+		float: none;
+	}
+
+	.main-navigation .sub-menu {
+		box-shadow: none;
+		display: block;
+		margin: 0 0 5px @smallGutterWidth;
+		position: relative;
+	}
+
+	.edit-link {
+		float: none;
+		margin-left: 5px;
+	}
+
+	/**
+	 * Center the thumbnail image
+	 */
+	.thumbnail {
+		display: block;
+		float: none;
+		margin: 0 auto @smallGutterWidth;
+	}
+}

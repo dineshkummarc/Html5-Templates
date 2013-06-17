@@ -1,0 +1,384 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<head lang="en">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<title>Template Documentation Template</title>
+	<!-- Framework CSS -->
+	<link rel="stylesheet" href="assets/blueprint-css/screen.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="assets/blueprint-css/print.css" type="text/css" media="print">
+	<!--[if lt IE 8]><link rel="stylesheet" href="assets/blueprint-css/ie.css" type="text/css" media="screen, projection"><![endif]-->
+	<link rel="stylesheet" href="assets/blueprint-css/plugins/fancy-type/screen.css" type="text/css" media="screen, projection">
+	<style type="text/css" media="screen">
+		p, table, hr, .box { margin-bottom:25px; }
+		.box p { margin-bottom:10px; }
+	</style>
+</head>
+
+
+<body>
+	<div class="container">
+	
+		<h3 class="center alt">	&ldquo;Left&rdquo; Documentation by &ldquo;ansimuz
+		  v1.0</h3>
+		
+<hr>
+		
+		<h1 class="center">&ldquo;LEFT TEMPLATE&rdquo;</h1>
+		
+<div class="borderTop">
+			<div class="span-6 colborder info prepend-1">
+				<p class="prepend-top">
+					<strong>
+					Created: 16/03/2011<br>
+					By: Luis Zuno aka ansimuz<br>
+					Email: <a href="mailto:luis@luiszuno.com">luis@luiszuno.com</a>					</strong>				</p>
+</div><!-- end div .span-6 -->		
+	
+			<div class="span-12 last">
+				<p class="prepend-top append-0">Thank you for downloading my theme. If you like this file you may like some of my premium items found on themeforest portfolio <a href="http://themeforest.net/user/Ansimuz/portfolio?ref=ansimuz">Visit portfolio</a>. Thanks so much!</p>
+    </div>
+		</div><!-- end div .borderTop -->
+		
+		<hr>
+		
+		<h2 id="toc" class="alt">Table of Contents</h2>
+		<ol class="alpha">
+			<li><a href="#htmlStructure">HTML</a></li>
+		  <li><a href="#cssFiles">CSS Files</a></li>
+		  <li><a href="#imgFiles">Image Files</a></li>
+		  <li><a href="#javascript">JavaScript</a></li>
+			<li><a href="#psdFiles">PSD Files</a></li>
+			<li><a href="#credits">Sources and Credits</a></li>
+			<li><a href="http://luiszuno.com/blog/tweaky/">Customisation</a></li>
+	    </ol>
+		
+<hr>
+		
+		<h1 id="htmlStructure"><strong>A) HTML </strong> - <a href="#toc">top</a></h1>
+	  <p>This theme is a fixed layout theme made in HTML 5 With 8 page layouts and a skin system to change the appearance editing or adding  files in the skin folder. The main
+	    structure is as follow:</p>
+	  <h2>HTML STRUCTURE</h2>
+<ol>
+    <li>WRAPPER
+      <ol>
+        <li>SIDEBAR</li>
+        <li>MAIN
+          <ol>
+            <li>HEADER</li>
+            <li>CONTENT
+              <ol>
+                <li>PAGE CONTENT                </li>
+              </ol>
+            </li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li>FOOTER</li>
+</ol>
+	  <p><img src="assets/images/html.png" alt="HTML Structure" width="508" height="241" /></p>
+	  <p><img src="assets/images/general-layout.gif" alt="HTML Structure" width="770" height="800" /></p>
+	  <h2>FILE LIST</h2>
+	  <p>The html folder contains all the necesary files to build a website it contains.
+	    Heres the list of files and folders:</p>
+	  <p>blog-compact.html<br>
+        blog.html<br>
+        contact.html<br>
+        css<strong> (Folder containing all the necesary style sheets)</strong><br>
+        features-accordion.html<br>
+        features-icons.html<br>
+        features-social-icons.html<br>
+        features-tabs.html<br>
+        features-toggle.html<br>
+        features-typography.html<br>
+        features.html<br>
+        gallery-fourcols.html<br>
+        gallery-video.html<br>
+        gallery.html<br>
+        images <strong>(Folder containing the slider images)</strong><br>
+        img <strong>(Contains all the image files)</strong><br>
+        index.html<br>
+        js <strong>(Javascript files)</strong><br>
+        single.html<br>
+        skins<strong> (Skin folders for the theme appearance)</strong><br>
+        skins.html</p>
+	  <h2>STYLED ELEMENTS</h2>
+	  <h3>COLUMNS</h3>
+	  <p>Set the columns by placin the content for that column inside the divs as
+	    shown below and having the &quot;last&quot; class for the last div. The
+	    div clear shown in the image is optional if you dont desire columns overlaping.</p>
+	  <p><img src="assets/images/columns.png" width="770" height="800"></p>
+	  <h3>&nbsp;</h3>
+	  <h2>TOOLTIPS</h2>
+	  <p>For the tooltips i am using a javascript library called <a href="http://vadikom.com/demos/poshytip/" target="_blank">poshytip</a> its very easy to set up. The default browser tooltip that displays the value of the title attribute is replaced with a &quot;poshier&quot; version just add a title text and a class of poshytip.</p>
+	  <p>&nbsp;</p>
+	  <p>Example</p>
+	  <pre>&lt;a href=&quot;#&quot;<strong> title=&quot;I am a tooltip&quot; class=&quot;poshytip&quot;</strong>&gt;Tool tip&lt;/a&gt;
+         
+         
+&lt;img src=&quot;image.jpg&quot; <strong>title=&quot;I am a tooltip&quot; class=&quot;poshytip</strong>&quot; alt=&quot;Image&quot; /&gt;</pre>
+	  <h3>&nbsp;</h3>
+	  <h2>ACCORDION AND TOGGLE BOXES</h2>
+	  <p>This template includes a left way to make toggle and accordion boxes
+	    using the magic of <a href="http://jquery.com/" target="_blank">Jquery</a>.</p>
+	  <p>Code example</p>
+	  <h2>TOGGLE BOX</h2>
+	  <pre><strong>A trigger link</strong><br>&lt;h2 class=&quot;toggle-trigger custom&quot;&gt;&lt;a href=&quot;#&quot;&gt;Toggle Switch&lt;/a&gt;&lt;/h2&gt;
+
+<strong>
+
+
+and a div block nested inside a container block div.</strong><br>&lt;div class=&quot;toggle-container&quot;&gt;<br>	&lt;div class=&quot;block&quot;&gt;<br>		&lt;p&gt;Content&lt;/p&gt;<br>	&lt;/div&gt;<br>&lt;/div&gt;</pre>
+	  <p><img src="assets/images/toggle.png" alt="HTML Structure" width="683" height="153" /></p>
+	  <h2>ACCORDION</h2>
+	  <pre><strong>A trigger link</strong><br>&lt;h2 class=&quot;accordion-trigger custom&quot;&gt;&lt;a href=&quot;#&quot;&gt;Accordion Switch&lt;/a&gt;&lt;/h2&gt;
+
+<strong>
+
+
+and a div block nested inside a container block div.</strong><br>&lt;div class=&quot;accordion-container&quot;&gt;<br>	&lt;div class=&quot;block&quot;&gt;<br>		&lt;p&gt;Content&lt;/p&gt;<br>	&lt;/div&gt;<br>&lt;/div&gt;</pre>
+      <p><img src="assets/images/accordion.png" alt="HTML Structure" width="668" height="157" /></p>
+      <h3>&nbsp;</h3>
+      <h2>TABS</h2>
+      <p>I am using a javascript library for the tabs you can find the source and more documentation <a href="http://flowplayer.org/tools/tabs/" target="_blank">here</a>.</p>
+      <p>Here is the minimal HTML code to get tabs working: </p>
+      <pre>&lt;!-- the tabs --&gt;
+ &lt;ul class=&quot;tabs&quot;&gt;
+ 	&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Tab 1&lt;/a&gt;&lt;/li&gt;
+ 	&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Tab 2&lt;/a&gt;&lt;/li&gt;
+ 	&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Tab 3&lt;/a&gt;&lt;/li&gt;
+ &lt;/ul&gt;</pre>
+      <pre>&lt;!-- tab &quot;panes&quot; --&gt;
+&lt;div class=&quot;panes&quot;&gt;
+	&lt;div&gt;pane 1 content&lt;/div&gt;
+	&lt;div&gt;pane 2 content&lt;/div&gt;
+	&lt;div&gt;pane 3 content&lt;/div&gt;
+&lt;/div&gt;</pre>
+      <p>&nbsp;</p>
+      <h2>GALLERY</h2>
+      <p>&nbsp;</p>
+      <p>You can have your gallery in 2 or four columns</p>
+      <p>The HTML structure for the gallery is:</p>
+      <ol>
+        <li>Flter </li>
+        <li>Thumbs</li>
+        <li>Pager</li>
+      </ol>
+      <p><img src="assets/images/gallery-blocks.png" alt="HTML Structure" width="657" height="282" /></p>
+      <p>&nbsp;</p>
+      <h2>BLOG</h2>
+      <p>You can have two layouts for the blog fullwidth and compact. The files for the blog are </p>
+      <p>blog.html<br>
+      blog-compact.html</p>
+      <p>Fullwidth HTML example</p>
+      <pre>&lt;div class=&quot;post&quot;&gt; .. &lt;/div&gt;
+
+
+</pre>
+      <p>Compact HTML example</p>
+      <pre>&lt;div class=&quot;post compact&quot;&gt; .. &lt;/div&gt;</pre>
+<p>&nbsp;</p>
+      <h2>CONTACT</h2>
+      <p>For the contact form 3 files are used one for the HTML (contact.html) another for the FORM VALIDATION (js/form-validation.js) and the PHP (send-mail.php) that actually sends the data .</p>
+      <p>The HTML</p>
+      <p><img src="assets/images/contact-html.png" width="815" height="481"></p>
+      <h2>Configuring the email recipients and data</h2>
+      <p>To set the sender and the recipients just change the value for the hidden
+        input values inside the contact.html.</p>
+      <p><img src="assets/images/send-mail-config.png" width="871" height="83"></p>
+      <h2>Form validation</h2>
+      <p><strong>Form-validation.js and post-validation.js</strong> This is the
+        javascript validation for the fields.</p>
+      <p>How to add fields to the contact form:</p>
+      <p> <img src="assets/images/field.png" width="687" height="201"></p>
+      <p>&nbsp;</p>
+      <h2>TWITTER CONFIGURATION</h2>
+      <p>Open the js/custom.js file and edit the variables for the twitter section:</p>
+      <pre>// Tweet
+ $(&quot;.tweet&quot;).tweet({
+ username: &quot;<strong>ansimuz</strong>&quot;,
+ join_text: &quot;auto&quot;,
+ avatar_size: 32,
+ count: 3,
+ auto_join_text_default: &quot;we said,&quot;,
+ auto_join_text_ed: &quot;we&quot;,
+ auto_join_text_ing: &quot;we were&quot;,
+ auto_join_text_reply: &quot;we replied to&quot;,
+ auto_join_text_url: &quot;we were checking out&quot;,
+ loading_text: &quot;loading tweets...&quot;
+ });</pre>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+    <hr>
+
+		<h1 id="cssFiles"><strong>B) CSS Files and Structure</strong> - <a href="#toc">top</a></h1>
+	  <p>This theme uses several css files contained in the <strong>css</strong> folder. There are 2 main important files for the theme: styles.css, typography.css. For the colors and backgrounds for the skin look in the <strong>skins/name-of-the-skin/styles.css</strong><br>
+	  </p>
+	  <p>Css files:</p>
+	  <p>ie7-hacks.css (hacks to display internet explorer 7 correctly)<br>
+	    ie8-hacks.css (hacks to display internet explorer 8 correctly)<br>
+	    jflickrfeed.css (Styles for the flickr feed)<br>
+	    jquery.tweet.css (Styles for the twitter)<br>
+	    nivo-slider.css (Styles for the slideshow)<br>
+	    reset.css <br>
+	    social-icons.css <br>
+	    style.css  <strong>(Main styles)</strong><br>
+	    styled-elements.css<strong> (Styles for the buttons, boxes, etc)</strong><br>
+	    superfish-left.css (dropdown styles)<br>
+	    superfish.css (dropdown styles)<br>
+	    tabs.css <br>
+      typography.css <strong>(All the typography styles)</strong></p>
+	  <p>This theme imports 3 styles a the begining of the main styles (styles.css). The styles are ordered in importance and position of the theme so the main and header styles are at the top and the footer an lesser styles are at the bottom.</p>
+	  <p><img src="assets/images/main-css.png" width="706" height="688"></p>
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  <p>&nbsp;</p>
+      <hr>
+		
+	  <h3 id="imgFiles">&nbsp;</h3>
+	  <h1><strong>C) Image Files - <a href="#toc">top</a></strong></h1>
+	  <p>The included image files in the downloadable package contain PSD and PNG files used in the layout</p>
+	  <p>You have all the editable graphic elements in the PSD folder.</p>
+	  <p>The image files for this theme is as follow:</p>
+	  <p>comments-balloon.png<br>
+	    drop-arrow-white.png<br>
+	    drop-arrow.png<br>
+	    dummies<strong> (dummie images to feed content)</strong><br>
+	    filterbar-bottom.png<br>
+	    filterbar-top.png<br>
+	    filterbar.png<br>
+	    knobs-icons<strong> ( icons used in the info boxes)</strong><br>
+	    line-divider.png<br>
+	    link-button-dark-over.png<br>
+	    link-button-dark.png<br>
+	    link-button-over.png<br>
+	    link-button.png<br>
+	    logo.png<br>
+	    mono-icons<strong> (general icons)</strong><br>
+	    nav-item.png<br>
+	    nivo-arrows.png<br>
+	    pager.png<br>
+	    play-button.png<br>
+	    plus-button.png<br>
+	    post-divider.png<br>
+	    quotes.png<br>
+	    search-bg.png<br>
+	    search-submit.png<br>
+	    sidebar-line-divider.png<br>
+	    slider-nav.png<br>
+	    slider-shadow.png<br>
+	    social-icons<br>
+	    tab-bg.png<br>
+	    tag.png<br>
+      to-top-arrow.png</p>
+	  <h1 id="javascript"></h1>
+      <h1><strong>D) JavaScript</strong> - <a href="#toc">top</a></h1>
+	  <p>&nbsp;</p>
+	  <p>You can control almost all the config for the javaascript functionality
+	    inside the <strong>&quot;js/custom.js</strong>&quot; file.</p>
+	  <h2>JS FILES LIST</h2>
+	  <ol>
+			<li><strong>jQuery</strong> is a Javascript library that greatly reduces the amount of code
+			  that you must write.</li>
+    <li><strong>DD_belatedPNG.js </strong>Fixes the transparency png issue in IE.</li>
+      <li><strong>easing.js</strong> Library for the easing Fx.</li>
+	  <li><strong>form-validation.js</strong> Needed for the validation of the contact form.</li>
+	  <li><strong>jflickrfeed</strong> Feeds the flickr entries</li>
+	  <li><strong>fancybox </strong> Used for the image pop up windows</li>
+	  <li><strong>quicksand</strong> Filterable content on the galleries javascript library</li>
+	  <li><strong>superfish</strong> For the dropdown menus</li>
+	  <li><strong>tabs</strong> tabbed content</li>
+	  <li><strong>tweet</strong> Javascript library that feeds latest tweets</li>
+	  </ol>
+		
+<h5>&nbsp;</h5>
+<h3 id="psdFiles">&nbsp;</h3>
+		<h1>E) PSD Files - <a href="#toc">top</a></h1>
+	  <p>I have included all the page layouts as well the web elements such buttons and icons.</p>
+		
+			<ol>
+			  <li>Main.psd The front page of the theme with the <strong>background elements editable</strong></li>
+	          <li>blog.psd Layout for the blog</li>
+	          <li>gallery.psd Layout for the galleries</li>
+	          <li>portfolio.psd layout for the porfolio listing</li>
+	          <li>portfolio-single.psd</li>
+	          <li>elements
+	            (This folder holds all the graphic web elements
+              for the theme also includes the templates for the skins)</li>
+      </ol>
+		
+      <p>&nbsp;</p>
+    <hr>
+		
+		<h1 id="credits">&nbsp;</h1>
+		<h1>F) Sources and Credits - <a href="#toc">top</a></h1>
+	  <p>I've used the following images, icons or other files as listed.        
+	  <h3>JAVASCRIPT      </h3>
+	  <ul><li>jQuery <a href="http://jquery.com/" target="_blank">http://jquery.com/</a></li>
+			<li>jqueryui .<a href="http://jqueryui.com/"> Jquery
+		    ui Home page.</a></li>
+			<li>jQuery Easing Plugin <a href="http://gsgd.co.uk/sandbox/jquery/easing/" target="_blank">http://gsgd.co.uk/sandbox/jquery/easing/</a></li>
+			<li>Jquery tabs <a href="http://flowplayer.org/tools/tabs/">http://flowplayer.org/tools/tabs/</a></li>
+			<li>PrettyPhoto<a href="http://www.no-margin-for-errors.com/projects/prettyphoto-jquery-lightbox-clone/" target="_blank"> http://www.no-margin-for-errors.com/projects/prettyphoto-jquery-lightbox-clone/</a></li>
+		<li>DD_belatedPNG <a href="http://www.dillerdesign.com/experiment/DD_belatedPNG/" target="_blank">http://www.dillerdesign.com/experiment/DD_belatedPNG/</a></li>
+	    <li>Superfish <a href="http://users.tpg.com.au/j_birch/plugins/superfish/" target="_blank">http://users.tpg.com.au/j_birch/plugins/superfish/</a></li>
+        <li>Google fonts api <a href="http://fonts.googleapis.com/" target="_blank">http://fonts.googleapis.com/</a></li>
+	    <li>Scrollto<a href="http://flesler.blogspot.com"> http://flesler.blogspot.com</a></li>
+	    <li>Nivo slider <a href="http://nivo.dev7studios.com" target="_blank">http://nivo.dev7studios.com</a></li>
+	    <li>Poshytip <a href="http://vadikom.com/tools/poshy-tip-jquery-plugin-for-stylish-tooltips/">http://vadikom.com/tools/poshy-tip-jquery-plugin-for-stylish-tooltips/</a></li>
+	    <li>tabs <a href="http://flowplayer.org/tools/tabs/">http://flowplayer.org/tools/tabs/</a></li>
+	    <li>tweet <a href="http://tweet.seaofclouds.com/" target="_blank">http://tweet.seaofclouds.com/</a></li>
+	  </ul>
+		
+      <h3>IMAGES</h3>
+      <ul>
+        <li>Social icons  <a href="http://www.premiumpixels.com/" target="_blank"> http://www.premiumpixels.com/</a></li>
+        <li>Knobs icons <a href="http://itweek.deviantart.com/art/Knob-Buttons-Toolbar-icons-73463960">http://itweek.deviantart.com/art/Knob-Buttons-Toolbar-icons-73463960</a></li>
+        <li>Background images <a href="http://www.premiumpixels.com/" target="_blank">http://www.premiumpixels.com/</a></li>
+      </ul>
+<hr>
+		
+		<p>Once again, thank you  for downloading this free file. I don't offer support on freebies however you can always look for help at <a href="http://luiszuno.com/free-forums/">http://luiszuno.com/free-forums/</a></p> 
+		
+		<p class="append-bottom alt large">ansimuz</p>
+		<p><a href="#toc">Go To Table of Contents</a></p>
+		
+		<hr class="space">
+	</div><!-- end div .container -->
+</body>
+</html>

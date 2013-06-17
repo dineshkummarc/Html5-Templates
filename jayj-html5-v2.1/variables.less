@@ -1,0 +1,153 @@
+// =======================================
+// Variables
+// -- The best way to customize the look and feel of Jayj HTML5 theme
+// =======================================
+
+// ====================
+// Color definitions
+// ====================
+
+// Greys
+@black:				#000;
+@grayDarker:		#222;
+@grayDark:			#333;
+@gray:				#555;
+@grayLight:			#999;
+@grayLighter:		#ededed;
+@white:				#fff;
+
+// Accent colors
+@blue:				#049cdb;
+@blueDark:			#0064cd;
+@green:				#093;
+@red:				#e9322d;
+@yellow:			#ff0;
+@orange:			#f89406;
+@pink:				#f71570;
+@purple:			#ca349b;
+
+// ====================
+// Scaffolding
+// ====================
+
+@primaryColor:				@pink;
+@textColor:					@grayDarker;
+@bodyBackground:			@grayLighter;
+@contentBackground:			@white;
+
+// Site title
+@siteTitleColor:			@linkColor;
+
+// Footer
+@footerLinkColor:			@linkColor;
+@footerBackgroundOpacity:	10%; // Opacity on the black radial gradient in the footer
+
+// ====================
+// Links
+// ====================
+
+@linkColor:				@primaryColor;
+@linkColorHover:		darken(@linkColor, 18%);
+
+// ====================
+// Typography
+// ====================
+
+@sansFontFamily:		"Helvetica Neue", sans-serif;
+@serifFontFamily:		Georgia, serif;
+@monoFontFamily:		Menlo, Monaco, Consolas, "Courier New", monospace;
+
+// Base fonts
+@baseFontFamily:		"Open Sans", @sansFontFamily;
+@headingsFontFamily:	"Merriweather", @serifFontFamily;
+
+// Base sizes
+@baseFontSize:			15px;
+@baseHeadingSize:		28px;
+@baseLineHeight:		1.6;
+
+// ====================
+// HTML elements
+// ====================
+
+// Color on selected text
+@selectionColor:		#bada55; // Green
+@selectionTextColor:	@black;
+
+// Horizontal rule <hr />
+@hrBorder:				darken(@grayLighter, 5%);
+
+// Blockquotes
+@blockquoteBorder:		@blue;
+
+// Tables
+@tableBorder:			#ddd;
+
+// Figures <figure>
+@figureBackground:		@grayDark;
+@figureTextColor:		@white;
+
+// Code <code>
+@codeColor:				@green;
+
+// ====================
+// Buttons
+// ====================
+
+@btnHighlight:						@white;
+@btnShadow:							#c9c9c9;
+
+@btnBackground:						@white;
+@btnBackgroundHighlight:			darken(@white, 10%);
+@btnTextColor:						@grayDark;
+
+@btnPrimaryBackground:				@primaryColor;
+@btnPrimaryBackgroundHighlight:		spin(lighten(@primaryColor, 12%), -8);
+@btnPrimaryTextColor:				@white;
+
+// ====================
+// Form elements
+// ====================
+
+// Legends <legend>
+@legendBackground:			#ffeef7;
+@legendColor:				darken(@purple, 10%);
+
+// Inputs
+@inputBackground:			@white;
+@inputBorder:				#ccc;
+@inputBorderRadius:			3px;
+
+// ====================
+// Alert messages
+// ====================
+
+@alertText:					@grayDarker;
+@alertBackground:			@grayLighter;
+@alertBorder:				darken(@grayLighter, 8%);
+
+@warningText:				#3b3601;
+@warningBackground:			#fef9c7;
+@warningBorder:				darken(spin(@warningBackground, -5), 25%);
+
+@errorText:					#7a0b0a;
+@errorBackground:			#f2dede;
+@errorBorder:				darken(spin(@errorBackground, -10), 25%);
+
+@successText:				#0d370d;
+@successBackground:			#dff0d8;
+@successBorder:				darken(spin(@successBackground, 10), 40%);
+
+@infoText:					#0c3346;
+@infoBackground:			#d9edf7;
+@infoBorder:				@blue;
+
+// ====================
+// The grid
+// ====================
+
+@gutterWidth:				40px;
+@smallGutterWidth:			25px;
+
+@fluidGridColumnWidth:		6.382978723%;
+@fluidGridGutterWidth:		2.127659574%;

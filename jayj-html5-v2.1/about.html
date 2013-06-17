@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<!-- Consider specifying the language of your content by adding the `lang` attribute to <html> -->
+<!--[if lt IE 7]> <html class="no-js ie6"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+
+	<meta charset="utf-8">
+
+	<!-- Always force latest IE rendering engine & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<!-- Put your title here! -->
+	<title></title>
+
+	<meta name="description" content="">
+
+	 <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+	<meta name="viewport" content="width=device-width">
+
+	<link href="style.css" rel="stylesheet">
+
+	<!-- Load Open Sans and Merriweather from Google Fonts
+		For optimal performance, customize it to load the styles you need:
+		http://goo.gl/QufgJ
+	-->
+	<link href="//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700|Merriweather:400,700,900" rel="stylesheet">
+
+	<!-- All JavaScript at the bottom, except for Modernizr
+		Modernizr enables HTML5 elements & feature detects; It includes Respond, a polyfill for min/max-width CSS3 Media Queries
+		For optimal performance, use a custom Modernizr build: www.modernizr.com/download/ -->
+	<script src="js/modernizr-2.6.1.min.js"></script>
+</head>
+
+<body>
+
+	<!-- Prompt IE 6 and 7 users to install Chrome Frame:		chromium.org/developers/how-tos/chrome-frame-getting-started -->
+	<!--[if lt IE 8]>
+		<p class="chromeframe alert alert-warning">Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p>
+	<![endif]-->
+
+	<header id="master-header" class="clearfix" role="banner">
+
+		<hgroup>
+			<h1 id="site-title"><a href="index.html" title="Your Site Name">Jayj HTML5 Theme</a></h1>
+			<h2 id="site-description">This is an awesome description of the site!</h2>
+		</hgroup>
+
+	</header> <!-- #master-header -->
+
+<div id="main" class="row">
+
+	<!-- Main navigation -->
+	<nav class="main-navigation span12 clearfix" role="navigation">
+		<h3 class="assistive-text">Main menu</h3>
+		<ul>
+			<li><a href="index.html">Home</a></li>
+			<li class="current">
+				<a href="about.html">About</a>
+				<ul class="sub-menu">
+					<li><a href="#">Subpage</a></li>
+					<li><a href="#">Subpage 2</a></li>
+				</ul>
+			</li>
+			<li><a href="contact.html">Contact</a></li>
+		</ul>
+	</nav> <!-- #main-navigation -->
+
+<div id="content" role="main" class="span12">
+
+	<article class="page hentry">
+
+		<header class="entry-header">
+			<h1 class="entry-title">Test page</h1>
+		</header> <!-- .entry-header -->
+
+		<div class="entry-content">
+			<p>
+				This page contains examples of many basic HTML elements and their styles.
+			</p>
+
+			<!-- Typography
+			================================================== -->
+			<section id="typography">
+				<h1>Typography <small>Headings, paragraphs, lists, and other inline type elements</small></h1>
+
+					<p>Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.</p>
+
+					<div class="row">
+						<div class="span7">
+							<h2>h2. Heading 2</h2>
+							<h3>h3. Heading 3</h3>
+							<h4>h4. Heading 4</h4>
+							<h5>h5. Heading 5</h5>
+							<h6>h6. Heading 6</h6>
+						</div>
+
+						<div class="span5">
+
+							<h1 class="page-header">Page Header <small><code>&lt;small&gt;</code>Subtitle<code>&lt;/small&gt;</code></small></h1>
+
+<pre class="prettyprint">
+&lt;h1 class="page-header"&gt;&lt;/h1&gt;
+
+// or
+&lt;div class="page-header"&gt;
+   &lt;h1&gt;&lt;/h1&gt;
+&lt;/div&gt;
+
+// or
+&lt;section&gt;
+   &lt;h1&gt;&lt;/h1&gt;
+&lt;/section&gt;</pre>
+					</div>
+				</div>
+
+	  			<h2>HTML elements</h2>
+
+					<table>
+						<thead>
+							<tr>
+								<th>Element</th>
+								<th>Usage</th>
+								<th>Note</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><code>&lt;strong&gt;</code></td>
+								<td>For emphasizing a snippet of text with <strong>important</strong></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td><code>&lt;em&gt;</code></td>
+								<td>For emphasizing a snippet of text with <em>stress</em></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td><code>&lt;abbr&gt;</code></td>
+								<td>Wraps abbreviations and acronyms to show the expanded version on hover</td>
+								<td>Include optional <code>title</code> attribute for expanded text</td>
+							</tr>
+							<tr>
+								<td><code>&lt;address&gt;</code></td>
+								<td>For contact information for its nearest ancestor or the entire body of work</td>
+								<td>Preserve formatting by ending all lines with <code>&lt;br&gt;</code></td>
+							</tr>
+
+							<tr>
+								<td><code>&lt;hr /&gt;</code></td>
+								<td>Represents a paragraph-level thematic break</td>
+								<td>Can be written as <code>&lt;hr&gt;</code></td>
+							</tr>
+
+							<tr>
+								<td><code>&lt;ins&gt;</code></td>
+								<td>Represents an addition to the document</td>
+								<td>Include optional <code>cite</code> attribute to specify the address of a document that explains the change <br />
+									The <code>datetime</code> attribute may be used to specify the time and date of the change.</td>
+							</tr>
+
+							<tr>
+								<td><code>&lt;del&gt;</code></td>
+								<td>Represents a removal from the document</td>
+								<td>Same as for <code>&lt;ins&gt;</code></td>
+							</tr>
+
+							<tr>
+								<td><code>&lt;mark&gt;</code></td>
+								<td>Represents a run of text in one document marked or highlighted because of its relevance in another context</td>
+								<td></td>
+							</tr>
+
+							<tr>
+								<td><code>&lt;small&gt;</code></td>
+								<td>Represents side comments such as small print</td>
+								<td></td>
+							</tr>
+
+							<tr>
+								<td><code>&lt;sub&gt;</code></td>
+								<td>Subscripts</td>
+								<td>Water is H<sub>2</sub>O: &nbsp; <code>Water is H&lt;sub&gt;2&lt;/sub&gt;O</code></td>
+							</tr>
+
+							<tr>
+								<td><code>&lt;sup&gt;</code></td>
+								<td>Superscripts</td>
+								<td>E = MC<sup>2</sup>: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <code>E = MC&lt;sub&gt;2&lt;/sub&gt;</code></td>
+							</tr>
+						</tbody>
+					</table>
+
+					<h3>Examples</h3>
+
+					<div class="row">
+   						<div class="span4">
+							<p><a href="#">Fusce dapibus</a>, <strong>tellus ac cursus commodo</strong>, <em>tortor mauris condimentum nibh</em>, ut fermentum massa justo sit amet risus. Maecenas faucibus mollis interdum. Nulla vitae elit libero, a pharetra augue.</p>
+
+							<p><strong>Note:</strong> Feel free to use <code>&lt;b&gt;</code> and <code>&lt;i&gt;</code> in HTML5, but their usage has changed a bit. <code>&lt;b&gt;</code> is meant to highlight words or phrases without conveying additional importance while <code>&lt;i&gt;</code> is mostly for voice, technical terms, etc.</p>
+						</div>
+
+						<div class="span4">
+							<p>Abbreviations with a <code>title</code> attribute have a light dotted bottom border and a help cursor on hover. This gives users extra indication something will be shown on hover.</p>
+							<p><abbr title="HyperText Markup Language">HTML</abbr> is the best thing since sliced bread. An abbreviation of the word attribute is <abbr title="attribute">attr</abbr>.</p>
+
+							<p>Elderflower cordial, with one <mark>part</mark> cordial to ten <mark>part</mark>s water, stands a<mark>part</mark> from the rest. This is marked using the <code>&lt;mark&gt;</code> tag.</p>
+						</div>
+
+						<div class="span4">
+							<p>Oh no! I wrote something incorrectly. <del>I’d better delete it</del>, using the <code>&lt;del&gt;</code> tag. I could alternately <span style="text-decoration: line-through;">strike something out</span> using the <code>&lt;strike&gt;</code> tag, or strike something out using the <code>&lt;s&gt;</code> tag. <em>So many choices</em>, which I emphasize using the <code>&lt;em&gt;</code> tag.</p>
+
+							<p>Just to clarify, <ins>this is some inserted text</ins>, that I’ll highlight using the <code>&lt;ins&gt;</code> tag.</p>
+
+							<p><small>Information obtained from <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a> and the HTML5 spec. I use the <code>&lt;small&gt;</code> tag here.</small></p>
+						</div>
+					</div>
+
+				<h2>Blockquotes</h2>
+
+					<table>
+						<thead>
+							<tr>
+								<th>Element</th>
+								<th>Usage</th>
+								<th>Optional</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><code>&lt;blockquote&gt;</code></td>
+								<td>For quoting content from another source</td>
+								<td>Add <code>cite</code> attribute for source URL <br />
+									Use <code>.alignleft</code> and <code>.alignright</code> classes for floated options
+								</td>
+							</tr>
+							<tr>
+								<td><code>&lt;small&gt;</code></td>
+								<td>Optional element for adding a user-facing citation, typically an author with title of work</td>
+								<td>Place the <code>&lt;cite&gt;</code> around the title or name of source</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<p>To include a blockquote, wrap <code>&lt;blockquote&gt;</code> around any <abbr title="HyperText Markup Language">HTML</abbr> as the quote.</p>
+					<p>Include an optional <code>&lt;small&gt;</code> element to cite your source and you'll get an em dash <code>&amp;mdash;</code> before it for styling purposes.</p>
+
+					<pre class="prettyprint linenums">
+&lt;blockquote&gt;
+	&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis.&lt;/p&gt;
+	&lt;small&gt;Someone famous&lt;/small&gt;
+&lt;/blockquote&gt;</pre>
+
+					<h3>Example blockquotes</h3>
+
+					<div class="row">
+						<div class="span6">
+							<p>Default blockquotes are styled as such:</p>
+							<blockquote>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis.</p>
+								<small>Someone famous in <cite title="">Body of work</cite></small>
+							</blockquote>
+						</div>
+						<div class="span6">
+							<p>To float your blockquote to the right, add <code>class="alignright"</code>:</p>
+							<blockquote class="alignright">
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis.</p>
+								<small>Someone famous in <cite title="">Body of work</cite></small>
+							</blockquote>
+						</div>
+					</div>
+
+				<hr />
+
+				<h2>Lists</h2>
+
+					<div class="row">
+						<div class="span4">
+							<h3>Unordered</h3>
+							<p><code>&lt;ul&gt;</code></p>
+							<ul>
+								<li>Lorem ipsum dolor sit amet</li>
+								<li>Consectetur adipiscing elit</li>
+								<li>Integer molestie lorem at massa</li>
+								<li>Facilisis in pretium nisl aliquet</li>
+								<li>Nulla volutpat aliquam velit
+									<ul>
+										<li>Phasellus iaculis neque</li>
+										<li>
+											Vestibulum laoreet porttitor sem
+											<ul>
+												<li>Phasellus iaculis neque</li>
+												<li>Purus sodales ultricies</li>
+												<li>Vestibulum laoreet porttitor sem</li>
+												<li>Ac tristique libero volutpat at</li>
+											</ul>
+										</li>
+										<li>Purus sodales ultricies</li>
+										<li>Ac tristique libero volutpat at</li>
+									</ul>
+								</li>
+								<li>Faucibus porta lacus fringilla vel</li>
+								<li>Aenean sit amet erat nunc</li>
+								<li>Eget porttitor lorem</li>
+							</ul>
+						</div>
+
+						<div class="span4">
+							<h3>Ordered</h3>
+							<p><code>&lt;ol&gt;</code></p>
+							<ol>
+								<li>Lorem ipsum dolor sit amet</li>
+								<li>Consectetur adipiscing elit</li>
+								<li>Integer molestie lorem at massa</li>
+								<li>Facilisis in pretium nisl aliquet</li>
+								<li>Nulla volutpat aliquam velit
+									<ol>
+										<li>Phasellus iaculis neque</li>
+										<li>
+											Purus sodales ultricies
+											<ol>
+												<li>Phasellus</li>
+												<li>Purus ultricies</li>
+												<li>Vestibulum</li>
+												<li>Ac tristique</li>
+											</ol>
+										</li>
+										<li>Vestibulum laoreet porttitor sem</li>
+										<li>Ac tristique libero volutpat at</li>
+									</ol>
+								</li>
+								<li>Faucibus porta lacus fringilla vel</li>
+								<li>Aenean sit amet erat nunc</li>
+								<li>Eget porttitor lorem</li>
+							</ol>
+						</div>
+
+						<div class="span4">
+							<h3>Description</h3>
+							<p><code>&lt;dl&gt;</code></p>
+							<dl>
+								<dt>Description lists</dt>
+									<dd>A description list is perfect for defining terms.</dd>
+								<dt>Euismod</dt>
+									<dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+									<dd>Donec id elit non mi porta gravida at eget metus.</dd>
+								<dt>Malesuada porta</dt>
+									<dd>Etiam porta sem malesuada magna mollis euismod.</dd>
+							</dl>
+						</div>
+					</div> <!-- .row -->
+			</section> <!-- #typography -->
+
+			<!-- Code
+			================================================== -->
+			<section id="code">
+				<h1>Code <small>Inline and block code snippets</small></h1>
+
+				<div class="row">
+					<div class="span4">
+						<h2>Inline</h2>
+						<p>Wrap inline snippets of code with <code>&lt;code&gt;</code>.</p>
+<pre class="prettyprint">
+For example, &lt;code&gt;section&lt;/code&gt; should be wrapped as inline.</pre>
+					</div> <!-- .span4 -->
+
+					<div class="span4">
+						<h2>Basic block</h2>
+						<p>Use <code>&lt;pre&gt;</code> for multiple lines of code. Be sure to escape any angle brackets in the code for proper rendering.</p>
+<pre>
+&lt;p&gt;Sample text here...&lt;/p&gt;</pre>
+
+<pre class="prettyprint linenums">
+&lt;pre&gt;
+   &lt;p&gt;Sample text here...&lt;/p&gt;
+&lt;/pre&gt;</pre>
+						<p><strong>Note:</strong> Be sure to keep code within <code>&lt;pre&gt;</code> tags as close to the left as possible; it will render all tabs.</p>
+					</div> <!-- .span4 -->
+
+					<div class="span4">
+						<h2>Google Prettify</h2>
+						<p>The theme supports Google Prettify but it is not included in the download. <a href="http://code.google.com/p/google-code-prettify/">Download google-code-prettify</a> and view the readme for <a href="http://google-code-prettify.googlecode.com/svn/trunk/README.html">how to use</a>.</p>
+
+						<p>Take the same <code>&lt;pre&gt;</code> element and add two optional classes for enhanced rendering.</p>
+<pre class="prettyprint linenums">
+&lt;p&gt;Sample text here...&lt;/p&gt;</pre>
+
+<pre class="prettyprint linenums">
+&lt;pre class="prettyprint linenums"&gt;
+   &lt;p&gt;Sample text here...&lt;/p&gt;
+&lt;/pre&gt;</pre>
+					</div> <!-- .span -->
+				</div> <!-- .row -->
+			</section> <!-- #code -->
+
+			<!-- Tables
+			================================================== -->
+			<section id="tables">
+
+				<h1>Tables</h1>
+
+				<h2>Table markup</h2>
+
+				<div class="row">
+					<div class="span8">
+
+						<table>
+							<colgroup>
+								<col class="span1">
+								<col class="span7">
+							</colgroup>
+							<thead>
+								<tr>
+									<th>Tag</th>
+									<th>Description</th>
+								</tr>
+							</thead>
+							<tbody>
+							<tr>
+								<td><code>&lt;table&gt;</code></td>
+								<td>Wrapping element for displaying data in a tabular format</td>
+							</tr>
+							<tr>
+								<td><code>&lt;thead&gt;</code></td>
+								<td>Container element for table header rows (<code>&lt;tr&gt;</code>) to label table columns</td>
+							</tr>
+							<tr>
+								<td><code>&lt;tfoot&gt;</code></td>
+								<td>Container element for table footer rows (<code>&lt;tr&gt;</code>) to label table columns</td>
+							</tr>
+							<tr>
+								<td><code>&lt;tbody&gt;</code></td>
+								<td>Container element for table rows (<code>&lt;tr&gt;</code>) in the body of the table</td>
+							</tr>
+							<tr>
+								<td><code>&lt;tr&gt;</code></td>
+								<td>Container element for a set of table cells (<code>&lt;td&gt;</code> or <code>&lt;th&gt;</code>) that appears on a single row</td>
+							</tr>
+							<tr>
+								<td><code>&lt;td&gt;</code></td>
+								<td>Default table cell</td>
+							</tr>
+							<tr>
+								<td><code>&lt;th&gt;</code></td>
+								<td>Special table cell for column (or row, depending on scope and placement) labels<br>
+									Must be used within a <code>&lt;thead&gt;</code>
+								</td>
+							</tr>
+							<tr>
+								<td><code>&lt;caption&gt;</code></td>
+								<td>Description or summary of what the table holds, especially useful for screen readers</td>
+							</tr>
+							</tbody>
+							<tfoot>
+								<tr>
+									<td>Tag</td>
+									<td>Description</td>
+								</tr>
+							</tfoot>
+						</table>
+					</div>
+
+					<div class="span4">
+<pre class="prettyprint linenums">
+&lt;table&gt;
+   &lt;thead&gt;
+     &lt;tr&gt;
+       &lt;th&gt;…&lt;/th&gt;
+       &lt;th&gt;…&lt;/th&gt;
+     &lt;/tr&gt;
+   &lt;/thead&gt;
+   &lt;tbody&gt;
+     &lt;tr&gt;
+       &lt;td&gt;…&lt;/td&gt;
+       &lt;td&gt;…&lt;/td&gt;
+     &lt;/tr&gt;
+   &lt;/tbody&gt;
+   &lt;tfoot&gt;
+     &lt;tr&gt;
+       &lt;td&gt;…&lt;/td&gt;
+       &lt;td&gt;…&lt;/td&gt;
+     &lt;/tr&gt;
+   &lt;/tfoot&gt;
+&lt;/table&gt;</pre>
+					</div>
+				</div> <!-- .row -->
+			</section> <!-- #tables -->
+
+			<!-- Forms
+			================================================== -->
+			<section id="forms">
+
+				<h1>Forms</h1>
+
+				<form class="row">
+
+					<fieldset class="span5">
+						<legend>Inputs as descendents of labels (form legend)</legend>
+
+						<p><label>Text input <input type="text" value="value"></label></p>
+
+						<p><label>Text input (required) <input type="text" required></label></p>
+
+						<p><label>Text input (with pattern requirement and placeholder) <input type="text" pattern="\d{5}(-\d{4})?" title="a US Zip code, with or without the +4 exension" placeholder="12345-6789"></label></p>
+
+						<p><label>Email input <input type="email"></label></p>
+
+						<p><label>Search input <input type="search" results="10"></label></p>
+
+						<p><label>Tel input <input type="tel"></label></p>
+
+						<p><label>URL input <input type="url" placeholder="http://"></label></p>
+
+						<p><label>Password input <input type="password" value="password"></label></p>
+
+						<p><label>File input <input type="file"></label></p>
+
+						<p><label>Radio input <input type="radio" name="rad"></label></p>
+
+						<p><label>Checkbox input <input type="checkbox"></label></p>
+
+						<p><label><input type="radio" name="rad"> Radio input</label></p>
+
+						<p><label><input type="checkbox"> Checkbox input</label></p>
+
+						<p>
+							<label>Select field<br>
+								<select>
+									<option>Option 01</option>
+									<option>Option 02</option>
+								</select>
+							</label>
+						</p>
+						<p><label>Textarea <textarea cols="30" rows="5">Textarea text</textarea></label></p>
+					</fieldset>
+
+					<fieldset class="span4">
+						<legend>Inputs as siblings of labels</legend>
+
+						<p><label for="ic">Color input</label> <input type="color" id="ic"></p>
+
+						<p><label for="in">Number input</label> <input type="number" id="in" min="0" max="10"></p>
+
+						<p><label for="ir">Range input</label> <input type="range" id="ir"></p>
+
+						<p><label for="idd">Date input</label> <input type="date" id="idd"></p>
+
+						<p><label for="idm">Month input</label> <input type="month" id="idm"></p>
+
+						<p><label for="idw">Week input</label> <input type="week" id="idw"></p>
+
+						<p><label for="idt">Datetime input</label> <input type="datetime" id="idt"></p>
+
+						<p><label for="idtl">Datetime-local input</label> <input type="datetime-local" id="idtl"></p>
+
+						<p><label for="irb">Radio input</label> <input type="radio" id="irb" name="rad"></p>
+
+						<p><label for="icb">Checkbox input</label> <input type="checkbox" id="icb"></p>
+
+						<p><input type="radio" id="irb2" name="rad"> <label for="irb2">Radio input</label></p>
+
+						<p><input type="checkbox" id="icb2"> <label for="icb2">Checkbox input</label></p>
+
+						<p>
+							<label for="s">Select field</label><br>
+							<select id="s">
+								<option>Option 01</option>
+								<option>Option 02</option>
+							</select>
+						</p>
+						<p><label for="t">Textarea</label> <textarea id="t" cols="30" rows="5">Textarea text</textarea></p>
+					</fieldset>
+
+					<fieldset class="span3">
+						<legend>Clickable inputs and buttons</legend>
+						<p><input type="image" src="http://placekitten.com/90/24" alt="Image (input)"></p>
+						<p><input type="reset" value="Reset (input)"></p>
+						<p><input type="button" value="Button (input)"></p>
+						<p><input type="submit" value="Submit (input)"></p>
+						<p><input type="reset" class="primary" value="Reset (.primary)"></p>
+						<p><input type="button" class="primary" value="Button (.primary)"></p>
+						<p><input type="submit" class="primary" value="Submit (.primary)"></p>
+						<p><button type="reset">Reset (button)</button></p>
+						<p><button type="button">Button (button)</button></p>
+						<p><button type="submit">Submit (button)</button></p>
+						<p><button type="submit" disabled>Disabled button</button></p>
+					</fieldset>
+				</form>
+
+			</section> <!-- #forms -->
+
+			<!-- Images
+			================================================== -->
+			<section id="images">
+
+				<h1>Images</h1>
+
+				<div class="row">
+					<figure class="span8">
+						<a href="http://i.imgur.com/lG2bb.jpg" title="Full size">
+							<img src="http://i.imgur.com/lG2bb.jpg" alt="Image alt">
+						</a>
+						<figcaption>Image caption</figcaption>
+					</figure>
+
+					<div class="span4">
+<pre class="prettyprint">
+&lt;figure&gt;
+   &lt;img src="" alt=""&gt;
+   &lt;figcaption&gt;Caption&lt;/figcaption&gt;
+&lt;/figure&gt;
+</pre>
+						<img src="http://i.imgur.com/lG2bbl.jpg" alt="Image alt">
+					</div>
+            	</div>
+			</section> <!-- #images -->
+
+			<!-- Miscellaneous
+			================================================== -->
+			<section id="miscellaneous">
+
+				<h1>Miscellaneous</h1>
+
+				<h2>The grid system</h2>
+
+				<style>
+					.show-grid {
+						font-size: 12px;
+						margin-top: 10px;
+						margin-bottom: 20px;
+					}
+					.show-grid [class*="span"] {
+						background-color: #eee;
+						text-align: center;
+						border-radius: 3px;
+						min-height: 30px;
+						line-height: 30px;
+					}
+					.show-grid:hover [class*="span"] {
+						background: #bada55;
+					}
+					.show-grid .show-grid {
+						margin-top: 0;
+						margin-bottom: 0;
+					}
+					.show-grid .show-grid [class*="span"] {
+						background-color: #ccc;
+					}
+				</style>
+
+				<div class="row show-grid">
+					<div class="span1">1</div>
+					<div class="span1">1</div>
+					<div class="span1">1</div>
+					<div class="span1">1</div>
+					<div class="span1">1</div>
+					<div class="span1">1</div>
+					<div class="span1">1</div>
+					<div class="span1">1</div>
+					<div class="span1">1</div>
+					<div class="span1">1</div>
+					<div class="span1">1</div>
+					<div class="span1">1</div>
+				</div>
+				<div class="row show-grid">
+					<div class="span4">4</div>
+					<div class="span4">4</div>
+					<div class="span4">4</div>
+				</div>
+				<div class="row show-grid">
+					<div class="span4">4</div>
+					<div class="span8">8</div>
+				</div>
+				<div class="row show-grid">
+					<div class="span6">6</div>
+					<div class="span6">6</div>
+				</div>
+				<div class="row show-grid">
+					<div class="span12">12</div>
+				</div>
+
+				<div class="row">
+					<div class="span4">
+						<p>The grid system is a fluid grid, adapted from <a href="http://twitter.github.com/bootstrap">Twitter Bootstrap</a>. It utilizes <strong>12 columns</strong> and uses percents for column widths instead of fixed pixels.</p>
+					</div>
+					<div class="span5">
+<pre class="prettyprint linenums">
+&lt;div class=&quot;row&quot;&gt;
+   &lt;div class=&quot;span4&quot;&gt;...&lt;/div&gt;
+   &lt;div class=&quot;span8&quot;&gt;...&lt;/div&gt;
+&lt;/div&gt;</pre>
+					</div>
+					<div class="span3">
+						<p>As shown here, a basic layout can be created with two "columns", each spanning a number of the 12 columns.</p>
+					</div>
+				</div>
+
+				<h2>Alerts <small>Styles for success, warning, and error messages</small></h2>
+
+				<div class="row">
+					<div class="alert span6">
+						<strong>Default!</strong> This is a default alert.
+					</div>
+
+<pre class="prettyprint span6">
+&lt;div class=&quot;alert&quot;&gt;
+   ...
+&lt;/div&gt;
+</pre>
+				</div>
+
+				<div class="row">
+					<div class="alert alert-warning span6">
+						<strong>Oh snap!</strong> Change this and that and <a href="#">try again</a>.
+					</div>
+
+<pre class="prettyprint span6">
+&lt;div class=&quot;alert alert-warning&quot;&gt; [...] &lt;/div&gt;
+</pre>
+				</div>
+
+				<div class="row">
+					<div class="alert alert-error span6">
+						<h4>Holy guacamole!</h4>
+						<p>Best check yo self, you're not looking too good.</p>
+						<p>This is line two</p>
+					</div>
+
+<pre class="prettyprint span6">
+&lt;div class=&quot;alert alert-error&quot;&gt; [...] &lt;/div&gt;
+</pre>
+				</div>
+
+				<div class="row">
+					<div class="alert alert-success span6">
+						<strong>Success!</strong> You successfully read this important alert message.
+					</div>
+
+<pre class="prettyprint span6">
+&lt;div class=&quot;alert alert-success&quot;&gt; [...] &lt;/div&gt;
+</pre>
+				</div>
+
+				<div class="row">
+					<div class="alert alert-info span6">
+						<strong>Tip!</strong> This is an alert that needs your attention, but it’s not a huge priority just yet.
+					</div>
+
+<pre class="prettyprint span6">
+&lt;div class=&quot;alert alert-info&quot;&gt; [...] &lt;/div&gt;
+</pre>
+
+				</div>
+
+				<div class="row">
+
+					<div class="span6">
+						<h2>Wells</h2>
+
+						<p>Use the well as a simple effect on an element to give it an inset effect.</p>
+
+						<div class="well">Look, I'm in a well!</div>
+
+<pre class="prettyprint">
+&lt;div class=&quot;well&quot;&gt; [...] &lt;/div&gt;
+</pre>
+					</div>
+
+					<div class="span6">
+						<h2>Helper classes</h2>
+
+						<table>
+						<thead>
+							<tr>
+								<th>Class</th>
+								<th>Usage</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><code>.alignleft</code></td>
+								<td>Floats an element to the left</td>
+							</tr>
+							<tr>
+								<td><code>.alignright</code></td>
+								<td>Floats an element to the right</td>
+							</tr>
+							<tr>
+								<td><code>.aligncenter</code></td>
+								<td>Makes the element a block element and centers it</td>
+							</tr>
+							<tr>
+								<td><code>.clearfix</code></td>
+								<td>For clearing floats, see <a href="http://nicolasgallagher.com/micro-clearfix-hack/">"A new micro clearfix hack"</a></td>
+							</tr>
+							<tr>
+								<td><code>.assistive-text</code></td>
+								<td>Hides text visually, but it will be available for screenreaders</td>
+							</tr>
+							<tr>
+								<td><code>.hidden</code></td>
+								<td>Hides from both screenreaders and browsers</td>
+							</tr>
+							<tr>
+								<td><code>.invisible</code></td>
+								<td>Hides visually and from screenreaders, but maintains layout</td>
+							</tr>
+						</tbody>
+					</table>
+
+
+					</div>
+				</div>
+
+			</section> <!-- #miscellaneous -->
+
+		</div> <!-- .entry-content -->
+
+	</article> <!-- .post.hentry -->
+
+</div> <!-- #content -->
+
+</div> <!-- #main -->
+
+	<footer id="footer" role="contentinfo">
+		<!-- You're free to remove the credit link to Jayj.dk in the footer, but please, please leave it there :) -->
+		<p>
+			Copyright &copy; 2012 <a href="#">Sitename.com</a>
+			<span class="sep">|</span>
+			Design by <a href="http://jayj.dk" title="Design by Jayj.dk">Jayj.dk</a>
+		</p>
+	</footer> <!-- #footer -->
+
+	<!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="js/jquery-1.7.2.min.js"><\/script>')</script>
+
+	<!-- Load custom scripts -->
+	<script src="js/script.js"></script>
+</body>
+</html>
