@@ -1,0 +1,692 @@
+<!--
+############################################
+		zlatnaspirala glmatrix plugin version 0.1 
+ reated by Nikola Lukic Contact: zlatnaspirala@gmail.com
+############################################
+-->
+<html>
+<head>
+<title>Zlatna Spirala glmatrix plugin webgl 3d wourld engine</title>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<script type="text/javascript" src="glmatrix/glMatrix-0.9.5.min.js"></script>
+<script type="text/javascript" src="glmatrix/webgl-utils.js"></script>
+<script type="text/javascript" src="zlatnaspirala/texture.js"></script>
+<script type="text/javascript" src="zlatnaspirala/initbufers1.js"></script>
+<script type="text/javascript" src="zlatnaspirala/dinamikabafer.js"></script>
+<script type="text/javascript" src="zlatnaspirala/zlatnaspirala.js"></script>
+<script type="text/javascript" src="zlatnaspirala/laptop.js"></script>
+<script type="text/javascript" src="zlatnaspirala/light.js"></script>
+<script type="text/javascript" src="zlatnaspirala/draw.js"></script>
+<script type="text/javascript" src="zlatnaspirala/teapot.js"></script>
+<script type="text/javascript" src="zlatnaspirala/canal.js"></script>
+<script type="text/javascript" src="zlatnaspirala/suriken.js"></script>
+
+<script id="per-fragment-lighting-fs" type="x-shader/x-fragment">
+    precision mediump float;
+
+    varying vec2 vTextureCoord;
+    varying vec3 vTransformedNormal;
+    varying vec4 vPosition;
+
+    uniform vec3 uMaterialAmbientColor;
+    uniform vec3 uMaterialDiffuseColor;
+    uniform vec3 uMaterialSpecularColor;
+    uniform float uMaterialShininess;
+    uniform vec3 uMaterialEmissiveColor;
+
+    uniform bool uShowSpecularHighlights;
+    uniform bool uUseTextures;
+
+    uniform vec3 uAmbientLightingColor;
+
+    uniform vec3 uPointLightingLocation;
+    uniform vec3 uPointLightingDiffuseColor;
+    uniform vec3 uPointLightingSpecularColor;
+
+    uniform sampler2D uSampler;
+
+
+    void main(void) {
+        vec3 ambientLightWeighting = uAmbientLightingColor;
+
+        vec3 lightDirection = normalize(uPointLightingLocation - vPosition.xyz);
+        vec3 normal = normalize(vTransformedNormal);
+
+        vec3 specularLightWeighting = vec3(0.0, 0.0, 0.0);
+        if (uShowSpecularHighlights) {
+            vec3 eyeDirection = normalize(-vPosition.xyz);
+            vec3 reflectionDirection = reflect(-lightDirection, normal);
+
+            float specularLightBrightness = pow(max(dot(reflectionDirection, eyeDirection), 0.0), uMaterialShininess);
+            specularLightWeighting = uPointLightingSpecularColor * specularLightBrightness;
+        }
+
+        float diffuseLightBrightness = max(dot(normal, lightDirection), 0.0);
+        vec3 diffuseLightWeighting = uPointLightingDiffuseColor * diffuseLightBrightness;
+
+        vec3 materialAmbientColor = uMaterialAmbientColor;
+        vec3 materialDiffuseColor = uMaterialDiffuseColor;
+        vec3 materialSpecularColor = uMaterialSpecularColor;
+        vec3 materialEmissiveColor = uMaterialEmissiveColor;
+        float alpha = 1.0;
+        if (uUseTextures) {
+            vec4 textureColor = texture2D(uSampler, vec2(vTextureCoord.s, vTextureCoord.t));
+            materialAmbientColor = materialAmbientColor * textureColor.rgb;
+            materialDiffuseColor = materialDiffuseColor * textureColor.rgb;
+            materialEmissiveColor = materialEmissiveColor * textureColor.rgb;
+            alpha = textureColor.a;
+        }
+        gl_FragColor = vec4(
+            materialAmbientColor * ambientLightWeighting
+            + materialDiffuseColor * diffuseLightWeighting
+            + materialSpecularColor * specularLightWeighting
+            + materialEmissiveColor,
+            alpha
+        );
+    }
+</script>
+
+
+
+<script id="per-fragment-lighting-vs" type="x-shader/x-vertex">
+
+    attribute vec3 aVertexPosition;
+    attribute vec3 aVertexNormal;
+    attribute vec2 aTextureCoord;
+
+    uniform mat4 uMVMatrix;
+    uniform mat4 uPMatrix;
+    uniform mat3 uNMatrix;
+
+    varying vec2 vTextureCoord;
+    varying vec3 vTransformedNormal;
+    varying vec4 vPosition;
+
+
+    void main(void) {
+        vPosition = uMVMatrix * vec4(aVertexPosition, 1.0);
+        gl_Position = uPMatrix * vPosition;
+        vTextureCoord = aTextureCoord;
+        vTransformedNormal = uNMatrix * aVertexNormal;
+    }
+</script>
+<script type="text/javascript">
+
+    var gl;
+
+    function initGL(canvas) {
+        try {
+            gl = canvas.getContext("experimental-webgl");
+            gl.viewportWidth = canvas.width;
+            gl.viewportHeight = canvas.height;
+        } catch (e) {
+        }
+        if (!gl) {
+            alert("Could not initialise WebGL,if you use IE you must have IE10 ,Mozilla FF need get.webgl.org (update GCard if steel not working),chrome works fine!Thanks for visiting my site. :Zlatnaspirala@gmail.com Nikola Lukic: ");
+        }
+    }
+
+
+    function getShader(gl, id) {
+        var shaderScript = document.getElementById(id);
+        if (!shaderScript) {
+            return null;
+        }
+
+        var str = "";
+        var k = shaderScript.firstChild;
+        while (k) {
+            if (k.nodeType == 3) {
+                str += k.textContent;
+            }
+            k = k.nextSibling;
+        }
+
+        var shader;
+        if (shaderScript.type == "x-shader/x-fragment") {
+            shader = gl.createShader(gl.FRAGMENT_SHADER);
+        } else if (shaderScript.type == "x-shader/x-vertex") {
+            shader = gl.createShader(gl.VERTEX_SHADER);
+        } else {
+            return null;
+        }
+
+        gl.shaderSource(shader, str);
+        gl.compileShader(shader);
+
+        if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+            alert(gl.getShaderInfoLog(shader));
+            return null;
+        }
+
+        return shader;
+    }
+
+
+    var shaderProgram;
+
+    function initShaders() {
+        var fragmentShader = getShader(gl, "per-fragment-lighting-fs");
+        var vertexShader = getShader(gl, "per-fragment-lighting-vs");
+
+        shaderProgram = gl.createProgram();
+        gl.attachShader(shaderProgram, vertexShader);
+        gl.attachShader(shaderProgram, fragmentShader);
+        gl.linkProgram(shaderProgram);
+
+        if (!gl.getProgramParameter(shaderProgram, gl.LINK_STATUS)) {
+            alert("Could not initialise shaders");
+        }
+
+        gl.useProgram(shaderProgram);
+
+        shaderProgram.vertexPositionAttribute = gl.getAttribLocation(shaderProgram, "aVertexPosition");
+        gl.enableVertexAttribArray(shaderProgram.vertexPositionAttribute);
+
+        shaderProgram.vertexNormalAttribute = gl.getAttribLocation(shaderProgram, "aVertexNormal");
+        gl.enableVertexAttribArray(shaderProgram.vertexNormalAttribute);
+
+        shaderProgram.textureCoordAttribute = gl.getAttribLocation(shaderProgram, "aTextureCoord");
+        gl.enableVertexAttribArray(shaderProgram.textureCoordAttribute);
+
+        shaderProgram.pMatrixUniform = gl.getUniformLocation(shaderProgram, "uPMatrix");
+        shaderProgram.mvMatrixUniform = gl.getUniformLocation(shaderProgram, "uMVMatrix");
+        shaderProgram.nMatrixUniform = gl.getUniformLocation(shaderProgram, "uNMatrix");
+        shaderProgram.samplerUniform = gl.getUniformLocation(shaderProgram, "uSampler");
+
+        shaderProgram.materialAmbientColorUniform = gl.getUniformLocation(shaderProgram, "uMaterialAmbientColor");
+        shaderProgram.materialDiffuseColorUniform = gl.getUniformLocation(shaderProgram, "uMaterialDiffuseColor");
+        shaderProgram.materialSpecularColorUniform = gl.getUniformLocation(shaderProgram, "uMaterialSpecularColor");
+        shaderProgram.materialShininessUniform = gl.getUniformLocation(shaderProgram, "uMaterialShininess");
+        shaderProgram.materialEmissiveColorUniform = gl.getUniformLocation(shaderProgram, "uMaterialEmissiveColor");
+        shaderProgram.showSpecularHighlightsUniform = gl.getUniformLocation(shaderProgram, "uShowSpecularHighlights");
+        shaderProgram.useTexturesUniform = gl.getUniformLocation(shaderProgram, "uUseTextures");
+        shaderProgram.ambientLightingColorUniform = gl.getUniformLocation(shaderProgram, "uAmbientLightingColor");
+        shaderProgram.pointLightingLocationUniform = gl.getUniformLocation(shaderProgram, "uPointLightingLocation");
+        shaderProgram.pointLightingSpecularColorUniform = gl.getUniformLocation(shaderProgram, "uPointLightingSpecularColor");
+        shaderProgram.pointLightingDiffuseColorUniform = gl.getUniformLocation(shaderProgram, "uPointLightingDiffuseColor");
+    }
+
+
+
+    var NIK=0;//za siljak rotacija
+	var nik001=0;
+    var moonTexture;
+    var crateTexture;
+
+
+
+    var mvMatrix = mat4.create();
+    var mvMatrixStack = [];
+    var pMatrix = mat4.create();
+
+    function mvPushMatrix() {
+        var copy = mat4.create();
+        mat4.set(mvMatrix, copy);
+        mvMatrixStack.push(copy);
+    }
+
+    function mvPopMatrix() {
+        if (mvMatrixStack.length == 0) {
+            throw "Invalid popMatrix!";
+        }
+        mvMatrix = mvMatrixStack.pop();
+    }
+
+    function setMatrixUniforms() {
+        gl.uniformMatrix4fv(shaderProgram.pMatrixUniform, false, pMatrix);
+        gl.uniformMatrix4fv(shaderProgram.mvMatrixUniform, false, mvMatrix);
+
+        var normalMatrix = mat3.create();
+        mat4.toInverseMat3(mvMatrix, normalMatrix);
+        mat3.transpose(normalMatrix);
+        gl.uniformMatrix3fv(shaderProgram.nMatrixUniform, false, normalMatrix);
+    }
+
+    function degToRad(degrees) {
+        return degrees * Math.PI / 180;
+    }
+
+
+    var rttFramebuffer;
+    var rttTexture;
+
+    function initTextureFramebuffer() {
+        rttFramebuffer = gl.createFramebuffer();
+        gl.bindFramebuffer(gl.FRAMEBUFFER, rttFramebuffer);
+        rttFramebuffer.width = 512;
+        rttFramebuffer.height = 512;
+
+        rttTexture = gl.createTexture();
+        gl.bindTexture(gl.TEXTURE_2D, rttTexture);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR_MIPMAP_NEAREST);
+        gl.generateMipmap(gl.TEXTURE_2D);
+
+        gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, rttFramebuffer.width, rttFramebuffer.height, 0, gl.RGBA, gl.UNSIGNED_BYTE, null);
+
+        var renderbuffer = gl.createRenderbuffer();
+        gl.bindRenderbuffer(gl.RENDERBUFFER, renderbuffer);
+        gl.renderbufferStorage(gl.RENDERBUFFER, gl.DEPTH_COMPONENT16, rttFramebuffer.width, rttFramebuffer.height);
+
+        gl.framebufferTexture2D(gl.FRAMEBUFFER, gl.COLOR_ATTACHMENT0, gl.TEXTURE_2D, rttTexture, 0);
+        gl.framebufferRenderbuffer(gl.FRAMEBUFFER, gl.DEPTH_ATTACHMENT, gl.RENDERBUFFER, renderbuffer);
+
+        gl.bindTexture(gl.TEXTURE_2D, null);
+        gl.bindRenderbuffer(gl.RENDERBUFFER, null);
+        gl.bindFramebuffer(gl.FRAMEBUFFER, null);
+    }
+
+
+    var laptopVertexPositionBuffer;
+    var laptopVertexNormalBuffer;
+    var laptopVertexTextureCoordBuffer;
+    var laptopVertexIndexBuffer;
+//test import obj #########################################################################
+
+ 	var cubeVertexPositionBufferVRATA;
+    var cubeVertexNormalBufferVRATA;
+    var cubeVertexTextureCoordBufferVRATA;
+    var cubeVertexIndexBufferVRATA;
+	
+    var teapotVertexPositionBuffer;
+    var teapotVertexNormalBuffer;
+    var teapotVertexTextureCoordBuffer;
+    var teapotVertexIndexBuffer;
+	
+    var teapotVertexPositionBufferQ;
+    var teapotVertexNormalBufferQ;
+    var teapotVertexTextureCoordBufferQ;
+    var teapotVertexIndexBufferQ;
+	    
+	var teapotVertexPositionBufferQQ;
+    var teapotVertexNormalBufferQQ;
+    var teapotVertexTextureCoordBufferQQ;
+    var teapotVertexIndexBufferQQ;
+
+ 
+//$$$$$$$$$$$$$$$$$###########################################################
+ 
+
+
+    function handleLoadedLaptop(laptopData) {
+        laptopVertexNormalBuffer = gl.createBuffer();
+        gl.bindBuffer(gl.ARRAY_BUFFER, laptopVertexNormalBuffer);
+        gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(laptopData.vertexNormals), gl.STATIC_DRAW);
+        laptopVertexNormalBuffer.itemSize = 3;
+        laptopVertexNormalBuffer.numItems = laptopData.vertexNormals.length / 3;
+
+        laptopVertexTextureCoordBuffer = gl.createBuffer();
+        gl.bindBuffer(gl.ARRAY_BUFFER, laptopVertexTextureCoordBuffer);
+        gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(laptopData.vertexTextureCoords), gl.STATIC_DRAW);
+        laptopVertexTextureCoordBuffer.itemSize = 2;
+        laptopVertexTextureCoordBuffer.numItems = laptopData.vertexTextureCoords.length / 2;
+
+        laptopVertexPositionBuffer = gl.createBuffer();
+        gl.bindBuffer(gl.ARRAY_BUFFER, laptopVertexPositionBuffer);
+        gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(laptopData.vertexPositions), gl.STATIC_DRAW);
+        laptopVertexPositionBuffer.itemSize = 3;
+        laptopVertexPositionBuffer.numItems = laptopData.vertexPositions.length / 3;
+
+        laptopVertexIndexBuffer = gl.createBuffer();
+        gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, laptopVertexIndexBuffer);
+        gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint16Array(laptopData.indices), gl.STREAM_DRAW);
+        laptopVertexIndexBuffer.itemSize = 1;
+        laptopVertexIndexBuffer.numItems = laptopData.indices.length;
+    }
+
+
+    function loadLaptop() {
+        var request = new XMLHttpRequest();
+        request.open("GET", "json/macbook.json");
+        request.onreadystatechange = function () {
+            if (request.readyState == 4) {
+                handleLoadedLaptop(JSON.parse(request.responseText));
+            }
+        }
+        request.send();
+		
+		
+    }
+
+
+    var laptopScreenAspectRatio = 2.66;
+
+    var moonAngle = 180;
+    var cubeAngle = 0;
+
+    function drawSceneOnLaptopScreen() {
+        gl.viewport(0, 0, rttFramebuffer.width, rttFramebuffer.height);
+        gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+
+        mat4.perspective(45, laptopScreenAspectRatio, 0.1, 100.0, pMatrix);
+
+        gl.uniform1i(shaderProgram.showSpecularHighlightsUniform, false);
+        gl.uniform3f(shaderProgram.ambientLightingColorUniform, 0.1, 1.0, 0.2);
+        gl.uniform3f(shaderProgram.pointLightingLocationUniform, 0, 0, -5);
+        //gl.uniform3f(shaderProgram.pointLightingDiffuseColorUniform, 0.8, 0.8, 0.8);original
+		gl.uniform3f(shaderProgram.pointLightingDiffuseColorUniform, 0.0, 0.6, 0.2);
+
+        gl.uniform1i(shaderProgram.showSpecularHighlightsUniform, false);
+        gl.uniform1i(shaderProgram.useTexturesUniform, true);
+
+        gl.uniform3f(shaderProgram.materialAmbientColorUniform, 1.0, 1.0, 1.0);
+        gl.uniform3f(shaderProgram.materialDiffuseColorUniform, 1.0, 1.0, 1.0);
+        gl.uniform3f(shaderProgram.materialSpecularColorUniform, 0.0, 0.0, 0.0);
+        gl.uniform1f(shaderProgram.materialShininessUniform, 0);
+        gl.uniform3f(shaderProgram.materialEmissiveColorUniform, 0.0, 0.0, 0.0);
+
+        mat4.identity(mvMatrix);
+//pocetak
+       /* mat4.translate(mvMatrix, [0, 0, 0]);
+        mat4.rotate(mvMatrix, degToRad(130), [1, 0, 0]);
+mat4.rotate(mvMatrix, degToRad(130), [0, 1, 0]);
+mat4.translate(mvMatrix, [0, 0, -3]);*/
+        mvPushMatrix();
+		mat4.translate(mvMatrix, [0, 0, 0]);
+        mat4.rotate(mvMatrix, degToRad(moonAngle), [0, 1, 0]);
+        
+		mat4.translate(mvMatrix, [0, 0, -3]);
+        gl.activeTexture(gl.TEXTURE0);
+        gl.bindTexture(gl.TEXTURE_2D, moonTexture);
+        gl.uniform1i(shaderProgram.samplerUniform, 0);
+
+        gl.bindBuffer(gl.ARRAY_BUFFER, moonVertexPositionBuffer);
+        gl.vertexAttribPointer(shaderProgram.vertexPositionAttribute, moonVertexPositionBuffer.itemSize, gl.FLOAT, false, 0, 0);
+
+        gl.bindBuffer(gl.ARRAY_BUFFER, moonVertexTextureCoordBuffer);
+        gl.vertexAttribPointer(shaderProgram.textureCoordAttribute, moonVertexTextureCoordBuffer.itemSize, gl.FLOAT, false, 0, 0);
+
+        gl.bindBuffer(gl.ARRAY_BUFFER, moonVertexNormalBuffer);
+        gl.vertexAttribPointer(shaderProgram.vertexNormalAttribute, moonVertexNormalBuffer.itemSize, gl.FLOAT, false, 0, 0);
+
+        gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, moonVertexIndexBuffer);
+        setMatrixUniforms();
+        gl.drawElements(gl.TRIANGLES, moonVertexIndexBuffer.numItems, gl.UNSIGNED_SHORT, 0);
+        mvPopMatrix();
+
+//objekat u laptop ekranu
+        mvPushMatrix();
+
+        mat4.translate(mvMatrix, [0, 0, -3]);
+		
+		mat4.rotate(mvMatrix,  degToRad(NIK), [0, 1, 0]);
+		
+        gl.bindBuffer(gl.ARRAY_BUFFER, cubeVertexPositionBufferKLASIK);
+        gl.vertexAttribPointer(shaderProgram.vertexPositionAttribute, cubeVertexPositionBufferKLASIK.itemSize, gl.FLOAT, false, 0, 0);
+
+        gl.bindBuffer(gl.ARRAY_BUFFER, cubeVertexNormalBufferKLASIK);
+        gl.vertexAttribPointer(shaderProgram.vertexNormalAttribute, cubeVertexNormalBufferKLASIK.itemSize, gl.FLOAT, false, 0, 0);
+
+        gl.bindBuffer(gl.ARRAY_BUFFER, cubeVertexTextureCoordBufferKLASIK);
+        gl.vertexAttribPointer(shaderProgram.textureCoordAttribute, cubeVertexTextureCoordBufferKLASIK.itemSize, gl.FLOAT, false, 0, 0);
+
+        gl.activeTexture(gl.TEXTURE0);
+        gl.bindTexture(gl.TEXTURE_2D, crateTexture);
+        gl.uniform1i(shaderProgram.samplerUniform, 0);
+
+        gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, cubeVertexIndexBufferKLASIK);
+        setMatrixUniforms();
+        gl.drawElements(gl.TRIANGLES, cubeVertexIndexBufferKLASIK.numItems, gl.UNSIGNED_SHORT, 0);
+        mvPopMatrix();
+
+        gl.bindTexture(gl.TEXTURE_2D, rttTexture);
+        gl.generateMipmap(gl.TEXTURE_2D);
+        gl.bindTexture(gl.TEXTURE_2D, null);
+    }
+
+var SILJAK = 5;
+
+var laptopAngle = 0;
+var moonAngle = 180;
+var cubeAngle = 0;
+var ugaobroj = 0;
+var xRot = 0;
+var yRot = 0;
+var zRot = 0;  
+var TZ,TZL;
+var TX,TXL;
+var TY,TYL,tekstura,rott=0,speedrot=0;
+ 
+/* %%%%%%%%%%%%%%%%%%%% 
+COPYPASTE HOLDER HELP PLACE
+
+
+
+
+		// PILEZ(-5,14,14,greenglass);
+		// PILEX(-5,14,14,greenglass);
+%%%%%%%%%%%%%%%%%%%%%
+*/
+    var lastTime = 0;
+
+    function animate() {
+        var timeNow = new Date().getTime();
+        if (lastTime != 0) {
+            var elapsed = timeNow - lastTime;
+	/*if(siljak1bool==0){
+			SILJAK1=SILJAK1+0.00002;
+			if(SILJAK1>1){siljak1bool=1;}
+}
+else{
+SILJAK1=SILJAK1-0.000002;
+if(SILJAK1<0){siljak1bool=0;}
+ }*/
+ if(nik001==0){NIK=NIK+0.02;if(NIK>1){nik001=1;}}else{NIK=NIK-0.02;if(NIK<0){nik001=0;}}
+		initBuffersDINAMIKA();
+
+         //   moonAngle += 0.005 * elapsed;
+            cubeAngle += 0.005 * elapsed;
+          //  laptopAngle -= 0.005 * elapsed;
+        }
+        lastTime = timeNow;
+		
+		 if (tempX <= 10){alfa = alfa - 3;}
+	   	 if (tempX >= 390){alfa = alfa + 3;}
+
+ 
+    }
+
+
+    function tick() {
+        requestAnimFrame(tick);
+        drawScene();
+        animate();
+    }
+
+
+    function webGLStart() {
+        var canvas = document.getElementById("lesson16-canvas");
+		initGL(canvas);
+        initShaders();
+        initBuffers();initBuffers1();initBuffersDINAMIKA();
+		loadLaptop();
+		loadTeapot1();
+		loadTeapot();
+		initTextureFramebuffer();
+		
+		
+        initTextures();
+		initTextureZID1();
+        gl.clearColor(0.0, 0.0, 0.0, 1.0);
+        gl.enable(gl.DEPTH_TEST);
+		//gl.enable(gl.CULL_FACE );
+		    tick();
+    }
+
+</script>
+<script type="text/javascript">//keypad detect kontrola!!!
+var transZ = -5;
+var transX = 0;
+var transY = -2;
+var DOPX = 0;
+var DOPY = 0;var alfa = 0;var beta = 0;
+var c,pucanj;pucanj=0;
+
+   nn=(document.layers)?true:false;
+   ie=(document.all)?true:false;
+ 
+   function keyDown(e) {
+
+   c=Math.PI/180;
+   yRot.toFixed(0);
+  DOPX = Math.cos(c*yRot);// 0 
+  DOPY = Math.sin(c*yRot);// 0 
+  
+     document.Show.ugao.value = yRot;
+	 document.Show.cos.value = DOPX;
+	 document.Show.sin.value = DOPY;
+//#######################################################
+//
+//#######################################################
+      var evt=(e)?e:(window.event)?window.event:null;
+      if(evt){
+         var key=(evt.charCode)?evt.charCode:((evt.keyCode)?evt.keyCode:((evt.which)?evt.which:0));
+         if(key == "13")
+             alert("You just pressed ENTER");
+			 if(key == "38")
+             {
+			 transZ = transZ + DOPX; //napred for
+			  transX = transX - DOPY;} //
+			 if(key == "39")
+            {transX =  transX -DOPX; //levo go left
+			 transZ =  transZ -DOPY; }//
+			 if(key == "37")
+               {transX =  transX + DOPX; //desno go right
+			    transZ =  transZ +DOPY;} // 
+			 if(key == "40")
+             {
+			 transZ =  transZ - DOPX; //nazad  go back
+			  transX = transX + DOPY; }// 
+			  if(key == "32")
+             alert("SPACE!");
+			  if(key == "17")
+            pucanj=1;//LEFTCONTROL  
+	        if(key == "81")
+			alfa = alfa - 5;//rotacija na tastaturi
+	        if(key == "87")
+			alfa = alfa + 5;
+         } 
+		 //novo
+	
+	//################################################################################
+	//###############################PUT HERE COALISION IF(){}########################
+	//################################################################################
+	//################################################################################
+	
+	if(transZ > 13){transZ=13;}
+	if(transX > 102.5){transX=102.5;}
+	if(transX < -102.5){transX=-102.5;}
+	
+	
+	//################################################################################
+	//################################################################################
+	//################################################################################
+	//################################################################################
+
+		 document.Show.transZZ.value = transZ;
+		 document.Show.transXX.value = transX;
+		 document.Show.transYY.value = transY;
+		 
+      }
+
+   document.onkeydown=keyDown;
+   if(nn) document.captureEvents(Event.KEYDOWN);
+   
+   
+ function sakridebug(){document.getElementById(1000).style.display = 'none';}
+ function showdebug(){document.getElementById(1000).style.display = 'display';}
+ function showcolor(){document.getElementById(light0).style.display = 'display';}
+ function sakricolor(){document.getElementById(light0).style.display = 'none';}
+ 
+</script>
+
+</head>
+
+
+
+<body onload="webGLStart();"  style="color: #00FF00; background-color: #000000" oncontextmenu="return false;">
+<br/>
+    <div id="glavni" style="text-align:center; margin: 0 auto" >
+<canvas id="lesson16-canvas" style="border: none;" width="370" height="400" ></canvas>
+</div>
+<a href="#" onclick="showdebug();return false;">translate view</a> 
+<a href="#" onclick="showcolor();return false;">color view</a> 
+<div id="1000" style="display:block;border:solid;border-color:green;border-width:3px;padding-left:100px;padding-top:19px;margin-top:20px;">
+<p onclick="sakridebug();">HIDE DEBUG</p> 
+<form name="Show">
+X <input name="MouseX" value="0" size="6" type="text">
+Y <input name="MouseY" value="0" size="6" type="text">Ugao:<input name="ugao" value="0" size="6" type="text">cosYrot:<input name="cos" value="0" size="6" type="text">sinYrot:<input name="sin" value="0" size="6" type="text">
+TRANSx<input name="transXX" size="6" type="text">TRANSz<input name="transZZ" size="6" type="text">TransYY<input name="transYY" size="6" type="text">
+</form>   
+</div>
+<div style="display:none;" id="light0">
+<p onclick="sakricolor();">hide</p>
+    <input type="checkbox" id="blending" checked />Transparencija
+    Alpha nivo:<input type="text" id="alpha" value="0.8"  size="4" />
+    <input type="checkbox" id="lighting"  />Svetlost
+          X: <input type="text" id="lightDirectionX" value="-0.25" size="4" />
+          Y: <input type="text" id="lightDirectionY" value="-0.25" size="4" />
+          Z: <input type="text" id="lightDirectionZ" value="-1.0" size="4"/>
+          R: <input type="text" id="directionalR" value="0.8" size="4"/>
+          G: <input type="text" id="directionalG" value="0.8" size="4"/>
+          B: <input type="text" id="directionalB" value="0.8" size="4"/>
+		  AR: <input type="text" id="ambientR" value="0.2" size="4"/>
+          AG: <input type="text" id="ambientG" value="0.2" size="4"/>
+          AB: <input type="text" id="ambientB" value="0.2" size="4"/>
+</div>
+ 
+<script type="text/javascript">
+//mouse i zvuk!!!
+   // var audioElement = document.createElement('audio');
+   // audioElement.setAttribute('src', 'uzbuna.ogg');
+   // audioElement.play();
+//glavni.style.cursor = 'url(kursor.cur), auto';
+glavni.style.cursor = 'none';
+  // da se ubaci za chrome icona
+
+var IE = document.all?true:false;
+if (!IE) document.captureEvents(Event.MOUSEMOVE);
+document.onmousemove = getMouseXY;
+var tempX = 0;
+var tempY = 0;
+var YY = 0;
+var XX = 0;var inck = 0;
+function getMouseXY(e) {
+if (IE) { // grab the x-y pos.s if browser is IE
+tempX = event.clientX + document.body.scrollLeft;
+tempY = event.clientY + document.body.scrollTop;
+}
+else {  // grab the x-y pos.s if browser is NS
+tempX = e.pageX;
+tempY = e.pageY;
+
+}  
+
+if (tempY < 18){tempY = 8;alfa=alfa+2;}  
+if (tempX > 490){tempX = 490;alfa=alfa-2;}
+if (tempX < 35){alfa=alfa-2;}
+if (tempY > 750){tempX = 750;}
+
+YY = tempY - 383;
+YY = YY / 4.25;
+XX = tempX - 558;
+XX = XX / 1.55;
+
+
+document.Show.MouseX.value = tempX;
+document.Show.MouseY.value = tempY;
+document.Show.ugao.value = yRot;
+document.Show.cos.value = DOPX;
+document.Show.sin.value = DOPY;
+
+
+
+return true;
+}
+</script>
+ 
+ 
+</body>
+
+</html>
