@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html>    
+  <head>        
+    <title>Risto Template Html5 & Css3 fullscreen image blur effect - by Daniele Votta
+    </title>        
+    <meta charset="UTF-8" />        
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">          
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>        
+    <meta name="description" content="Template Html5 Css3 per ristorante con galleria immagini e google maps a tutto schermo. Non lasciartelo scappare!" />        
+    <meta name="keywords" content="blur, html5, canvas, fallback, effect, images, gallery, css3, navigation, blurry, fullscreen" />        
+    <meta name="author" content="Daniele Votta" />        
+    <link rel="shortcut icon" href="../favicon.ico">                 
+    <link rel="stylesheet" type="text/css" href="css/demo.css" />        
+    <link rel="stylesheet" type="text/css" href="css/style.css" />        
+    <link rel="stylesheet" type="text/css" href="css/style_common.css" />        
+    <link rel="stylesheet" type="text/css" href="css/demo2.css" />        
+    <link rel="stylesheet" type="text/css" href="css/style9.css" />        
+    <link rel="stylesheet" type="text/css" href="css/jquery.fancybox.css" media="screen" />                   
+    <link href='http://fonts.googleapis.com/css?family=Dancing+Script' rel='stylesheet' type='text/css'>        
+    <link href='http://fonts.googleapis.com/css?family=Miltonian|Bitter' rel='stylesheet' type='text/css' />	     	
+<script type="text/javascript" src="js/modernizr.custom.21750.js"></script>        
+    <noscript>
+      <style>.bx-loading{display:none;}
+      </style>
+    </noscript>        
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDFn_Ybh5T2D5HWyH6HPGY5jDaI6u2z3N0&sensor=false"></script>    
+<script type="text/javascript">
+      function initialize() {
+        var myOptions = {
+          center: new google.maps.LatLng(45.43434, 12.33878),
+          zoom: 18,
+         panControlOptions: {
+        position: google.maps.ControlPosition.TOP_RIGHT
+    },
+     zoomControl: true,
+    zoomControlOptions: {
+        style: google.maps.ZoomControlStyle.LARGE,
+        position: google.maps.ControlPosition.TOP_RIGHT
+    },
+    scaleControl: true,
+    scaleControlOptions: {
+        position: google.maps.ControlPosition.TOP_RIGHT
+    },
+    streetViewControl: true,
+    streetViewControlOptions: {
+        position: google.maps.ControlPosition.TOP_RIGHT
+    },
+          mapTypeId: 'satellite'
+         
+        }; 
+        var map = new google.maps.Map(document.getElementById("map_canvas"),
+            myOptions);
+        map.setTilt(45);   
+      }               
+    </script>    
+  </head>    
+  <body onload="initialize()">  
+  <header>    
+    <div id="container-menu">          
+      <img id="logo" src="./images/logo.png" alt="">        	
+      <nav>        		
+        <ul>        			
+          <li id="1">
+            <a href="#">WELCOME
+              <span>About us
+              </span></a>
+          </li>        			
+          <li id="2">
+            <a href="#">MENUS
+              <span>Our delicious dishes
+              </span></a>
+          </li>        			
+          <li id="3">
+            <a href="#">NEWS
+              <span>What's new
+              </span></a>
+          </li>        			
+          <li id="4">
+            <a href="#">GALLERY
+              <span>Photos of our resturant
+              </span></a>
+          </li>        			
+          <li id="5">
+            <a href="#">CONTACT
+              <span>Location and address details
+              </span></a>
+          </li>        		
+        </ul>        	
+      </nav>          
+      <ul id="social_icons">          
+        <li>
+        <a href="#">
+          <img src="./images/social/facebook.png" alt="Seguici su Facebook" title="Seguici su Facebook"></a>
+        </li>           
+        <li>
+        <a href="#">
+          <img style="margin-right:3px;" src="./images/social/twitter.png" alt="Seguici su Twitter" title="Seguici su Twitter"></a>
+        </li>            
+        <li>
+        <a href="#">
+          <img src="./images/social/google+.png" alt="Seguici su Google+" title="Seguici su Google+"></a>
+        </li>             
+        <li>
+        <a href="#">
+          <img src="./images/social/rss.png" alt="Iscriviti al feed" title="Iscriviti al feed"></a>
+        </li>                    
+      </ul>        
+    </div>  
+    </header>  
+    <section>    
+    <div class="contentX" id="content1">	
+      <h1 class="huge">WELCOME</h1>                 	 
+      <p class="testo">        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.         Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.                   
+      </p>        
+      <img id="home_img" src="./images/resturant_sea.jpg" alt="">        	 
+      <p class="testo">        DANIRESTURANT CORPORATION
+        <br>Via Ad minim veniamMars Avenue 231/09
+        <br>Venice City, 35   
+        <br>Tel: 012345678.(info e prenotazioni)
+        <br>
+        <br>ORARIO DI APERTURA 
+        <br>Negozio: Tutti i giorni 10-22 
+        <br>Ristorante: Tutti i giorni 11-21:30   
+        <br>Bar: Tutti i giorni 9:30-21.30  
+        <br>Giorni di chiusura 25 e 26/12/2011, 1/1/2012, 8 e 9/4/2012, 25/4/2012, 1/5/2012         
+      </p>                 
+    </div> 
+    </section>     
+    <section>                  
+    <div class="contentX" id="content2">           
+      <!-- START ANTIPASTI-->        
+      <h1 class="huge">ANTIPASTI</h1>        
+      <!-- START FOOD1-->        
+      <div class="foods">                   
+        <a class="fan" href="./images/large/1.jpg" title="Assunção - Santo Tirso...a New Dimension... (Alex Matos)">            
+          <img class="foods_thumb" src="./images/thumbs/1.jpg" alt=""></a>            
+        <h3 class="prezzo">&#x20ac; 3.99<h3>          
+            <h2 class="nome_piatto">FOOD 1</h2>          
+            <div class="container_star">          
+              <ul class="star">            
+                <li> 
+                <img  src="./images/icon_star.png" alt="">
+                </li>            
+                <li> 
+                <img  src="./images/icon_star.png" alt="">
+                </li>            
+                <li> 
+                <img  src="./images/icon_star.png" alt="">
+                </li>            
+                <li> 
+                <img  src="./images/icon_star.png" alt="">
+                </li>            
+                <li> 
+                <img  src="./images/icon_star.png" alt="">
+                </li>          
+              </ul>        
+            </div>          
+            <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tellus libero, aliquet id dignissim vel, molestie at sem.
+            </span>        
+      </div>        
+      <!-- END FOOD1-->        
+      <!-- START FOOD2-->         
+      <div class="foods">            
+        <a class="fan" href="./images/large/2.jpg" title="Assunção - Santo Tirso...a New Dimension... (Alex Matos)">            
+          <img class="foods_thumb" src="./images/thumbs/2.jpg" alt=""></a>            
+        <h3 class="prezzo">&#x20ac; 5.00<h3>          
+            <h2 class="nome_piatto">FOOD 2</h2>          
+            <div class="container_star">          
+              <ul class="star">            
+                <li> 
+                <img  src="./images/icon_star.png" alt="">
+                </li>            
+                <li> 
+                <img  src="./images/icon_star.png" alt="">
+                </li>            
+                <li> 
+                <img  src="./images/icon_star.png" alt="">
+                </li>            
+                <li> 
+                <img  src="./images/icon_star.png" alt="">
+                </li>            
+                <li> 
+                <img  src="./images/icon_star_empty.png" alt="">
+                </li>          
+              </ul>        
+            </div>          
+            <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tellus libero, aliquet id dignissim vel, molestie at sem.
+            </span>        
+      </div>        
+      <!-- END FOOD2-->        
+      <!-- START FOOD3-->          
+      <div class="foods">             
+        <a class="fan" href="./images/large/3.jpg" title="Assunção - Santo Tirso...a New Dimension... (Alex Matos)">            
+          <img class="foods_thumb" src="./images/thumbs/3.jpg" alt=""></a>            
+        <h3 class="prezzo">&#x20ac; 3.45<h3>          
+            <h2 class="nome_piatto">FOOD 3</h2>          
+            <div class="container_star">          
+              <ul class="star">            
+                <li> 
+                <img  src="./images/icon_star.png" alt="">
+                </li>            
+                <li> 
+                <img  src="./images/icon_star.png" alt="">
+                </li>            
+                <li> 
+                <img  src="./images/icon_star.png" alt="">
+                </li>            
+                <li> 
+                <img  src="./images/icon_star.png" alt="">
+                </li>            
+                <li> 
+                <img  src="./images/icon_star.png" alt="">
+                </li>          
+              </ul>        
+            </div>          
+            <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tellus libero, aliquet id dignissim vel, molestie at sem.
+            </span>        
+      </div>        
+      <!-- END FOOD3-->         
+      <!-- END ANTIPASTI-->          
+      <!-- START PRIMI-->        
+      <h1 class="huge">PRIMI</h1>          
+      <!-- START FOOD4-->            
+      <div class="foods">            
+        <a class="fan" href="./images/large/4.jpg" title="Assunção - Santo Tirso...a New Dimension... (Alex Matos)">            
+          <img class="foods_thumb" src="./images/thumbs/4.jpg" alt=""></a>            
+        <h3 class="prezzo">&#x20ac; 6.25<h3>          
+            <h2 class="nome_piatto">FOOD 4</h2>          
+            <div class="container_star">          
+              <ul class="star">            
+                <li> 
+                <img  src="./images/icon_star.png" alt="">
+                </li>            
+                <li> 
+                <img  src="./images/icon_star.png" alt="">
+                </li>            
+                <li> 
+                <img  src="./images/icon_star.png" alt="">
+                </li>            
+                <li> 
+                <img  src="./images/icon_star.png" alt="">
+                </li>            
+                <li> 
+                <img  src="./images/icon_star.png" alt="">
+                </li>          
+              </ul>        
+            </div>          
+            <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tellus libero, aliquet id dignissim vel, molestie at sem.
+            </span>        
+      </div>          
+      <!-- END FOOD4-->           
+      <!-- START FOOD5-->            
+      <div class="foods">             
+        <a class="fan" href="./images/large/5.jpg" title="Assunção - Santo Tirso...a New Dimension... (Alex Matos)">            
+          <img class="foods_thumb" src="./images/thumbs/5.jpg" alt=""></a>            
+        <h3 class="prezzo">&#x20ac; 2.30<h3>          
+            <h2 class="nome_piatto">FOOD 5</h2>          
+            <div class="container_star">          
+              <ul class="star">            
+                <li> 
+                <img  src="./images/icon_star.png" alt="">
+                </li>            
+                <li> 
+                <img  src="./images/icon_star.png" alt="">
+                </li>            
+                <li> 
+                <img  src="./images/icon_star.png" alt="">
+                </li>            
+                <li> 
+                <img  src="./images/icon_star.png" alt="">
+                </li>            
+                <li> 
+                <img  src="./images/icon_star_empty.png" alt="">
+                </li>          
+              </ul>        
+            </div>          
+            <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tellus libero, aliquet id dignissim vel, molestie at sem.
+            </span>        
+      </div>          
+      <!-- END FOOD5-->          
+      <!-- START FOOD6-->            
+      <div class="foods">            
+        <a class="fan" href="./images/large/6.jpg" title="Assunção - Santo Tirso...a New Dimension... (Alex Matos)">            
+          <img class="foods_thumb" src="./images/thumbs/6.jpg" alt=""></a>            
+        <h3 class="prezzo">&#x20ac; 5.65<h3>          
+            <h2 class="nome_piatto">FOOD 6</h2>          
+            <div class="container_star">          
+              <ul class="star">            
+                <li> 
+                <img  src="./images/icon_star.png" alt="">
+                </li>            
+                <li> 
+                <img  src="./images/icon_star.png" alt="">
+                </li>            
+                <li> 
+                <img  src="./images/icon_star.png" alt="">
+                </li>            
+                <li> 
+                <img  src="./images/icon_star.png" alt="">
+                </li>            
+                <li> 
+                <img  src="./images/icon_star_empty.png" alt="">
+                </li>          
+              </ul>        
+            </div>          
+            <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tellus libero, aliquet id dignissim vel, molestie at sem.
+            </span>        
+      </div>          
+      <!-- END FOOD6-->         
+      <!-- END ANTIPASTI-->        
+      <h1 class="huge">SECONDI</h1>        
+      <h1 class="huge">VINI</h1>        
+      <h1 class="huge">DESSERT</h1>           
+    </div>
+    </section>        
+    <section>
+    <div class="contentX" id="content3">
+      <h1 class="huge">NEWS</h1>                  
+      <a class="fan" href="./images/large/1.jpg" title="Assunção - Santo Tirso...a New Dimension... (Alex Matos)">            
+        <img class="foods_thumb news_img" src="./images/230/1.jpg" alt=""></a>                          <h2>
+        <img  style="margin-right:10px;" src="./images/icon_star.png" alt="">01-07-2012</h2>             	 
+      <p class="testo_news">        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.         Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.                   
+      </p>                    
+      <br>                            
+      <a class="fan" href="./images/large/2.jpg" title="Assunção - Santo Tirso...a New Dimension... (Alex Matos)">            
+        <img class="foods_thumb news_img" src="./images/230/2.jpg" alt=""></a>                          <h2>
+        <img style="margin-right:10px;" src="./images/icon_star.png" alt="">02-07-2012</h2>             	 
+      <p class="testo_news">        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.         Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.                   
+      </p>                                    
+      <br>                            
+      <a class="fan" href="./images/large/3.jpg" title="Assunção - Santo Tirso...a New Dimension... (Alex Matos)">            
+        <img class="foods_thumb news_img" src="./images/230/3.jpg" alt=""></a>                          <h2>
+        <img style="margin-right:10px;" src="./images/icon_star.png" alt="">03-07-2012</h2>             	 
+      <p class="testo_news">        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.         Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.                   
+      </p>                                    
+      <br>                                                        
+      <a class="fan" href="./images/large/4.jpg" title="Assunção - Santo Tirso...a New Dimension... (Alex Matos)">            
+        <img class="foods_thumb news_img" src="./images/230/4.jpg" alt=""></a>                          <h2>
+        <img style="margin-right:10px;" src="./images/icon_star.png" alt="">04-07-2012</h2>             	 
+      <p class="testo_news">        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.         Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.                   
+      </p>                                    
+      <br>                                             
+      <a class="fan" href="./images/large/5.jpg" title="Assunção - Santo Tirso...a New Dimension... (Alex Matos)">            
+        <img class="foods_thumb news_img" src="./images/230/5.jpg" alt=""></a>                          <h2>
+        <img style="margin-right:10px;" src="./images/icon_star.png" alt="">05-07-2012</h2>             	 
+      <p class="testo_news">        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.         Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.                   
+      </p>                                    
+      <br>                       
+      <a class="fan" href="./images/large/6.jpg" title="Assunção - Santo Tirso...a New Dimension... (Alex Matos)">            
+        <img class="foods_thumb news_img" src="./images/230/6.jpg" alt=""></a>                          <h2>
+        <img style="margin-right:10px;" src="./images/icon_star.png" alt="">06-07-2012</h2>             	 
+      <p class="testo_news">        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.         Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.                   
+      </p>                                    
+      <br>                                 
+      <a class="fan" href="./images/large/7.jpg" title="Assunção - Santo Tirso...a New Dimension... (Alex Matos)">            
+        <img class="foods_thumb news_img" src="./images/230/7.jpg" alt=""></a>                          <h2>
+        <img style="margin-right:10px;" src="./images/icon_star.png" alt="">07-07-2012</h2>             	 
+      <p class="testo_news">        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.         Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.                   
+      </p>                                    
+      <br>              
+      <a class="fan" href="./images/large/4.jpg" title="Assunção - Santo Tirso...a New Dimension... (Alex Matos)">            
+        <img class="foods_thumb news_img" src="./images/230/4.jpg" alt=""></a>                          <h2>
+        <img style="margin-right:10px;" src="./images/icon_star.png" alt="">08-07-2012</h2>             	 
+      <p class="testo_news">        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.         Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.                   
+      </p>                                    
+      <br>                          
+    </div>	
+    </section>
+    <section>	          
+    <div class="contentX" id="content4">
+      <h1 class="huge">GALLERY</h1>		 		 
+      <p class="testo">        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.         Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.                   
+      </p>                  
+      <div class="main">                
+        <!-- NINTH EXAMPLE -->                
+        <div class="view view-ninth">                    
+          <img src="images/230/1.jpg" />                    
+          <div class="mask mask-1">
+          </div>                    
+          <div class="mask mask-2">
+          </div>                    
+          <div class="content">                        <h2>Hover Style #1</h2>                        
+            <p>Cool!
+            </p>                        
+            <a href="#" class="info">Read More</a>                    
+          </div>                
+        </div>                
+        <div class="view view-ninth">                    
+          <img src="images/230/2.jpg" />                    
+          <div class="mask mask-1">
+          </div>                    
+          <div class="mask mask-2">
+          </div>                    
+          <div class="content">                        <h2>Hover Style #2</h2>                        
+            <p>Cool!
+            </p>                        
+            <a href="#" class="info">Read More</a>                    
+          </div>                
+        </div>                
+        <div class="view view-ninth">                    
+          <img src="images/230/3.jpg" />                    
+          <div class="mask mask-1">
+          </div>                    
+          <div class="mask mask-2">
+          </div>                    
+          <div class="content">                        <h2>Hover Style #3</h2>                        
+            <p>Cool!
+            </p>                        
+            <a href="#" class="info">Read More</a>                    
+          </div>                
+        </div>                
+        <div class="view view-ninth">                    
+          <img src="images/230/4.jpg" />                    
+          <div class="mask mask-1">
+          </div>                    
+          <div class="mask mask-2">
+          </div>                    
+          <div class="content">                        <h2>Hover Style #4</h2>                        
+            <p>Cool!
+            </p>                        
+            <a href="#" class="info">Read More</a>                    
+          </div>                
+        </div>                    
+        <div class="view view-ninth">                    
+          <img src="images/230/5.jpg" />                    
+          <div class="mask mask-1">
+          </div>                    
+          <div class="mask mask-2">
+          </div>                    
+          <div class="content">                        <h2>Hover Style #5</h2>                        
+            <p>Cool!
+            </p>                        
+            <a href="#" class="info">Read More</a>                    
+          </div>                
+        </div>                
+        <div class="view view-ninth">                    
+          <img src="images/230/6.jpg" />                    
+          <div class="mask mask-1">
+          </div>                    
+          <div class="mask mask-2">
+          </div>                    
+          <div class="content">                        <h2>Hover Style #6</h2>                        
+            <p>Cool!
+            </p>                        
+            <a href="#" class="info">Read More</a>                    
+          </div>                
+        </div>                
+        <div class="view view-ninth">                    
+          <img src="images/230/7.jpg" />                    
+          <div class="mask mask-1">
+          </div>                    
+          <div class="mask mask-2">
+          </div>                    
+          <div class="content">                        <h2>Hover Style #7</h2>                        
+            <p>Cool!
+            </p>                        
+            <a href="#" class="info">Read More</a>                    
+          </div>                
+        </div>                
+        <div class="view view-ninth">                    
+          <img src="images/230/1.jpg" />                    
+          <div class="mask mask-1">
+          </div>                    
+          <div class="mask mask-2">
+          </div>                    
+          <div class="content">                        <h2>Hover Style #8</h2>                        
+            <p>Cool!
+            </p>                        
+            <a href="#" class="info">Read More</a>                    
+          </div>                
+        </div>                         
+        <div class="view view-ninth">                    
+          <img src="images/230/1.jpg" />                    
+          <div class="mask mask-1">
+          </div>                    
+          <div class="mask mask-2">
+          </div>                    
+          <div class="content">                        <h2>Hover Style #9</h2>                        
+            <p>Cool!
+            </p>                        
+            <a href="#" class="info">Read More</a>                    
+          </div>                
+        </div>                
+        <div class="view view-ninth">                    
+          <img src="images/230/2.jpg" />                    
+          <div class="mask mask-1">
+          </div>                    
+          <div class="mask mask-2">
+          </div>                    
+          <div class="content">                        <h2>Hover Style #10</h2>                        
+            <p>Cool!
+            </p>                        
+            <a href="#" class="info">Read More</a>                    
+          </div>                
+        </div>                
+        <div class="view view-ninth">                    
+          <img src="images/230/3.jpg" />                    
+          <div class="mask mask-1">
+          </div>                    
+          <div class="mask mask-2">
+          </div>                    
+          <div class="content">                        <h2>Hover Style #11</h2>                        
+            <p>Cool!
+            </p>                        
+            <a href="#" class="info">Read More</a>                    
+          </div>                
+        </div>                
+        <div class="view view-ninth">                    
+          <img src="images/230/4.jpg" />                    
+          <div class="mask mask-1">
+          </div>                    
+          <div class="mask mask-2">
+          </div>                    
+          <div class="content">                        <h2>Hover Style #12</h2>                        
+            <p>Cool!
+            </p>                        
+            <a href="#" class="info">Read More</a>                    
+          </div>                
+        </div>                    
+        <div class="view view-ninth">                    
+          <img src="images/230/5.jpg" />                    
+          <div class="mask mask-1">
+          </div>                    
+          <div class="mask mask-2">
+          </div>                    
+          <div class="content">                        <h2>Hover Style #13</h2>                        
+            <p>Cool!
+            </p>                        
+            <a href="#" class="info">Read More</a>                    
+          </div>                
+        </div>                
+        <div class="view view-ninth">                    
+          <img src="images/230/6.jpg" />                    
+          <div class="mask mask-1">
+          </div>                    
+          <div class="mask mask-2">
+          </div>                    
+          <div class="content">                        <h2>Hover Style #14</h2>                        
+            <p>Cool!
+            </p>                        
+            <a href="#" class="info">Read More</a>                    
+          </div>                
+        </div>                
+        <div class="view view-ninth">                    
+          <img src="images/230/7.jpg" />                    
+          <div class="mask mask-1">
+          </div>                    
+          <div class="mask mask-2">
+          </div>                    
+          <div class="content">                        <h2>Hover Style #15</h2>                        
+            <p>Cool!
+            </p>                        
+            <a href="#" class="info">Read More</a>                    
+          </div>                
+        </div>                
+        <div class="view view-ninth">                    
+          <img src="images/230/1.jpg" />                    
+          <div class="mask mask-1">
+          </div>                    
+          <div class="mask mask-2">
+          </div>                    
+          <div class="content">                        <h2>Hover Style #16</h2>                        
+            <p>Cool!
+            </p>                        
+            <a href="#" class="info">Read More</a>                    
+          </div>                
+        </div>                
+      </div>                   
+    </div>
+    </section>  
+    <section>      
+    <div class="contentX" id="content5">
+      <h1 class="huge">CONTACT</h1>          
+      <div id="sede_sin">                
+        <p class="testo_sede">DaniResturant Corporation.
+          <br>Ad minim veniamMars Avenue 231/09, Venice City
+          <br>
+          <br>                  Tel 1: +777 906 534 07
+          <br>                  Tel 2: +777 906 352 90 
+        </p>              
+      </div>                          
+      <p class="testo">              Per qualsiasi informazione non esitare a contattarci, saremo lieti di risponderti il prima possibile!                   
+      </p>                  
+      <!-- START FORM --> 
+               
+      <form method="post" action="./submit.php">              
+        <fieldset>                
+          <p style="margin-top:30px">                    
+            <label for="name">Il tuo nome:
+            </label>                    
+            <input type="text" id="first_name" name="first_name" size="30" style="width:68%;" placheolder="Inserisci il tuo nome *" autofocus="autofocus" required="required" >                  
+          </p>                  
+          <p style="margin-top:20px">                      
+            <label for="email">La tua email:
+            </label>                      
+            <input type="email" id="email" name="email" size="30" style="width:68%;" placheolder="tua@mail.it *" required="required" >                  
+          </p>                 
+          <p style="margin-top:20px">                      
+            <label for="phone_number">Il tuo telefono:
+            </label>                      
+            <input type="tel" id="phone_number" name="phone_number" size="30" style="width:68%;" placheolder="Inserisci il tuo telefono">                
+          </p>                 
+          <p style="margin-top:20px">                    
+            <label for="subject">Oggetto:
+            </label>                    
+            <input type="text" id="subject" name="subject" size="30" style="width:68%;" placheolder="Inserisci un oggetto del messaggio *" required="required" >                  
+          </p>                  
+          <p style="margin-top:20px">                  
+<textarea type="text" id="text" name="text" rows="15" cols="80"  style="width:100%;" placheolder="Inserisci il tuo messaggio *" required="required"></textarea>                  
+          </p>                
+          <p style="margin-top:20px">                  
+            <input id="invia" type="submit" name="submit" value="Invia!">                
+          </p>              
+        </fieldset>            
+      </form>  
+             
+      <!-- END FORM -->        
+    </div> 
+    </section>          
+    <div id="map_canvas" style="width:100%; height:100%">
+    </div>        
+    <div class="container">			                                    
+      <div id="bx-wrapper" class="bx-wrapper">                
+        <div class="bx-loading">                                       
+          <span>Risto Template Html5 Preloading Images...
+          </span>                
+        </div>                                				
+        <div class="bx-content"></div>				
+        <div class="bx-container">                    
+          <img src="images/large/7.jpg" alt="image07" title="Aroma Paradise"/>                    
+          <img src="images/large/6.jpg" alt="image06" title="Tenderness"/>                    
+          <img src="images/large/5.jpg" alt="image05" title="Flavour Bomb"/>                    
+          <img src="images/large/4.jpg" alt="image04" title="Crunchbite"/>                    
+          <img src="images/large/3.jpg" alt="image03" title="Freshness"/>                    
+          <img src="images/large/2.jpg" alt="image02" title="Raw Love"/>                    
+          <img src="images/large/1.jpg" alt="image01" title="Shushi Town"/>				
+        </div>                
+        <div class="bx-overlay">
+        </div>			
+      </div>        
+    </div>        
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>		    
+<script type="text/javascript" src="js/StackBlur.js"></script>        
+<script type="text/javascript" src="js/utility.js"></script>           
+<script type="text/javascript" src="js/jquery.mousewheel-3.0.6.pack.js"></script>        
+<script type="text/javascript" src="css/jquery.fancybox.pack.js"></script>           
+<script>
+  $(document).ready(function() {
+$("#1").click(function () {
+    
+     $("#content1").fadeToggle("slow", "linear");   
+       $("#content2").fadeOut("slow", "linear");
+        $("#content3").fadeOut("slow", "linear");
+         $("#content4").fadeOut("slow", "linear");
+          $("#content5").fadeOut("slow", "linear");
+            $(".container").fadeIn("slow", "linear");  
+    });
+$("#2").click(function () {
+    
+      $("#content2").fadeToggle("slow", "linear");    
+       $("#content1").fadeOut("slow", "linear");
+        $("#content3").fadeOut("slow", "linear");
+         $("#content4").fadeOut("slow", "linear");
+          $("#content5").fadeOut("slow", "linear");
+           $(".container").fadeIn("slow", "linear");  
+    });
+$("#3").click(function () {
+    
+      $("#content3").fadeToggle("slow", "linear");
+       $("#content1").fadeOut("slow", "linear");
+        $("#content2").fadeOut("slow", "linear");
+         $("#content4").fadeOut("slow", "linear");
+          $("#content5").fadeOut("slow", "linear");
+           $(".container").fadeIn("slow", "linear");  
+    });
+$("#4").click(function () {
+    
+      $("#content4").fadeToggle("slow", "linear"); 
+       $("#content1").fadeOut("slow", "linear");
+        $("#content2").fadeOut("slow", "linear");
+         $("#content3").fadeOut("slow", "linear");
+          $("#content5").fadeOut("slow", "linear");
+           $(".container").fadeIn("slow", "linear");  
+    });
+$("#5").click(function () {
+    
+       $("#map_canvas").fadeIn("slow", "linear"); 
+        $("#content5").fadeToggle("slow", "linear");
+      $(".container").fadeOut("slow", "linear");   
+         $("#content1").fadeOut("slow", "linear");
+          $("#content2").fadeOut("slow", "linear");
+           $("#content3").fadeOut("slow", "linear");
+             $("#content4").fadeOut("slow", "linear");
+        
+    });
+    $(".fan").fancybox({
+      openEffect  : 'elastic',
+      closeEffect : 'elastic',
+      helpers : {
+        title : {
+          type : 'inside'
+        }
+      }
+    });
+  });
+  </script>     
+  </body>
+</html>

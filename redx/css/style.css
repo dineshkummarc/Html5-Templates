@@ -1,0 +1,638 @@
+﻿/*
+Theme: LightSource
+Author:Gekko aka Patrick Best
+Distributed for FreeHTML5Templates.com
+*/
+
+/*
+    HTML5 RESET
+*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+body {
+    line-height:1;
+}
+
+article,aside,details,figcaption,figure,hgroup,
+header,menu,nav,section,footer { 
+	display:block;
+}
+
+nav ul {
+    list-style:none;
+}
+
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+hr {
+    display:block;
+    height:1px;
+    border:0;   
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+
+/*
+    BACKGROUND STYLES
+*/
+
+html {
+    background-color:#none;
+  
+}
+
+body {
+    
+    color:#333;
+    font-family:helvetica, arial, sans-serif;
+    font-size:14px;
+    line-height:19px;
+}
+
+header {
+    background-color:#383838;
+background: -moz-linear-gradient(top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.65)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* Opera11.10+ */
+background: -ms-linear-gradient(top, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* IE10+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+background: linear-gradient(top, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* W3C */
+    margin-bottom:10px;
+    overflow:visible;
+}
+
+#header_middle .container {
+    padding:20px 0px 0px 0px;
+
+}
+
+#header_bottom {
+    background-color:#transparent;
+    height:101px;
+}
+
+footer {
+    background:#ddd;
+    border-top:1px solid #ccc;
+}
+
+
+
+/*
+    GENERIC STYLES
+*/
+
+h1, h2, h3, h4, h5 { clear:both; }
+
+h1 {
+	margin:15px 5px;
+	padding-top:15px;
+	color:#333;
+	font-size:35px;
+	font-weight:100;
+	line-height: 20px;
+	
+	
+}
+
+h2 {
+    margin:15px 0px;
+	padding-top:15px;
+    color:#333;
+    font-size:20px;
+    font-weight:300;
+}
+
+h3 {
+    margin:15px 0px;
+    color:#333;
+    font-size:18px;
+    font-weight:300;
+}
+
+h4 {
+    margin:10px 0px;
+    color:#444;
+    font-size:16px;
+}
+
+h5 {
+    margin:10px 0px;
+    color:#333;
+    font-size:14px;
+}
+
+h6 {
+    margin:10px 0px;
+    color:#999;
+    font-size:10px;
+}
+
+p {
+    color:#333;
+	margin-bottom: 15px;
+}
+
+a {
+    color:#b22222;
+    text-decoration:none;
+}
+
+a:hover, a:active, a:focus {
+    text-decoration:underline;
+    outline:none;
+}
+
+.left { float:left; margin:5px 20px 5px 0px; }
+
+.right { float:right; margin:5px 0px 5px 20px; }
+
+
+
+.clear { clear:both; }
+	
+	
+#intro {
+	width: 980px;
+	position: relative;
+	float: left;
+	height: 120px;
+	background: transparent;
+	margin-top: 25px;
+}
+
+#logo {
+	position: relative;
+        float: left;
+	left: 0px;
+	width: 167px;
+	height: 43px;
+	top: 32px;
+}
+
+/*
+    LIST STYLES
+*/
+
+ol { margin-left:20px; }
+
+ul { margin-bottom:20px; clear:both; }
+
+ul li { list-style:none; }
+
+.circle{ list-style:circle;}
+.squares{ list-style:square;}
+/*
+	HEADER STYLES
+*/
+
+
+
+nav {
+    position:absolute;
+    top:50px;
+    right:0px;
+	list-style:none;
+	z-index:10;
+}
+
+nav ul {
+	overflow:visible;
+}
+
+nav ul li {
+	position:relative;
+	float:left;
+	margin-left:10px;
+}
+
+nav ul li a {
+	display:block;
+	float:left;
+	padding:2px 5px;
+	margin-bottom:3px;
+	color:#333;
+	font-family:helvetica,arial,serif;
+	line-height:20px;
+	font-size:20px;
+	
+}
+
+
+
+nav ul li a:hover, nav ul li a.selected{
+	color:#930000;
+	background:none;
+	text-decoration:none;
+	text-shadow:none;
+	-webkit-border-radius:2px;
+	-moz-border-radius:2px;
+	border-radius:2px;
+}
+
+
+
+
+
+#header_main #secondary {
+    position:relative;
+    padding:20px 0px;
+    background:none;
+}
+
+
+#header_main #secondary #slogan p.text1 {
+	margin-bottom:10px;
+    color:#333;
+    font-size:35px;
+	font-family:helvetica, arial, serif;
+	letter-spacing:-1px;
+}
+
+
+
+ul#header_menu {
+    padding-top:34px;
+	margin:0px;
+	line-height:30px;
+}
+
+ul#header_menu li { float:left; margin-right:20px; }
+
+ul#header_menu li a {
+	padding:7px 15px 6px 15px;
+	background:#282828;
+    color:#f4f4f4;
+    font-family:helvetica, arial, sans-serif;
+    font-size:12px;
+	font-weight:bold;
+	text-transform:uppercase;
+    text-decoration:none;
+    
+	-webkit-border-radius:4px;
+	-moz-border-radius:4px;
+	border-radius:4px;
+	
+	border:#222 solid 1px;
+}
+
+ul#header_menu li a:hover {
+	background:#b22222;
+    text-decoration:none;
+}
+
+/* NIVO SLIDER */
+theme-default #slider {
+    margin:100px auto 0 auto;
+    width:618px; /* Make sure your images are the same size */
+    height:246px; /* Make sure your images are the same size */
+}
+.theme-pascal.slider-wrapper,
+.theme-orman.slider-wrapper {
+    margin-top:150px;
+}
+
+/*====================*/
+/*=== Other Styles ===*/
+/*====================*/
+.clear {
+	clear:both;}
+
+/* The Nivo Slider styles */
+.nivoSlider {
+	position:relative;
+}
+.nivoSlider img {
+	position:absolute;
+	top:0px;
+	left:0px;
+}
+/* If an image is wrapped in a link */
+.nivoSlider a.nivo-imageLink {
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+	border:0;
+	padding:0;
+	margin:0;
+	z-index:6;
+	display:none;
+}
+/* The slices and boxes in the Slider */
+.nivo-slice {
+	display:block;
+	position:absolute;
+	z-index:5;
+	height:100%;
+}
+.nivo-box {
+	display:block;
+	position:absolute;
+	z-index:5;
+}
+/* Caption styles */
+.nivo-caption {
+	position:absolute;
+	left:0px;
+	bottom:0px;
+	background:#000;
+	color:#fff;
+	opacity:0.8; /* Overridden by captionOpacity setting */
+	width:100%;
+	z-index:8;
+}
+.nivo-caption p {
+	padding:5px;
+	margin:0;
+}
+.nivo-caption a {
+	display:inline !important;
+}
+.nivo-html-caption {
+    display:none;
+}
+/* Direction nav styles (e.g. Next & Prev) */
+.nivo-directionNav a {
+	position:absolute;
+	top:45%;
+	z-index:9;
+	cursor:pointer;
+}
+.nivo-prevNav {
+	left:0px;
+}
+.nivo-nextNav {
+	right:0px;
+}
+/* Control nav styles (e.g. 1,2,3...) */
+.nivo-controlNav a {
+	position:relative;
+	z-index:9;
+	cursor:pointer;
+}
+.nivo-controlNav a.active {
+	font-weight:bold;
+}
+
+/*
+	CONTENT STYLES
+*/
+
+.container {
+    margin:0px auto;
+    padding:0px;
+    width:950px;
+    position:relative;
+}
+
+.block {
+    display:block;
+    overflow:hidden;
+    
+}
+
+.block p {
+    margin:5px 0px;
+   
+}
+
+.box {
+    margin-top:20px;
+	padding-bottom:20px;
+    float:left;
+    position:relative;
+}
+/* main content */
+.main_content {
+	position: relative;
+	float: left;
+	width: 100%;
+	margin-top: 4px;
+	padding-top: 10px;
+}
+	
+.main_content_separator{
+	margin-bottom: 20px;
+}
+#container, #container_left, #container_right {
+	position: relative;
+	width: 100%;
+}
+	
+#container {
+	position: relative;
+	width: 980px;
+	margin: 0 auto;
+	background-color: transparent;
+	min-height: 100%;
+}
+
+.left {
+	float: left;
+	width: 250px;
+	position: relative;
+	background: transparent;
+	padding: 15px;
+	margin-bottom: 10px;
+}
+	
+.middle {
+	float: left;
+	width: 250px;
+	position: relative;
+	background: transparent;
+	padding: 15px;
+	margin-bottom: 10px;
+	margin-left: 30px;
+}
+	
+.right {
+	float: right;
+	width: 250px;
+	position: relative;
+	background: transparent;
+	padding: 15px;
+	}
+
+
+.half,  .half, .third,  .third, .fourth,  .fourth, .fifth,  .fifth, .sixth, .sixth, .seventh, .eighth, .twothird, .twothird .full{
+	float:left;
+	margin-right:38px;
+} 
+
+.half { width:440px; }
+.full { width:880px; }
+
+.third { width:280px; }
+
+.fourth { width:200px; }
+
+
+.fifth { margin-right:40px; width:150px; }
+
+.sixth { margin-right:40px; width:125px; }
+.seventh { margin-right: 20px; width: 75px; }
+
+.copyright {margin-right:20px; width:800px;}
+
+
+
+
+
+
+h3.letter { padding-left:30px; margin-top:0px; height:24px; }
+
+
+.button_readmore {
+    margin-top:10px;
+   background:#282828;
+    width:82px;
+    height:22px;
+    color:#fff;
+    font-size:11px;
+    line-height:22px;
+    text-align:center;
+    text-decoration:none;
+    float:right;
+	border:#222 solid 1px;
+	-webkit-border-radius:4px;
+	-moz-border-radius:4px;
+	border-radius:4px;
+}
+
+a.button_readmore:hover {
+    background:#b22222;
+    text-decoration:none;
+    color:#fff;
+    border:#222 solid 1px;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    border-radius:4px;
+}
+
+
+
+
+
+
+
+
+
+/*
+    FOOTER STYLES
+*/
+
+footer { margin-top:30px; }
+
+footer .light {
+    background:none;
+    overflow:auto;
+}
+
+footer .left {
+	margin-top:10px;
+}
+
+footer .right {
+	margin-top:10px;
+}
+
+footer h3 { color:#111; }
+
+footer p { color:#222; }
+
+footer ul li {
+    padding:5px 0px 5px 12px;
+    border-bottom:1px solid #bbb;
+}
+
+footer ul li a {
+    padding:6px 0px;
+    color:#444;
+}
+
+footer ul li a:hover {
+    color:#222;
+    text-decoration:none;
+}
+
+
+
+
+#footer_bottom p {
+    padding:0px 20px 0px 0px;
+    color:#333;
+    font-size:11px;
+    line-height:11px;
+}
+
+#footer_bottom  {
+    position:absolute;
+    width:16px;
+    height:18px;
+    right:0px;
+    top:7px;
+}
+
+
+
+/* Misc */
+
+section { overflow:hidden; }
+
+
+a.photo_hover {
+	position: relative;
+	float: left;
+	margin: 16px 13px 8px 0;
+	padding: 8px;
+   background-color: white;
+	border: 1px solid #D6D6D6;
+}
+
+a.photo_hover: hover {
+	border: 1px solid #D6D6D6;
+	background-color: transparent;
+	opacity: 0.9;
+	z-index: 1000;
+}

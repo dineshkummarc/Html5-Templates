@@ -1,0 +1,333 @@
+/*Risto Template by Daniele Votta
+Sito: http://danielevotta.it
+Blog: http://blog.danielevotta.it
+Twitter: @DanieleVotta
+*/
+
+.bx-content h2, .bx-content h3{
+    font-size: 120px;
+    position: relative;
+    z-index: 300;
+    color: #fff;
+    padding: 20px 30px 0px;
+    font-family: 'Miltonian';
+    text-align: center;
+    text-shadow: 0px 0px 1px rgba(255,255,255,0.9), 1px 2px 5px rgba(0,0,0,0.5);
+}
+.bx-content h3{
+    font-size: 60px;
+}
+.bx-container{
+	position:fixed;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+	z-index:0;
+}
+.bx-container img{
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+	z-index: 101;
+	display:none;
+}
+.bx-canvas{
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+}
+.bx-overlay, .bx-loading {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0px;
+	left: 0px;           
+	background: transparent url(../images/pattern.png) repeat top left;
+	z-index:10;
+}
+.bx-loading{
+    z-index: 9999;
+    background: #000;
+
+}
+.bx-loading span{
+width:500px;
+    color: #fff;
+    font-size: 40px;
+    position: fixed;
+    font-family: 'Dancing Script', cursive;
+    
+    letter-spacing: 8px;
+    /*margin: -12px 0 0 -46px;   */
+    left: 50%;
+    top: 50%;
+    margin-left:-250px;
+    text-align:center;
+    text-shadow: 0px 0px 1px rgba(255,255,255,0.9), 1px 2px 5px rgba(0,0,0,0.5);
+}
+.bx-thumbs{
+    position:absolute;
+    z-index: 100;   
+    bottom: 50px;
+    left: 50%;
+    margin-left: -294px; /*half of width for centering*/
+}
+.bx-thumbs a{
+    float: left;
+    width: 66px;
+    height: 66px;
+    border: 2px solid #000;
+    overflow: hidden;
+    margin: 2px 7px;
+    position: relative;
+    outline: none;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: center center;
+    opacity: 0.8;
+    border-radius: 34px;
+    -webkit-border-radius: 34px;
+    -moz-border-radius: 34px;
+	box-shadow: 
+        0px 0px 3px rgba(0,0,0,0.6),
+        0px 0px 0px 40px rgba(0,0,0,0.3) inset;
+    -webkit-transition: all 0.4s ease-in-out;
+	-moz-transition: all 0.4s ease-in-out;
+	-o-transition: all 0.4s ease-in-out;
+	-ms-transition: all 0.4s ease-in-out;
+	transition: all 0.4s ease-in-out;
+}
+.bx-thumbs a:hover{
+    opacity: 1.0;
+    box-shadow: 
+        0px 0px 3px rgba(0,0,0,0.6),
+        0px 0px 0px 0px rgba(0,0,0,0.1) inset;
+}
+.bx-thumbs a.bx-thumbs-current{
+    opacity: 1.0;
+    border-color: #fff;
+    box-shadow: 0px 0px 3px rgba(0,0,0,0.6);
+}
+
+
+#container-menu{
+    z-index:1000;
+    position:fixed;
+    left:0;
+    background: url("../images/000_80.png") repeat scroll center center transparent;
+    width:230px;
+    height:100%;
+    float:left;
+    border-left: 5px solid #4D5052;
+    border-right: 1px solid #4D5052;;
+
+}
+
+nav li {
+    border-bottom: 1px solid #DADFBE;
+    cursor: pointer;
+    display: block;
+    line-height: 0.7em;
+    padding: 15px 0 15px 20px;
+    font-size: 24px;
+}
+
+nav li:first-child {
+    border-top: 0 none;
+}
+
+nav li:last-child {
+    border-bottom: 0 none;
+}
+
+nav li a span {
+    color: #999999;
+}
+
+nav li a span {
+    color: #9C9D80;
+    display: block;
+    font-size: 14px;
+    letter-spacing: 0;
+    margin: 2px 0 0;
+    text-transform: none;
+}
+
+nav li:hover{
+    background: none repeat scroll 0 0 #191919;
+}
+
+.contentX {
+    z-index:1000;
+    background: url("../images/000_70.png") repeat scroll center center transparent;
+    border-right: 5px solid #B8860B;
+    left: 236px;
+    width: 540px;
+    margin: 0;
+    padding:30px 50px 0 50px;
+    min-height: 100%;
+    position: absolute;
+    top: 0;
+    display:none;
+    overflow: auto;
+    
+   
+}
+
+#map_canvas { height: 100% ;overflow: hidden;}
+
+label {
+    color: #e16020;
+    /*font-weight: bold;*/
+}
+
+textarea{
+     color: #797979;
+}
+
+input.blur[type="text"], textarea.blur {
+    color: #999999;
+    font-style: italic;
+}
+
+.search_box input[type="text"], input[type="email"], input[type="tel"],input[type="text"],input[type="text"], select, textarea {
+    background: none repeat scroll 0 0 #191919;
+    border: 1px solid #0C0D0D;
+    box-shadow: -3px -3px 0 0 #313334, 3px 3px 0 0 #313334, 3px 0 0 0 #313334, 0 3px 0 0 #313334, 3px -3px 0 0 #313334, -3px 3px 0 0 #313334;
+}
+
+input[type="submit"], input[type="button"], a.button {
+    background: -moz-linear-gradient(center top , #FEA35A, #FE7201) repeat scroll 0 0 transparent;
+    border: 1px solid #E56701;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font: bold 12px Arial,sans-serif;
+    outline: medium none;
+    padding: 0.65em 2em;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.6);
+}
+
+
+input[type="submit"], input[type="button"], a.button {
+    border: 1px solid #E56801;
+}
+
+input[type="submit"], input[type="button"], a.button {
+    color: #FFFFFF;
+}
+
+input[type="submit"], input[type="button"], a.button {
+    background: -moz-linear-gradient(center top , #FE8F34, #FE7301) repeat scroll 0 0 transparent;
+}
+
+input[type="submit"], input[type="button"], a.button {
+    background: -moz-linear-gradient(center top , #FEA35A, #FE7201) repeat scroll 0 0 transparent;
+    border: 1px solid #E56701;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font: bold 12px Arial,sans-serif;
+    outline: medium none;
+    padding: 0.65em 2em;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.6);
+}
+
+input[type="submit"], input[type="button"], a.button {
+    background: -moz-linear-gradient(center top , #FEA35A, #FE7201) repeat scroll 0 0 transparent;
+    border: 1px solid #E56701;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font: bold 12px Arial,sans-serif;
+    outline: medium none;
+    padding: 0.65em 2em;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.6);
+}
+
+
+p input {float: right;}
+p textarea {float: right;}
+#invia {float:left; margin-top:20px;}
+
+
+.foods_thumb{
+    margin-top:20px;
+    margin-right:20px;
+    padding:1px;
+    border: 1px solid #fff;
+    background:#fff;
+    float:left;
+    z-index:9999;
+}
+
+.foods{
+    position:relative;
+    height:110px;
+    border-bottom:1px solid #333;
+    /*color:#999;*/
+    color:#fff;
+}
+
+.prezzo {
+    position:absolute;
+    right:0;
+    top:0;
+    color:#fff;
+    font-weight:bold;
+    margin-top:20px;
+}
+
+.container_star{
+    float:left;
+    margin-right:20px;
+}
+.star li{
+    float:left;
+}
+
+#logo{
+    margin-top:10px;
+    margin-left:17px;
+    margin-bottom:20px;
+}
+
+#social_icons {
+    position:absolute;
+    bottom:0;
+    margin-bottom:20px;
+    margin-left:30px;
+}
+
+#social_icons li{
+    float:left;
+    margin-left:5px;
+}
+
+#home_img{
+margin-top:20px;
+border:2px solid #fff;
+}
+
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+   .contentX{width:427px;}
+   #map_canvas{display:none;}
+   #home_img{width:427px;}
+}
+
+.nome_piatto{
+    margin-left:100px;
+}
